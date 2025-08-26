@@ -1,0 +1,1913 @@
+{
+  "url": "https://americanexpress.com",
+  "timestamp": "2025-08-25T16:52:08.178Z",
+  "executiveReport": {
+    "executiveSummary": {
+      "complianceScore": 0,
+      "riskLevel": "UNKNOWN",
+      "totalViolations": 0,
+      "criticalViolations": 0,
+      "trackingScripts": 5,
+      "unknownScripts": 38,
+      "cmpProvider": "AmEx UCM",
+      "consentMechanism": "US_style"
+    },
+    "technicalFindings": {
+      "preConsentTracking": 5,
+      "postAcceptTracking": 0,
+      "postRejectTracking": 5,
+      "trackingIncrease": -5,
+      "cookieIncrease": -19,
+      "storageIncrease": -2
+    },
+    "businessImpact": "Unknown - Analysis incomplete",
+    "urgency": "Assessment needed"
+  },
+  "detailedResults": {
+    "url": "https://americanexpress.com",
+    "evidence": {
+      "baseline": {
+        "timestamp": "2025-08-25T16:51:50.530Z",
+        "stage": "baseline",
+        "url": "https://americanexpress.com",
+        "scriptsCount": 55,
+        "scripts": [
+          {
+            "src": "https://www.aexp-static.com/cdaas/one/statics/@americanexpress/homepage-frontend/3.17.7/package/dist/E3/markets/es-ar/app_top.js?cb=12524506092025",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "",
+            "type": "",
+            "innerHTML": "bazadebezolkohpepadr=\"1461195157\""
+          },
+          {
+            "src": "https://www.americanexpress.com/akam/13/571812d3",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one/dxt-script-supplier-helper/1.4.0/dxt-script-supplier-helper.js",
+            "type": "",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/user-consent-management/ucm/v1.16.9/UCM.js",
+            "type": "",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/entrypoints/v1.235.0/entrypoint-15983.js",
+            "type": "",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/datapoint-script/datapoint/v1.67.0/datapoint.js",
+            "type": "",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/dxt/dxt-script-supplier-dynamic/v1.7.0/dxt-script-supplier-dynamic.js",
+            "type": "",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/dxt-vendor-shared-scripts/contentsquare/v1.0.64/contentsquare.js",
+            "type": "",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/dxt-vendor-shared-scripts/adobe-wrapper/v1.10.40/adobe-wrapper.js",
+            "type": "",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/v1.235.0/filter-data.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/v1.235.0/sri-hashes.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/v1.235.0/trigger-and-watch-data.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-100000/v1.235.0/filter-data.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-100000/v1.235.0/sri-hashes.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-100000/v1.235.0/trigger-and-watch-data.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://ct.contentsquare.net/ss/3776/58f9bb16-be1c-40a4-a9f6-764647d60c8c/72/uxa.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://assets.adobedtm.com/98caf8fccc463fd7e47088b35e73b27720bb5cc1/satelliteLib-bea3c9697c6240996731438f72200c4b82ae0d40.js",
+            "type": "",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://assets.adobedtm.com/dcb19cbd6cbf/61650f53735f/16894481fce5/EX9d5dd7be6b2e4e91a6a7ff4391410228-libraryCode_source.min.js",
+            "type": "",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://assets.adobedtm.com/dcb19cbd6cbf/61650f53735f/16894481fce5/RC2dfd42bd99df43a58b9c80394fc4b6b5-source.min.js",
+            "type": "",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://assets.adobedtm.com/dcb19cbd6cbf/61650f53735f/16894481fce5/RC22de28b131b34b7daeccd655c41ca747-source.min.js",
+            "type": "",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-583300-sha256-FHQDnKMdVnBU1Da0-Jt14Lso5WgEztG5OzX8HIRj6wE=.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-120186-sha256-SjvP0QKOV4WR7meEedTseVSoBp2dbBBV6OlSOgEYnTY=.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-120187-sha256-UVDkSQ3Bfp0OdoLAsx5v6vn9SZ9kT60boIrLv1fHtZg=.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-704092-sha256-vMcvZvSREQw9kJbK5BA9pHyDM3pdjdZkjl_Vfr-mWWA=.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-475289-sha256-q872INCOW7lB-cKLJSx9KQnL0ILJC2HXchz6iYvR6LE=.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-483510-sha256-MAGOhIA8jB16lESpbY5G_jQ8GGCkQX3eczucFPGzkjc=.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-504855-sha256-4WtKO91qk3i0nVAjdyDaoQkndf5EhGT1o_7NNdO-fg4=.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-532106-sha256-5pefRzu9j67M0ogf6-Y1kqZ1Tns97eEWEUuxHWTE3wQ=.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-486112-sha256-Yc2wyE2L8K_UcRBUo4N-rKTmWWGd-ft5mwrNIr5c_no=.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/data/data-60673-sha256-CHTXfXR8S8BG_wFSkXQnalcFglv0CE2B9G1qiPdO7rw=.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/data/data-60674-sha256-yvYl3XF6tp4hn6gsAPSYBfMoyjMSNqhXFsy-c3-9B60=.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/data/data-60675-sha256-hkTQHzLygoqhLI6AAvCGpVNBhrcGrBtmezjdVw7o6t0=.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://ct.contentsquare.net/ss/3776/58f9bb16-be1c-40a4-a9f6-764647d60c8c/72/ptc.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-120187-sha256-UVDkSQ3Bfp0OdoLAsx5v6vn9SZ9kT60boIrLv1fHtZg=.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://assets.adobedtm.com/dcb19cbd6cbf/61650f53735f/16894481fce5/RCba6f9cee3abe426fa326391960ab44ab-source.min.js",
+            "type": "",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://icm.aexp-static.com/content/Navigation/Partials/prod/headerScript.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "",
+            "type": "",
+            "innerHTML": "\n    var browserType = navigator.userAgent;\n    if(browserType.indexOf(\"MSIE\")>=0){\n        function"
+          },
+          {
+            "src": "https://icm.aexp-static.com/content/Navigation/Partials/prod/footerScript.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "",
+            "type": "text/javascript",
+            "innerHTML": "\n    var digitalData = {\"page\":{\"pageInfo\":{\"pageName\":\"Homepage\",\"country\":\"AR\",\"language\":\"es\",\"cu"
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one/statics/@americanexpress/homepage-frontend/3.17.7/package/dist/E3/markets/es-ar/app_bottom.js?cb=12524506092025",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one/statics/@americanexpress/dls/6.23.1/package/dist/6.23.1/scripts/dls.min.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.americanexpress.com/etc.clientlibs/enterprise/clientlibs/enterprise.min.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.americanexpress.com/etc.clientlibs/homepage/clientlibs/homepage.min.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "",
+            "type": "",
+            "innerHTML": " var excludeOmniture = true;"
+          },
+          {
+            "src": "https://www.aexp-static.com/akamai/one/statics/@americanexpress/dls-icons/0.5.0/package/dist/browser/dls-icons.min.js",
+            "type": "",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.americanexpress.com/hO9dg4_Ic/D9_cdOFEg/kuEOGVfX6rQLbw1XhE/DFxcZFd6PAI/NHAZE/HMhemIB",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one/axp-script-supplier/6.0.9/script-supplier.js",
+            "type": "",
+            "innerHTML": ""
+          },
+          {
+            "src": "",
+            "type": "",
+            "innerHTML": "\n//initialize events array if not already done\nif (typeof(digitalData) == \"undefined\"){window.digita"
+          },
+          {
+            "src": "",
+            "type": "",
+            "innerHTML": "_satellite[\"_runScript1\"](function(event, target, Promise) {\nwindow.EuCookieConsentHandlers=window.E"
+          },
+          {
+            "src": "",
+            "type": "",
+            "innerHTML": "_satellite[\"_runScript2\"](function(event, target, Promise) {\n!function(){function e(){var e=Object.k"
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/api/axpi/gct/1.0.0/gct_intl.js?gct=gctintlver",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://ct.contentsquare.net/ss/3776/58f9bb16-be1c-40a4-a9f6-764647d60c8c/72/pcc.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://ct.contentsquare.net/ss/3776/58f9bb16-be1c-40a4-a9f6-764647d60c8c/72/wr.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "",
+            "type": "",
+            "innerHTML": "_satellite[\"_runScript3\"](function(event, target, Promise) {\ns&&(s.events&&(s.events=\"\"),s.clearVars"
+          }
+        ],
+        "cookiesCount": 19,
+        "cookies": [
+          {
+            "name": "_cs_s",
+            "value": "1.5.0.9.1756142510366",
+            "domain": ".americanexpress.com",
+            "path": "/",
+            "expires": 1756142510,
+            "size": 26,
+            "httpOnly": false,
+            "secure": false,
+            "session": false,
+            "sameSite": "Lax",
+            "priority": "Medium",
+            "sameParty": false,
+            "sourceScheme": "Secure"
+          },
+          {
+            "name": "_cs_id",
+            "value": "78230221-51b6-abfb-b17f-27b3295012b9.1756140709.1.1756140709.1756140709.1.1790304709813.1.x",
+            "domain": ".americanexpress.com",
+            "path": "/",
+            "expires": 1790304709,
+            "size": 97,
+            "httpOnly": false,
+            "secure": false,
+            "session": false,
+            "sameSite": "Lax",
+            "priority": "Medium",
+            "sameParty": false,
+            "sourceScheme": "Secure"
+          },
+          {
+            "name": "s_pers",
+            "value": "%20s_tbm%3Dtrue%7C1756142507586%3B%20gpv_v41%3DAR%257CAMEX%257CHome%257CHomepage%7C1756142508039%3B",
+            "domain": ".americanexpress.com",
+            "path": "/",
+            "expires": 1790355108,
+            "size": 105,
+            "httpOnly": false,
+            "secure": false,
+            "session": false,
+            "priority": "Medium",
+            "sameParty": false,
+            "sourceScheme": "Secure"
+          },
+          {
+            "name": "TS01a91ed4",
+            "value": "01d4f2e23e7c25c2e28de5a7ef73269778d2538d5a83d4632aeca74b83564dcda57aba179bf49203124758bd95974dceae92bf61c0",
+            "domain": ".americanexpress.com",
+            "path": "/",
+            "expires": -1,
+            "size": 116,
+            "httpOnly": false,
+            "secure": false,
+            "session": true,
+            "priority": "Medium",
+            "sameParty": false,
+            "sourceScheme": "Secure"
+          },
+          {
+            "name": "AMCV_5C36123F5245AF470A490D45%40AdobeOrg",
+            "value": "870038026%7CMCMID%7C26409042350773730123829990128682438472%7CMCAID%7CNONE%7CMCOPTOUT-1756147907s%7CNONE%7CvVersion%7C5.0.0",
+            "domain": ".americanexpress.com",
+            "path": "/",
+            "expires": 1790355107,
+            "size": 162,
+            "httpOnly": false,
+            "secure": false,
+            "session": false,
+            "priority": "Medium",
+            "sameParty": false,
+            "sourceScheme": "Secure"
+          },
+          {
+            "name": "ak_bmsc",
+            "value": "DD69E8282B258DFCABCE6A2874036F84~000000000000000000000000000000~YAAQGpXAF7VKvN+YAQAAGJkk4hz3e2snpv+j8JbjuxFd2aMTF5KpS3Etvjyrd9DHGAj/H3uo6VRm7Itljmqi+gmx8k/ryhLRwWa4hRsRmN4UI9Gi0KLJKL+I+Wth7j72EGj8skySN1AtVkIZRL8kaYXAUnuvVy2p5njb1LuoYZ/Z/6idgjoqvbO1u5BBSv+Zr7OfnZY6OomUD4/1p6M7yRaL0KQFbsrWHeLkvI86uSsEA/R9jVXziPCz78wKWzbW/jB9qijnv/LR6F406J6UnJfDUiD+5HWpuXxCcqlc50NGQW6Nhf7JwpYqkxrXAKbWrTiocVeQW9GOcul4PQPqnUBfISi40lqjCZEZfSFj6EnOCY+uJt0GXALSkeb4wTtUxCxMERmRPzNRzhZ4qEPCoTIzjI88ZKgT6faN6QXDCoo47owlXrulON8jAC1y4BbRA8dqHhZ7cPa8RZeXkwRp2wxbw1gSAgZtWKEUMhznNcyQt34hhLvotmK6V9hhn34sGg==",
+            "domain": ".americanexpress.com",
+            "path": "/",
+            "expires": 1756147903.985647,
+            "size": 587,
+            "httpOnly": false,
+            "secure": true,
+            "session": false,
+            "sameSite": "None",
+            "priority": "Medium",
+            "sameParty": false,
+            "sourceScheme": "Secure"
+          },
+          {
+            "name": "_abck",
+            "value": "7BA929D94AAB00C98E3442D96199D26D~0~YAAQGpXAF8VKvN+YAQAAnp4k4g7FB4GjKWFqpSmDIbvJuJiRk1ByKABEYuhtK7cvuTPb3EsfO+lbWokSTGnkgvCJgqr7HcFQZsuFhl+DK89RFMIcKtWuF3jjzWBleuTx10zv/oeyutjaSBqxmLPETSQOpvOx33bqdfoKbR/3Ws+Rl79G3Pnr/d8eN2D3HnMHeJLQNVurH9vUTBGlsMfbYN9ffEtO7zxsTQywByZWHlT+h1xq3edTTuJAuD3HeWIPSNHHK/TKJnmqyr1JUndd0WsxRnJm9c1QLYNisYqjH+bCbeuLPAKf1eH5sfX3sUL+6VRwTngYOeVvwiXhlJLeIIeXlZ9RgljDkIIsn/X3IAPnfUIw+QHB28B1pXt6LFGz9z7MhEI9N9T5HXhEMjuYrArwV0w7h95hadfFnmYCLANOlbFRZ7U70rwX0LSJrBtB83VFe3dfE270/K4KUlHqLsqgwC/C1iVQ/Zt8UH5MpRTv+zwRmIjzT3XtmLNVDCW24z2bXsTfC88/d/OXm4jfJFXbIuKwZRT1jMI6ckskDZYH19kewZjkBw4HYnnArOxIqdkA0AQoCLOntJp7l04inycGzpo2C9Ka2xXGLt8ueU+QZfSHTrEO41tv+S7RCeKnUSAIAnH5NqRp1nomMKXzzJAHVL4=~-1~-1~-1~~",
+            "domain": ".americanexpress.com",
+            "path": "/",
+            "expires": 1787676707.399821,
+            "size": 719,
+            "httpOnly": false,
+            "secure": true,
+            "session": false,
+            "sameSite": "None",
+            "priority": "Medium",
+            "sameParty": false,
+            "sourceScheme": "Secure"
+          },
+          {
+            "name": "_cs_c",
+            "value": "1",
+            "domain": ".americanexpress.com",
+            "path": "/",
+            "expires": 1790304706,
+            "size": 6,
+            "httpOnly": false,
+            "secure": false,
+            "session": false,
+            "sameSite": "Lax",
+            "priority": "Medium",
+            "sameParty": false,
+            "sourceScheme": "Secure"
+          },
+          {
+            "name": "axplocale",
+            "value": "es-AR",
+            "domain": ".americanexpress.com",
+            "path": "/",
+            "expires": -1,
+            "size": 14,
+            "httpOnly": false,
+            "secure": true,
+            "session": true,
+            "priority": "Medium",
+            "sameParty": false,
+            "sourceScheme": "Secure"
+          },
+          {
+            "name": "_cs_cvars",
+            "value": "%7B%226%22%3A%5B%22Page%20Name%22%2C%22AR%7CAMEX%7CHome%7CHomepage%22%5D%2C%227%22%3A%5B%22businessUnit%22%2C%22AMEX%22%5D%7D",
+            "domain": ".americanexpress.com",
+            "path": "/",
+            "expires": -1,
+            "size": 134,
+            "httpOnly": false,
+            "secure": false,
+            "session": true,
+            "sameSite": "Lax",
+            "priority": "Medium",
+            "sameParty": false,
+            "sourceScheme": "Secure"
+          },
+          {
+            "name": "bm_sz",
+            "value": "1514EB36154DB3F2D24B9822D5CA2384~YAAQGpXAF7FKvN+YAQAAz5ck4hyv/zypt/qiorxjbjeA5Cb3euAd3yPj/ScwYu9VdZ/TUwMQVBFhowO8u08cqcEQMemhdHePKgDz5pgJ14oETKPdssNzjkhUA0aDYooe1A3yZPanLGOMReXjtbraRuYtTj/6AkZT0yY2DHFT6QvtAr2QbFiWmY1rEUnk9E3zk3+VvE/dd7vMglGM/tiurHVPHvob6k6QrwDWHIAMP6/zn9cEsapk8BXMQzhG55WbO0s8OX30dx7xUSOA4zrCTG8iaO4Hd2ddH6JC4JpNjXulODSZjvbuyzIM6G8h+/ACBUKH6/O2OvVZkxLEzM7gkv9VUUmuM8+6LvAt2hrx/jdB0z0DRLikcsOUxzIoBINVZzWC8ThZv1HKAmyNGD2QtGWt/lgsNvw4TqoZ/BBthgWlvByRrw==~4538677~4605506",
+            "domain": ".americanexpress.com",
+            "path": "/",
+            "expires": 1756155104.661459,
+            "size": 490,
+            "httpOnly": false,
+            "secure": true,
+            "session": false,
+            "sameSite": "None",
+            "priority": "Medium",
+            "sameParty": false,
+            "sourceScheme": "Secure"
+          },
+          {
+            "name": "agent-id",
+            "value": "f63e1c34-a129-4bbe-9fed-30ed009702ef",
+            "domain": ".americanexpress.com",
+            "path": "/",
+            "expires": 1787676707.399659,
+            "size": 44,
+            "httpOnly": true,
+            "secure": true,
+            "session": false,
+            "priority": "Medium",
+            "sameParty": false,
+            "sourceScheme": "Secure"
+          },
+          {
+            "name": "bm_sv",
+            "value": "F6FF90B7FF679A8E881356ECD27E2749~YAAQGpXAF51KvN+YAQAAlJQk4hwn3sjVqeqVF+sCC7IHgXoWwDrjgv69A6NBPOdl3aGo79Ip2R0k0OISwQmp2f3X249Gt6GF8CjuaGF9YaWJd1Hw270w5WUPINT3Vg1LaDdP6oNGW/xlr3Lur3VLOef/dXk9cVJClHnUhs7etQni6rAuQisJrrVog2oPkGkv5Oaxr5infmJ3n0AzsMehukWKcTvnCAAQ5cjbZ4IzXXyb4c/+M3LmyfCZBpuCOvT++1WphQDvbD/C~1",
+            "domain": ".americanexpress.com",
+            "path": "/",
+            "expires": 1756147904.832722,
+            "size": 308,
+            "httpOnly": false,
+            "secure": true,
+            "session": false,
+            "sameSite": "None",
+            "priority": "Medium",
+            "sameParty": false,
+            "sourceScheme": "Secure"
+          },
+          {
+            "name": "JSESSIONID",
+            "value": "xJKO0mYd4yswuMywrVSmZEJ6_N97VBgi8zlcNE8t.loyment-d646cf97f-g4d9p",
+            "domain": ".americanexpress.com",
+            "path": "/",
+            "expires": -1,
+            "size": 74,
+            "httpOnly": false,
+            "secure": true,
+            "session": true,
+            "priority": "Medium",
+            "sameParty": false,
+            "sourceScheme": "Secure"
+          },
+          {
+            "name": "akaalb_www_homepageus_v18",
+            "value": "1756141004~op=www_homepage_enus_LBM:homepagehydraorigin|~rv=4~m=homepagehydraorigin:0|~os=9184cb63cc50160c7345890467a4f9a2~id=6d659315afbad36cc72bf80641c680a0",
+            "domain": "www.americanexpress.com",
+            "path": "/",
+            "expires": 1756141004.745134,
+            "size": 183,
+            "httpOnly": true,
+            "secure": true,
+            "session": false,
+            "sameSite": "None",
+            "priority": "Medium",
+            "sameParty": false,
+            "sourceScheme": "Secure"
+          },
+          {
+            "name": "AMCVS_5C36123F5245AF470A490D45%40AdobeOrg",
+            "value": "1",
+            "domain": ".americanexpress.com",
+            "path": "/",
+            "expires": -1,
+            "size": 42,
+            "httpOnly": false,
+            "secure": false,
+            "session": true,
+            "priority": "Medium",
+            "sameParty": false,
+            "sourceScheme": "Secure"
+          },
+          {
+            "name": "bm_mi",
+            "value": "8BC2BE40FC0799A3225B5517B3E3DA44~YAAQGpXAF5xKvN+YAQAAlJQk4hzD17fQrbKHTXES3kGQuRf33bj7aKAMe042SFRep93JRFQYRZI+h6LwTDyb/75Xm0u/BtRkPBGH09zl+oj27dUOTeXwL3pRBlG3zqVsmtZ9xxYs6wLnf1T7lcU8aHJyH4sBerkTy1B8GPpWjk2Me00GxafZ1psFXH5FZB+vXjx7nFWkM8jYB8oGT94N0i7hnBKk63YsZTzpCom1tNbFquXrzmjSLpH6QSujunlrbEMC6nNV+yzux42A8lzIjR5HQOIGjAVPkE50pfrmryPcS/rj38V7fPGipcdZCTEQiWI6ajf6OuL0Djj1aA==~1",
+            "domain": ".americanexpress.com",
+            "path": "/",
+            "expires": 1756147904.832354,
+            "size": 380,
+            "httpOnly": false,
+            "secure": true,
+            "session": false,
+            "sameSite": "None",
+            "priority": "Medium",
+            "sameParty": false,
+            "sourceScheme": "Secure"
+          },
+          {
+            "name": "s_sess",
+            "value": "%20s_visit%3D1%3B%20s_tp%3D2127%3B%20s_ppv%3DAR%25257CAMEX%25257CHome%25257CHomepage%252C36%252C36%252C768%3B%20s_cc%3Dtrue%3B",
+            "domain": ".americanexpress.com",
+            "path": "/",
+            "expires": -1,
+            "size": 132,
+            "httpOnly": false,
+            "secure": false,
+            "session": true,
+            "priority": "Medium",
+            "sameParty": false,
+            "sourceScheme": "Secure"
+          },
+          {
+            "name": "s_ecid",
+            "value": "MCMID%7C26409042350773730123829990128682438472",
+            "domain": ".americanexpress.com",
+            "path": "/",
+            "expires": 1790355108.21953,
+            "size": 52,
+            "httpOnly": false,
+            "secure": true,
+            "session": false,
+            "sameSite": "None",
+            "priority": "Medium",
+            "sameParty": false,
+            "sourceScheme": "Secure"
+          }
+        ],
+        "localStorageCount": 2,
+        "trackingPixels": 0,
+        "thirdPartyScripts": 43,
+        "scriptAnalysis": {
+          "total": 55,
+          "tracking": 5,
+          "necessary": 12,
+          "unknown": 38,
+          "trackingDetails": [
+            "https://assets.adobedtm.com/98caf8fccc463fd7e47088b35e73b27720bb5cc1/satelliteLib-bea3c9697c6240996731438f72200c4b82ae0d40.js",
+            "https://assets.adobedtm.com/dcb19cbd6cbf/61650f53735f/16894481fce5/EX9d5dd7be6b2e4e91a6a7ff4391410228-libraryCode_source.min.js",
+            "https://assets.adobedtm.com/dcb19cbd6cbf/61650f53735f/16894481fce5/RC2dfd42bd99df43a58b9c80394fc4b6b5-source.min.js",
+            "https://assets.adobedtm.com/dcb19cbd6cbf/61650f53735f/16894481fce5/RC22de28b131b34b7daeccd655c41ca747-source.min.js",
+            "https://assets.adobedtm.com/dcb19cbd6cbf/61650f53735f/16894481fce5/RCba6f9cee3abe426fa326391960ab44ab-source.min.js"
+          ],
+          "unknownDetails": [
+            "https://www.aexp-static.com/cdaas/one/statics/@americanexpress/homepage-frontend/3.17.7/package/dist/E3/markets/es-ar/app_top.js?cb=12524506092025",
+            "https://www.aexp-static.com/cdaas/one/dxt-script-supplier-helper/1.4.0/dxt-script-supplier-helper.js",
+            "https://www.aexp-static.com/cdaas/user-consent-management/ucm/v1.16.9/UCM.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/entrypoints/v1.235.0/entrypoint-15983.js",
+            "https://www.aexp-static.com/cdaas/datapoint-script/datapoint/v1.67.0/datapoint.js",
+            "https://www.aexp-static.com/cdaas/dxt/dxt-script-supplier-dynamic/v1.7.0/dxt-script-supplier-dynamic.js",
+            "https://www.aexp-static.com/cdaas/dxt-vendor-shared-scripts/contentsquare/v1.0.64/contentsquare.js",
+            "https://www.aexp-static.com/cdaas/dxt-vendor-shared-scripts/adobe-wrapper/v1.10.40/adobe-wrapper.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/v1.235.0/filter-data.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/v1.235.0/sri-hashes.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/v1.235.0/trigger-and-watch-data.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-100000/v1.235.0/filter-data.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-100000/v1.235.0/sri-hashes.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-100000/v1.235.0/trigger-and-watch-data.js",
+            "https://ct.contentsquare.net/ss/3776/58f9bb16-be1c-40a4-a9f6-764647d60c8c/72/uxa.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-583300-sha256-FHQDnKMdVnBU1Da0-Jt14Lso5WgEztG5OzX8HIRj6wE=.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-120186-sha256-SjvP0QKOV4WR7meEedTseVSoBp2dbBBV6OlSOgEYnTY=.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-120187-sha256-UVDkSQ3Bfp0OdoLAsx5v6vn9SZ9kT60boIrLv1fHtZg=.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-704092-sha256-vMcvZvSREQw9kJbK5BA9pHyDM3pdjdZkjl_Vfr-mWWA=.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-475289-sha256-q872INCOW7lB-cKLJSx9KQnL0ILJC2HXchz6iYvR6LE=.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-483510-sha256-MAGOhIA8jB16lESpbY5G_jQ8GGCkQX3eczucFPGzkjc=.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-504855-sha256-4WtKO91qk3i0nVAjdyDaoQkndf5EhGT1o_7NNdO-fg4=.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-532106-sha256-5pefRzu9j67M0ogf6-Y1kqZ1Tns97eEWEUuxHWTE3wQ=.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-486112-sha256-Yc2wyE2L8K_UcRBUo4N-rKTmWWGd-ft5mwrNIr5c_no=.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/data/data-60673-sha256-CHTXfXR8S8BG_wFSkXQnalcFglv0CE2B9G1qiPdO7rw=.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/data/data-60674-sha256-yvYl3XF6tp4hn6gsAPSYBfMoyjMSNqhXFsy-c3-9B60=.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/data/data-60675-sha256-hkTQHzLygoqhLI6AAvCGpVNBhrcGrBtmezjdVw7o6t0=.js",
+            "https://ct.contentsquare.net/ss/3776/58f9bb16-be1c-40a4-a9f6-764647d60c8c/72/ptc.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-120187-sha256-UVDkSQ3Bfp0OdoLAsx5v6vn9SZ9kT60boIrLv1fHtZg=.js",
+            "https://icm.aexp-static.com/content/Navigation/Partials/prod/headerScript.js",
+            "https://icm.aexp-static.com/content/Navigation/Partials/prod/footerScript.js",
+            "https://www.aexp-static.com/cdaas/one/statics/@americanexpress/homepage-frontend/3.17.7/package/dist/E3/markets/es-ar/app_bottom.js?cb=12524506092025",
+            "https://www.aexp-static.com/cdaas/one/statics/@americanexpress/dls/6.23.1/package/dist/6.23.1/scripts/dls.min.js",
+            "https://www.aexp-static.com/akamai/one/statics/@americanexpress/dls-icons/0.5.0/package/dist/browser/dls-icons.min.js",
+            "https://www.aexp-static.com/cdaas/one/axp-script-supplier/6.0.9/script-supplier.js",
+            "https://www.aexp-static.com/cdaas/api/axpi/gct/1.0.0/gct_intl.js?gct=gctintlver",
+            "https://ct.contentsquare.net/ss/3776/58f9bb16-be1c-40a4-a9f6-764647d60c8c/72/pcc.js",
+            "https://ct.contentsquare.net/ss/3776/58f9bb16-be1c-40a4-a9f6-764647d60c8c/72/wr.js"
+          ],
+          "necessaryDetails": [
+            "[inline]",
+            "https://www.americanexpress.com/akam/13/571812d3",
+            "[inline]",
+            "[inline]",
+            "https://www.americanexpress.com/etc.clientlibs/enterprise/clientlibs/enterprise.min.js"
+          ],
+          "mathCheck": "PASS"
+        },
+        "cookieAnalysis": {
+          "total": 17,
+          "tracking": 0,
+          "necessary": 17
+        },
+        "localStorageAnalysis": {
+          "total": 2,
+          "tracking": 0,
+          "necessary": 2
+        },
+        "screenshot": "1756140712553_baseline.png"
+      },
+      "reject_pre": {
+        "timestamp": "2025-08-25T16:51:57.863Z",
+        "stage": "reject_pre",
+        "url": "https://americanexpress.com",
+        "scriptsCount": 55,
+        "scripts": [
+          {
+            "src": "https://www.aexp-static.com/cdaas/one/statics/@americanexpress/homepage-frontend/3.17.7/package/dist/E3/markets/es-ar/app_top.js?cb=12524506092025",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "",
+            "type": "",
+            "innerHTML": "bazadebezolkohpepadr=\"1461195157\""
+          },
+          {
+            "src": "https://www.americanexpress.com/akam/13/571812d3",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one/dxt-script-supplier-helper/1.4.0/dxt-script-supplier-helper.js",
+            "type": "",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/user-consent-management/ucm/v1.16.9/UCM.js",
+            "type": "",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/dxt-vendor-shared-scripts/adobe-wrapper/v1.10.40/adobe-wrapper.js",
+            "type": "",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/dxt-vendor-shared-scripts/contentsquare/v1.0.64/contentsquare.js",
+            "type": "",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/datapoint-script/datapoint/v1.67.0/datapoint.js",
+            "type": "",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/entrypoints/v1.235.0/entrypoint-15983.js",
+            "type": "",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/dxt/dxt-script-supplier-dynamic/v1.7.0/dxt-script-supplier-dynamic.js",
+            "type": "",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://assets.adobedtm.com/98caf8fccc463fd7e47088b35e73b27720bb5cc1/satelliteLib-bea3c9697c6240996731438f72200c4b82ae0d40.js",
+            "type": "",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://assets.adobedtm.com/dcb19cbd6cbf/61650f53735f/16894481fce5/EX9d5dd7be6b2e4e91a6a7ff4391410228-libraryCode_source.min.js",
+            "type": "",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://assets.adobedtm.com/dcb19cbd6cbf/61650f53735f/16894481fce5/RC2dfd42bd99df43a58b9c80394fc4b6b5-source.min.js",
+            "type": "",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://assets.adobedtm.com/dcb19cbd6cbf/61650f53735f/16894481fce5/RC22de28b131b34b7daeccd655c41ca747-source.min.js",
+            "type": "",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://ct.contentsquare.net/ss/3776/58f9bb16-be1c-40a4-a9f6-764647d60c8c/72/uxa.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/v1.235.0/filter-data.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/v1.235.0/sri-hashes.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/v1.235.0/trigger-and-watch-data.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-100000/v1.235.0/filter-data.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-100000/v1.235.0/sri-hashes.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-100000/v1.235.0/trigger-and-watch-data.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-583300-sha256-FHQDnKMdVnBU1Da0-Jt14Lso5WgEztG5OzX8HIRj6wE=.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-120186-sha256-SjvP0QKOV4WR7meEedTseVSoBp2dbBBV6OlSOgEYnTY=.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-120187-sha256-UVDkSQ3Bfp0OdoLAsx5v6vn9SZ9kT60boIrLv1fHtZg=.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-704092-sha256-vMcvZvSREQw9kJbK5BA9pHyDM3pdjdZkjl_Vfr-mWWA=.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-475289-sha256-q872INCOW7lB-cKLJSx9KQnL0ILJC2HXchz6iYvR6LE=.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-483510-sha256-MAGOhIA8jB16lESpbY5G_jQ8GGCkQX3eczucFPGzkjc=.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-504855-sha256-4WtKO91qk3i0nVAjdyDaoQkndf5EhGT1o_7NNdO-fg4=.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-532106-sha256-5pefRzu9j67M0ogf6-Y1kqZ1Tns97eEWEUuxHWTE3wQ=.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-486112-sha256-Yc2wyE2L8K_UcRBUo4N-rKTmWWGd-ft5mwrNIr5c_no=.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/data/data-60673-sha256-CHTXfXR8S8BG_wFSkXQnalcFglv0CE2B9G1qiPdO7rw=.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/data/data-60674-sha256-yvYl3XF6tp4hn6gsAPSYBfMoyjMSNqhXFsy-c3-9B60=.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/data/data-60675-sha256-hkTQHzLygoqhLI6AAvCGpVNBhrcGrBtmezjdVw7o6t0=.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://ct.contentsquare.net/ss/3776/58f9bb16-be1c-40a4-a9f6-764647d60c8c/72/ptc.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-120187-sha256-UVDkSQ3Bfp0OdoLAsx5v6vn9SZ9kT60boIrLv1fHtZg=.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://assets.adobedtm.com/dcb19cbd6cbf/61650f53735f/16894481fce5/RCba6f9cee3abe426fa326391960ab44ab-source.min.js",
+            "type": "",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://icm.aexp-static.com/content/Navigation/Partials/prod/headerScript.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "",
+            "type": "",
+            "innerHTML": "\n    var browserType = navigator.userAgent;\n    if(browserType.indexOf(\"MSIE\")>=0){\n        function"
+          },
+          {
+            "src": "https://icm.aexp-static.com/content/Navigation/Partials/prod/footerScript.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "",
+            "type": "text/javascript",
+            "innerHTML": "\n    var digitalData = {\"page\":{\"pageInfo\":{\"pageName\":\"Homepage\",\"country\":\"AR\",\"language\":\"es\",\"cu"
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one/statics/@americanexpress/homepage-frontend/3.17.7/package/dist/E3/markets/es-ar/app_bottom.js?cb=12524506092025",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one/statics/@americanexpress/dls/6.23.1/package/dist/6.23.1/scripts/dls.min.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.americanexpress.com/etc.clientlibs/enterprise/clientlibs/enterprise.min.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.americanexpress.com/etc.clientlibs/homepage/clientlibs/homepage.min.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "",
+            "type": "",
+            "innerHTML": " var excludeOmniture = true;"
+          },
+          {
+            "src": "https://www.aexp-static.com/akamai/one/statics/@americanexpress/dls-icons/0.5.0/package/dist/browser/dls-icons.min.js",
+            "type": "",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.americanexpress.com/hO9dg4_Ic/D9_cdOFEg/kuEOGVfX6rQLbw1XhE/DFxcZFd6PAI/NHAZE/HMhemIB",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one/axp-script-supplier/6.0.9/script-supplier.js",
+            "type": "",
+            "innerHTML": ""
+          },
+          {
+            "src": "",
+            "type": "",
+            "innerHTML": "\n//initialize events array if not already done\nif (typeof(digitalData) == \"undefined\"){window.digita"
+          },
+          {
+            "src": "",
+            "type": "",
+            "innerHTML": "_satellite[\"_runScript1\"](function(event, target, Promise) {\nwindow.EuCookieConsentHandlers=window.E"
+          },
+          {
+            "src": "",
+            "type": "",
+            "innerHTML": "_satellite[\"_runScript2\"](function(event, target, Promise) {\n!function(){function e(){var e=Object.k"
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/api/axpi/gct/1.0.0/gct_intl.js?gct=gctintlver",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://ct.contentsquare.net/ss/3776/58f9bb16-be1c-40a4-a9f6-764647d60c8c/72/pcc.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://ct.contentsquare.net/ss/3776/58f9bb16-be1c-40a4-a9f6-764647d60c8c/72/wr.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "",
+            "type": "",
+            "innerHTML": "_satellite[\"_runScript3\"](function(event, target, Promise) {\ns&&(s.events&&(s.events=\"\"),s.clearVars"
+          }
+        ],
+        "cookiesCount": 17,
+        "cookies": [
+          {
+            "name": "_cs_s",
+            "value": "1.5.0.9.1756142516626",
+            "domain": ".americanexpress.com",
+            "path": "/",
+            "expires": 1756142516,
+            "size": 26,
+            "httpOnly": false,
+            "secure": false,
+            "session": false,
+            "sameSite": "Lax",
+            "priority": "Medium",
+            "sameParty": false,
+            "sourceScheme": "Secure"
+          },
+          {
+            "name": "_cs_id",
+            "value": "2c9e8c58-51b6-a355-f3b0-fde2bf21a647.1756140716.1.1756140716.1756140716.1.1790304716449.1.x",
+            "domain": ".americanexpress.com",
+            "path": "/",
+            "expires": 1790304716,
+            "size": 97,
+            "httpOnly": false,
+            "secure": false,
+            "session": false,
+            "sameSite": "Lax",
+            "priority": "Medium",
+            "sameParty": false,
+            "sourceScheme": "Secure"
+          },
+          {
+            "name": "s_pers",
+            "value": "%20s_tbm%3Dtrue%7C1756142513487%3B%20gpv_v41%3DAR%257CAMEX%257CHome%257CHomepage%7C1756142515814%3B",
+            "domain": ".americanexpress.com",
+            "path": "/",
+            "expires": 1790355115,
+            "size": 105,
+            "httpOnly": false,
+            "secure": false,
+            "session": false,
+            "priority": "Medium",
+            "sameParty": false,
+            "sourceScheme": "Secure"
+          },
+          {
+            "name": "TS01a91ed4",
+            "value": "01d4f2e23e10153fbf46bbf7552b934fbf0cf1954352f62645dc6046b8c969359336bd447894950cfb73356bcf05225a057887423e",
+            "domain": ".americanexpress.com",
+            "path": "/",
+            "expires": -1,
+            "size": 116,
+            "httpOnly": false,
+            "secure": false,
+            "session": true,
+            "priority": "Medium",
+            "sameParty": false,
+            "sourceScheme": "Secure"
+          },
+          {
+            "name": "AMCV_5C36123F5245AF470A490D45%40AdobeOrg",
+            "value": "870038026%7CMCMID%7C91748467930856729845169103458575782543%7CMCAID%7CNONE%7CMCOPTOUT-1756147913s%7CNONE%7CvVersion%7C5.0.0",
+            "domain": ".americanexpress.com",
+            "path": "/",
+            "expires": 1790355113,
+            "size": 162,
+            "httpOnly": false,
+            "secure": false,
+            "session": false,
+            "priority": "Medium",
+            "sameParty": false,
+            "sourceScheme": "Secure"
+          },
+          {
+            "name": "AMCVS_5C36123F5245AF470A490D45%40AdobeOrg",
+            "value": "1",
+            "domain": ".americanexpress.com",
+            "path": "/",
+            "expires": -1,
+            "size": 42,
+            "httpOnly": false,
+            "secure": false,
+            "session": true,
+            "priority": "Medium",
+            "sameParty": false,
+            "sourceScheme": "Secure"
+          },
+          {
+            "name": "_abck",
+            "value": "74B05FD5651AEF599E0002C5B9D1B68B~0~YAAQGpXAFy5LvN+YAQAAo8Qk4g58RE4nvZYZR9TMRbmslhpuuAiJG15mk4Je9WlviqA0nUHCIQimNW8LnIJNJZPzt8TCYCpd5a5aQNU0im6D8EQvR7eg5qeRmGpfY/31bm4EkP2gQwpzWJtCYER5wOEI+vJCKJtgloA5bavXIjNCc7cNGDGVpsu9QCeEdxb8JbHgRXH9MCPf36CMB3rmTSMLTO2zFKyfpaig1+yKehuejXvSRntvNjC+LK9qHwh8z5DpydfyuEXpTmCVEqrAHJGJLvDqlZoSb5KLQDKNtj1VYEL4tTz49eEwNOAG7EzSdHrfF5aFYzfkJ9ikUnKdF/OWt84npshuSCBd1TC57w8eTP4/HxSTCVwTPHsaNYF6OLxfq36flaRPtl8sxQUyGTurSoHTHpxnZn/Y1Pbe9H0oBtdPpBTW/54P1JQk7JzaXs1vLJlPEG3iACctC4RWYzqGcIef+3pkNh/wpPXpAhE4WQDvXoDT4pEE0eEErwk6G/Htc6dS67+NFiKWKPkP3z2GJLF6dy2sChXiKhtYFKhd+TwmZqJF+K7ZRDWPz7ff+k57Evz4yP91Ac6DpAVJ3SEdjvG70ZCUhKvedxlulY6c4ZC4Hk9Cs6jvbdAxeGIpkQLHbwHJGUgbP3gXECfRqBps8g8=~-1~-1~-1~~",
+            "domain": ".americanexpress.com",
+            "path": "/",
+            "expires": 1787676717.132979,
+            "size": 719,
+            "httpOnly": false,
+            "secure": true,
+            "session": false,
+            "sameSite": "None",
+            "priority": "Medium",
+            "sameParty": false,
+            "sourceScheme": "Secure"
+          },
+          {
+            "name": "ak_bmsc",
+            "value": "15AFFE3283A18637EF3D5496E6665707~000000000000000000000000000000~YAAQGpXAFwRLvN+YAQAAErYk4hyU1oZImBN65k/GSNZJLr67b7zyuVEQNi94C/55C0CxkQTjyzhji8xFzu+p4P1vHwJgg6horx3N44YVT8zyTjdIYzQgZNm/PJaqehhZEnMK8SdVaw7FIM/y6xCkaxoltu+K1KJeFAUPQBFsm2VM8l9mGpdobSbHeWVt4nwuzVCI1PfHX+D8mC8ll+dn77mtJ8I0P8BqVUnpBC67oimZ4reFQL5WrDi+7Q6BnjpmZKueT5+9ODX1ArLttK/TP+OXaUm4BHzS5ueqWNRlYf7wcWP+45JTHNikEk7RGuo1gk8I/QGkUSiCbGhuhe2cWmPEaNsRdFcyq+I+ph+cKUM+lSKUFv9kEerRgrU0ttBroGih+STkS2M8YOS7W/Jf0Wve+MhEqGFuLWweRTrDQHJI/w==",
+            "domain": ".americanexpress.com",
+            "path": "/",
+            "expires": 1756147912.405509,
+            "size": 503,
+            "httpOnly": false,
+            "secure": true,
+            "session": false,
+            "sameSite": "None",
+            "priority": "Medium",
+            "sameParty": false,
+            "sourceScheme": "Secure"
+          },
+          {
+            "name": "_cs_c",
+            "value": "1",
+            "domain": ".americanexpress.com",
+            "path": "/",
+            "expires": 1790304713,
+            "size": 6,
+            "httpOnly": false,
+            "secure": false,
+            "session": false,
+            "sameSite": "Lax",
+            "priority": "Medium",
+            "sameParty": false,
+            "sourceScheme": "Secure"
+          },
+          {
+            "name": "axplocale",
+            "value": "es-AR",
+            "domain": ".americanexpress.com",
+            "path": "/",
+            "expires": -1,
+            "size": 14,
+            "httpOnly": false,
+            "secure": true,
+            "session": true,
+            "priority": "Medium",
+            "sameParty": false,
+            "sourceScheme": "Secure"
+          },
+          {
+            "name": "akaalb_www_homepageus_v18",
+            "value": "1756141012~op=www_homepage_enus_LBM:homepagehydraorigin|~rv=20~m=homepagehydraorigin:0|~os=9184cb63cc50160c7345890467a4f9a2~id=4bad15ac6ca83c242f471b3a365f47f0",
+            "domain": "www.americanexpress.com",
+            "path": "/",
+            "expires": 1756141012.726272,
+            "size": 184,
+            "httpOnly": true,
+            "secure": true,
+            "session": false,
+            "sameSite": "None",
+            "priority": "Medium",
+            "sameParty": false,
+            "sourceScheme": "Secure"
+          },
+          {
+            "name": "JSESSIONID",
+            "value": "gMuKktOQm-hMrjMxx4lKC9RC-eh_hHVQJiE0OzxL.loyment-d646cf97f-g4d9p",
+            "domain": ".americanexpress.com",
+            "path": "/",
+            "expires": -1,
+            "size": 74,
+            "httpOnly": false,
+            "secure": true,
+            "session": true,
+            "priority": "Medium",
+            "sameParty": false,
+            "sourceScheme": "Secure"
+          },
+          {
+            "name": "_cs_cvars",
+            "value": "%7B%226%22%3A%5B%22Page%20Name%22%2C%22AR%7CAMEX%7CHome%7CHomepage%22%5D%2C%227%22%3A%5B%22businessUnit%22%2C%22AMEX%22%5D%7D",
+            "domain": ".americanexpress.com",
+            "path": "/",
+            "expires": -1,
+            "size": 134,
+            "httpOnly": false,
+            "secure": false,
+            "session": true,
+            "sameSite": "Lax",
+            "priority": "Medium",
+            "sameParty": false,
+            "sourceScheme": "Secure"
+          },
+          {
+            "name": "bm_sz",
+            "value": "C4D7A6F1E199B3A09873A19EC461C5C4~YAAQGpXAF/pKvN+YAQAAm7Mk4hwO/XNfWhlzJudmrYBLH6lbigHMuvZsqnlBBiZ53laplxUtJ9RHu4lVNDJIOkZ+0qAykMjn+uQg8zS/eIKxFs+h+O5wi6mfRzfXSFUayfPBf8uLZtGHVu7j/76OIfanwkCXvyg/8SANoSnM0IWF6bnwynxlGoZxU3hlcZ+I/sAjzG2VWmxBoRc1jxFy1Ypt84StMMbsZwjGn4mDBryQgaVohwcd/0L9ugpZQ3bY92poRUY860FXZ1JOqQUpBcVt0wC9Mv1ra8edhS748SMcTL4eb8eKr2B6bKQCJiFEpuaxzFrc3QmPd3tX42/yGzietmaP0MOZASI06I5L6uhX29qsggu9BkyeZz7zPUZyTU00CHchspAgnUxvwIwleyvJdQc/pSQgapvQ~3556912~3748915",
+            "domain": ".americanexpress.com",
+            "path": "/",
+            "expires": 1756155112.774065,
+            "size": 474,
+            "httpOnly": false,
+            "secure": true,
+            "session": false,
+            "sameSite": "None",
+            "priority": "Medium",
+            "sameParty": false,
+            "sourceScheme": "Secure"
+          },
+          {
+            "name": "s_sess",
+            "value": "%20s_visit%3D1%3B%20s_tp%3D2127%3B%20s_ppv%3DAR%25257CAMEX%25257CHome%25257CHomepage%252C36%252C36%252C768%3B%20s_cc%3Dtrue%3B",
+            "domain": ".americanexpress.com",
+            "path": "/",
+            "expires": -1,
+            "size": 132,
+            "httpOnly": false,
+            "secure": false,
+            "session": true,
+            "priority": "Medium",
+            "sameParty": false,
+            "sourceScheme": "Secure"
+          },
+          {
+            "name": "s_ecid",
+            "value": "MCMID%7C91748467930856729845169103458575782543",
+            "domain": ".americanexpress.com",
+            "path": "/",
+            "expires": 1790355115.999315,
+            "size": 52,
+            "httpOnly": false,
+            "secure": true,
+            "session": false,
+            "sameSite": "None",
+            "priority": "Medium",
+            "sameParty": false,
+            "sourceScheme": "Secure"
+          },
+          {
+            "name": "agent-id",
+            "value": "3ca17261-5a11-4508-87a0-4f07c6187f41",
+            "domain": ".americanexpress.com",
+            "path": "/",
+            "expires": 1787676717.132665,
+            "size": 44,
+            "httpOnly": true,
+            "secure": true,
+            "session": false,
+            "priority": "Medium",
+            "sameParty": false,
+            "sourceScheme": "Secure"
+          }
+        ],
+        "localStorageCount": 2,
+        "trackingPixels": 0,
+        "thirdPartyScripts": 43,
+        "scriptAnalysis": {
+          "total": 55,
+          "tracking": 5,
+          "necessary": 12,
+          "unknown": 38,
+          "trackingDetails": [
+            "https://assets.adobedtm.com/98caf8fccc463fd7e47088b35e73b27720bb5cc1/satelliteLib-bea3c9697c6240996731438f72200c4b82ae0d40.js",
+            "https://assets.adobedtm.com/dcb19cbd6cbf/61650f53735f/16894481fce5/EX9d5dd7be6b2e4e91a6a7ff4391410228-libraryCode_source.min.js",
+            "https://assets.adobedtm.com/dcb19cbd6cbf/61650f53735f/16894481fce5/RC2dfd42bd99df43a58b9c80394fc4b6b5-source.min.js",
+            "https://assets.adobedtm.com/dcb19cbd6cbf/61650f53735f/16894481fce5/RC22de28b131b34b7daeccd655c41ca747-source.min.js",
+            "https://assets.adobedtm.com/dcb19cbd6cbf/61650f53735f/16894481fce5/RCba6f9cee3abe426fa326391960ab44ab-source.min.js"
+          ],
+          "unknownDetails": [
+            "https://www.aexp-static.com/cdaas/one/statics/@americanexpress/homepage-frontend/3.17.7/package/dist/E3/markets/es-ar/app_top.js?cb=12524506092025",
+            "https://www.aexp-static.com/cdaas/one/dxt-script-supplier-helper/1.4.0/dxt-script-supplier-helper.js",
+            "https://www.aexp-static.com/cdaas/user-consent-management/ucm/v1.16.9/UCM.js",
+            "https://www.aexp-static.com/cdaas/dxt-vendor-shared-scripts/adobe-wrapper/v1.10.40/adobe-wrapper.js",
+            "https://www.aexp-static.com/cdaas/dxt-vendor-shared-scripts/contentsquare/v1.0.64/contentsquare.js",
+            "https://www.aexp-static.com/cdaas/datapoint-script/datapoint/v1.67.0/datapoint.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/entrypoints/v1.235.0/entrypoint-15983.js",
+            "https://www.aexp-static.com/cdaas/dxt/dxt-script-supplier-dynamic/v1.7.0/dxt-script-supplier-dynamic.js",
+            "https://ct.contentsquare.net/ss/3776/58f9bb16-be1c-40a4-a9f6-764647d60c8c/72/uxa.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/v1.235.0/filter-data.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/v1.235.0/sri-hashes.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/v1.235.0/trigger-and-watch-data.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-100000/v1.235.0/filter-data.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-100000/v1.235.0/sri-hashes.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-100000/v1.235.0/trigger-and-watch-data.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-583300-sha256-FHQDnKMdVnBU1Da0-Jt14Lso5WgEztG5OzX8HIRj6wE=.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-120186-sha256-SjvP0QKOV4WR7meEedTseVSoBp2dbBBV6OlSOgEYnTY=.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-120187-sha256-UVDkSQ3Bfp0OdoLAsx5v6vn9SZ9kT60boIrLv1fHtZg=.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-704092-sha256-vMcvZvSREQw9kJbK5BA9pHyDM3pdjdZkjl_Vfr-mWWA=.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-475289-sha256-q872INCOW7lB-cKLJSx9KQnL0ILJC2HXchz6iYvR6LE=.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-483510-sha256-MAGOhIA8jB16lESpbY5G_jQ8GGCkQX3eczucFPGzkjc=.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-504855-sha256-4WtKO91qk3i0nVAjdyDaoQkndf5EhGT1o_7NNdO-fg4=.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-532106-sha256-5pefRzu9j67M0ogf6-Y1kqZ1Tns97eEWEUuxHWTE3wQ=.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-486112-sha256-Yc2wyE2L8K_UcRBUo4N-rKTmWWGd-ft5mwrNIr5c_no=.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/data/data-60673-sha256-CHTXfXR8S8BG_wFSkXQnalcFglv0CE2B9G1qiPdO7rw=.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/data/data-60674-sha256-yvYl3XF6tp4hn6gsAPSYBfMoyjMSNqhXFsy-c3-9B60=.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/data/data-60675-sha256-hkTQHzLygoqhLI6AAvCGpVNBhrcGrBtmezjdVw7o6t0=.js",
+            "https://ct.contentsquare.net/ss/3776/58f9bb16-be1c-40a4-a9f6-764647d60c8c/72/ptc.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-120187-sha256-UVDkSQ3Bfp0OdoLAsx5v6vn9SZ9kT60boIrLv1fHtZg=.js",
+            "https://icm.aexp-static.com/content/Navigation/Partials/prod/headerScript.js",
+            "https://icm.aexp-static.com/content/Navigation/Partials/prod/footerScript.js",
+            "https://www.aexp-static.com/cdaas/one/statics/@americanexpress/homepage-frontend/3.17.7/package/dist/E3/markets/es-ar/app_bottom.js?cb=12524506092025",
+            "https://www.aexp-static.com/cdaas/one/statics/@americanexpress/dls/6.23.1/package/dist/6.23.1/scripts/dls.min.js",
+            "https://www.aexp-static.com/akamai/one/statics/@americanexpress/dls-icons/0.5.0/package/dist/browser/dls-icons.min.js",
+            "https://www.aexp-static.com/cdaas/one/axp-script-supplier/6.0.9/script-supplier.js",
+            "https://www.aexp-static.com/cdaas/api/axpi/gct/1.0.0/gct_intl.js?gct=gctintlver",
+            "https://ct.contentsquare.net/ss/3776/58f9bb16-be1c-40a4-a9f6-764647d60c8c/72/pcc.js",
+            "https://ct.contentsquare.net/ss/3776/58f9bb16-be1c-40a4-a9f6-764647d60c8c/72/wr.js"
+          ],
+          "necessaryDetails": [
+            "[inline]",
+            "https://www.americanexpress.com/akam/13/571812d3",
+            "[inline]",
+            "[inline]",
+            "https://www.americanexpress.com/etc.clientlibs/enterprise/clientlibs/enterprise.min.js"
+          ],
+          "mathCheck": "PASS"
+        },
+        "cookieAnalysis": {
+          "total": 15,
+          "tracking": 0,
+          "necessary": 15
+        },
+        "localStorageAnalysis": {
+          "total": 2,
+          "tracking": 0,
+          "necessary": 2
+        },
+        "screenshot": "1756140719885_reject_pre.png"
+      },
+      "reject": {
+        "timestamp": "2025-08-25T16:51:57.863Z",
+        "stage": "reject_unavailable",
+        "url": "https://americanexpress.com",
+        "scriptsCount": 55,
+        "scripts": [
+          {
+            "src": "https://www.aexp-static.com/cdaas/one/statics/@americanexpress/homepage-frontend/3.17.7/package/dist/E3/markets/es-ar/app_top.js?cb=12524506092025",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "",
+            "type": "",
+            "innerHTML": "bazadebezolkohpepadr=\"1461195157\""
+          },
+          {
+            "src": "https://www.americanexpress.com/akam/13/571812d3",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one/dxt-script-supplier-helper/1.4.0/dxt-script-supplier-helper.js",
+            "type": "",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/user-consent-management/ucm/v1.16.9/UCM.js",
+            "type": "",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/dxt-vendor-shared-scripts/adobe-wrapper/v1.10.40/adobe-wrapper.js",
+            "type": "",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/dxt-vendor-shared-scripts/contentsquare/v1.0.64/contentsquare.js",
+            "type": "",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/datapoint-script/datapoint/v1.67.0/datapoint.js",
+            "type": "",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/entrypoints/v1.235.0/entrypoint-15983.js",
+            "type": "",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/dxt/dxt-script-supplier-dynamic/v1.7.0/dxt-script-supplier-dynamic.js",
+            "type": "",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://assets.adobedtm.com/98caf8fccc463fd7e47088b35e73b27720bb5cc1/satelliteLib-bea3c9697c6240996731438f72200c4b82ae0d40.js",
+            "type": "",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://assets.adobedtm.com/dcb19cbd6cbf/61650f53735f/16894481fce5/EX9d5dd7be6b2e4e91a6a7ff4391410228-libraryCode_source.min.js",
+            "type": "",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://assets.adobedtm.com/dcb19cbd6cbf/61650f53735f/16894481fce5/RC2dfd42bd99df43a58b9c80394fc4b6b5-source.min.js",
+            "type": "",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://assets.adobedtm.com/dcb19cbd6cbf/61650f53735f/16894481fce5/RC22de28b131b34b7daeccd655c41ca747-source.min.js",
+            "type": "",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://ct.contentsquare.net/ss/3776/58f9bb16-be1c-40a4-a9f6-764647d60c8c/72/uxa.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/v1.235.0/filter-data.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/v1.235.0/sri-hashes.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/v1.235.0/trigger-and-watch-data.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-100000/v1.235.0/filter-data.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-100000/v1.235.0/sri-hashes.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-100000/v1.235.0/trigger-and-watch-data.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-583300-sha256-FHQDnKMdVnBU1Da0-Jt14Lso5WgEztG5OzX8HIRj6wE=.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-120186-sha256-SjvP0QKOV4WR7meEedTseVSoBp2dbBBV6OlSOgEYnTY=.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-120187-sha256-UVDkSQ3Bfp0OdoLAsx5v6vn9SZ9kT60boIrLv1fHtZg=.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-704092-sha256-vMcvZvSREQw9kJbK5BA9pHyDM3pdjdZkjl_Vfr-mWWA=.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-475289-sha256-q872INCOW7lB-cKLJSx9KQnL0ILJC2HXchz6iYvR6LE=.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-483510-sha256-MAGOhIA8jB16lESpbY5G_jQ8GGCkQX3eczucFPGzkjc=.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-504855-sha256-4WtKO91qk3i0nVAjdyDaoQkndf5EhGT1o_7NNdO-fg4=.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-532106-sha256-5pefRzu9j67M0ogf6-Y1kqZ1Tns97eEWEUuxHWTE3wQ=.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-486112-sha256-Yc2wyE2L8K_UcRBUo4N-rKTmWWGd-ft5mwrNIr5c_no=.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/data/data-60673-sha256-CHTXfXR8S8BG_wFSkXQnalcFglv0CE2B9G1qiPdO7rw=.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/data/data-60674-sha256-yvYl3XF6tp4hn6gsAPSYBfMoyjMSNqhXFsy-c3-9B60=.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/data/data-60675-sha256-hkTQHzLygoqhLI6AAvCGpVNBhrcGrBtmezjdVw7o6t0=.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://ct.contentsquare.net/ss/3776/58f9bb16-be1c-40a4-a9f6-764647d60c8c/72/ptc.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-120187-sha256-UVDkSQ3Bfp0OdoLAsx5v6vn9SZ9kT60boIrLv1fHtZg=.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://assets.adobedtm.com/dcb19cbd6cbf/61650f53735f/16894481fce5/RCba6f9cee3abe426fa326391960ab44ab-source.min.js",
+            "type": "",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://icm.aexp-static.com/content/Navigation/Partials/prod/headerScript.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "",
+            "type": "",
+            "innerHTML": "\n    var browserType = navigator.userAgent;\n    if(browserType.indexOf(\"MSIE\")>=0){\n        function"
+          },
+          {
+            "src": "https://icm.aexp-static.com/content/Navigation/Partials/prod/footerScript.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "",
+            "type": "text/javascript",
+            "innerHTML": "\n    var digitalData = {\"page\":{\"pageInfo\":{\"pageName\":\"Homepage\",\"country\":\"AR\",\"language\":\"es\",\"cu"
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one/statics/@americanexpress/homepage-frontend/3.17.7/package/dist/E3/markets/es-ar/app_bottom.js?cb=12524506092025",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one/statics/@americanexpress/dls/6.23.1/package/dist/6.23.1/scripts/dls.min.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.americanexpress.com/etc.clientlibs/enterprise/clientlibs/enterprise.min.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.americanexpress.com/etc.clientlibs/homepage/clientlibs/homepage.min.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "",
+            "type": "",
+            "innerHTML": " var excludeOmniture = true;"
+          },
+          {
+            "src": "https://www.aexp-static.com/akamai/one/statics/@americanexpress/dls-icons/0.5.0/package/dist/browser/dls-icons.min.js",
+            "type": "",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.americanexpress.com/hO9dg4_Ic/D9_cdOFEg/kuEOGVfX6rQLbw1XhE/DFxcZFd6PAI/NHAZE/HMhemIB",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/one/axp-script-supplier/6.0.9/script-supplier.js",
+            "type": "",
+            "innerHTML": ""
+          },
+          {
+            "src": "",
+            "type": "",
+            "innerHTML": "\n//initialize events array if not already done\nif (typeof(digitalData) == \"undefined\"){window.digita"
+          },
+          {
+            "src": "",
+            "type": "",
+            "innerHTML": "_satellite[\"_runScript1\"](function(event, target, Promise) {\nwindow.EuCookieConsentHandlers=window.E"
+          },
+          {
+            "src": "",
+            "type": "",
+            "innerHTML": "_satellite[\"_runScript2\"](function(event, target, Promise) {\n!function(){function e(){var e=Object.k"
+          },
+          {
+            "src": "https://www.aexp-static.com/cdaas/api/axpi/gct/1.0.0/gct_intl.js?gct=gctintlver",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://ct.contentsquare.net/ss/3776/58f9bb16-be1c-40a4-a9f6-764647d60c8c/72/pcc.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "https://ct.contentsquare.net/ss/3776/58f9bb16-be1c-40a4-a9f6-764647d60c8c/72/wr.js",
+            "type": "text/javascript",
+            "innerHTML": ""
+          },
+          {
+            "src": "",
+            "type": "",
+            "innerHTML": "_satellite[\"_runScript3\"](function(event, target, Promise) {\ns&&(s.events&&(s.events=\"\"),s.clearVars"
+          }
+        ],
+        "cookiesCount": 17,
+        "cookies": [
+          {
+            "name": "_cs_s",
+            "value": "1.5.0.9.1756142516626",
+            "domain": ".americanexpress.com",
+            "path": "/",
+            "expires": 1756142516,
+            "size": 26,
+            "httpOnly": false,
+            "secure": false,
+            "session": false,
+            "sameSite": "Lax",
+            "priority": "Medium",
+            "sameParty": false,
+            "sourceScheme": "Secure"
+          },
+          {
+            "name": "_cs_id",
+            "value": "2c9e8c58-51b6-a355-f3b0-fde2bf21a647.1756140716.1.1756140716.1756140716.1.1790304716449.1.x",
+            "domain": ".americanexpress.com",
+            "path": "/",
+            "expires": 1790304716,
+            "size": 97,
+            "httpOnly": false,
+            "secure": false,
+            "session": false,
+            "sameSite": "Lax",
+            "priority": "Medium",
+            "sameParty": false,
+            "sourceScheme": "Secure"
+          },
+          {
+            "name": "s_pers",
+            "value": "%20s_tbm%3Dtrue%7C1756142513487%3B%20gpv_v41%3DAR%257CAMEX%257CHome%257CHomepage%7C1756142515814%3B",
+            "domain": ".americanexpress.com",
+            "path": "/",
+            "expires": 1790355115,
+            "size": 105,
+            "httpOnly": false,
+            "secure": false,
+            "session": false,
+            "priority": "Medium",
+            "sameParty": false,
+            "sourceScheme": "Secure"
+          },
+          {
+            "name": "TS01a91ed4",
+            "value": "01d4f2e23e10153fbf46bbf7552b934fbf0cf1954352f62645dc6046b8c969359336bd447894950cfb73356bcf05225a057887423e",
+            "domain": ".americanexpress.com",
+            "path": "/",
+            "expires": -1,
+            "size": 116,
+            "httpOnly": false,
+            "secure": false,
+            "session": true,
+            "priority": "Medium",
+            "sameParty": false,
+            "sourceScheme": "Secure"
+          },
+          {
+            "name": "AMCV_5C36123F5245AF470A490D45%40AdobeOrg",
+            "value": "870038026%7CMCMID%7C91748467930856729845169103458575782543%7CMCAID%7CNONE%7CMCOPTOUT-1756147913s%7CNONE%7CvVersion%7C5.0.0",
+            "domain": ".americanexpress.com",
+            "path": "/",
+            "expires": 1790355113,
+            "size": 162,
+            "httpOnly": false,
+            "secure": false,
+            "session": false,
+            "priority": "Medium",
+            "sameParty": false,
+            "sourceScheme": "Secure"
+          },
+          {
+            "name": "AMCVS_5C36123F5245AF470A490D45%40AdobeOrg",
+            "value": "1",
+            "domain": ".americanexpress.com",
+            "path": "/",
+            "expires": -1,
+            "size": 42,
+            "httpOnly": false,
+            "secure": false,
+            "session": true,
+            "priority": "Medium",
+            "sameParty": false,
+            "sourceScheme": "Secure"
+          },
+          {
+            "name": "_abck",
+            "value": "74B05FD5651AEF599E0002C5B9D1B68B~0~YAAQGpXAFy5LvN+YAQAAo8Qk4g58RE4nvZYZR9TMRbmslhpuuAiJG15mk4Je9WlviqA0nUHCIQimNW8LnIJNJZPzt8TCYCpd5a5aQNU0im6D8EQvR7eg5qeRmGpfY/31bm4EkP2gQwpzWJtCYER5wOEI+vJCKJtgloA5bavXIjNCc7cNGDGVpsu9QCeEdxb8JbHgRXH9MCPf36CMB3rmTSMLTO2zFKyfpaig1+yKehuejXvSRntvNjC+LK9qHwh8z5DpydfyuEXpTmCVEqrAHJGJLvDqlZoSb5KLQDKNtj1VYEL4tTz49eEwNOAG7EzSdHrfF5aFYzfkJ9ikUnKdF/OWt84npshuSCBd1TC57w8eTP4/HxSTCVwTPHsaNYF6OLxfq36flaRPtl8sxQUyGTurSoHTHpxnZn/Y1Pbe9H0oBtdPpBTW/54P1JQk7JzaXs1vLJlPEG3iACctC4RWYzqGcIef+3pkNh/wpPXpAhE4WQDvXoDT4pEE0eEErwk6G/Htc6dS67+NFiKWKPkP3z2GJLF6dy2sChXiKhtYFKhd+TwmZqJF+K7ZRDWPz7ff+k57Evz4yP91Ac6DpAVJ3SEdjvG70ZCUhKvedxlulY6c4ZC4Hk9Cs6jvbdAxeGIpkQLHbwHJGUgbP3gXECfRqBps8g8=~-1~-1~-1~~",
+            "domain": ".americanexpress.com",
+            "path": "/",
+            "expires": 1787676717.132979,
+            "size": 719,
+            "httpOnly": false,
+            "secure": true,
+            "session": false,
+            "sameSite": "None",
+            "priority": "Medium",
+            "sameParty": false,
+            "sourceScheme": "Secure"
+          },
+          {
+            "name": "ak_bmsc",
+            "value": "15AFFE3283A18637EF3D5496E6665707~000000000000000000000000000000~YAAQGpXAFwRLvN+YAQAAErYk4hyU1oZImBN65k/GSNZJLr67b7zyuVEQNi94C/55C0CxkQTjyzhji8xFzu+p4P1vHwJgg6horx3N44YVT8zyTjdIYzQgZNm/PJaqehhZEnMK8SdVaw7FIM/y6xCkaxoltu+K1KJeFAUPQBFsm2VM8l9mGpdobSbHeWVt4nwuzVCI1PfHX+D8mC8ll+dn77mtJ8I0P8BqVUnpBC67oimZ4reFQL5WrDi+7Q6BnjpmZKueT5+9ODX1ArLttK/TP+OXaUm4BHzS5ueqWNRlYf7wcWP+45JTHNikEk7RGuo1gk8I/QGkUSiCbGhuhe2cWmPEaNsRdFcyq+I+ph+cKUM+lSKUFv9kEerRgrU0ttBroGih+STkS2M8YOS7W/Jf0Wve+MhEqGFuLWweRTrDQHJI/w==",
+            "domain": ".americanexpress.com",
+            "path": "/",
+            "expires": 1756147912.405509,
+            "size": 503,
+            "httpOnly": false,
+            "secure": true,
+            "session": false,
+            "sameSite": "None",
+            "priority": "Medium",
+            "sameParty": false,
+            "sourceScheme": "Secure"
+          },
+          {
+            "name": "_cs_c",
+            "value": "1",
+            "domain": ".americanexpress.com",
+            "path": "/",
+            "expires": 1790304713,
+            "size": 6,
+            "httpOnly": false,
+            "secure": false,
+            "session": false,
+            "sameSite": "Lax",
+            "priority": "Medium",
+            "sameParty": false,
+            "sourceScheme": "Secure"
+          },
+          {
+            "name": "axplocale",
+            "value": "es-AR",
+            "domain": ".americanexpress.com",
+            "path": "/",
+            "expires": -1,
+            "size": 14,
+            "httpOnly": false,
+            "secure": true,
+            "session": true,
+            "priority": "Medium",
+            "sameParty": false,
+            "sourceScheme": "Secure"
+          },
+          {
+            "name": "akaalb_www_homepageus_v18",
+            "value": "1756141012~op=www_homepage_enus_LBM:homepagehydraorigin|~rv=20~m=homepagehydraorigin:0|~os=9184cb63cc50160c7345890467a4f9a2~id=4bad15ac6ca83c242f471b3a365f47f0",
+            "domain": "www.americanexpress.com",
+            "path": "/",
+            "expires": 1756141012.726272,
+            "size": 184,
+            "httpOnly": true,
+            "secure": true,
+            "session": false,
+            "sameSite": "None",
+            "priority": "Medium",
+            "sameParty": false,
+            "sourceScheme": "Secure"
+          },
+          {
+            "name": "JSESSIONID",
+            "value": "gMuKktOQm-hMrjMxx4lKC9RC-eh_hHVQJiE0OzxL.loyment-d646cf97f-g4d9p",
+            "domain": ".americanexpress.com",
+            "path": "/",
+            "expires": -1,
+            "size": 74,
+            "httpOnly": false,
+            "secure": true,
+            "session": true,
+            "priority": "Medium",
+            "sameParty": false,
+            "sourceScheme": "Secure"
+          },
+          {
+            "name": "_cs_cvars",
+            "value": "%7B%226%22%3A%5B%22Page%20Name%22%2C%22AR%7CAMEX%7CHome%7CHomepage%22%5D%2C%227%22%3A%5B%22businessUnit%22%2C%22AMEX%22%5D%7D",
+            "domain": ".americanexpress.com",
+            "path": "/",
+            "expires": -1,
+            "size": 134,
+            "httpOnly": false,
+            "secure": false,
+            "session": true,
+            "sameSite": "Lax",
+            "priority": "Medium",
+            "sameParty": false,
+            "sourceScheme": "Secure"
+          },
+          {
+            "name": "bm_sz",
+            "value": "C4D7A6F1E199B3A09873A19EC461C5C4~YAAQGpXAF/pKvN+YAQAAm7Mk4hwO/XNfWhlzJudmrYBLH6lbigHMuvZsqnlBBiZ53laplxUtJ9RHu4lVNDJIOkZ+0qAykMjn+uQg8zS/eIKxFs+h+O5wi6mfRzfXSFUayfPBf8uLZtGHVu7j/76OIfanwkCXvyg/8SANoSnM0IWF6bnwynxlGoZxU3hlcZ+I/sAjzG2VWmxBoRc1jxFy1Ypt84StMMbsZwjGn4mDBryQgaVohwcd/0L9ugpZQ3bY92poRUY860FXZ1JOqQUpBcVt0wC9Mv1ra8edhS748SMcTL4eb8eKr2B6bKQCJiFEpuaxzFrc3QmPd3tX42/yGzietmaP0MOZASI06I5L6uhX29qsggu9BkyeZz7zPUZyTU00CHchspAgnUxvwIwleyvJdQc/pSQgapvQ~3556912~3748915",
+            "domain": ".americanexpress.com",
+            "path": "/",
+            "expires": 1756155112.774065,
+            "size": 474,
+            "httpOnly": false,
+            "secure": true,
+            "session": false,
+            "sameSite": "None",
+            "priority": "Medium",
+            "sameParty": false,
+            "sourceScheme": "Secure"
+          },
+          {
+            "name": "s_sess",
+            "value": "%20s_visit%3D1%3B%20s_tp%3D2127%3B%20s_ppv%3DAR%25257CAMEX%25257CHome%25257CHomepage%252C36%252C36%252C768%3B%20s_cc%3Dtrue%3B",
+            "domain": ".americanexpress.com",
+            "path": "/",
+            "expires": -1,
+            "size": 132,
+            "httpOnly": false,
+            "secure": false,
+            "session": true,
+            "priority": "Medium",
+            "sameParty": false,
+            "sourceScheme": "Secure"
+          },
+          {
+            "name": "s_ecid",
+            "value": "MCMID%7C91748467930856729845169103458575782543",
+            "domain": ".americanexpress.com",
+            "path": "/",
+            "expires": 1790355115.999315,
+            "size": 52,
+            "httpOnly": false,
+            "secure": true,
+            "session": false,
+            "sameSite": "None",
+            "priority": "Medium",
+            "sameParty": false,
+            "sourceScheme": "Secure"
+          },
+          {
+            "name": "agent-id",
+            "value": "3ca17261-5a11-4508-87a0-4f07c6187f41",
+            "domain": ".americanexpress.com",
+            "path": "/",
+            "expires": 1787676717.132665,
+            "size": 44,
+            "httpOnly": true,
+            "secure": true,
+            "session": false,
+            "priority": "Medium",
+            "sameParty": false,
+            "sourceScheme": "Secure"
+          }
+        ],
+        "localStorageCount": 2,
+        "trackingPixels": 0,
+        "thirdPartyScripts": 43,
+        "scriptAnalysis": {
+          "total": 55,
+          "tracking": 5,
+          "necessary": 12,
+          "unknown": 38,
+          "trackingDetails": [
+            "https://assets.adobedtm.com/98caf8fccc463fd7e47088b35e73b27720bb5cc1/satelliteLib-bea3c9697c6240996731438f72200c4b82ae0d40.js",
+            "https://assets.adobedtm.com/dcb19cbd6cbf/61650f53735f/16894481fce5/EX9d5dd7be6b2e4e91a6a7ff4391410228-libraryCode_source.min.js",
+            "https://assets.adobedtm.com/dcb19cbd6cbf/61650f53735f/16894481fce5/RC2dfd42bd99df43a58b9c80394fc4b6b5-source.min.js",
+            "https://assets.adobedtm.com/dcb19cbd6cbf/61650f53735f/16894481fce5/RC22de28b131b34b7daeccd655c41ca747-source.min.js",
+            "https://assets.adobedtm.com/dcb19cbd6cbf/61650f53735f/16894481fce5/RCba6f9cee3abe426fa326391960ab44ab-source.min.js"
+          ],
+          "unknownDetails": [
+            "https://www.aexp-static.com/cdaas/one/statics/@americanexpress/homepage-frontend/3.17.7/package/dist/E3/markets/es-ar/app_top.js?cb=12524506092025",
+            "https://www.aexp-static.com/cdaas/one/dxt-script-supplier-helper/1.4.0/dxt-script-supplier-helper.js",
+            "https://www.aexp-static.com/cdaas/user-consent-management/ucm/v1.16.9/UCM.js",
+            "https://www.aexp-static.com/cdaas/dxt-vendor-shared-scripts/adobe-wrapper/v1.10.40/adobe-wrapper.js",
+            "https://www.aexp-static.com/cdaas/dxt-vendor-shared-scripts/contentsquare/v1.0.64/contentsquare.js",
+            "https://www.aexp-static.com/cdaas/datapoint-script/datapoint/v1.67.0/datapoint.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/entrypoints/v1.235.0/entrypoint-15983.js",
+            "https://www.aexp-static.com/cdaas/dxt/dxt-script-supplier-dynamic/v1.7.0/dxt-script-supplier-dynamic.js",
+            "https://ct.contentsquare.net/ss/3776/58f9bb16-be1c-40a4-a9f6-764647d60c8c/72/uxa.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/v1.235.0/filter-data.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/v1.235.0/sri-hashes.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/v1.235.0/trigger-and-watch-data.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-100000/v1.235.0/filter-data.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-100000/v1.235.0/sri-hashes.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-100000/v1.235.0/trigger-and-watch-data.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-583300-sha256-FHQDnKMdVnBU1Da0-Jt14Lso5WgEztG5OzX8HIRj6wE=.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-120186-sha256-SjvP0QKOV4WR7meEedTseVSoBp2dbBBV6OlSOgEYnTY=.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-120187-sha256-UVDkSQ3Bfp0OdoLAsx5v6vn9SZ9kT60boIrLv1fHtZg=.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-704092-sha256-vMcvZvSREQw9kJbK5BA9pHyDM3pdjdZkjl_Vfr-mWWA=.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-475289-sha256-q872INCOW7lB-cKLJSx9KQnL0ILJC2HXchz6iYvR6LE=.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-483510-sha256-MAGOhIA8jB16lESpbY5G_jQ8GGCkQX3eczucFPGzkjc=.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-504855-sha256-4WtKO91qk3i0nVAjdyDaoQkndf5EhGT1o_7NNdO-fg4=.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-532106-sha256-5pefRzu9j67M0ogf6-Y1kqZ1Tns97eEWEUuxHWTE3wQ=.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-486112-sha256-Yc2wyE2L8K_UcRBUo4N-rKTmWWGd-ft5mwrNIr5c_no=.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/data/data-60673-sha256-CHTXfXR8S8BG_wFSkXQnalcFglv0CE2B9G1qiPdO7rw=.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/data/data-60674-sha256-yvYl3XF6tp4hn6gsAPSYBfMoyjMSNqhXFsy-c3-9B60=.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/data/data-60675-sha256-hkTQHzLygoqhLI6AAvCGpVNBhrcGrBtmezjdVw7o6t0=.js",
+            "https://ct.contentsquare.net/ss/3776/58f9bb16-be1c-40a4-a9f6-764647d60c8c/72/ptc.js",
+            "https://www.aexp-static.com/cdaas/one-tag/tagging/groups/group-744/tags/tag-120187-sha256-UVDkSQ3Bfp0OdoLAsx5v6vn9SZ9kT60boIrLv1fHtZg=.js",
+            "https://icm.aexp-static.com/content/Navigation/Partials/prod/headerScript.js",
+            "https://icm.aexp-static.com/content/Navigation/Partials/prod/footerScript.js",
+            "https://www.aexp-static.com/cdaas/one/statics/@americanexpress/homepage-frontend/3.17.7/package/dist/E3/markets/es-ar/app_bottom.js?cb=12524506092025",
+            "https://www.aexp-static.com/cdaas/one/statics/@americanexpress/dls/6.23.1/package/dist/6.23.1/scripts/dls.min.js",
+            "https://www.aexp-static.com/akamai/one/statics/@americanexpress/dls-icons/0.5.0/package/dist/browser/dls-icons.min.js",
+            "https://www.aexp-static.com/cdaas/one/axp-script-supplier/6.0.9/script-supplier.js",
+            "https://www.aexp-static.com/cdaas/api/axpi/gct/1.0.0/gct_intl.js?gct=gctintlver",
+            "https://ct.contentsquare.net/ss/3776/58f9bb16-be1c-40a4-a9f6-764647d60c8c/72/pcc.js",
+            "https://ct.contentsquare.net/ss/3776/58f9bb16-be1c-40a4-a9f6-764647d60c8c/72/wr.js"
+          ],
+          "necessaryDetails": [
+            "[inline]",
+            "https://www.americanexpress.com/akam/13/571812d3",
+            "[inline]",
+            "[inline]",
+            "https://www.americanexpress.com/etc.clientlibs/enterprise/clientlibs/enterprise.min.js"
+          ],
+          "mathCheck": "PASS"
+        },
+        "cookieAnalysis": {
+          "total": 15,
+          "tracking": 0,
+          "necessary": 15
+        },
+        "localStorageAnalysis": {
+          "total": 2,
+          "tracking": 0,
+          "necessary": 2
+        },
+        "screenshot": "1756140719885_reject_pre.png",
+        "violation": "No reject option provided (GDPR violation)"
+      },
+      "accept_pre": {
+        "timestamp": "2025-08-25T16:52:05.161Z",
+        "stage": "accept_pre",
+        "url": "https://americanexpress.com",
+        "error": "Attempted to use detached Frame '05BD4225C43E3B8B681F01374D027612'.",
+        "scriptsCount": 0,
+        "cookiesCount": 0,
+        "localStorageCount": 0,
+        "trackingPixels": 0,
+        "thirdPartyScripts": 0
+      }
+    },
+    "bannerAnalysis": {
+      "detected": true,
+      "provider": "AmEx UCM",
+      "text": "\n\n\t\n\t\n\n\t\n\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\tAmerican Express Argentina\n\t\n\t\n\n\n    \n    \n    \n    \n    \n\n\n\n    \n    \n    \n    \n    \n    \n    \n\n\n\n\t\n\n\n\n\n\n\n\n\n\n\n\n\n\n    \n\n\n\n\n\n\n    \n\n\n\n\n\n\n\n    \n\n\n\n\n    \n    \n        \n  ",
+      "hasDirectReject": false,
+      "hasAccept": false,
+      "hasSettings": false,
+      "type": "US_style",
+      "buttonTexts": []
+    },
+    "error": "Attempted to use detached Frame '05BD4225C43E3B8B681F01374D027612'."
+  },
+  "metadata": {
+    "spectralVersion": "1.0.0",
+    "analysisType": "comprehensive-privacy-compliance",
+    "reportGeneration": "automated"
+  }
+}

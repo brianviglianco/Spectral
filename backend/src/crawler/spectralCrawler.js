@@ -361,53 +361,378 @@ class SpectralCrawler {
             evidence.scriptsCount = scriptsCount;
             evidence.scripts = scriptDetails;
 
+            // ENHANCED: Detailed Cookie Analysis with Specific Names
             const cookies = await this.page.cookies();
             evidence.cookiesCount = cookies.length;
             evidence.cookies = cookies;
 
-            const storageCount = await this.page.evaluate(() => {
+            // NEW: Detailed Cookie Analysis with Tracking/Necessary Classification - FIXED
+            const detailedCookieAnalysis = await this.page.evaluate(() => {
                 try {
-                    return window.localStorage.length;
-                } catch (e) {
-                    return 0;
+                    const cookies = document.cookie.split(';').filter(c => c.trim());
+                    const trackingCookieDetails = [];
+                    const necessaryCookieDetails = [];
+                    
+                    cookies.forEach(cookie => {
+                        try {
+                            const name = cookie.split('=')[0].trim();
+                            const value = cookie.split('=')[1] || '';
+                            
+                            // Tracking cookie patterns
+                            const isTracking = (
+                                name.toLowerCase().includes('ga') || name.toLowerCase().includes('_utm') || 
+                                name.toLowerCase().includes('facebook') || name.toLowerCase().includes('_fbp') ||
+                                name.toLowerCase().includes('linkedin') || name.toLowerCase().includes('doubleclick') ||
+                                name.toLowerCase().includes('_gid') || name.toLowerCase().includes('_gat') ||
+                                name.toLowerCase().includes('fr') || name.toLowerCase().includes('tr') ||
+                                name.toLowerCase().includes('_gcl') || name.toLowerCase().includes('ads') ||
+                                name.toLowerCase().includes('analytics') || name.toLowerCase().includes('tracking') ||
+                                name.toLowerCase().includes('mktrecipe') || name.toLowerCase().includes('_ga_')
+                            );
+                            
+                            const cookieInfo = {
+                                name: name,
+                                value: value.substring(0, 50), // Truncate long values
+                                classification: isTracking ? 'tracking' : 'necessary'
+                            };
+                            
+                            if (isTracking) {
+                                trackingCookieDetails.push(cookieInfo);
+                            } else {
+                                necessaryCookieDetails.push(cookieInfo);
+                            }
+                        } catch (cookieError) {
+                            // Skip malformed cookies
+                        }
+                    });
+                    
+                    return {
+                        total: cookies.length,
+                        tracking: trackingCookieDetails.length,
+                        necessary: necessaryCookieDetails.length,
+                        trackingDetails: trackingCookieDetails,
+                        necessaryDetails: necessaryCookieDetails.slice(0, 5) // Limit output
+                    };
+                } catch (error) {
+                    return {
+                        total: 0,
+                        tracking: 0,
+                        necessary: 0,
+                        trackingDetails: [],
+                        necessaryDetails: [],
+                        error: error.message
+                    };
                 }
             });
-            evidence.localStorageCount = storageCount;
+            evidence.detailedCookieAnalysis = detailedCookieAnalysis;
 
-            const trackingPixels = await this.page.evaluate(() => {
-                const images = Array.from(document.querySelectorAll('img'));
-                return images.filter(img => 
-                    (img.width === 1 && img.height === 1) ||
-                    img.src.includes('analytics') ||
-                    img.src.includes('tracking') ||
-                    img.src.includes('pixel') ||
-                    img.src.includes('facebook.com') ||
-                    img.src.includes('google-analytics.com')
-                ).length;
+            // FIXED: Enhanced LocalStorage Analysis with Comprehensive Patterns + Debug Logging
+            const detailedStorageAnalysis = await this.page.evaluate(() => {
+                try {
+                    let trackingStorageItems = [];
+                    let necessaryStorageItems = [];
+                    let allKeys = []; // DEBUG: Capture all keys for analysis
+                    
+                    try {
+                        for (let i = 0; i < localStorage.length; i++) {
+                            const key = localStorage.key(i);
+                            const value = localStorage.getItem(key);
+                            
+                            // DEBUG: Capture all keys
+                            allKeys.push(key);
+                            
+                            // ENHANCED: Comprehensive tracking detection patterns
+                            const isTracking = (
+                                // Google ecosystem - ENHANCED
+                                key.toLowerCase().includes('ga') || key.toLowerCase().includes('_ga') ||
+                                key.toLowerCase().includes('gtag') || key.toLowerCase().includes('gtm') ||
+                                key.toLowerCase().includes('google') || key.toLowerCase().includes('goog') ||
+                                key.toLowerCase().includes('_gid') || key.toLowerCase().includes('_gat') ||
+                                key.toLowerCase().includes('clientid') || key.toLowerCase().includes('client_id') ||
+                                
+                                // UTM and campaign tracking
+                                key.toLowerCase().includes('utm') || key.toLowerCase().includes('campaign') ||
+                                key.toLowerCase().includes('source') || key.toLowerCase().includes('medium') ||
+                                
+                                // Social media tracking - ENHANCED
+                                key.toLowerCase().includes('facebook') || key.toLowerCase().includes('_fb') ||
+                                key.toLowerCase().includes('linkedin') || key.toLowerCase().includes('twitter') ||
+                                key.toLowerCase().includes('tiktok') || key.toLowerCase().includes('instagram') ||
+                                key.toLowerCase().includes('pinterest') || key.toLowerCase().includes('snapchat') ||
+                                
+                                // Analytics platforms - ENHANCED
+                                key.toLowerCase().includes('analytics') || key.toLowerCase().includes('tracking') ||
+                                key.toLowerCase().includes('segment') || key.toLowerCase().includes('mixpanel') ||
+                                key.toLowerCase().includes('amplitude') || key.toLowerCase().includes('hotjar') ||
+                                key.toLowerCase().includes('fullstory') || key.toLowerCase().includes('mouseflow') ||
+                                key.toLowerCase().includes('smartlook') || key.toLowerCase().includes('logrocket') ||
+                                
+                                // Advertising - ENHANCED
+                                key.toLowerCase().includes('ads') || key.toLowerCase().includes('adwords') ||
+                                key.toLowerCase().includes('doubleclick') || key.toLowerCase().includes('bing') ||
+                                key.toLowerCase().includes('criteo') || key.toLowerCase().includes('outbrain') ||
+                                key.toLowerCase().includes('taboula') || key.toLowerCase().includes('amazon') ||
+                                
+                                // User identification - ENHANCED
+                                key.toLowerCase().includes('userid') || key.toLowerCase().includes('user_id') ||
+                                key.toLowerCase().includes('visitor') || key.toLowerCase().includes('session') ||
+                                key.toLowerCase().includes('uuid') || key.toLowerCase().includes('guid') ||
+                                key.toLowerCase().includes('fingerprint') || key.toLowerCase().includes('device') ||
+                                
+                                // Marketing automation - NEW
+                                key.toLowerCase().includes('marketo') || key.toLowerCase().includes('pardot') ||
+                                key.toLowerCase().includes('hubspot') || key.toLowerCase().includes('eloqua') ||
+                                key.toLowerCase().includes('salesforce') || key.toLowerCase().includes('6sense') ||
+                                
+                                // Common tracking patterns - NEW
+                                key.toLowerCase().includes('track') || key.toLowerCase().includes('pixel') ||
+                                key.toLowerCase().includes('beacon') || key.toLowerCase().includes('event') ||
+                                key.toLowerCase().includes('conversion') || key.toLowerCase().includes('attribution') ||
+                                
+                                // E-commerce tracking - NEW
+                                key.toLowerCase().includes('cart') || key.toLowerCase().includes('purchase') ||
+                                key.toLowerCase().includes('checkout') || key.toLowerCase().includes('order') ||
+                                key.toLowerCase().includes('product') || key.toLowerCase().includes('wishlist') ||
+                                
+                                // A/B Testing - NEW
+                                key.toLowerCase().includes('experiment') || key.toLowerCase().includes('test') ||
+                                key.toLowerCase().includes('variant') || key.toLowerCase().includes('optimize') ||
+                                
+                                // Personalization - NEW
+                                key.toLowerCase().includes('personalization') || key.toLowerCase().includes('recommend') ||
+                                key.toLowerCase().includes('profile') || key.toLowerCase().includes('preference') ||
+                                
+                                // Heat mapping - NEW
+                                key.toLowerCase().includes('heatmap') || key.toLowerCase().includes('click') ||
+                                key.toLowerCase().includes('scroll') || key.toLowerCase().includes('mouse') ||
+                                
+                                // Company-specific patterns for Dell
+                                key.toLowerCase().includes('dell') || key.toLowerCase().includes('dtm') ||
+                                key.toLowerCase().includes('adobe') || key.toLowerCase().includes('omniture') ||
+                                key.toLowerCase().includes('mbox') || key.toLowerCase().includes('target')
+                            );
+                            
+                            const storageInfo = {
+                                key: key,
+                                value: value ? value.substring(0, 100) : '', // Truncate long values
+                                classification: isTracking ? 'tracking' : 'necessary'
+                            };
+                            
+                            if (isTracking) {
+                                trackingStorageItems.push(storageInfo);
+                            } else {
+                                necessaryStorageItems.push(storageInfo);
+                            }
+                        }
+                    } catch (storageError) {
+                        // localStorage not accessible or empty
+                    }
+                    
+                    return {
+                        total: localStorage.length || 0,
+                        tracking: trackingStorageItems.length,
+                        necessary: necessaryStorageItems.length,
+                        trackingDetails: trackingStorageItems,
+                        necessaryDetails: necessaryStorageItems.slice(0, 5), // Limit output
+                        allKeys: allKeys, // DEBUG: All localStorage keys found
+                        debug: true
+                    };
+                } catch (error) {
+                    return {
+                        total: 0,
+                        tracking: 0,
+                        necessary: 0,
+                        trackingDetails: [],
+                        necessaryDetails: [],
+                        allKeys: [],
+                        error: error.message,
+                        debug: true
+                    };
+                }
             });
-            evidence.trackingPixels = trackingPixels;
+            evidence.detailedStorageAnalysis = detailedStorageAnalysis;
+            evidence.localStorageCount = detailedStorageAnalysis.total; // Keep compatibility
 
-            const thirdPartyScripts = await this.page.evaluate(() => {
-                const scripts = Array.from(document.scripts);
-                return scripts.filter(script => {
-                    const src = script.src;
-                    return src && (
-                        src.includes('google') ||
-                        src.includes('facebook') ||
-                        src.includes('analytics') ||
-                        src.includes('doubleclick') ||
-                        src.includes('amazon-adsystem') ||
-                        !src.includes(window.location.hostname)
-                    );
-                }).length;
+            // ENHANCED: Debug logging to see all localStorage keys
+            if (detailedStorageAnalysis.debug && detailedStorageAnalysis.allKeys.length > 0) {
+                console.log(`🔧 DEBUG: All localStorage keys found (${detailedStorageAnalysis.allKeys.length}):`);
+                detailedStorageAnalysis.allKeys.slice(0, 10).forEach((key, i) => {
+                    console.log(`  ${i + 1}. ${key}`);
+                });
+                if (detailedStorageAnalysis.allKeys.length > 10) {
+                    console.log(`  ... and ${detailedStorageAnalysis.allKeys.length - 10} more keys`);
+                }
+            }
+
+            // FIXED: Show specific tracking localStorage items if found
+            if (detailedStorageAnalysis.tracking > 0 && detailedStorageAnalysis.trackingDetails) {
+                console.log(`💾 TRACKING LOCALSTORAGE FOUND (${detailedStorageAnalysis.tracking}):`);
+                detailedStorageAnalysis.trackingDetails.forEach((item, i) => {
+                    console.log(`  ${i + 1}. ${item.key}`);
+                });
+            } else if (detailedStorageAnalysis.total > 0) {
+                // DEBUG: Show why no tracking was detected
+                console.log(`💾 LocalStorage found (${detailedStorageAnalysis.total} total) but none classified as tracking`);
+            }
+
+            // ENHANCED: Detailed Tracking Pixels Analysis with URLs - FIXED
+            const detailedPixelAnalysis = await this.page.evaluate(() => {
+                try {
+                    const images = Array.from(document.querySelectorAll('img'));
+                    const trackingPixelDetails = [];
+                    
+                    images.forEach(img => {
+                        try {
+                            if (!img.src) return;
+                            
+                            const isTrackingPixel = (
+                                (img.width === 1 && img.height === 1) ||
+                                img.src.includes('analytics') ||
+                                img.src.includes('tracking') ||
+                                img.src.includes('pixel') ||
+                                img.src.includes('facebook.com') ||
+                                img.src.includes('google-analytics.com') ||
+                                img.src.includes('doubleclick.net') ||
+                                img.src.includes('linkedin.com/px') ||
+                                img.src.includes('bing.com/tr') ||
+                                img.src.includes('tr?') ||
+                                img.src.includes('collect?') ||
+                                img.src.includes('pagead/viewthroughconversion')
+                            );
+                            
+                            if (isTrackingPixel) {
+                                // FIXED: Safe URL parsing
+                                let hostname = 'unknown';
+                                try {
+                                    hostname = new URL(img.src).hostname;
+                                } catch (urlError) {
+                                    hostname = img.src.split('/')[2] || 'malformed-url';
+                                }
+                                
+                                trackingPixelDetails.push({
+                                    url: img.src,
+                                    hostname: hostname,
+                                    dimensions: `${img.width}x${img.height}`,
+                                    classification: 'tracking-pixel'
+                                });
+                            }
+                        } catch (imgError) {
+                            // Skip problematic images
+                        }
+                    });
+                    
+                    return {
+                        total: trackingPixelDetails.length,
+                        details: trackingPixelDetails
+                    };
+                } catch (error) {
+                    return {
+                        total: 0,
+                        details: [],
+                        error: error.message
+                    };
+                }
             });
-            evidence.thirdPartyScripts = thirdPartyScripts;
+            evidence.detailedPixelAnalysis = detailedPixelAnalysis;
+            evidence.trackingPixels = detailedPixelAnalysis.total; // Keep compatibility
 
-            // ✅ ENTERPRISE ENHANCED: Complete tracking database + ALL DISCOVERED DOMAINS
+            // FIXED: Show tracking pixels if found with proper hostname extraction
+            if (detailedPixelAnalysis.total > 0 && detailedPixelAnalysis.details) {
+                console.log(`🖼️ TRACKING PIXELS FOUND (${detailedPixelAnalysis.total}):`);
+                detailedPixelAnalysis.details.forEach((pixel, i) => {
+                    console.log(`  ${i + 1}. ${pixel.hostname} (${pixel.dimensions})`);
+                });
+            }
+
+            // ENHANCED: Detailed Third-party Requests with Domain Classification - FIXED
+            const detailedThirdPartyAnalysis = await this.page.evaluate(() => {
+                try {
+                    const scripts = Array.from(document.scripts);
+                    const thirdPartyDetails = [];
+                    const currentHostname = window.location.hostname;
+                    
+                    scripts.forEach(script => {
+                        try {
+                            const src = script.src;
+                            if (!src) return;
+                            
+                            let scriptHostname;
+                            try {
+                                scriptHostname = new URL(src).hostname;
+                            } catch (urlError) {
+                                // FIXED: Fallback for malformed URLs
+                                const parts = src.split('/');
+                                scriptHostname = parts[2] || 'unknown';
+                            }
+                            
+                            if (scriptHostname && scriptHostname !== currentHostname) {
+                                // Classify the third-party domain
+                                let category = 'unknown';
+                                let company = 'Unknown';
+                                
+                                const srcLower = src.toLowerCase();
+                                
+                                if (srcLower.includes('google')) {
+                                    category = 'analytics';
+                                    company = 'Google';
+                                } else if (srcLower.includes('facebook')) {
+                                    category = 'social-tracking';
+                                    company = 'Facebook/Meta';
+                                } else if (srcLower.includes('linkedin')) {
+                                    category = 'social-tracking';
+                                    company = 'LinkedIn';
+                                } else if (srcLower.includes('adobe') || srcLower.includes('omtrdc')) {
+                                    category = 'analytics';
+                                    company = 'Adobe';
+                                } else if (srcLower.includes('amazon') || srcLower.includes('aws')) {
+                                    category = 'infrastructure';
+                                    company = 'Amazon';
+                                } else if (srcLower.includes('microsoft') || srcLower.includes('bing')) {
+                                    category = 'analytics';
+                                    company = 'Microsoft';
+                                } else if (srcLower.includes('tiktok')) {
+                                    category = 'social-tracking';
+                                    company = 'TikTok';
+                                } else if (srcLower.includes('quantserve') || srcLower.includes('quantcast')) {
+                                    category = 'analytics';
+                                    company = 'Quantcast';
+                                } else if (srcLower.includes('6sc.co')) {
+                                    category = 'analytics';
+                                    company = '6sense';
+                                }
+                                
+                                thirdPartyDetails.push({
+                                    url: src,
+                                    domain: scriptHostname,
+                                    company: company,
+                                    category: category
+                                });
+                            }
+                        } catch (scriptError) {
+                            // Skip problematic scripts
+                        }
+                    });
+                    
+                    return {
+                        total: thirdPartyDetails.length,
+                        details: thirdPartyDetails
+                    };
+                } catch (error) {
+                    return {
+                        total: 0,
+                        details: [],
+                        error: error.message
+                    };
+                }
+            });
+            evidence.detailedThirdPartyAnalysis = detailedThirdPartyAnalysis;
+            evidence.thirdPartyScripts = detailedThirdPartyAnalysis.total; // Keep compatibility
+
+            // Keep existing script analysis for compatibility
             const scriptAnalysis = await this.page.evaluate(() => {
                 const scripts = Array.from(document.scripts);
                 
-                // ✅ COMPLETE ENTERPRISE TRACKING DOMAINS DATABASE - FULLY UPDATED
+                // COMPLETE ENTERPRISE TRACKING DOMAINS DATABASE - FULLY UPDATED
                 const trackingDomains = [
                     // Google ecosystem
                     'google-analytics.com', 'googletagmanager.com', 'googlesyndication.com', 'doubleclick.net',
@@ -442,7 +767,7 @@ class SpectralCrawler {
                     'newrelic.com', 'bugsnag.com', 'sentry.io', 'datadog.com',
                     'pingdom.com', 'gtm.start.dk', 'gemius.dk',
                     
-                    // ✅ MICROSOFT ENTERPRISE TRACKING DOMAINS
+                    // MICROSOFT ENTERPRISE TRACKING DOMAINS
                     'clarity.ms', 'www.clarity.ms', 'scripts.clarity.ms',        
                     'monitor.azure.com', 'js.monitor.azure.com',                
                     'applicationinsights.microsoft.com',                        
@@ -450,33 +775,12 @@ class SpectralCrawler {
                     'vortex.data.microsoft.com',                               
                     'browser.pipe.aria.microsoft.com',
                     
-                    // ✅ BING ADS CONVERSION TRACKING
+                    // BING ADS CONVERSION TRACKING
                     'bat.bing.com', 'bing.com/analytics', 'uet.bing.com',
                     
-                    // ✅ CLICKTALE / CONTENTSQUARE
-                    'clicktale.net', 'cdnssl.clicktale.net', 'contentsquare.com',
-                    
-                    // ✅ SALESFORCE ENTERPRISE TRACKING - NEWLY DISCOVERED
-                    'evgnet.com', 'cdn.evgnet.com',                           // Evergage (Salesforce Personalization)
-                    's.go-mpulse.net',                                        // Akamai mPulse - Real User Monitoring
-
-                    // ✅ TEALIUM TAG MANAGEMENT SYSTEM - MAJOR DISCOVERY
-                    'tags.tiqcdn.com', 'tiqcdn.com',                         // Tealium Universal Tag (utag.js)
-                    
-                    // ✅ ORACLE ELOQUA TRACKING - ENTERPRISE
-                    'img.en25.com', 'en25.com',                              // Oracle Eloqua marketing automation
-                    
-                    // ✅ LIVEPERSON CHAT TRACKING
-                    'lptag.liveperson.net',                                   // LivePerson chat analytics
-                    
-                    // ✅ WOOPIC ANALYTICS PLATFORM - FRENCH
-                    'woopic.com', 'c.woopic.com', 'elcos.cdn.s.woopic.com', 'gp.cdn.woopic.com',
-                    
-                    // ✅ CONFIANT AD SECURITY TRACKING
-                    'cdn.confiant-integrations.net',                         // Confiant ad verification
-                    
-                    // ✅ USERCENTRICS CMP TRACKING (Partial)
-                    'app.usercentrics.eu'                                    // Usercentrics CMP scripts
+                    // SALESFORCE ENTERPRISE TRACKING - NEWLY DISCOVERED
+                    'evgnet.com', 'cdn.evgnet.com',                           
+                    's.go-mpulse.net',                                        
                 ];
                 
                 const necessaryDomains = [
@@ -498,34 +802,7 @@ class SpectralCrawler {
                     'amazonaws.com', 'fastly.com', 'akamai.net', 'maxcdn.com',
                     
                     // Essential functionality
-                    'polyfill.io', 'bootstrapcdn.com', 'fontawesome.com', 'fonts.googleapis.com',
-                    
-                    // ✅ MICROSOFT NECESSARY DOMAINS
-                    'wcpstatic.microsoft.com',                                  
-                    'mem.gfx.ms',                                              
-                    'c.msn.com',                                               
-                    'assets.msn.com',                                          
-                    'statics-marketingsites-wcus-ms-com.akamaized.net',
-                    
-                    // ✅ ADOBE HELIX RUM (Performance Monitoring - NECESSARY)
-                    'rum.hlx.page', 'hlx.page', 'hlx3.page',
-                    
-                    // ✅ SALESFORCE NECESSARY DOMAINS - NEWLY DISCOVERED
-                    'sfdcstatic.com', 'a.sfdcstatic.com',                     // Salesforce static assets CDN
-                    
-                    // ✅ SIEMENS ENTERPRISE DOMAINS  
-                    'w3.siemens.com',                                          // Siemens web platform
-                    'prod.ste.dc.siemens.com',                               // Siemens production services
-                    'data.cdn.siemens.com',                                  // Siemens CDN services
-                    
-                    // ✅ ORANGE TELECOM INFRASTRUCTURE
-                    'orangeads.fr', 'cdn.adgtw.orangeads.fr',               // Orange ad platform (internal)
-                    
-                    // ✅ PRIVACY CENTER SDK - CMP NECESSARY
-                    'sdk.privacy-center.org',                                // Privacy center consent SDK
-                    
-                    // ✅ TEMPLATE ENGINES - UNIVERSAL NECESSARY  
-                    'nunjucks'                                              // Nunjucks templating engine
+                    'polyfill.io', 'bootstrapcdn.com', 'fontawesome.com', 'fonts.googleapis.com'
                 ];
                 
                 let trackingScripts = 0;
@@ -570,7 +847,7 @@ class SpectralCrawler {
             });
             evidence.scriptAnalysis = scriptAnalysis;
 
-            // Analyze cookies by domain/purpose
+            // Keep existing cookie and localStorage analysis for compatibility
             const cookieAnalysis = await this.page.evaluate(() => {
                 const cookies = document.cookie.split(';');
                 const trackingCookies = cookies.filter(cookie => {
@@ -588,7 +865,6 @@ class SpectralCrawler {
             });
             evidence.cookieAnalysis = cookieAnalysis;
 
-            // Analyze localStorage for tracking content
             const localStorageAnalysis = await this.page.evaluate(() => {
                 let trackingItems = 0;
                 try {
@@ -617,19 +893,51 @@ class SpectralCrawler {
             });
             evidence.screenshot = screenshotName;
 
-            console.log(`📸 ${stage}: ${scriptsCount} scripts (${scriptAnalysis.tracking} tracking, ${scriptAnalysis.necessary} necessary, ${scriptAnalysis.unknown} unknown), ${cookies.length} cookies (${cookieAnalysis.tracking} tracking), ${storageCount} localStorage (${localStorageAnalysis.tracking} tracking), ${trackingPixels} pixels, ${thirdPartyScripts} 3rd-party`);
+            // Enhanced logging with specific details - IMPROVED
+            console.log(`📸 ${stage}: ${scriptsCount} scripts (${scriptAnalysis.tracking} tracking, ${scriptAnalysis.necessary} necessary, ${scriptAnalysis.unknown} unknown), ${cookies.length} cookies (${detailedCookieAnalysis.tracking} tracking), ${detailedStorageAnalysis.total} localStorage (${detailedStorageAnalysis.tracking} tracking), ${detailedPixelAnalysis.total} pixels, ${detailedThirdPartyAnalysis.total} 3rd-party`);
             
             // Math validation logging
             if (scriptAnalysis.mathCheck === 'FAIL') {
                 console.log(`⚠️ MATH ERROR: Script totals don't add up for ${stage}`);
             }
 
-            // Show script classification details for troubleshooting
+            // Show detailed tracking information
             if (scriptAnalysis.tracking > 0) {
                 console.log(`🎯 TRACKING SCRIPTS FOUND (${scriptAnalysis.tracking}):`);
                 scriptAnalysis.trackingDetails.forEach((script, i) => {
                     console.log(`  ${i + 1}. ${script}`);
                 });
+            }
+
+            // FIXED: Show specific tracking cookies if found with deduplication
+            if (detailedCookieAnalysis.tracking > 0 && detailedCookieAnalysis.trackingDetails) {
+                const uniqueCookies = [...new Set(detailedCookieAnalysis.trackingDetails.map(c => c.name))];
+                console.log(`🍪 TRACKING COOKIES FOUND (${uniqueCookies.length}):`);
+                uniqueCookies.forEach((cookieName, i) => {
+                    console.log(`  ${i + 1}. ${cookieName}`);
+                });
+            }
+
+            // FIXED: Show third-party companies classification
+            if (detailedThirdPartyAnalysis.total > 0 && detailedThirdPartyAnalysis.details) {
+                const companiesSummary = {};
+                detailedThirdPartyAnalysis.details.forEach(script => {
+                    if (!companiesSummary[script.company]) {
+                        companiesSummary[script.company] = 0;
+                    }
+                    companiesSummary[script.company]++;
+                });
+                
+                const topCompanies = Object.entries(companiesSummary)
+                    .sort(([,a], [,b]) => b - a)
+                    .slice(0, 5);
+                
+                if (topCompanies.length > 0) {
+                    console.log(`🏢 TOP 3RD-PARTY COMPANIES:`);
+                    topCompanies.forEach(([company, count], i) => {
+                        console.log(`  ${i + 1}. ${company}: ${count} scripts`);
+                    });
+                }
             }
 
             // FIXED: Better unknown scripts logging
