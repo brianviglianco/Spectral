@@ -1,0 +1,512 @@
+{
+  "google-analytics.com": {
+    "category": "analytics",
+    "company": "Google",
+    "confidence": 1,
+    "tracking": true
+  },
+  "googletagmanager.com": {
+    "category": "tag-manager",
+    "company": "Google",
+    "confidence": 1,
+    "tracking": true
+  },
+  "googlesyndication.com": {
+    "category": "advertising",
+    "company": "Google",
+    "confidence": 1,
+    "tracking": true
+  },
+  "doubleclick.net": {
+    "category": "advertising",
+    "company": "Google",
+    "confidence": 1,
+    "tracking": true
+  },
+  "googleadservices.com": {
+    "category": "advertising",
+    "company": "Google",
+    "confidence": 1,
+    "tracking": true
+  },
+  "google.com": {
+    "category": "mixed",
+    "company": "Google",
+    "confidence": 0.8,
+    "tracking": false
+  },
+  "facebook.com": {
+    "category": "social-tracking",
+    "company": "Meta",
+    "confidence": 1,
+    "tracking": true
+  },
+  "facebook.net": {
+    "category": "social-tracking",
+    "company": "Meta",
+    "confidence": 1,
+    "tracking": true
+  },
+  "connect.facebook.net": {
+    "category": "social-tracking",
+    "company": "Meta",
+    "confidence": 1,
+    "tracking": true
+  },
+  "fbcdn.net": {
+    "category": "social-content",
+    "company": "Meta",
+    "confidence": 0.9,
+    "tracking": false
+  },
+  "clarity.ms": {
+    "category": "analytics",
+    "company": "Microsoft",
+    "confidence": 1,
+    "tracking": true
+  },
+  "bing.com": {
+    "category": "mixed",
+    "company": "Microsoft",
+    "confidence": 0.8,
+    "tracking": true
+  },
+  "bat.bing.com": {
+    "category": "advertising",
+    "company": "Microsoft",
+    "confidence": 1,
+    "tracking": true
+  },
+  "microsoftonline.com": {
+    "category": "authentication",
+    "company": "Microsoft",
+    "confidence": 1,
+    "tracking": false
+  },
+  "linkedin.com": {
+    "category": "social-tracking",
+    "company": "LinkedIn",
+    "confidence": 1,
+    "tracking": true
+  },
+  "snap.licdn.com": {
+    "category": "social-tracking",
+    "company": "LinkedIn",
+    "confidence": 1,
+    "tracking": true
+  },
+  "li.lms-analytics": {
+    "category": "social-tracking",
+    "company": "LinkedIn",
+    "confidence": 1,
+    "tracking": true
+  },
+  "adobe.com": {
+    "category": "mixed",
+    "company": "Adobe",
+    "confidence": 0.8,
+    "tracking": true
+  },
+  "adobedtm.com": {
+    "category": "tag-manager",
+    "company": "Adobe",
+    "confidence": 1,
+    "tracking": true
+  },
+  "omtrdc.net": {
+    "category": "analytics",
+    "company": "Adobe",
+    "confidence": 1,
+    "tracking": true
+  },
+  "demdex.net": {
+    "category": "analytics",
+    "company": "Adobe",
+    "confidence": 1,
+    "tracking": true
+  },
+  "segment.com": {
+    "category": "analytics",
+    "company": "Segment",
+    "confidence": 1,
+    "tracking": true
+  },
+  "segment.io": {
+    "category": "analytics",
+    "company": "Segment",
+    "confidence": 1,
+    "tracking": true
+  },
+  "mixpanel.com": {
+    "category": "analytics",
+    "company": "Mixpanel",
+    "confidence": 1,
+    "tracking": true
+  },
+  "amplitude.com": {
+    "category": "analytics",
+    "company": "Amplitude",
+    "confidence": 1,
+    "tracking": true
+  },
+  "hotjar.com": {
+    "category": "analytics",
+    "company": "Hotjar",
+    "confidence": 1,
+    "tracking": true
+  },
+  "mouseflow.com": {
+    "category": "analytics",
+    "company": "Mouseflow",
+    "confidence": 1,
+    "tracking": true
+  },
+  "fullstory.com": {
+    "category": "analytics",
+    "company": "FullStory",
+    "confidence": 1,
+    "tracking": true
+  },
+  "6sc.co": {
+    "category": "analytics",
+    "company": "6sense",
+    "confidence": 1,
+    "tracking": true
+  },
+  "quantserve.com": {
+    "category": "advertising",
+    "company": "Quantcast",
+    "confidence": 1,
+    "tracking": true
+  },
+  "quantcast.com": {
+    "category": "advertising",
+    "company": "Quantcast",
+    "confidence": 1,
+    "tracking": true
+  },
+  "scorecardresearch.com": {
+    "category": "analytics",
+    "company": "Comscore",
+    "confidence": 1,
+    "tracking": true
+  },
+  "cloudflare.com": {
+    "category": "cdn",
+    "company": "Cloudflare",
+    "confidence": 1,
+    "tracking": false
+  },
+  "cloudflare.net": {
+    "category": "cdn",
+    "company": "Cloudflare",
+    "confidence": 1,
+    "tracking": false
+  },
+  "fastly.net": {
+    "category": "cdn",
+    "company": "Fastly",
+    "confidence": 1,
+    "tracking": false
+  },
+  "amazonaws.com": {
+    "category": "cdn",
+    "company": "Amazon",
+    "confidence": 0.9,
+    "tracking": false
+  },
+  "jsdelivr.net": {
+    "category": "cdn",
+    "company": "JSDelivr",
+    "confidence": 1,
+    "tracking": false
+  },
+  "unpkg.com": {
+    "category": "cdn",
+    "company": "Unpkg",
+    "confidence": 1,
+    "tracking": false
+  },
+  "cdnjs.cloudflare.com": {
+    "category": "cdn",
+    "company": "Cloudflare",
+    "confidence": 1,
+    "tracking": false
+  },
+  "cookielaw.org": {
+    "category": "cmp",
+    "company": "OneTrust",
+    "confidence": 1,
+    "tracking": false
+  },
+  "onetrust.com": {
+    "category": "cmp",
+    "company": "OneTrust",
+    "confidence": 1,
+    "tracking": false
+  },
+  "cookiebot.com": {
+    "category": "cmp",
+    "company": "Cookiebot",
+    "confidence": 1,
+    "tracking": false
+  },
+  "trustarc.com": {
+    "category": "cmp",
+    "company": "TrustArc",
+    "confidence": 1,
+    "tracking": false
+  },
+  "consent.trustarc.com": {
+    "category": "cmp",
+    "company": "TrustArc",
+    "confidence": 1,
+    "tracking": false
+  },
+  "usercentrics.com": {
+    "category": "cmp",
+    "company": "Usercentrics",
+    "confidence": 1,
+    "tracking": false
+  },
+  "stripe.com": {
+    "category": "payment",
+    "company": "Stripe",
+    "confidence": 1,
+    "tracking": false
+  },
+  "paypal.com": {
+    "category": "payment",
+    "company": "PayPal",
+    "confidence": 1,
+    "tracking": false
+  },
+  "twitter.com": {
+    "category": "social",
+    "company": "Twitter",
+    "confidence": 0.9,
+    "tracking": true
+  },
+  "tiktok.com": {
+    "category": "social-tracking",
+    "company": "TikTok",
+    "confidence": 1,
+    "tracking": true
+  },
+  "pinterest.com": {
+    "category": "social-tracking",
+    "company": "Pinterest",
+    "confidence": 1,
+    "tracking": true
+  },
+  "evgnet.com": {
+    "category": "analytics",
+    "company": "Salesforce",
+    "confidence": 1,
+    "tracking": true
+  },
+  "cdn.evgnet.com": {
+    "category": "analytics",
+    "company": "Salesforce",
+    "confidence": 1,
+    "tracking": true
+  },
+  "s.go-mpulse.net": {
+    "category": "analytics",
+    "company": "Salesforce",
+    "confidence": 1,
+    "tracking": true
+  },
+  "nexus.dell.com": {
+    "category": "library",
+    "company": "Dell",
+    "confidence": 0.95,
+    "tracking": false,
+    "learned": true,
+    "firstSeen": "2025-08-26T04:38:23.580Z"
+  },
+  "cdn.cookielaw.org": {
+    "category": "cmp",
+    "company": "OneTrust",
+    "confidence": 0.9,
+    "tracking": false,
+    "source": "parent-domain",
+    "domain": "cdn.cookielaw.org"
+  },
+  "j.6sc.co": {
+    "category": "analytics",
+    "company": "6sense",
+    "confidence": 0.9,
+    "tracking": true,
+    "source": "parent-domain",
+    "domain": "j.6sc.co"
+  },
+  "secure.quantserve.com": {
+    "category": "advertising",
+    "company": "Quantcast",
+    "confidence": 0.9,
+    "tracking": true,
+    "source": "parent-domain",
+    "domain": "secure.quantserve.com"
+  },
+  "www.googletagmanager.com": {
+    "category": "tag-manager",
+    "company": "Google",
+    "confidence": 0.9,
+    "tracking": true,
+    "source": "parent-domain",
+    "domain": "www.googletagmanager.com"
+  },
+  "analytics.tiktok.com": {
+    "category": "social-tracking",
+    "company": "TikTok",
+    "confidence": 0.9,
+    "tracking": true,
+    "source": "parent-domain",
+    "domain": "analytics.tiktok.com"
+  },
+  "collector-45774.tvsquared.com": {
+    "category": "tracking",
+    "company": "Tvsquared",
+    "confidence": 0.8,
+    "tracking": true,
+    "learned": true,
+    "firstSeen": "2025-08-26T04:38:51.767Z"
+  },
+  "d2qmp7jjpd79k7.cloudfront.net": {
+    "category": "tracking",
+    "company": "Cloudfront",
+    "confidence": 0.9,
+    "tracking": true,
+    "learned": true,
+    "firstSeen": "2025-08-26T04:38:51.767Z"
+  },
+  "sc-static.net": {
+    "category": "static",
+    "company": "Sc-static",
+    "confidence": 0.7,
+    "tracking": false,
+    "learned": true,
+    "firstSeen": "2025-08-26T04:38:51.767Z"
+  },
+  "tags.creativecdn.com": {
+    "category": "cdn",
+    "company": "Creativecdn",
+    "confidence": 0.8,
+    "tracking": false,
+    "learned": true,
+    "firstSeen": "2025-08-26T04:38:51.767Z"
+  },
+  "origin.acuityplatform.com": {
+    "category": "tracking",
+    "company": "Acuityplatform",
+    "confidence": 0.9,
+    "tracking": true,
+    "learned": true,
+    "firstSeen": "2025-08-26T04:38:51.768Z"
+  },
+  "sync-tm.everesttech.net": {
+    "category": "tracking",
+    "company": "Everesttech",
+    "confidence": 0.9,
+    "tracking": true,
+    "learned": true,
+    "firstSeen": "2025-08-26T04:38:51.770Z"
+  },
+  "e.acuityplatform.com": {
+    "category": "tracking",
+    "company": "Acuityplatform",
+    "confidence": 0.9,
+    "tracking": true,
+    "learned": true,
+    "firstSeen": "2025-08-26T04:38:51.771Z"
+  },
+  "googleads.g.doubleclick.net": {
+    "category": "advertising",
+    "company": "Google",
+    "confidence": 0.9,
+    "tracking": true,
+    "source": "parent-domain",
+    "domain": "googleads.g.doubleclick.net"
+  },
+  "afcs.dellcdn.com": {
+    "category": "cdn",
+    "company": "Dellcdn",
+    "confidence": 0.8,
+    "tracking": false,
+    "learned": true,
+    "firstSeen": "2025-08-26T04:39:22.739Z"
+  },
+  "scripts.clarity.ms": {
+    "category": "analytics",
+    "company": "Microsoft",
+    "confidence": 0.9,
+    "tracking": true,
+    "source": "parent-domain",
+    "domain": "scripts.clarity.ms"
+  },
+  "www.clarity.ms": {
+    "category": "analytics",
+    "company": "Microsoft",
+    "confidence": 0.9,
+    "tracking": true,
+    "source": "parent-domain",
+    "domain": "www.clarity.ms"
+  },
+  "www.microsoft.com": {
+    "category": "library",
+    "company": "Microsoft",
+    "confidence": 0.95,
+    "tracking": false,
+    "learned": true,
+    "firstSeen": "2025-08-26T04:41:55.026Z"
+  },
+  "assets.adobedtm.com": {
+    "category": "tag-manager",
+    "company": "Adobe",
+    "confidence": 0.9,
+    "tracking": true,
+    "source": "parent-domain",
+    "domain": "assets.adobedtm.com"
+  },
+  "ct.pinterest.com": {
+    "category": "social-tracking",
+    "company": "Pinterest",
+    "confidence": 0.9,
+    "tracking": true,
+    "source": "parent-domain",
+    "domain": "ct.pinterest.com"
+  },
+  "track.adform.net": {
+    "category": "analytics",
+    "company": "Adform",
+    "confidence": 0.75,
+    "tracking": true,
+    "autoClassified": true,
+    "reason": "Tracking patterns found in 5 URLs"
+  },
+  "www.dell.com": {
+    "category": "library",
+    "company": "Dell",
+    "confidence": 0.75,
+    "tracking": false,
+    "autoClassified": true,
+    "reason": "Necessary patterns found in 8 URLs"
+  },
+  "www.bmw.com": {
+    "category": "library",
+    "company": "Bmw",
+    "confidence": 0.75,
+    "tracking": false,
+    "autoClassified": true,
+    "reason": "Necessary patterns found in 3 URLs"
+  },
+  "pagead2.googlesyndication.com": {
+    "category": "advertising",
+    "company": "Google",
+    "confidence": 0.9,
+    "tracking": true,
+    "source": "parent-domain",
+    "domain": "pagead2.googlesyndication.com"
+  }
+}

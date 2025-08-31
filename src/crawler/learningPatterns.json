@@ -1,0 +1,116 @@
+{
+  "trackingPatterns": [
+    {
+      "pattern": "/analytics/i",
+      "confidence": 0.9,
+      "category": "analytics"
+    },
+    {
+      "pattern": "/track/i",
+      "confidence": 0.8,
+      "category": "tracking"
+    },
+    {
+      "pattern": "/pixel/i",
+      "confidence": 0.9,
+      "category": "tracking"
+    },
+    {
+      "pattern": "/beacon/i",
+      "confidence": 0.9,
+      "category": "tracking"
+    },
+    {
+      "pattern": "/collect/i",
+      "confidence": 0.7,
+      "category": "analytics"
+    },
+    {
+      "pattern": "/metrics/i",
+      "confidence": 0.8,
+      "category": "analytics"
+    },
+    {
+      "pattern": "/telemetry/i",
+      "confidence": 0.9,
+      "category": "analytics"
+    },
+    {
+      "pattern": "/_ga|_gid|_utm/i",
+      "confidence": 0.95,
+      "category": "analytics"
+    },
+    {
+      "pattern": "/conversion/i",
+      "confidence": 0.85,
+      "category": "advertising"
+    }
+  ],
+  "necessaryPatterns": [
+    {
+      "pattern": "/jquery|bootstrap|react|angular|vue/i",
+      "confidence": 0.95,
+      "category": "library"
+    },
+    {
+      "pattern": "/polyfill/i",
+      "confidence": 0.95,
+      "category": "compatibility"
+    },
+    {
+      "pattern": "/\\.min\\.js$/i",
+      "confidence": 0.3,
+      "category": "library"
+    },
+    {
+      "pattern": "/api\\./i",
+      "confidence": 0.7,
+      "category": "api"
+    },
+    {
+      "pattern": "/cdn\\./i",
+      "confidence": 0.8,
+      "category": "cdn"
+    },
+    {
+      "pattern": "/static\\./i",
+      "confidence": 0.7,
+      "category": "static"
+    },
+    {
+      "pattern": "/assets\\./i",
+      "confidence": 0.8,
+      "category": "assets"
+    }
+  ],
+  "companyPatterns": [
+    {
+      "pattern": "/google/i",
+      "company": "Google"
+    },
+    {
+      "pattern": "/facebook|fb/i",
+      "company": "Meta"
+    },
+    {
+      "pattern": "/microsoft|msft|azure/i",
+      "company": "Microsoft"
+    },
+    {
+      "pattern": "/amazon|aws/i",
+      "company": "Amazon"
+    },
+    {
+      "pattern": "/adobe/i",
+      "company": "Adobe"
+    },
+    {
+      "pattern": "/linkedin/i",
+      "company": "LinkedIn"
+    },
+    {
+      "pattern": "/twitter/i",
+      "company": "Twitter"
+    }
+  ]
+}

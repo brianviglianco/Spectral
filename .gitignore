@@ -1,0 +1,15 @@
+/node_modules/
+reports/
+backups/
+*.sql
+*.dump
+tmp/
+logs/
+*.log
+*.out
+.puppeteer_cache/
+.browser-profile/
+browser-profile/
+.DS_Store
+Thumbs.db
+.env
