@@ -1,6 +1,0 @@
-2025/08/21-02:28:18.511 328715 Reusing MANIFEST /Users/brianviglianco/Desktop/Spectral/backend/browser-profile/Default/Local Storage/leveldb/MANIFEST-000001
-2025/08/21-02:28:18.513 328715 Recovering log #7
-2025/08/21-02:28:18.513 328715 Reusing old log /Users/brianviglianco/Desktop/Spectral/backend/browser-profile/Default/Local Storage/leveldb/000007.log 
-2025/08/21-02:29:02.758 328717 Level-0 table #11: started
-2025/08/21-02:29:02.762 328717 Level-0 table #11: 23117 bytes OK
-2025/08/21-02:29:02.764 328717 Delete type=0 #7

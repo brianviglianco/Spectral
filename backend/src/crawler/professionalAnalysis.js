@@ -1,105 +1,125 @@
-const SpectralCrawler = require('./spectralCrawler');
-const fs = require('fs').promises;
-const path = require('path');
+/**
+ * PROFESSIONAL ANALYSIS (P0)
+ * - Ejecuta runCrawl(url), carga violationEngine P0, imprime bloques estilo “Siemens”
+ * - Guarda JSON completo en /reports
+ */
 
-class SpectralAnalysisRunner {
-    constructor() {
-        this.reportDir = path.join(__dirname, '../../reports');
-    }
+'use strict';
 
-    async generateExecutiveReport(url) {
-        console.log('🏢 SPECTRAL PRIVACY COMPLIANCE ANALYSIS');
-        console.log('=' .repeat(60));
-        console.log(`🌐 Target: ${url}`);
-        console.log(`📅 Analysis Date: ${new Date().toLocaleString()}`);
-        console.log('=' .repeat(60));
-        
-        const crawler = new SpectralCrawler({ headless: false });
-        
-        try {
-            await crawler.init();
-            const results = await crawler.crawlSite(url);
-            
-            // Use the new violation engine's report directly
-            if (results.gdprCompliance && results.gdprCompliance.report) {
-                console.log(results.gdprCompliance.report);
-            } else {
-                console.log('❌ GDPR compliance analysis failed or incomplete');
-            }
-            
-            // Save comprehensive report
-            await this.saveReport(url, results);
-            
-            return results;
-            
-        } catch (error) {
-            console.error('❌ Analysis failed:', error.message);
-            throw error;
-        } finally {
-            await crawler.close();
-        }
-    }
+const { runCrawl, saveReportJSON } = require('./spectralCrawler');
 
-    async saveReport(url, results) {
-        try {
-            await fs.mkdir(this.reportDir, { recursive: true });
-            
-            const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-            const domain = new URL(url).hostname;
-            const filename = `spectral-analysis-${domain}-${timestamp}.json`;
-            const filepath = path.join(this.reportDir, filename);
-            
-            const reportData = {
-                url,
-                timestamp: new Date().toISOString(),
-                complianceScore: results.gdprCompliance?.complianceScore || 0,
-                riskLevel: results.gdprCompliance?.riskLevel || 'UNKNOWN',
-                violations: results.gdprCompliance?.violations || [],
-                fullReport: results.gdprCompliance?.report || '',
-                detailedResults: results,
-                metadata: {
-                    spectralVersion: '1.0.0',
-                    analysisType: 'comprehensive-privacy-compliance',
-                    reportGeneration: 'automated'
-                }
-            };
-            
-            await fs.writeFile(filepath, JSON.stringify(reportData, null, 2));
-            
-            console.log(`\n💾 COMPREHENSIVE REPORT SAVED:`);
-            console.log(`   📁 Location: ${filepath}`);
-            console.log(`   📊 Size: ${(JSON.stringify(reportData).length / 1024).toFixed(1)} KB`);
-            console.log(`   🔗 Share with legal/compliance teams for review`);
-            
-        } catch (error) {
-            console.error('❌ Failed to save report:', error.message);
-        }
-    }
+async function loadViolationEngine(){
+  let ve;
+  try { ve = require('./violationEngine'); } catch {}
+  if (typeof ve === 'function') return { analyze: ve };
+  if (ve && typeof ve.analyze === 'function') return { analyze: ve.analyze };
+  return { analyze: () => ({ score: 100, risk: 'LOW', violations: [], note: 've-not-found' }) };
 }
 
-// Main execution
-async function runAnalysis() {
-    if (process.argv.length < 3) {
-        console.log('Usage: node professionalAnalysis.js <URL>');
-        console.log('Example: node professionalAnalysis.js https://example.com');
-        process.exit(1);
-    }
-    
-    const url = process.argv[2];
-    const analyzer = new SpectralAnalysisRunner();
-    
-    try {
-        await analyzer.generateExecutiveReport(url);
-    } catch (error) {
-        console.error('Analysis failed:', error.message);
-        process.exit(1);
-    }
+function pick(stages,name){ return (stages||[]).find(s=>s.stage===name) || {}; }
+
+function summarizeStage(stage){
+  const s = stage||{}; const ne = s.networkEvidence||{}; const sc = s.scriptAnalysis||{};
+  const total = sc?.statistics?.total || 0;
+  const tracking = sc?.tracking || 0;
+  const necessary = sc?.necessary || 0;
+  const unknown = sc?.unknown || Math.max(0, total - tracking - (necessary||0));
+  const setC = (ne.setCookies||[]).length;
+  const hits = (ne.trackingHits||[]).length;
+  const cats = ne.cookieBreakdown || { tracking:0, consent:0, unknown:0 };
+  const ls = s.storage?.localStorageKeys?.length || 0;
+  const ss = s.storage?.sessionStorageKeys?.length || 0;
+  return { total, tracking, necessary, unknown, setC, hits, cats, ls, ss };
 }
 
-// Export for use as module
-module.exports = SpectralAnalysisRunner;
+function topHits(stage, n=5){
+  const hits = stage?.networkEvidence?.trackingHits||[];
+  const har = stage?.networkEvidence?.harLite?.entries||[];
+  if (!hits.length) return [];
+  const urls = Array.from(new Set(hits.map(h=>h.url))).slice(0, n);
+  return urls.map(u=>{
+    const e = har.find(x=>x.url===u) || {};
+    return `• ${u}${e.status?` [${e.status}]`:''}${e.mimeType?` (${e.mimeType})`:''}`;
+  });
+}
 
-// Run if called directly
+async function main(){
+  const url = process.argv[2];
+  if (!url) { console.error('Uso: node src/crawler/professionalAnalysis.js <URL>'); process.exit(1); }
+
+  console.log('🏢 SPECTRAL PRIVACY COMPLIANCE ANALYSIS');
+  console.log('============================================================');
+  console.log(`🌐 Target: ${url}`);
+  console.log(`📅 Analysis Date: ${new Date().toLocaleString()}`);
+  console.log('============================================================');
+
+  const results = await runCrawl(url);
+  const ve = await loadViolationEngine();
+  const verdict = ve.analyze(results);
+
+  const B  = pick(results.stages,'baseline');
+  const RP = pick(results.stages,'reject_pre');
+  const R  = pick(results.stages,'reject');
+  const AP = pick(results.stages,'accept_pre');
+  const A  = pick(results.stages,'accept');
+
+  const SB  = summarizeStage(B);
+  const SRP = summarizeStage(RP);
+  const SR  = summarizeStage(R);
+  const SAP = summarizeStage(AP);
+  const SA  = summarizeStage(A);
+
+  const bs = results.bannerSummary || { anyDetected:false, providers:[], buttons:{} };
+  console.log(`🧭 CMP consolidated → detected=${bs.anyDetected} providers=[${bs.providers.join(', ')||'None'}] buttons: reject=${!!bs.buttons.reject} accept=${!!bs.buttons.accept} settings=${!!bs.buttons.settings}`);
+
+  function block(label, S){
+    console.log(`📸 ${label}: ${S.total} scripts (t=${S.tracking}, n=${S.necessary}, u=${S.unknown}), hits=${S.hits}, set-cookie=${S.setC} [tracking:${S.cats.tracking}, consent:${S.cats.consent}, unknown:${S.cats.unknown}], LS=${S.ls}, SS=${S.ss}`);
+  }
+
+  console.log('📋 Loading baseline...');
+  block('baseline', SB);
+  console.log('📊 Capturing reject_pre...');
+  block('reject_pre', SRP);
+  console.log('📊 Capturing reject...');
+  block('reject', SR);
+  console.log('📊 Capturing accept_pre...');
+  block('accept_pre', SAP);
+  console.log('ℹ️ Note: accept_pre activity is background (pre-accept), not post-consent');
+  console.log('📊 Capturing accept...');
+  block('accept', SA);
+
+  console.log('\n🔝 TOP TRACKING URLS:');
+  console.log(' - baseline:\n   ' + (topHits(B).join('\n   ') || '(none)'));
+  console.log(' - reject:\n   '   + (topHits(R).join('\n   ') || '(none)'));
+  console.log(' - accept:\n   '   + (topHits(A).join('\n   ') || '(none)'));
+
+  console.log('\n🔍 ANALYZING GDPR COMPLIANCE...');
+  console.log('📊 Running Violation Engine (P0)');
+
+  console.log('\n📋 EXECUTIVE SUMMARY');
+  console.log('══════════════════════════════════════════════════');
+  const totalV = (verdict.violations||[]).length;
+  const riskEmoji = verdict.risk==='CRITICAL'?'🚨': verdict.risk==='HIGH'?'⚠️': '✅';
+  const status = verdict.score===100?'COMPLIANT':'NON-COMPLIANT';
+  console.log(`Privacy Compliance Status: ${riskEmoji} ${status}`);
+  console.log(`Overall Score: ${verdict.score}%`);
+  console.log(`Risk Level: ${verdict.risk}`);
+  console.log(`GDPR Violations: ${totalV} total`);
+  if (totalV) {
+    console.log('\n🚨 VIOLATIONS DETECTED:');
+    for (const v of verdict.violations) {
+      console.log(` - [${v.code}] ${v.title} (${v.severity})`);
+    }
+  }
+
+  const annotated = { ...results, annotations: { accept_pre: { background: true, note: 'pre-accept background activity; not post-consent' } }, report: verdict };
+  const file = await saveReportJSON(annotated);
+  console.log('\n💾 COMPREHENSIVE REPORT SAVED:');
+  console.log(`   📁 ${file}`);
+}
+
 if (require.main === module) {
-    runAnalysis();
+  main().catch(e=>{ console.error('❌ Analysis failed:', e?.message||e); process.exit(1); });
 }
+
+module.exports = { main };

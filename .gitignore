@@ -1,1 +1,4 @@
 .DS_Store
+
+# p0 artifacts
+reports/*.p0.json
