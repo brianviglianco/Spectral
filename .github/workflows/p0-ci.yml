@@ -1,0 +1,97 @@
+name: Spectral P0 CI
+
+on:
+  push:
+    branches: [ "**" ]
+  pull_request:
+    branches: [ "**" ]
+
+concurrency:
+  group: spectral-p0-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  NODE_VERSION: "22.18.0"
+
+jobs:
+  p0-baseline:
+    name: P0 baseline (make + verify + artifacts)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "npm"
+          cache-dependency-path: backend/package-lock.json
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Ensure scripts executable
+        run: |
+          chmod +x p0-pipeline.sh || true
+          chmod +x p0-verify.sh || true
+
+      - name: Run P0 pipeline (make + verify)
+        run: ./p0-pipeline.sh | tee reports/ci-p0.log
+
+      - name: Upload P0 artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: p0-artifacts-${{ github.sha }}
+          path: |
+            backend/reports/**/*.p0.json
+            backend/reports/**/*.json
+            backend/reports/**/*.log
+            backend/reports/**/*.txt
+            backend/reports/**/*.png
+          if-no-files-found: warn
+
+  matrix-multi-region:
+    name: Matrix multi-region (requires self-hosted + VPN)
+    needs: p0-baseline
+    runs-on: [ self-hosted, linux, vpn ]
+    strategy:
+      fail-fast: false
+      matrix:
+        region: [ de, fr, es, it, nl ]
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "npm"
+          cache-dependency-path: backend/package-lock.json
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Make runner executable
+        run: chmod +x scripts/run-p0-matrix.sh
+
+      - name: Run matrix for ${{ matrix.region }}
+        run: scripts/run-p0-matrix.sh ${{ matrix.region }} config/sites-anchor.json | tee reports/matrix-${{ matrix.region }}.log
+
+      - name: Upload matrix artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: matrix-${{ matrix.region }}-${{ github.sha }}
+          path: |
+            backend/reports/matrix/**/*
+            backend/reports/matrix-*.*.log
+            backend/reports/**/*.p0.json
+            backend/reports/**/*.json
+          if-no-files-found: warn
