@@ -17,43 +17,54 @@ jobs:
   p0-baseline:
     name: P0 baseline (make + verify + artifacts)
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: backend
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Show repo tree for debug
+        run: |
+          pwd
+          ls -la
+          ls -la backend || true
+          ls -la backend/package.json backend/package-lock.json || true
+          ls -la backend/p0-pipeline.sh backend/p0-verify.sh || true
 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: "npm"
-          cache-dependency-path: backend/package-lock.json
+          cache: npm
+          cache-dependency-path: |
+            backend/package-lock.json
 
-      - name: Install deps
+      - name: Install deps (backend)
+        working-directory: backend
         run: npm ci
 
       - name: Ensure scripts executable
+        working-directory: backend
         run: |
           chmod +x p0-pipeline.sh || true
           chmod +x p0-verify.sh || true
 
       - name: Run P0 pipeline (make + verify)
+        working-directory: backend
         run: ./p0-pipeline.sh | tee reports/ci-p0.log
 
       - name: Upload P0 artifacts
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: p0-artifacts-${{ github.sha }}
           path: |
-            backend/reports/**/*.p0.json
-            backend/reports/**/*.json
-            backend/reports/**/*.log
-            backend/reports/**/*.txt
-            backend/reports/**/*.png
+            backend/reports/**/*.*
+            backend/reports/**/*
           if-no-files-found: warn
 
+  # Se define pero no corre sin runner self-hosted
   matrix-multi-region:
     name: Matrix multi-region (requires self-hosted + VPN)
     needs: p0-baseline
@@ -62,36 +73,6 @@ jobs:
       fail-fast: false
       matrix:
         region: [ de, fr, es, it, nl ]
-    defaults:
-      run:
-        working-directory: backend
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: "npm"
-          cache-dependency-path: backend/package-lock.json
-
-      - name: Install deps
-        run: npm ci
-
-      - name: Make runner executable
-        run: chmod +x scripts/run-p0-matrix.sh
-
-      - name: Run matrix for ${{ matrix.region }}
-        run: scripts/run-p0-matrix.sh ${{ matrix.region }} config/sites-anchor.json | tee reports/matrix-${{ matrix.region }}.log
-
-      - name: Upload matrix artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: matrix-${{ matrix.region }}-${{ github.sha }}
-          path: |
-            backend/reports/matrix/**/*
-            backend/reports/matrix-*.*.log
-            backend/reports/**/*.p0.json
-            backend/reports/**/*.json
-          if-no-files-found: warn
+      - name: Placeholder
+        run: echo "Self-hosted runner required; job will stay queued if none."
