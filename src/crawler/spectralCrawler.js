@@ -1,338 +1,389 @@
 /**
- * SPECTRAL CRAWLER — P0+P1 (v22 safe, sin createIncognitoBrowserContext)
- * - Espera de banner (retry) antes de baseline
- * - CDP: requests/responses/Set-Cookie por stage (HAR-lite)
- * - Estado OneTrust (OptanonActiveGroups / OptanonConsent)
- * - Idle de red adaptativo
- * - Sin incognito API; se usan newPage() y limpieza de estado
+ * SPECTRAL CRAWLER (P0)
+ * - Puppeteer ^24.9.0
+ * - Baseline/reject/accept medidos por ejecución real (network + Set-Cookie + storage)
+ * - Espera robusta de CMP (OneTrust) antes de baseline
+ * - Network idle por etapa (inflight=0 durante 2500ms)
+ * - Scroll profundo para forzar carga perezosa
+ * - Normalización de dominio (eTLD+1 naive)
  */
 
+'use strict';
+
+const fs = require('fs');
+const path = require('path');
 const puppeteer = require('puppeteer');
 
-const DEFAULT_VIEWPORT = { width: 1366, height: 900 };
-const NAV_TIMEOUT = 45000;
-const STAGE_IDLE_MS = 1200;
-const STAGE_IDLE_MAX_MS = 3500;
-const OVERLAY_MAX_WAIT_MS = 5000;
-const MAX_REQ_PER_STAGE = 50;
+const HEADLESS = (process.env.HEADLESS ?? 'true') !== 'false';
+const ACCEPT_LANG = process.env.ACCEPT_LANG || 'en-US';
+const OUT_DIR = path.join(process.cwd(), 'reports');
+const SS_DIR = path.join(process.cwd(), 'public', 'screenshots');
+const HAR_DIR = path.join(process.cwd(), 'public', 'har-files');
 
-const LAUNCH_ARGS = [
-  '--no-sandbox',
-  '--disable-web-security',
-  '--disable-features=BlockThirdPartyCookies,TrackingProtection3pcd,PrivacySandboxAdsAPIs,FirstPartySets',
-  '--disable-blink-features=AutomationControlled',
-  '--disable-dev-shm-usage'
-];
+ensureDir(OUT_DIR);
+ensureDir(SS_DIR);
+ensureDir(HAR_DIR);
 
-const TRACKING_ENDPOINT_REGEX = new RegExp([
-  '\\bgoogle-analytics\\.com/(collect|g\\/collect|j\\/collect)',
-  '\\bwww\\.google-analytics\\.com/(collect|r/collect)',
-  '\\bwww\\.googletagmanager\\.com/gtag/js',
-  '\\b(?:omtrdc|2o7|adobedtm|sc-omtrdc)\\.(net|com)/',
-  '/b/ss/',
-  'AMCV_[A-Z0-9]+%40AdobeOrg',
-  '\\bconnect\\.facebook\\.net/.*/fbevents\\.js',
-  'facebook\\.com/tr/?\\?',
-  '\\bj\\.6sc\\.co/',
-  '\\bsecure\\.quantserve\\.com/quant\\.js',
-  '\\banalytics\\.tiktok\\.com/i18n/event',
-  '\\bstatic\\.hotjar\\.com/c/hotjar-',
-  '\\bscript\\.hotjar\\.com/modules',
-  '\\bsnap\\.licdn\\.com/li.lms-analytics',
-  '\\bbat\\.bing\\.com/(bat|action)\\.js',
-  '\\b/collect\\b',
-  '\\b/events\\b',
-  '\\b/pixel\\b'
-].join('|'), 'i');
+// --- utils -------------------------------------------------------------------
 
-const ONETRUST = {
-  banner: ['#onetrust-banner-sdk','div#onetrust-consent-sdk','div.ot-sdk-container'],
-  accept: ['#onetrust-accept-btn-handler','button#onetrust-accept-btn-handler','button[aria-label*="Accept"]'],
-  reject: ['#onetrust-reject-all-handler','button#onetrust-reject-all-handler','button[aria-label*="Reject"]'],
-  settings: ['#onetrust-pc-btn-handler','button#onetrust-pc-btn-handler','button[aria-label*="Settings"]'],
-};
+function ensureDir(p) { if (!fs.existsSync(p)) fs.mkdirSync(p, { recursive: true }); }
 
-const STAGES = { BASELINE:'baseline', REJECT_PRE:'reject_pre', REJECT:'reject', ACCEPT_PRE:'accept_pre', ACCEPT:'accept' };
-const dly = (ms)=>new Promise(r=>setTimeout(r,ms));
+function ts() { return new Date().toISOString().replace(/[:.]/g, '-'); }
 
-async function waitForNetworkQuiet(page, minMs=STAGE_IDLE_MS, maxMs=STAGE_IDLE_MAX_MS){
-  const client = await page.createCDPSession();
-  await client.send('Network.enable');
-  let inflight = 0, last = Date.now();
-  const bump=()=>{ last=Date.now(); };
-  const onReq = ()=>{ inflight++; bump(); };
-  const onDone= ()=>{ inflight=Math.max(0,inflight-1); bump(); };
-  client.on('Network.requestWillBeSent', onReq);
-  client.on('Network.loadingFinished', onDone);
-  client.on('Network.loadingFailed', onDone);
-  const start = Date.now();
-  while (Date.now()-start < maxMs){
-    await dly(100);
-    if (inflight===0 && Date.now()-last>=minMs) break;
-  }
-  client.detach().catch(()=>{});
+function etldPlus1(host) {
+  // naive eTLD+1: toma los 2 últimos labels; si country TLD típico, toma 3
+  if (!host) return host;
+  const parts = host.split('.').filter(Boolean);
+  if (parts.length <= 2) return host;
+  const ccTLD = new Set(['uk','de','fr','it','es','nl','se','no','dk','pl','pt','be','at','ch','ie','cz','gr','ro','hu']);
+  const last = parts[parts.length-1];
+  if (ccTLD.has(last)) return parts.slice(-3).join('.');
+  return parts.slice(-2).join('.');
 }
 
-async function ensureVisibleHandle(page, selectors){
-  for (const sel of selectors){
-    try{
-      const h = await page.$(sel);
-      if (!h) continue;
-      const box = await h.boundingBox();
-      if (box) return h;
-    }catch{}
-  }
-  return null;
+function isFirstParty(url, siteETLD) {
+  try {
+    const u = new URL(url);
+    return etldPlus1(u.hostname) === siteETLD;
+  } catch { return false; }
 }
 
-async function detectCMP(page){
-  const banner = await ensureVisibleHandle(page, ONETRUST.banner);
-  if (banner){
-    const accept = await ensureVisibleHandle(page, ONETRUST.accept);
-    const reject = await ensureVisibleHandle(page, ONETRUST.reject);
-    const settings = await ensureVisibleHandle(page, ONETRUST.settings);
-    return { detected:true, provider:'OneTrust', buttons:{accept:!!accept,reject:!!reject,settings:!!settings}, handles:{banner,accept,reject,settings} };
-  }
-  return { detected:false, provider:'None', buttons:{accept:false,reject:false,settings:false}, handles:{} };
-}
+function sleep(ms) { return new Promise(res => setTimeout(res, ms)); }
 
-async function waitCMPOverlayOrTimeout(page, maxWaitMs=OVERLAY_MAX_WAIT_MS){
-  const t0 = Date.now();
-  while (Date.now()-t0 < maxWaitMs){
-    const cmp = await detectCMP(page);
-    if (cmp.detected) return cmp;
-    await page.evaluate(()=>{ try{ window.scrollBy(0,200); }catch{} });
-    await dly(150);
-  }
-  return detectCMP(page);
-}
+// --- CMP (OneTrust) ----------------------------------------------------------
 
-async function clickIfPresent(page, handle){
-  if(!handle) return false;
-  try{
-    await handle.evaluate(el=>el.scrollIntoView({block:'center'}));
-    await dly(60);
-    await handle.click({delay:40});
-    return true;
-  }catch{
-    try{ await page.evaluate(el=>el.click(), handle); return true; }catch{ return false; }
-  }
-}
-
-function isLikelyTrackingUrl(url){ return TRACKING_ENDPOINT_REGEX.test(url||''); }
-
-function classifyCookie(entry){
-  const name = entry?.name || '';
-  const domain = (entry?.domain || '').toLowerCase();
-  const sameSite = String(entry?.sameSite || '');
-  if (/^_ga|^_gid|^_gcl_|^_gat/.test(name)) return 'tracking';
-  if (/^_fbp|^_fbc/.test(name)) return 'tracking';
-  if (/^AMCV_/.test(name)) return 'tracking';
-  if (/^Optanon/.test(name)) return 'consent';
-  if (domain && /none/i.test(sameSite)) return 'likely_tracking';
-  return 'unknown';
-}
-
-function buildHarLite(stageName, reqs){
-  const sorted = [...reqs].sort((a,b)=>(a.ts||0)-(b.ts||0)).slice(0, MAX_REQ_PER_STAGE);
-  return {
-    stage: stageName,
-    entries: sorted.map(r=>({
-      url: r.url, method: r.method, status: r.status, mimeType: r.mimeType,
-      ts: r.ts, fromCache: !!(r.fromDiskCache||r.fromServiceWorker),
-      ip: r.remoteIP, initiator: r.initiatorType, setCookies: r.setCookies||[]
-    }))
-  };
-}
-
-async function readOneTrustState(page){
-  try{
-    return await page.evaluate(()=>({
-      OptanonActiveGroups: window.OptanonActiveGroups,
-      OptanonConsent: window.OptanonConsent
-    }));
-  }catch{ return {}; }
-}
-
-async function collectStorageSnapshot(page){
-  try{
-    return await page.evaluate(()=>{
-      const ksLS = Object.keys(window.localStorage||{});
-      const ksSS = Object.keys(window.sessionStorage||{});
-      const sample=(st,ks,cap=20)=>ks.slice(0,cap).map(k=>({key:k,value:String(st.getItem(k)).slice(0,128)}));
+async function detectCMP(page) {
+  try {
+    return await page.evaluate(() => {
+      const byId = (id) => !!document.getElementById(id);
+      const sdk = document.getElementById('onetrust-consent-sdk');
+      const rej = document.getElementById('onetrust-reject-all-handler');
+      const acc = document.getElementById('onetrust-accept-btn-handler');
+      const set = document.getElementById('onetrust-pc-btn-handler') || document.querySelector('[aria-label*="settings"],[aria-label*="opciones"]');
       return {
-        localStorageKeys: ksLS, sessionStorageKeys: ksSS,
-        localStorageSample: sample(localStorage, ksLS),
-        sessionStorageSample: sample(sessionStorage, ksSS),
+        detected: !!sdk,
+        provider: sdk ? 'OneTrust' : 'None',
+        reject: !!rej,
+        accept: !!acc,
+        settings: !!set
       };
     });
-  }catch{
-    return { localStorageKeys:[], sessionStorageKeys:[], localStorageSample:[], sessionStorageSample:[] };
+  } catch {
+    return { detected:false, provider:'None', reject:false, accept:false, settings:false };
   }
 }
 
-function safeHeader(h, key){
-  if (!h) return undefined;
-  const k = Object.keys(h).find(k=>k.toLowerCase()===String(key).toLowerCase());
-  return k ? h[k] : undefined;
+async function waitForCMPOverlay(page, { timeoutMs = 5000, retry = 3 } = {}) {
+  const start = Date.now();
+  for (let i=0; i<=retry; i++) {
+    const cmp = await detectCMP(page);
+    if (cmp.detected) return { ...cmp, waitedMs: Date.now()-start, tries: i+1 };
+    await sleep(Math.min(800, timeoutMs/ (retry||1)));
+  }
+  return { detected:false, provider:'None', reject:false, accept:false, settings:false, waitedMs: Date.now()-start, tries: retry+1 };
 }
 
-async function clearPageState(page){
-  try{
-    const client = await page.createCDPSession();
-    await client.send('Network.clearBrowserCookies').catch(()=>{});
-    await client.send('Network.clearBrowserCache').catch(()=>{});
-  }catch{}
-  try{ await page.evaluate(()=>{ try{ localStorage.clear(); sessionStorage.clear(); }catch{} }); }catch{}
+async function clickReject(page) {
+  return page.evaluate(() => {
+    const el = document.getElementById('onetrust-reject-all-handler');
+    if (el) { el.click(); return true; }
+    return false;
+  });
 }
 
-async function stageCapture(page, url, stageName, opts={}){
-  const client = await page.createCDPSession();
-  await client.send('Network.enable');
+async function clickAccept(page) {
+  return page.evaluate(() => {
+    const el = document.getElementById('onetrust-accept-btn-handler');
+    if (el) { el.click(); return true; }
+    return false;
+  });
+}
 
-  const stageReqs = [];
-  const trackingHits = [];
-  const setCookies = [];
+// --- network capture ----------------------------------------------------------
 
-  const onReq = (e)=>{
-    try{
-      stageReqs.push({
-        url: e.request?.url, method: e.request?.method, ts: e.timestamp,
-        initiatorType: e.initiator?.type
+function wireNetwork(page, siteETLD, buckets) {
+  // buckets = { requests:[], trackingHits:[], setCookies:[], harLite:{entries:[]}, inflight:Set() }
+  buckets.inflight = new Set();
+
+  page.on('request', (req) => {
+    buckets.inflight.add(req._id);
+    buckets.requests.push({ url:req.url(), method:req.method(), ts:Date.now() });
+  });
+
+  page.on('requestfinished', async (req) => {
+    buckets.inflight.delete(req._id);
+    try {
+      const res = await req.response();
+      const url = req.url();
+      const status = res?.status();
+      const headers = await res?.headers();
+      const setCookieRaw = headers?.['set-cookie'];
+      if (setCookieRaw) {
+        const list = Array.isArray(setCookieRaw) ? setCookieRaw : [setCookieRaw];
+        for (const sc of list) buckets.setCookies.push({ url, setCookie: sc, ts: Date.now() });
+      }
+      buckets.harLite.entries.push({
+        url, status, mimeType: headers?.['content-type'] || '', ts: Date.now()
       });
-      if (isLikelyTrackingUrl(e.request?.url)){
-        trackingHits.push({ url: e.request.url, method: e.request.method, ts: e.timestamp });
+
+      // tracking hit heurística básica P0 (solo ejecución real)
+      if (!isFirstParty(url, siteETLD)) {
+        // patrones típicos de tracking
+        const hit = /collect|pixel|gtag\/js|analytics|insight\.min\.js|quant\.js|tiktok|\/g\/collect|\/r\/collect|ads|doubleclick|px\.ads\.|snap\.licdn|6si\.min\.js/i.test(url);
+        if (hit) buckets.trackingHits.push({ url, status, ts: Date.now() });
       }
-    }catch{}
-  };
+    } catch {}
+  });
 
-  const onResp = (e)=>{
-    try{
-      const url = e.response?.url;
-      const m = stageReqs.find(r=>r.url===url && !r.status);
-      if (m){
-        m.status = e.response.status;
-        m.mimeType = e.response.mimeType;
-        m.remoteIP = e.response.remoteIPAddress;
+  page.on('requestfailed', (req) => {
+    buckets.inflight.delete(req._id);
+  });
+}
+
+async function waitForNetworkIdle(buckets, idleMs = 2500, maxWaitMs = 15000) {
+  const start = Date.now();
+  while (Date.now() - start < maxWaitMs) {
+    if (buckets.inflight.size === 0) {
+      const idleStart = Date.now();
+      // espera continua
+      while (Date.now() - idleStart < idleMs) {
+        if (buckets.inflight.size !== 0) break;
+        await sleep(100);
       }
-    }catch{}
-  };
-
-  const onRespExtra = (e)=>{
-    try{
-      const headers = e.headers || {};
-      const authority = safeHeader(headers, ':authority');
-      const hostHdr = authority || safeHeader(headers, 'host') || '';
-      const rawSet = headers['set-cookie'] || headers['Set-Cookie'];
-      if (rawSet){
-        const lines = Array.isArray(rawSet) ? rawSet : String(rawSet).split(/,(?=[^ ;]+=)/);
-        for (const line of lines){
-          const name = String(line).split('=')[0].trim();
-          const sameSite = (String(line).match(/samesite=([^;]+)/i)||[])[1] || '';
-          const cat = classifyCookie({ name, domain: hostHdr, sameSite });
-          setCookies.push({ name, raw: line, domain: hostHdr, category: cat });
-        }
-      }
-    }catch{}
-  };
-
-  client.on('Network.requestWillBeSent', onReq);
-  client.on('Network.responseReceived', onResp);
-  client.on('Network.responseReceivedExtraInfo', onRespExtra);
-
-  if (opts.navigate){
-    await clearPageState(page);
-    await page.goto(url, { waitUntil:'domcontentloaded', timeout:NAV_TIMEOUT }).catch(()=>{});
+      if (buckets.inflight.size === 0) return true;
+    }
+    await sleep(150);
   }
-  await waitForNetworkQuiet(page);
+  return false;
+}
 
-  const cookies = await page.cookies().catch(()=>[]);
-  const storage = await collectStorageSnapshot(page);
-  const cmp = await detectCMP(page);
-  const cmpState = await readOneTrustState(page);
-  const har = buildHarLite(stageName, stageReqs);
+// --- stage capture ------------------------------------------------------------
 
-  try{ client.detach().catch(()=>{}); }catch{}
+async function deepScroll(page) {
+  try {
+    await page.evaluate(async () => {
+      const delay = (ms) => new Promise(r=>setTimeout(r,ms));
+      let last = 0;
+      for (let i=0;i<20;i++){
+        window.scrollBy(0, Math.max(300, window.innerHeight*0.8));
+        await delay(150);
+        const y = window.scrollY;
+        if (Math.abs(y-last) < 50) break;
+        last = y;
+      }
+      window.scrollTo(0, 0); // vuelve arriba para capturas coherentes
+    });
+  } catch {}
+}
+
+async function readStorage(page){
+  try {
+    return await page.evaluate(() => {
+      const lsKeys = []; const ssKeys = [];
+      for (let i=0;i<localStorage.length;i++) lsKeys.push(localStorage.key(i));
+      for (let i=0;i<sessionStorage.length;i++) ssKeys.push(sessionStorage.key(i));
+      return {
+        localStorageKeys: lsKeys,
+        sessionStorageKeys: ssKeys
+      };
+    });
+  } catch { return { localStorageKeys:[], sessionStorageKeys:[] }; }
+}
+
+async function readScripts(page, siteETLD) {
+  try {
+    const { list, thirdParty } = await page.evaluate((siteETLD) => {
+      const srcs = [...document.querySelectorAll('script')].map(s => s.src || '[inline]');
+      const set = Array.from(new Set(srcs));
+      const third = set.filter(u=>{
+        if (u === '[inline]') return false;
+        try {
+          const h = new URL(u, location.href).hostname;
+          const isFP = (h.split('.').slice(-2).join('.')) === siteETLD; // naive en el lado cliente
+          return !isFP;
+        } catch { return false; }
+      }).length;
+      return { list: set, thirdParty: third };
+    }, siteETLD);
+
+    // clasificación P0: presence-only (para reporte), el motor de violación usa hits/cookies/storage
+    const total = list.length;
+    const unknown = list.length; // en P0 no clasificamos scripts por dominio; reporte los muestra como unknown
+    return { scripts:list, statistics:{ total, thirdParty }, tracking:0, necessary:0, unknown };
+  } catch {
+    return { scripts:[], statistics:{ total:0, thirdParty:0 }, tracking:0, necessary:0, unknown:0 };
+  }
+}
+
+async function readCMPState(page) {
+  try {
+    return await page.evaluate(() => {
+      const st = {};
+      try { st.OptanonActiveGroups = window.Optanon && typeof Optanon.GetDomainData === 'function'
+        ? (window.OptanonActiveGroups || null) : null; } catch { st.OptanonActiveGroups = null; }
+      try { st.OptanonConsent = (window.Optanon && window.Optanon.GetConsentData) ? (window.Optanon.GetConsentData() || null) : null; } catch { st.OptanonConsent = null; }
+      return st;
+    });
+  } catch { return {}; }
+}
+
+function bucketCookies(setCookies) {
+  const out = { tracking:0, consent:0, unknown:0, all:[] };
+  const CONSENT_KEYS = /optanon|onetrust|consent|euconsent|didomi/i;
+  const TRACK_KEYS = /(ga=|_ga=|_gid=|_fbp=|_gcl_au=|_uetvid=|_uetsid=|amplitude_id|ajs_)/i;
+  for (const it of setCookies) {
+    const sc = it.setCookie || '';
+    const lower = sc.toLowerCase();
+    if (CONSENT_KEYS.test(lower)) out.consent++;
+    else if (TRACK_KEYS.test(lower)) out.tracking++;
+    else out.unknown++;
+    out.all.push(sc);
+  }
+  return out;
+}
+
+async function captureStage(page, name, siteETLD, globalIdx) {
+  const buckets = { requests:[], trackingHits:[], setCookies:[], harLite:{ entries:[] } };
+  wireNetwork(page, siteETLD, buckets);
+
+  await deepScroll(page);
+  await waitForNetworkIdle(buckets, 2500, 15000);
+
+  const scriptAnalysis = await readScripts(page, siteETLD);
+  const storage = await readStorage(page);
+  const cookies = []; // sólo se listan Set-Cookie; cookies persistidas del jar no se enumeran en P0
+  const cmpState = await readCMPState(page);
+
+  // screenshot
+  const ssName = `${ts()}-${name}.png`;
+  const ssPath = path.join(SS_DIR, ssName);
+  try { await page.screenshot({ path: ssPath, fullPage: true }).catch(()=>{}); } catch {}
+
+  const cookieBreakdown = bucketCookies(buckets.setCookies);
 
   return {
-    stage: stageName,
-    cmp: { detected: cmp.detected, provider: cmp.provider, buttons: cmp.buttons },
-    cmpState,
-    cookies,
-    storage,
+    stage: name,
+    timestamp: new Date().toISOString(),
+    url: page.url(),
+    host: (()=>{ try { return new URL(page.url()).hostname; } catch { return ''; } })(),
+    eTLDplus1: siteETLD,
+    screenshot: path.relative(process.cwd(), ssPath),
     networkEvidence: {
-      trackingHits,
-      setCookies,
-      harLite: har,
-      totals: { requests: stageReqs.length, trackingHits: trackingHits.length, setCookies: setCookies.length },
-    }
+      requests: buckets.requests,
+      trackingHits: buckets.trackingHits,
+      setCookies: buckets.setCookies,
+      cookieBreakdown,
+      harLite: buckets.harLite
+    },
+    scriptAnalysis,
+    storage,
+    cookies,
+    cmpState
   };
 }
 
-async function runCrawl(targetUrl){
-  const browser = await puppeteer.launch({ headless:false, defaultViewport: DEFAULT_VIEWPORT, args: LAUNCH_ARGS });
-  const pageA = await browser.newPage();
-  pageA.setDefaultTimeout(NAV_TIMEOUT);
-  if (process.env.ACCEPT_LANG) await pageA.setExtraHTTPHeaders({'Accept-Language': process.env.ACCEPT_LANG});
+// --- main crawl ---------------------------------------------------------------
 
-  const results = { url: targetUrl, analysisAt: new Date().toISOString(), stages: [], errors: [] };
+async function newIsolatedPage(browser, lang = ACCEPT_LANG) {
+  const ctx = await browser.createBrowserContext(); // v24+
+  const page = await ctx.newPage();
+  await page.setExtraHTTPHeaders({ 'Accept-Language': lang });
+  await page.setViewport({ width: 1366, height: 900 });
+  return { ctx, page };
+}
 
-  try{
-    // A: baseline + reject flow
-    await clearPageState(pageA);
-    await pageA.goto(targetUrl, { waitUntil:'domcontentloaded', timeout:NAV_TIMEOUT }).catch(()=>{});
-    const cmp0 = await waitCMPOverlayOrTimeout(pageA);
-    console.log(`🧭 CMP detection → detected=${cmp0.detected} provider=${cmp0.provider} reject=${cmp0.buttons.reject} settings=${cmp0.buttons.settings}`);
+async function gotoAndPrep(page, url) {
+  await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 });
+}
 
-    console.log(`📊 Capturing ${STAGES.BASELINE}...`);
-    results.stages.push(await stageCapture(pageA, null, STAGES.BASELINE, { navigate:false }));
+async function runCrawl(url) {
+  const browser = await puppeteer.launch({
+    headless: HEADLESS,
+    args: [
+      '--no-sandbox','--disable-setuid-sandbox',
+      '--disable-dev-shm-usage',
+      '--window-size=1366,900'
+    ]
+  });
 
-    console.log(`📊 Capturing ${STAGES.REJECT_PRE}...`);
-    results.stages.push(await stageCapture(pageA, null, STAGES.REJECT_PRE, { navigate:false }));
-    const cmpR = await detectCMP(pageA);
-    if (cmpR.detected && cmpR.handles.reject){
-      console.log('🖱️ Clicking Reject...');
-      await clickIfPresent(pageA, cmpR.handles.reject);
-      await waitForNetworkQuiet(pageA);
-    } else {
-      console.log('⚠️ Reject button not found');
+  const { ctx: ctxA, page: pageA } = await newIsolatedPage(browser);
+  await gotoAndPrep(pageA, url);
+
+  // normalización de dominio
+  const siteHost = new URL(pageA.url()).hostname;
+  const siteETLD = etldPlus1(siteHost);
+
+  // CMP antes de baseline
+  const cmpInitial = await waitForCMPOverlay(pageA, { timeoutMs: 5000, retry: 3 });
+
+  // baseline
+  const baseline = await captureStage(pageA, 'baseline', siteETLD, 0);
+
+  // reject_pre
+  const rejectPre = await captureStage(pageA, 'reject_pre', siteETLD, 1);
+
+  // intentar click Reject
+  try {
+    const clickedRej = await clickReject(pageA);
+    console.log(clickedRej ? '🖱️ Clicked OneTrust Reject' : '🖱️ OneTrust Reject not found');
+  } catch { console.log('🖱️ OneTrust Reject click error'); }
+  await sleep(400); // deja fluir el click
+  const reject = await captureStage(pageA, 'reject', siteETLD, 2);
+
+  // accept flow en pestaña B aislada (estado limpio)
+  const { ctx: ctxB, page: pageB } = await newIsolatedPage(browser);
+  await gotoAndPrep(pageB, url);
+  await waitForCMPOverlay(pageB, { timeoutMs: 5000, retry: 3 });
+
+  const acceptPre = await captureStage(pageB, 'accept_pre', siteETLD, 3);
+
+  try {
+    const clickedAcc = await clickAccept(pageB);
+    console.log(clickedAcc ? '🖱️ Clicked OneTrust Accept' : '🖱️ OneTrust Accept not found');
+  } catch { console.log('🖱️ OneTrust Accept click error'); }
+  await sleep(500);
+  const accept = await captureStage(pageB, 'accept', siteETLD, 4);
+
+  const cmpFinalA = await detectCMP(pageA);
+  const cmpFinalB = await detectCMP(pageB);
+
+  const bannerSummary = {
+    initial: cmpInitial,
+    finalA: cmpFinalA,
+    finalB: cmpFinalB,
+    anyDetected: !!(cmpInitial?.detected || cmpFinalA?.detected || cmpFinalB?.detected),
+    providers: ['OneTrust'].filter(Boolean),
+    buttons: {
+      reject: !!(cmpInitial?.reject || cmpFinalA?.reject || cmpFinalB?.reject),
+      accept: !!(cmpInitial?.accept || cmpFinalA?.accept || cmpFinalB?.accept),
+      settings: !!(cmpInitial?.settings || cmpFinalA?.settings || cmpFinalB?.settings)
     }
+  };
 
-    console.log(`📊 Capturing ${STAGES.REJECT}...`);
-    results.stages.push(await stageCapture(pageA, null, STAGES.REJECT, { navigate:false }));
+  await ctxA.close().catch(()=>{});
+  await ctxB.close().catch(()=>{});
+  await browser.close().catch(()=>{});
 
-    // B: accept flow en nueva pestaña (sin incognito)
-    console.log(`🌐 Opening B tab for accept flow...`);
-    const pageB = await browser.newPage();
-    pageB.setDefaultTimeout(NAV_TIMEOUT);
-    if (process.env.ACCEPT_LANG) await pageB.setExtraHTTPHeaders({'Accept-Language': process.env.ACCEPT_LANG});
-    await clearPageState(pageB);
-    await pageB.goto(targetUrl, { waitUntil:'domcontentloaded', timeout:NAV_TIMEOUT }).catch(()=>{});
-    await waitCMPOverlayOrTimeout(pageB);
-
-    console.log(`📊 Capturing ${STAGES.ACCEPT_PRE}...`);
-    results.stages.push(await stageCapture(pageB, null, STAGES.ACCEPT_PRE, { navigate:false }));
-    const cmpA = await detectCMP(pageB);
-    if (cmpA.detected && cmpA.handles.accept){
-      console.log('🖱️ Clicking Accept...');
-      await clickIfPresent(pageB, cmpA.handles.accept);
-      await waitForNetworkQuiet(pageB);
-    } else {
-      console.log('⚠️ Accept button not found');
+  const results = {
+    url,
+    siteHost,
+    siteETLD,
+    bannerSummary,
+    stages: [baseline, rejectPre, reject, acceptPre, accept],
+    meta: {
+      headless: HEADLESS,
+      lang: ACCEPT_LANG,
+      ts: new Date().toISOString()
     }
-
-    console.log(`📊 Capturing ${STAGES.ACCEPT}...`);
-    results.stages.push(await stageCapture(pageB, null, STAGES.ACCEPT, { navigate:false }));
-    await pageB.close().catch(()=>{});
-  }catch(e){
-    console.error('❌ Crawl error:', e.message);
-    results.errors.push({ where:'runCrawl', error:e.message, stack:String(e.stack).split('\n').slice(0,5).join(' | ') });
-  }finally{
-    await pageA.close().catch(()=>{});
-    await browser.close().catch(()=>{});
-  }
-
+  };
   return results;
 }
 
-module.exports = { runCrawl, constants:{ STAGES } };
+async function saveReportJSON(payload) {
+  const fname = `spectral-analysis-${(new URL(payload.url)).hostname}-${ts()}.json`;
+  const fpath = path.join(OUT_DIR, fname);
+  fs.writeFileSync(fpath, JSON.stringify(payload, null, 2));
+  return fpath;
+}
+
+module.exports = { runCrawl, saveReportJSON };

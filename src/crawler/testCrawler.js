@@ -1,92 +1,52 @@
 /**
- * SPECTRAL – Test Runner (Puppeteer v22 compatible)
- * - NO usa createIncognitoBrowserContext (el crawler gestiona navegador)
- * - Llama a spectralCrawler.runCrawl(url) y luego a violationEngine.analyze(evidence)
- * - Guarda reporte JSON en ./reports/
+ * TEST CRAWLER (smoke P0)
+ * - Solo navega, corre el flujo y muestra métricas por etapa
  */
 
-const fs = require('fs');
-const path = require('path');
-const { runCrawl } = require('./spectralCrawler');              // mismo folder
-const { analyze }   = require('./violationEngine');             // mismo folder
+'use strict';
 
-function ts() {
-  const d = new Date();
-  return d.toISOString().replace(/[:.]/g, '-');
-}
+const { runCrawl } = require('./spectralCrawler');
 
-async function main() {
+async function main(){
   const url = process.argv[2];
   if (!url) {
-    console.error('Uso: node src/crawler/testCrawler.js <url>');
+    console.error('Uso: node src/crawler/testCrawler.js <URL>');
     process.exit(1);
   }
-
-  console.log('🧪 SPECTRAL TEST - Enhanced GDPR Detection');
-  console.log('==================================================');
-
-  // 1) Crawl: el crawler abre y cierra su propio browser. Aquí NO se crean contexts.
-  let evidence;
+  console.log(`🧭 Navigating → ${url}`);
   try {
-    evidence = await runCrawl(url);
-  } catch (e) {
-    console.error(`❌ Crawl failed: ${e.message}`);
-    process.exit(1);
-  }
+    const res = await runCrawl(url);
+    console.log('🧪 SPECTRAL TEST - Enhanced GDPR Detection');
+    console.log('==================================================');
 
-  // 2) Analítica de violaciones
-  let report;
-  try {
-    report = analyze(evidence);
-  } catch (e) {
-    console.error(`❌ Analysis failed: ${e.message}`);
-    process.exit(1);
-  }
+    const bs = res.bannerSummary || { anyDetected:false, provider:'None' };
+    const anyProv = bs.providers?.length ? bs.providers.join(',') : (bs.initial?.provider||'None');
+    const detected = !!(bs.initial?.detected || bs.finalA?.detected || bs.finalB?.detected);
+    const rej = !!(bs.initial?.reject || bs.finalA?.reject || bs.finalB?.reject);
+    const set = !!(bs.initial?.settings || bs.finalA?.settings || bs.finalB?.settings);
+    console.log(`🧭 CMP detection → detected=${detected} provider=${anyProv||'None'} reject=${rej} settings=${set}`);
 
-  // 3) Persistencia del reporte
-  try {
-    const outDir = path.join(process.cwd(), 'reports');
-    if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
-    const host = (() => {
-      try { return new URL(url).hostname.replace(/[^a-z0-9.-]/gi, '_'); } catch { return 'site'; }
-    })();
-    const outFile = path.join(outDir, `spectral-analysis-${host}-${ts()}.json`);
-    fs.writeFileSync(outFile, JSON.stringify({ evidence, report }, null, 2), 'utf8');
-    console.log(`\n💾 Reporte guardado: ${outFile}`);
-  } catch (e) {
-    console.error(`⚠️ No se pudo guardar el reporte: ${e.message}`);
-  }
-
-  // 4) Resumen en consola
-  try {
-    const { score, risk, violations } = report || {};
-    console.log('\n📊 RESULTS:');
-    console.log(`URL: ${url}`);
-    if (evidence?.stages?.[0]?.cmp) {
-      const cmpAny = evidence.stages.find(s => s?.cmp?.detected) || {};
-      const cmp = cmpAny.cmp || evidence.stages[0].cmp;
-      console.log('\n🎯 BANNER ANALYSIS:');
-      console.log(`Provider: ${cmp.provider || 'None'}`);
-      console.log(`Detected: ${cmp.detected ? 'Yes' : 'No'}`);
-      console.log(`Buttons: Reject=${cmp.buttons?.reject ? 'Yes' : 'No'} | Accept=${cmp.buttons?.accept ? 'Yes' : 'No'} | Settings=${cmp.buttons?.settings ? 'Yes' : 'No'}`);
+    console.log('📊 Captured stages: ' + res.stages.map(s=>s.stage).join(', '));
+    for (const s of res.stages) {
+      const ne = s.networkEvidence || {};
+      const sc = s.scriptAnalysis || {};
+      const hits = (ne.trackingHits||[]).length;
+      const scats = ne.cookieBreakdown || { tracking:0, consent:0, unknown:0 };
+      console.log(`📸 ${s.stage}: scripts=${sc.statistics?.total||0} (t=${sc.tracking||0}, n=${sc.necessary||0}, u=${sc.unknown||0}) | hits=${hits} | set-cookie=${(ne.setCookies||[]).length} | cookies=0`);
     }
-    console.log('\n================================================================================');
-    console.log('📊 GDPR COMPLIANCE REPORT');
-    console.log('================================================================================');
-    console.log(`Score: ${typeof score === 'number' ? score : 'n/a'}%`);
-    console.log(`Risk: ${risk || 'n/a'}`);
-    console.log(`Total Violations: ${Array.isArray(violations) ? violations.length : 0}`);
-    if (Array.isArray(violations)) {
-      for (const v of violations) {
-        console.log(`- [${v.code}] ${v.title} (${v.severity || 'n/a'})`);
-      }
-    }
+
+    // ratio helper
+    const pre = (res.stages.find(x=>x.stage==='baseline')?.networkEvidence?.trackingHits||[]).length;
+    const rejHits = (res.stages.find(x=>x.stage==='reject')?.networkEvidence?.trackingHits||[]).length;
+    const accHits = (res.stages.find(x=>x.stage==='accept')?.networkEvidence?.trackingHits||[]).length;
+    console.log(`[ViolationEngine] pre={hits:${pre},cookies:0} rej={h:${rejHits},c:0} acc={h:${accHits},c:0} ratio=${accHits? (rejHits/accHits).toFixed(2):'0.00'}`);
+
   } catch (e) {
-    console.error(`⚠️ Error mostrando resumen: ${e.message}`);
+    console.error('❌ Test failed:', e?.message || e);
+    process.exit(1);
   }
 }
 
-main().catch(e => {
-  console.error(`❌ Test failed: ${e.message}`);
-  process.exit(1);
-});
+if (require.main === module) {
+  main();
+}
