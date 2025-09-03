@@ -1,0 +1,870 @@
+[
+  {
+    "url": "https://www.amazon.de",
+    "topEndpoints": [
+      [
+        "unagi.amazon.de/1/events/com.amazon.csm.csa.prod",
+        68
+      ],
+      [
+        "www.amazon.de/rd/uedata",
+        34
+      ],
+      [
+        "aax-eu.amazon-adsystem.com/s/iu3",
+        14
+      ],
+      [
+        "fls-eu.amazon.de/1/batch/1/OE/",
+        10
+      ],
+      [
+        "unagi-na.amazon.com/1/events/com.amazon.Vowels.ClientMetrics",
+        10
+      ],
+      [
+        "images-eu.ssl-images-amazon.com/images/I/31Jek51cSbL.js",
+        10
+      ],
+      [
+        "images-eu.ssl-images-amazon.com/images/I/21MACqcqyOL.js",
+        9
+      ],
+      [
+        "m.media-amazon.com/images/I/01Fp0ygptYL.js",
+        9
+      ],
+      [
+        "m.media-amazon.com/images/I/31vAtMVBenL.js",
+        9
+      ],
+      [
+        "m.media-amazon.com/images/I/51QQI+6C9PL.js",
+        9
+      ]
+    ],
+    "topCookies": [
+      [
+        "charset",
+        18
+      ]
+    ],
+    "basic": {
+      "baseline": {},
+      "reject": {},
+      "accept_pre": {},
+      "accept": {}
+    }
+  },
+  {
+    "url": "https://www.bbc.com",
+    "topEndpoints": [
+      [
+        "a1.api.bbc.co.uk/event",
+        416
+      ],
+      [
+        "www.google-analytics.com/analytics.js",
+        11
+      ],
+      [
+        "ping.chartbeat.net/ping",
+        11
+      ],
+      [
+        "cdn.cxense.com/cx.js",
+        7
+      ],
+      [
+        "www.bbc.com/",
+        6
+      ],
+      [
+        "p1cluster.cxense.com/p1.js",
+        6
+      ],
+      [
+        "comcluster.cxense.com/Repo/rep.gif",
+        6
+      ],
+      [
+        "id.cxense.com/public/user/id",
+        6
+      ],
+      [
+        "cdn.cxense.com/cx.cce.js",
+        5
+      ],
+      [
+        "static.files.bbci.co.uk/bbcdotcom/web/20250828-055926-c20c0c03f5-2.28.1-2/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js",
+        5
+      ]
+    ],
+    "topCookies": [
+      [
+        "Version",
+        12
+      ],
+      [
+        "charset",
+        6
+      ]
+    ],
+    "basic": {
+      "baseline": {},
+      "reject": {},
+      "accept_pre": {},
+      "accept": {}
+    }
+  },
+  {
+    "url": "https://www.cnn.com",
+    "topEndpoints": [
+      [
+        "dt.adsafeprotected.com/dt",
+        120
+      ],
+      [
+        "zion.api.cnn.io/bridge/v1/putRecord",
+        64
+      ],
+      [
+        "live-media-aka.warnermediacdn.com/cmaf/live/2028716/cnnfast-international/AUDIO_7_64000_eng.m3u8",
+        61
+      ],
+      [
+        "sb.scorecardresearch.com/p",
+        58
+      ],
+      [
+        "live-media-aka.warnermediacdn.com/cmaf/live/2028716/cnnfast-international/VIDEO_5_564000.m3u8",
+        53
+      ],
+      [
+        "media.cnn.com/api/v1/images/stellar/prod/gettyimages-2232590294.jpg",
+        49
+      ],
+      [
+        "media.cnn.com/api/v1/images/stellar/prod/ap25244049477135.jpg",
+        49
+      ],
+      [
+        "edition.cnn.com/media/sites/cnn/favicon.ico",
+        41
+      ],
+      [
+        "p8dn7fp1liosd47cq1r3sb455.litix.io/",
+        39
+      ],
+      [
+        "media.cnn.com/api/v1/images/stellar/prod/cnn-headlines-international-logo.png",
+        36
+      ]
+    ],
+    "topCookies": [
+      [
+        "charset",
+        213
+      ],
+      [
+        "jsessionid",
+        30
+      ],
+      [
+        "r",
+        29
+      ],
+      [
+        "event",
+        29
+      ],
+      [
+        "labels",
+        29
+      ],
+      [
+        "rf",
+        29
+      ],
+      [
+        "a",
+        29
+      ],
+      [
+        "url",
+        29
+      ],
+      [
+        "ns",
+        29
+      ],
+      [
+        "ce",
+        29
+      ]
+    ],
+    "basic": {
+      "baseline": {},
+      "reject": {},
+      "accept_pre": {},
+      "accept": {}
+    }
+  },
+  {
+    "url": "https://www.cookielaw.org",
+    "topEndpoints": [
+      [
+        "b.6sc.co/v1/beacon/img.gif",
+        54
+      ],
+      [
+        "trustcenter-privacy.my.onetrust.com/request/v1/consentreceipts",
+        16
+      ],
+      [
+        "cdn.cookielaw.org/scripttemplates/202505.1.0/otBannerSdk.js",
+        9
+      ],
+      [
+        "px.ads.linkedin.com/attribution_trigger",
+        8
+      ],
+      [
+        "px.ads.linkedin.com/collect",
+        8
+      ],
+      [
+        "cdn.bizible.com/xdc.js",
+        7
+      ],
+      [
+        "j.6sc.co/6si.min.js",
+        7
+      ],
+      [
+        "snap.licdn.com/li.lms-analytics/insight.min.js",
+        7
+      ],
+      [
+        "cdn.cookielaw.org/logos/static/ot_persistent_cookie.png",
+        6
+      ],
+      [
+        "cdn.bizible.com/ipv",
+        6
+      ]
+    ],
+    "topCookies": [
+      [
+        "charset",
+        6
+      ]
+    ],
+    "basic": {
+      "baseline": {},
+      "reject": {},
+      "accept_pre": {},
+      "accept": {}
+    }
+  },
+  {
+    "url": "https://www.cookielaw.org",
+    "topEndpoints": [
+      [
+        "b.6sc.co/v1/beacon/img.gif",
+        54
+      ],
+      [
+        "px.ads.linkedin.com/attribution_trigger",
+        8
+      ],
+      [
+        "px.ads.linkedin.com/collect",
+        8
+      ],
+      [
+        "cdn.cookielaw.org/scripttemplates/202505.1.0/otBannerSdk.js",
+        7
+      ],
+      [
+        "cdn.bizible.com/xdc.js",
+        7
+      ],
+      [
+        "j.6sc.co/6si.min.js",
+        7
+      ],
+      [
+        "snap.licdn.com/li.lms-analytics/insight.min.js",
+        7
+      ],
+      [
+        "cdn.cookielaw.org/logos/static/ot_persistent_cookie.png",
+        6
+      ],
+      [
+        "trustcenter-privacy.my.onetrust.com/request/v1/consentreceipts",
+        6
+      ],
+      [
+        "cdn.bizible.com/ipv",
+        6
+      ]
+    ],
+    "topCookies": [
+      [
+        "charset",
+        6
+      ]
+    ],
+    "basic": {
+      "baseline": {},
+      "reject": {},
+      "accept_pre": {},
+      "accept": {}
+    }
+  },
+  {
+    "url": "https://www.dell.com",
+    "topEndpoints": [
+      [
+        "metrics.brightcove.com/v2/tracker",
+        75
+      ],
+      [
+        "www.googletagmanager.com/gtag/js",
+        48
+      ],
+      [
+        "gbxgateway.dell.com/post/WEB/report",
+        36
+      ],
+      [
+        "b.6sc.co/v1/beacon/img.gif",
+        36
+      ],
+      [
+        "px.ads.linkedin.com/attribution_trigger",
+        24
+      ],
+      [
+        "px.ads.linkedin.com/collect",
+        24
+      ],
+      [
+        "ams.creativecdn.com/tags/v2",
+        20
+      ],
+      [
+        "googleads.g.doubleclick.net/pagead/viewthroughconversion/1056645703/",
+        18
+      ],
+      [
+        "www.dell.com/mW0j_y/r64f/p/Z/qONeSUDgOnwOSBs/Gk9Q8ViVh1/T306UUA/SEQu/SkwTBkxn",
+        17
+      ],
+      [
+        "sync-tm.everesttech.net/upi/pid/GLyisARe",
+        17
+      ]
+    ],
+    "topCookies": [
+      [
+        "type",
+        168
+      ],
+      [
+        "cat",
+        168
+      ],
+      [
+        "ord",
+        168
+      ],
+      [
+        "gtm",
+        168
+      ],
+      [
+        "dma",
+        168
+      ],
+      [
+        "dma_cps",
+        168
+      ],
+      [
+        "npa",
+        168
+      ],
+      [
+        "gcs",
+        168
+      ],
+      [
+        "gcd",
+        168
+      ],
+      [
+        "uaa",
+        168
+      ]
+    ],
+    "basic": {
+      "baseline": {},
+      "reject": {},
+      "accept_pre": {},
+      "accept": {}
+    }
+  },
+  {
+    "url": "https://www.dell.com",
+    "topEndpoints": [
+      [
+        "metrics.brightcove.com/v2/tracker",
+        76
+      ],
+      [
+        "www.googletagmanager.com/gtag/js",
+        48
+      ],
+      [
+        "gbxgateway.dell.com/post/WEB/report",
+        36
+      ],
+      [
+        "b.6sc.co/v1/beacon/img.gif",
+        34
+      ],
+      [
+        "px.ads.linkedin.com/attribution_trigger",
+        24
+      ],
+      [
+        "px.ads.linkedin.com/collect",
+        24
+      ],
+      [
+        "www.dell.com/4Y4xA/a/51/2hCg/UZKU1fbB/wJEiQGimEL/Ggh7AEFcVA/UxxDPAoa/Gj1n",
+        23
+      ],
+      [
+        "ams.creativecdn.com/tags/v2",
+        20
+      ],
+      [
+        "googleads.g.doubleclick.net/pagead/viewthroughconversion/1056645703/",
+        18
+      ],
+      [
+        "sync-tm.everesttech.net/upi/pid/GLyisARe",
+        17
+      ]
+    ],
+    "topCookies": [
+      [
+        "type",
+        168
+      ],
+      [
+        "cat",
+        168
+      ],
+      [
+        "ord",
+        168
+      ],
+      [
+        "gtm",
+        168
+      ],
+      [
+        "dma",
+        168
+      ],
+      [
+        "dma_cps",
+        168
+      ],
+      [
+        "npa",
+        168
+      ],
+      [
+        "gcs",
+        168
+      ],
+      [
+        "gcd",
+        168
+      ],
+      [
+        "uaa",
+        168
+      ]
+    ],
+    "basic": {
+      "baseline": {},
+      "reject": {},
+      "accept_pre": {},
+      "accept": {}
+    }
+  },
+  {
+    "url": "https://www.elpais.com",
+    "topEndpoints": [
+      [
+        "events.newsroom.bi/recirculation/recirculation.php",
+        26
+      ],
+      [
+        "events.newsroom.bi/ingest.php",
+        18
+      ],
+      [
+        "flowcards.mrf.io/json/experiences",
+        18
+      ],
+      [
+        "marfeelexperimentsexperienceengine.mrf.io/experimentsexperience/render",
+        14
+      ],
+      [
+        "dpm.demdex.net/id",
+        10
+      ],
+      [
+        "assets.adobedtm.com/0681c221600c/d0943e7fed9e/93607c6cbf18/RC4243e37327184e9dbb602e9f63b4497d-source.min.js",
+        9
+      ],
+      [
+        "assets.adobedtm.com/0681c221600c/d0943e7fed9e/93607c6cbf18/RC6d06c68917d84e94b03fdb45321f2626-source.min.js",
+        9
+      ],
+      [
+        "es-config.sensic.net/s2s-web.js",
+        9
+      ],
+      [
+        "sdk.mrf.io/statics/marfeel-sdk.js",
+        9
+      ],
+      [
+        "assets.adobedtm.com/0681c221600c/d0943e7fed9e/93607c6cbf18/RCb3d471fbecc246c1b53f2f43b158082f-source.min.js",
+        9
+      ]
+    ],
+    "topCookies": [
+      [
+        "charset",
+        36
+      ]
+    ],
+    "basic": {
+      "baseline": {},
+      "reject": {},
+      "accept_pre": {},
+      "accept": {}
+    }
+  },
+  {
+    "url": "https://www.lemonde.fr",
+    "topEndpoints": [
+      [
+        "www.w3.org/2000/svg%27",
+        62
+      ],
+      [
+        "www.w3.org/1999/xlink%27",
+        12
+      ],
+      [
+        "www.lemonde.fr/ajax/home/roll/6",
+        12
+      ],
+      [
+        "www.lemonde.fr/ajax/home/roll/7",
+        12
+      ],
+      [
+        "www.lemonde.fr/ajax/home/roll/8",
+        12
+      ],
+      [
+        "www.lemonde.fr/ajax/home/roll/9",
+        12
+      ],
+      [
+        "www.lemonde.fr/ajax/home/roll/10",
+        12
+      ],
+      [
+        "www.lemonde.fr/ajax/home/roll/11",
+        12
+      ],
+      [
+        "img.lemde.fr/2025/09/01/26/0/2137/1424/664/442/75/0/dd1b5a5_upload-1-3d23kxmicrcy-libido-sciendi-hd.jpg",
+        9
+      ],
+      [
+        "img.lemde.fr/2025/09/02/30/0/5677/3784/664/442/75/0/7a51e47_ftp-import-images-1-bggr27y1lr6e-5774072-01-06.jpg",
+        9
+      ]
+    ],
+    "topCookies": [
+      [
+        "fill",
+        138
+      ],
+      [
+        "d",
+        138
+      ],
+      [
+        "in",
+        112
+      ],
+      [
+        "result",
+        100
+      ],
+      [
+        "charset",
+        93
+      ],
+      [
+        "width",
+        90
+      ],
+      [
+        "height",
+        90
+      ],
+      [
+        "xmlns",
+        62
+      ],
+      [
+        "fill-rule",
+        62
+      ],
+      [
+        "id",
+        56
+      ]
+    ],
+    "basic": {
+      "baseline": {},
+      "reject": {},
+      "accept_pre": {},
+      "accept": {}
+    }
+  },
+  {
+    "url": "https://www.nytimes.com",
+    "topEndpoints": [
+      [
+        "a.et.nytimes.com/track",
+        506
+      ],
+      [
+        "www.googletagmanager.com/a",
+        346
+      ],
+      [
+        "pnytimes.chartbeat.net/ping",
+        101
+      ],
+      [
+        "www.nytimes.com/statsig/rgstr",
+        36
+      ],
+      [
+        "vp.nyt.com/video/2025/08/28/147809_1_00vid-rv-pakistan-floods_wg_1080p.vtt",
+        34
+      ],
+      [
+        "www.nytimes.com/api/market",
+        29
+      ],
+      [
+        "vp.nyt.com/video/2025/09/02/148066_1_02vid-China-protest_wg_720p.mp4",
+        27
+      ],
+      [
+        "vp.nyt.com/video/2025/09/02/148029_1_02vid-afghan-quake-_wg_720p.mp4",
+        27
+      ],
+      [
+        "vp.nyt.com/video/2025/08/28/147809_1_00vid-rv-pakistan-floods_wg_1080p.mp4",
+        27
+      ],
+      [
+        "vp.nyt.com/video/2025/09/02/148066_1_02vid-China-protest_wg_mobile_1080p.vtt",
+        19
+      ]
+    ],
+    "topCookies": [
+      [
+        "charset",
+        74
+      ]
+    ],
+    "basic": {
+      "baseline": {},
+      "reject": {},
+      "accept_pre": {},
+      "accept": {}
+    }
+  },
+  {
+    "url": "https://www.repubblica.it",
+    "topEndpoints": [
+      [
+        "events.newsroom.bi/recirculation/recirculation.php",
+        35
+      ],
+      [
+        "events.newsroom.bi/ingest.php",
+        33
+      ],
+      [
+        "secure-it.imrworldwide.com/cgi-bin/gn",
+        20
+      ],
+      [
+        "ping.chartbeat.net/ping",
+        17
+      ],
+      [
+        "www.repstatic.it/minify/sites/repubblica/nazionale/2020-v1/config.cache.php",
+        15
+      ],
+      [
+        "connect.facebook.net/it_IT/sdk.js",
+        14
+      ],
+      [
+        "eulogin.gedi.it/sdk.config.get",
+        11
+      ],
+      [
+        "www.googletagmanager.com/gtag/js",
+        11
+      ],
+      [
+        "flowcards.mrf.io/json/experiences",
+        10
+      ],
+      [
+        "marfeelexperimentsexperienceengine.mrf.io/experimentsexperience/render",
+        10
+      ]
+    ],
+    "topCookies": [
+      [
+        "charset",
+        31
+      ]
+    ],
+    "basic": {
+      "baseline": {},
+      "reject": {},
+      "accept_pre": {},
+      "accept": {}
+    }
+  },
+  {
+    "url": "https://www.royalcaribbean.com",
+    "topEndpoints": [
+      [
+        "pdx-col.eum-appdynamics.com/eumcollector/beacons/browser/v2/AD-AAB-AAU-AJK/adrum",
+        76
+      ],
+      [
+        "beacon.lynx.cognitivlabs.com/pixel/capture",
+        70
+      ],
+      [
+        "va.v.liveperson.net/api/js/51532229",
+        60
+      ],
+      [
+        "analytics-fe.digital-cloud-us-main.medallia.com/api/web/events",
+        48
+      ],
+      [
+        "in.treasuredata.com//js/v3/event/prod_source/td_royal_sdk_link_clicks",
+        27
+      ],
+      [
+        "collect.tealiumiq.com/rccl/gdp/2/i.gif",
+        24
+      ],
+      [
+        "insight.adsrvr.org/track/realtimeconversion",
+        24
+      ],
+      [
+        "c.amazon-adsystem.com/aat/amzn.js",
+        19
+      ],
+      [
+        "sp.analytics.yahoo.com/sp.pl",
+        18
+      ],
+      [
+        "www.royalcaribbean.com/content/dam/royal/global-login-bundle.js",
+        17
+      ]
+    ],
+    "topCookies": [
+      [
+        "ord",
+        234
+      ],
+      [
+        "type",
+        216
+      ],
+      [
+        "cat",
+        216
+      ],
+      [
+        "src",
+        196
+      ],
+      [
+        "charset",
+        154
+      ],
+      [
+        "npa",
+        136
+      ],
+      [
+        "auiddc",
+        136
+      ],
+      [
+        "u2",
+        136
+      ],
+      [
+        "gdid",
+        136
+      ],
+      [
+        "uaa",
+        136
+      ]
+    ],
+    "basic": {
+      "baseline": {},
+      "reject": {},
+      "accept_pre": {},
+      "accept": {}
+    }
+  }
+]
