@@ -1,0 +1,12 @@
+{
+  "DE": { "acceptLanguage": "de-DE,de;q=0.9", "tz": "Europe/Berlin",   "flag": "🇩🇪" },
+  "FR": { "acceptLanguage": "fr-FR,fr;q=0.9", "tz": "Europe/Paris",    "flag": "🇫🇷" },
+  "IT": { "acceptLanguage": "it-IT,it;q=0.9", "tz": "Europe/Rome",     "flag": "🇮🇹" },
+  "ES": { "acceptLanguage": "es-ES,es;q=0.9", "tz": "Europe/Madrid",   "flag": "🇪🇸" },
+  "NL": { "acceptLanguage": "nl-NL,nl;q=0.9", "tz": "Europe/Amsterdam","flag": "🇳🇱" },
+  "SE": { "acceptLanguage": "sv-SE,sv;q=0.9", "tz": "Europe/Stockholm","flag": "🇸🇪" },
+  "IE": { "acceptLanguage": "en-IE,en;q=0.9", "tz": "Europe/Dublin",   "flag": "🇮🇪" },
+  "PT": { "acceptLanguage": "pt-PT,pt;q=0.9", "tz": "Europe/Lisbon",   "flag": "🇵🇹" },
+  "GB": { "acceptLanguage": "en-GB,en;q=0.9", "tz": "Europe/London",   "flag": "🇬🇧" },
+  "US-CA": { "acceptLanguage": "en-US,en;q=0.9", "tz": "America/Los_Angeles", "flag": "🇺🇸" }
+}

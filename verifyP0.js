@@ -1,43 +1,78 @@
-// verifyP0.js — robusto, imprime resumen y valida presencia de métricas
+#!/usr/bin/env node
+/**
+ * SPECTRAL – P0 Verifier (extended CMP checks)
+ *
+ * Validates normalized P0 snapshots:
+ *  - numeric metrics for all 5 stages
+ *  - cmpDetected/cmpProvider presence and consistency
+ *  - cookielaw.org special case score=100
+ *
+ * Usage:
+ *   node verifyP0.js reports/*.p0.json
+ */
+
+'use strict';
+
 const fs = require('fs');
 
-function readJson(p) {
+function readJSON(p) {
   try { return JSON.parse(fs.readFileSync(p, 'utf8')); }
   catch (e) { return { __error: String(e) }; }
 }
 
 function isNum(v){ return typeof v === 'number' && Number.isFinite(v); }
 
-function evaluate(n) {
+function evalFile(n) {
+  const reasons = [];
   const M = n.metrics || {};
   const stages = ['baseline','reject_pre','reject','accept_pre','accept'];
-  const reasons = [];
 
+  // metrics check
   const hasAll = stages.every(k =>
     M[k] && ['hits','setCookie','ls','ss'].every(m => isNum(M[k][m]))
   );
   if (!hasAll) reasons.push('Missing or non-numeric metrics in one or more stages');
 
-  if ((n.siteHost || '').match(/(^|\.)cookielaw\.org$/i) && n.score !== 100) {
-    reasons.push(`Cookielaw score expected 100, got ${n.score == null ? 'null' : n.score}`);
+  // CMP fields presence
+  const hasCMP = ('cmpDetected' in n) && ('cmpProvider' in n);
+  if (!hasCMP) reasons.push('Missing cmpDetected/cmpProvider in snapshot');
+
+  // CMP consistency
+  if (hasCMP) {
+    if (typeof n.cmpDetected !== 'boolean') reasons.push('cmpDetected must be boolean');
+    if (n.cmpDetected && (!n.cmpProvider || String(n.cmpProvider).trim().length === 0)) {
+      reasons.push('cmpProvider must be non-empty when cmpDetected=true');
+    }
   }
+
+  // Cookielaw special
+  if ((n.siteHost || '').match(/(^|\.)cookielaw\.org$/i)) {
+    if (n.score !== 100) reasons.push(`Cookielaw score expected 100, got ${n.score == null ? 'null' : n.score}`);
+  }
+
   return { pass: reasons.length === 0, reasons };
 }
 
 function printOne(r, i){
   console.log(`[${i+1}] ${r.pass ? 'PASS':'FAIL'}  ${r.file}`);
   console.log(`URL: ${r.url}`);
-  if (r.score != null || r.risk != null) {
-    const s = r.score != null ? `Score: ${r.score}` : null;
-    const k = r.risk  != null ? `Risk: ${r.risk}`   : null;
-    if (s || k) console.log([s,k].filter(Boolean).join('  '));
-  }
-  const m = r.metrics;
+  const s = (r.score == null) ? null : `Score: ${r.score}`;
+  const k = (r.risk  == null) ? null : `Risk: ${r.risk}`;
+  const cmp = (('cmpDetected' in r) || ('cmpProvider' in r))
+    ? `CMP: detected=${String(r.cmpDetected)} provider=${r.cmpProvider || 'None'}`
+    : 'CMP: n/a';
+  if (s || k) console.log([s,k].filter(Boolean).join('  '));
+  console.log(cmp);
+
+  const m = r.metrics || {};
+  const st = (name) => (m[name] || { hits:0,setCookie:0,ls:0,ss:0 });
   console.log('Metrics:');
-  console.log(`  baseline   → hits=${m.baseline.hits} set-cookie=${m.baseline.setCookie} ls=${m.baseline.ls} ss=${m.baseline.ss}`);
-  console.log(`  reject     → hits=${m.reject.hits} set-cookie=${m.reject.setCookie}`);
-  console.log(`  accept_pre → hits=${m.accept_pre.hits} set-cookie=${m.accept_pre.setCookie}  preConsent=${r.annotations.accept_pre.background ? 'background' : 'false'}`);
-  console.log(`  accept     → hits=${m.accept.hits} set-cookie=${m.accept.setCookie}`);
+  console.log(`  baseline   → hits=${st('baseline').hits} set-cookie=${st('baseline').setCookie} ls=${st('baseline').ls} ss=${st('baseline').ss}`);
+  console.log(`  reject_pre → hits=${st('reject_pre').hits} set-cookie=${st('reject_pre').setCookie} ls=${st('reject_pre').ls} ss=${st('reject_pre').ss}`);
+  console.log(`  reject     → hits=${st('reject').hits} set-cookie=${st('reject').setCookie} ls=${st('reject').ls} ss=${st('reject').ss}`);
+  console.log(`  accept_pre → hits=${st('accept_pre').hits} set-cookie=${st('accept_pre').setCookie} ls=${st('accept_pre').ls} ss=${st('accept_pre').ss}  preConsent=${r.annotations?.accept_pre?.background ? 'background' : 'false'}`);
+  console.log(`  accept     → hits=${st('accept').hits} set-cookie=${st('accept').setCookie} ls=${st('accept').ls} ss=${st('accept').ss}`);
+
   if (!r.pass && r.reasons.length) {
     console.log('Reasons:');
     r.reasons.forEach(x => console.log(`  - ${x}`));
@@ -45,15 +80,15 @@ function printOne(r, i){
   console.log('');
 }
 
-function main(){
+(function main(){
   const files = process.argv.slice(2);
   if (!files.length) {
     console.error('Usage: node verifyP0.js <file1.p0.json> [...]');
     process.exit(2);
   }
   const results = files.map(file => {
-    const n = readJson(file);
-    const out = { file, ...n, ...evaluate(n) };
+    const n = readJSON(file);
+    const out = { file, ...n, ...evalFile(n) };
     return out;
   });
 
@@ -63,6 +98,4 @@ function main(){
   const anyFail = results.some(r => !r.pass);
   console.log('==================================================');
   console.log(anyFail ? 'SOME FAIL' : 'ALL PASS');
-}
-
-main();
+})();

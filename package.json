@@ -9,9 +9,11 @@
   "scripts": {
     "scan": "node src/crawler/professionalAnalysis.js",
     "smoke": "node src/crawler/testCrawler.js",
-    "verify": "node src/tools/verifyReport.js reports/spectral-analysis-*.json"
+    "verify": "node src/tools/verifyReport.js reports/spectral-analysis-*.json",
+    "pack:zip": "node src/tools/forensicZip.js reports/spectral-analysis-*.json"
   },
   "dependencies": {
+    "archiver": "^6.0.1",
     "puppeteer": "^24.18.0",
     "tldts": "^6.1.47",
     "uuid": "^9.0.1"
