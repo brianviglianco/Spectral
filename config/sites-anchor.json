@@ -1,0 +1,12 @@
+[
+  "https://www.dell.com",
+  "https://www.microsoft.com",
+  "https://www.americanexpress.com",
+  "https://www.bmw.de",
+  "https://www.bmw.com",
+  "https://www.mercedes-benz.de",
+  "https://www.volkswagen.de",
+  "https://www.carrefour.fr",
+  "https://www.royalcaribbean.com",
+  "https://www.cookielaw.org"
+]

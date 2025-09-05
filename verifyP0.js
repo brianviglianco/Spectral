@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * SPECTRAL – P0 Verifier (extended CMP checks)
+ * SPECTRAL – P0 Verifier (extended CMP checks + glob support)
  *
  * Validates normalized P0 snapshots:
  *  - numeric metrics for all 5 stages
@@ -9,11 +9,13 @@
  *
  * Usage:
  *   node verifyP0.js reports/*.p0.json
+ *   node verifyP0.js "reports/*.p0.json"   // quoted; glob will be expanded internally
  */
 
 'use strict';
 
 const fs = require('fs');
+const path = require('path');
 
 function readJSON(p) {
   try { return JSON.parse(fs.readFileSync(p, 'utf8')); }
@@ -21,6 +23,31 @@ function readJSON(p) {
 }
 
 function isNum(v){ return typeof v === 'number' && Number.isFinite(v); }
+
+function toRegexFromGlob(glob) {
+  const dir = path.dirname(glob);
+  const base = path.basename(glob)
+    .replace(/[.+^${}()|[\]\\]/g, '\\$&')
+    .replace(/\*/g, '.*')
+    .replace(/\?/g, '.');
+  return { dir, re: new RegExp('^' + base + '$') };
+}
+
+function expandArgs(argv) {
+  const out = [];
+  for (const token of argv) {
+    if (!token.includes('*') && !token.includes('?')) {
+      out.push(token);
+      continue;
+    }
+    const { dir, re } = toRegexFromGlob(token);
+    if (!fs.existsSync(dir)) continue;
+    const matches = fs.readdirSync(dir).filter(f => re.test(f)).map(f => path.join(dir, f));
+    out.push(...matches);
+  }
+  // de-dup y orden
+  return Array.from(new Set(out)).sort();
+}
 
 function evalFile(n) {
   const reasons = [];
@@ -81,11 +108,17 @@ function printOne(r, i){
 }
 
 (function main(){
-  const files = process.argv.slice(2);
-  if (!files.length) {
+  const rawArgs = process.argv.slice(2);
+  if (!rawArgs.length) {
     console.error('Usage: node verifyP0.js <file1.p0.json> [...]');
     process.exit(2);
   }
+  const files = expandArgs(rawArgs);
+  if (!files.length) {
+    console.error('No input files matched.');
+    process.exit(3);
+  }
+
   const results = files.map(file => {
     const n = readJSON(file);
     const out = { file, ...n, ...evalFile(n) };
