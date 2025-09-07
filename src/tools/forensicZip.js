@@ -1,325 +1,192 @@
-#!/usr/bin/env node
-/**
- * SPECTRAL – Forensic ZIP Packager (P0.5 complete)
- *
- * Packages, per report:
- *  - Source JSON report (professionalAnalysis/testCrawler output)
- *  - P0 snapshot (.p0.json) generated inline with CMP + ExecSummary fixes
- *  - Stage screenshots (if present)
- *  - HAR-lite per stage (extracted from evidence)
- *  - MANIFEST.json with SHA256 hashes and metadata
- *
- * Usage:
- *   node src/tools/forensicZip.js "reports/spectral-analysis-*.json"
- *   node src/tools/forensicZip.js reports/spectral-analysis-www.dell.com-2025-*.json
- *
- * Output:
- *   reports/forensic/forensic-<host>-<ISO>.zip
- */
+// src/tools/forensicZip.js
+import fs from 'node:fs';
+import path from 'node:path';
+import { spawnSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
 
-'use strict';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const log = (...a) => console.log('[forensicZip]', ...a);
 
-const fs = require('fs');
-const fsp = fs.promises;
-const path = require('path');
-const crypto = require('crypto');
-const archiver = require('archiver');
-
-const ROOT = process.cwd();
-const OUT_DIR = path.join(ROOT, 'reports', 'forensic');
-const INPUTS = process.argv.slice(2);
-if (!INPUTS.length) {
-  console.error('Usage: node src/tools/forensicZip.js <glob-or-path> [...]');
-  process.exit(2);
+function safeGet(obj, p, d = undefined) {
+  return p.split('.').reduce((o,k) => (o && k in o ? o[k] : undefined), obj) ?? d;
 }
-
-// ---------- utils ----------
-function ensureDirSync(p) { if (!fs.existsSync(p)) fs.mkdirSync(p, { recursive: true }); }
-function tsIsoSafe(d = new Date()) { return d.toISOString().replace(/[:.]/g, '-'); }
-function pick(...xs) { return xs.find(v => v !== undefined && v !== null); }
-function num(v) { return (typeof v === 'number' && Number.isFinite(v)) ? v : (Number(v) || 0); }
-function sha256OfBuffer(buf) { return crypto.createHash('sha256').update(buf).digest('hex'); }
-async function sha256OfFile(fp) {
-  return new Promise((resolve, reject) => {
-    const h = crypto.createHash('sha256');
-    const s = fs.createReadStream(fp);
-    s.on('data', chunk => h.update(chunk));
-    s.on('end', () => resolve(h.digest('hex')));
-    s.on('error', reject);
-  });
+function domainFromUrl(u) {
+  try { return new URL(u).hostname.replace(/^www\./,''); } catch { return 'invalid-domain'; }
 }
-
-function globSync(pattern) {
-  if (fs.existsSync(pattern) && fs.statSync(pattern).isFile()) return [pattern];
-  const dir = path.dirname(pattern);
-  const base = path.basename(pattern).replace(/\./g, '\\.').replace(/\*/g, '.*');
-  const re = new RegExp(`^${base}$`);
-  if (!fs.existsSync(dir)) return [];
-  return fs.readdirSync(dir).filter(f => re.test(f)).map(f => path.join(dir, f));
+function which(cmd) {
+  const isWin = process.platform === 'win32';
+  const r = spawnSync(isWin ? 'where' : 'which', [cmd], { encoding: 'utf8' });
+  return r.status === 0 ? r.stdout.split(/\r?\n/).filter(Boolean)[0] : null;
 }
-
-function safeReadJSON(p) {
-  try { return JSON.parse(fs.readFileSync(p, 'utf8')); }
-  catch (e) { console.error(`[WARN] unreadable JSON ${p}: ${e.message}`); return null; }
-}
-
-// ---------- inline P0 normalizer (aligned with makeP0.js) ----------
-function getStage(root, name) {
-  const S = root?.stages || root?.snapshots || [];
-  if (Array.isArray(S)) {
-    return S.find(s =>
-      [s?.stage, s?.name, s?.label, s?.tag, s?.id, s?.state].includes(name)
-    ) || {};
+function copyDir(src, dst) {
+  fs.mkdirSync(dst, { recursive: true });
+  for (const entry of fs.readdirSync(src, { withFileTypes: true })) {
+    const s = path.join(src, entry.name);
+    const d = path.join(dst, entry.name);
+    if (entry.isDirectory()) copyDir(s, d);
+    else fs.copyFileSync(s, d);
   }
-  if (S && typeof S === 'object') return S[name] || {};
-  return {};
 }
-function metricObj(stage) {
-  const s = stage || {};
-  const ne = s.networkEvidence || {};
-  const m = s.metrics || {};
-  return {
-    hits:      num(pick(m.hits,      ne.trackingHits?.length)),
-    setCookie: num(pick(m.setCookie, (ne.setCookies || []).length)),
-    ls:        num(pick(m.ls,        s.storage?.localStorageKeys?.length)),
-    ss:        num(pick(m.ss,        s.storage?.sessionStorageKeys?.length)),
-  };
-}
-function extractCMP(raw) {
-  const bs = raw?.bannerSummary || {};
-  const anyDetected = !!pick(bs.anyDetected, bs.detected, bs.initial?.detected, bs.finalA?.detected, bs.finalB?.detected, false);
-  let provider =
-    pick(
-      (Array.isArray(bs.providers) && bs.providers[0]),
-      bs.provider,
-      bs.initial?.provider,
-      bs.finalA?.provider,
-      bs.finalB?.provider,
-      null
-    );
-  const ba = raw?.report?.bannerAnalysis || raw?.report?.cmp || {};
-  if (!provider) provider = pick(ba.provider, ba.name, null);
-  const repDetected = pick(ba.detected, ba.present, null);
-  const detected = anyDetected || !!repDetected;
 
-  if (typeof provider === 'string' && /^none$/i.test(provider.trim())) provider = null;
-  if (!provider) {
-    const candidates = ['baseline','reject_pre','reject','accept_pre','accept']
-      .map(k => raw?.stages && raw.stages.find(s => s.stage === k)?.banner?.provider)
-      .filter(Boolean);
-    provider = candidates[0] || null;
+// ---------- CMP ----------
+export function extractCMP(bannerSummary = {}) {
+  const stages = ['initial','finalA','finalB'];
+  let anyDetected = false, provider = null, type = null;
+  for (const s of stages) {
+    const st = bannerSummary?.[s];
+    if (!st) continue;
+    if (st.detected) anyDetected = true;
+    if (!provider && st.provider) provider = st.provider;
+    if (!type && st.type) type = st.type;
   }
-  return { cmpDetected: !!detected, cmpProvider: provider || null };
+  return { cmpDetected: !!anyDetected, cmpProvider: provider || null, cmpType: type || null, bannerSummary };
 }
-function extractScoreRisk(raw) {
-  const score = pick(
-    raw?.report?.executiveSummary?.overallScore,
-    raw?.report?.summary?.overallScore,
-    raw?.report?.score,
-    raw?.compliance?.score,
-    raw?.score,
-    null
-  );
-  const risk = pick(
-    raw?.report?.executiveSummary?.riskLevel,
-    raw?.report?.risk,
-    raw?.risk,
-    null
-  );
-  return { score: (score == null ? null : num(score)), risk: risk ?? null };
-}
-function buildP0Snapshot(raw){
-  const url = pick(raw?.url, raw?.meta?.url, 'unknown');
-  let siteHost = raw?.siteHost;
-  if (!siteHost) { try { siteHost = new URL(url).host; } catch { siteHost = ''; } }
 
-  const { cmpDetected, cmpProvider } = extractCMP(raw);
-  const { score, risk } = extractScoreRisk(raw);
-
-  const out = {
-    url,
-    siteHost,
-    cmpDetected,
-    cmpProvider,
-    score,
-    risk,
-    metrics: {
-      baseline:   metricObj(getStage(raw, 'baseline')),
-      reject_pre: metricObj(getStage(raw, 'reject_pre')),
-      reject:     metricObj(getStage(raw, 'reject')),
-      accept_pre: metricObj(getStage(raw, 'accept_pre')),
-      accept:     metricObj(getStage(raw, 'accept')),
+export function buildP0Snapshot(rawReport = {}) {
+  const snapshot = {
+    url: rawReport.url || rawReport.targetUrl || null,
+    domain: domainFromUrl(rawReport.url || rawReport.targetUrl || ''),
+    startedAt: rawReport.startedAt || rawReport.timestamp || new Date().toISOString(),
+    region: process.env.SPECTRAL_REGION || rawReport.region || null,
+    cookies: rawReport.cookies || [],
+    localStorage: rawReport.localStorage || [],
+    sessionStorage: rawReport.sessionStorage || [],
+    requests: rawReport.requests || [],
+    scripts: rawReport.scripts || [],
+    stages: {
+      baseline: rawReport.baseline || null,
+      reject: rawReport.reject || null,
+      accept: rawReport.accept || null,
     },
-    annotations: {
-      accept_pre: { background: !!(getStage(raw, 'accept_pre')?.annotations?.background) }
-    }
   };
-
-  if ((out.siteHost || '').match(/(^|\.)cookielaw\.org$/i) && out.score == null) {
-    out.score = 100;
-  }
-  return out;
+  const mergedBannerSummary =
+    rawReport.bannerSummary ||
+    safeGet(rawReport, 'baseline.bannerSummary') ||
+    safeGet(rawReport, 'reject.bannerSummary') ||
+    safeGet(rawReport, 'accept.bannerSummary') || {};
+  const cmp = extractCMP(mergedBannerSummary);
+  snapshot.cmpDetected = cmp.cmpDetected;
+  snapshot.cmpProvider = cmp.cmpProvider;
+  snapshot.cmpType = cmp.cmpType;
+  snapshot.bannerSummary = cmp.bannerSummary;
+  return snapshot;
 }
 
-// ---------- HAR-lite + screenshots ----------
-function extractHarLitePerStage(raw) {
-  const stages = Array.isArray(raw?.stages) ? raw.stages : [];
-  const out = [];
-  for (const st of stages) {
-    const name = st?.stage || st?.name || st?.label || 'stage';
-    const entries = st?.networkEvidence?.harLite?.entries || [];
-    out.push({ stage: name, entries });
-  }
-  return out;
+// ---------- I/O ----------
+export async function normalizeOneReport(rawPath) {
+  const raw = JSON.parse(fs.readFileSync(rawPath, 'utf8'));
+  const snapshot = buildP0Snapshot(raw);
+  const normPath = rawPath.replace(/\.json$/i, '.norm.json');
+  fs.writeFileSync(normPath, JSON.stringify(snapshot, null, 2), 'utf8');
+  return normPath;
 }
-function collectScreenshotPaths(raw) {
-  const stages = Array.isArray(raw?.stages) ? raw.stages : [];
-  const shots = [];
-  for (const st of stages) {
-    const rel = st?.screenshot;
-    if (!rel) continue;
-    const abs = path.isAbsolute(rel) ? rel : path.join(ROOT, rel);
-    shots.push({ stage: st?.stage || st?.name || 'stage', rel, abs });
-  }
-  return shots;
+export function listReports(dir) {
+  return fs.readdirSync(dir)
+    .filter(f => f.endsWith('.json') && !f.endsWith('.norm.json'))
+    .map(f => path.join(dir, f))
+    .sort();
+}
+export function listNorms(dir) {
+  return fs.readdirSync(dir)
+    .filter(f => f.endsWith('.norm.json'))
+    .map(f => path.join(dir, f))
+    .sort();
 }
 
-// ---------- manifest ----------
-function stageBrief(s) {
-  const ne = s.networkEvidence || {};
-  return {
-    stage: s.stage,
-    url: s.url,
-    hits: ne.trackingHits?.length || 0,
-    setCookies: ne.setCookies?.length || 0,
-    cookieBreakdown: ne.cookieBreakdown || { tracking:0, consent:0, unknown:0 },
-    ls: s.storage?.localStorageKeys?.length || 0,
-    ss: s.storage?.sessionStorageKeys?.length || 0
-  };
-}
-function makeManifest(raw, p0, harPerStage, shots, sourceFile) {
-  const puppeteerVersion = safeReadJSON(path.join(ROOT, 'node_modules', 'puppeteer', 'package.json'))?.version || null;
-  return {
-    meta: {
-      bundleVersion: 'p0.5',
-      generatedAt: new Date().toISOString(),
-      node: process.versions.node,
-      puppeteer: puppeteerVersion,
-      headless: pick(raw?.meta?.headless, true),
-      acceptLanguage: pick(raw?.meta?.lang, process.env.ACCEPT_LANG || null),
-      url: p0.url,
-      siteHost: p0.siteHost
-    },
-    p0,
-    stages: Array.isArray(raw?.stages) ? raw.stages.map(stageBrief) : [],
-    evidence: {
-      sourceJson: path.relative(ROOT, sourceFile),
-      screenshots: shots.map(x => x.rel),
-      harLite: harPerStage.map(h => ({ stage: h.stage, file: `har/${h.stage}.har.json` }))
-    },
-    integrity: { files: [] }
-  };
+// ---------- Manifest + ZIP ----------
+function buildManifest(normPaths, { latestOnly }) {
+  const byDomain = new Map();
+  for (const p of normPaths) {
+    const j = JSON.parse(fs.readFileSync(p, 'utf8'));
+    const d = j.domain || 'unknown';
+    if (!byDomain.has(d)) byDomain.set(d, []);
+    byDomain.get(d).push({ path: p, ts: fs.statSync(p).mtimeMs, url: j.url, cmpDetected: j.cmpDetected, cmpProvider: j.cmpProvider });
+  }
+  const domains = [];
+  for (const [domain, arr] of byDomain.entries()) {
+    arr.sort((a,b)=>a.ts-b.ts);
+    domains.push({ domain, items: latestOnly ? [arr[arr.length-1]] : arr });
+  }
+  return { generatedAt: new Date().toISOString(), latestOnly, domains };
 }
 
-// ---------- pack one ----------
-async function packOne(absJsonPath) {
-  console.log(`\n[PACK] ${absJsonPath}`);
-  const raw = safeReadJSON(absJsonPath);
-  if (!raw) { console.error('  -> skip: unreadable JSON'); return null; }
-
-  const p0 = buildP0Snapshot(raw);
-  const url = p0.url || 'unknown';
-  let host = '';
-  try { host = new URL(url).hostname; } catch { host = p0.siteHost || 'unknown-host'; }
-
-  ensureDirSync(OUT_DIR);
-  const ts = tsIsoSafe();
-  const zipName = `forensic-${host}-${ts}.zip`;
-  const zipPath = path.join(OUT_DIR, zipName);
-
-  // working dir
-  const workDir = path.join(OUT_DIR, `.tmp-${host}-${ts}`);
-  const shotsDir = path.join(workDir, 'screenshots');
-  const harDir = path.join(workDir, 'har');
-  ensureDirSync(workDir); ensureDirSync(shotsDir); ensureDirSync(harDir);
-
-  // write p0
-  const p0Path = path.join(workDir, 'snapshot.p0.json');
-  fs.writeFileSync(p0Path, JSON.stringify(p0, null, 2), 'utf8');
-
-  // copy source report
-  const srcCopy = path.join(workDir, 'report.json');
-  fs.copyFileSync(absJsonPath, srcCopy);
-
-  // HAR-lite
-  const harLite = extractHarLitePerStage(raw);
-  for (const h of harLite) {
-    const fp = path.join(harDir, `${h.stage}.har.json`);
-    fs.writeFileSync(fp, JSON.stringify({ entries: h.entries || [] }, null, 2), 'utf8');
+function zipPaths(outputZip, paths, cwd) {
+  const zipBin = which('zip');
+  if (zipBin) {
+    const args = ['-r', outputZip, ...paths];
+    const r = spawnSync(zipBin, args, { stdio: 'inherit', cwd });
+    return r.status === 0;
   }
-
-  // screenshots (tolerant)
-  const shots = collectScreenshotPaths(raw);
-  for (const s of shots) {
-    try {
-      const dest = path.join(shotsDir, path.basename(s.rel));
-      if (fs.existsSync(s.abs)) fs.copyFileSync(s.abs, dest);
-    } catch (e) {
-      console.log(`  [skip] screenshot ${s.rel}: ${e.message}`);
-    }
+  const tarBin = which('tar');
+  if (tarBin) {
+    const outTgz = outputZip.replace(/\.zip$/i, '.tar.gz');
+    const args = ['-czf', outTgz, ...paths];
+    const r = spawnSync(tarBin, args, { stdio: 'inherit', cwd });
+    return r.status === 0;
   }
+  console.warn('[forensicZip] Neither zip nor tar present. Skipping archive.');
+  return true;
+}
 
-  // manifest
-  const manifest = makeManifest(raw, p0, harLite, shots, absJsonPath);
-
-  // integrity hashes
-  const filesForHash = [];
-  filesForHash.push({ rel: 'report.json', abs: srcCopy });
-  filesForHash.push({ rel: 'snapshot.p0.json', abs: p0Path });
-  for (const f of fs.readdirSync(harDir)) filesForHash.push({ rel: `har/${f}`, abs: path.join(harDir, f) });
-  for (const f of (fs.existsSync(shotsDir) ? fs.readdirSync(shotsDir) : [])) filesForHash.push({ rel: `screenshots/${f}`, abs: path.join(shotsDir, f) });
-
-  for (const file of filesForHash) {
-    const sha = await sha256OfFile(file.abs);
-    const bytes = fs.statSync(file.abs).size;
-    manifest.integrity.files.push({ path: file.rel, sha256: sha, bytes });
+export async function packageForensics({ reportsDir, latestOnly = true, includeEvidence = true }) {
+  let norms = listNorms(reportsDir);
+  if (!norms.length) {
+    const raws = listReports(reportsDir);
+    for (const r of raws) await normalizeOneReport(r);
+    norms = listNorms(reportsDir);
   }
+  if (!norms.length) throw new Error('No normalized reports found');
 
-  const manifestPath = path.join(workDir, 'MANIFEST.json');
+  const manifest = buildManifest(norms, { latestOnly });
+  const manifestPath = path.join(reportsDir, 'MANIFEST.json');
   fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2), 'utf8');
 
-  // zip
-  await new Promise((resolve, reject) => {
-    const output = fs.createWriteStream(zipPath);
-    const arc = archiver('zip', { zlib: { level: 9 } });
-    output.on('close', resolve);
-    arc.on('error', reject);
-    arc.pipe(output);
-    arc.directory(workDir + '/', false);
-    arc.finalize();
-  });
+  const created = [];
+  for (const d of manifest.domains) {
+    const dom = d.domain || 'unknown';
+    const outDir = path.join(reportsDir, `forensic-${dom}`);
+    fs.mkdirSync(outDir, { recursive: true });
 
-  // cleanup
-  try { fs.rmSync(workDir, { recursive: true, force: true }); } catch {}
+    for (const it of d.items) {
+      const normPath = it.path;
+      const rawPath = normPath.replace(/\.norm\.json$/i, '.json');
+      fs.copyFileSync(normPath, path.join(outDir, path.basename(normPath)));
+      if (fs.existsSync(rawPath)) fs.copyFileSync(rawPath, path.join(outDir, path.basename(rawPath)));
+    }
 
-  console.log(`✅ ZIP: ${zipPath}`);
-  return zipPath;
+    if (includeEvidence) {
+      const entries = fs.readdirSync(reportsDir, { withFileTypes: true });
+      for (const e of entries) {
+        if (e.isDirectory() && e.name.toLowerCase().includes(dom.toLowerCase()) && !e.name.startsWith('forensic-')) {
+          copyDir(path.join(reportsDir, e.name), path.join(outDir, e.name));
+        }
+      }
+    }
+
+    // MANIFEST por dominio en la raíz del paquete
+    fs.writeFileSync(
+      path.join(outDir, 'MANIFEST.json'),
+      JSON.stringify({ ...manifest, domains: [d] }, null, 2),
+      'utf8'
+    );
+
+    // ZIP con MANIFEST en la raíz del ZIP: cwd = outDir, paths = ['.']
+    const outZip = path.join(reportsDir, `forensic-${dom}.zip`);
+    const ok = zipPaths(outZip, ['.'], outDir);
+    created.push(ok ? outZip : outDir);
+  }
+
+  return { created, manifest: manifestPath };
 }
 
-// ---------- main ----------
-(async function main(){
-  const patterns = INPUTS;
-  const inputs = patterns.flatMap(globSync);
-  if (!inputs.length) {
-    console.log('[INFO] no inputs found');
-    process.exit(0);
-  }
-  let ok = 0, fail = 0;
-  for (const p of inputs) {
-    try { await packOne(path.resolve(p)); ok++; }
-    catch (e) { console.error(`[ERR] ${p}: ${e.message}`); fail++; }
-  }
-  console.log('FORENSIC ZIP SUMMARY');
-  console.log('====================');
-  console.log(`inputs=${inputs.length} ok=${ok} fail=${fail}`);
-})();
+// CLI opcional
+if (import.meta.url === `file://${process.argv[1]}`) {
+  const args = process.argv.slice(2);
+  const reportsDir = path.resolve(args[0] || path.join(process.cwd(), 'reports'));
+  const latestOnly = !args.includes('--all');
+  const includeEvidence = !args.includes('--no-evidence');
+  packageForensics({ reportsDir, latestOnly, includeEvidence })
+    .then(r => { log('OK', r); })
+    .catch(e => { console.error('[forensicZip] FATAL', e?.stack || e); process.exit(1); });
+}

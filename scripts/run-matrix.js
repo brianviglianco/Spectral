@@ -1,102 +1,107 @@
-#!/usr/bin/env node
-/**
- * Runs professionalAnalysis.js sequentially for a list of sites.
- * Writes raw logs per site and a JSON summary per region.
- * Assumes Bitdefender VPN or equivalent is active on the runner.
- */
+// run-matrix.js
+// ESM-ready. Robust flag parser. Runs professionalAnalysis.js across regions and sites.
+// Example:
+//   node run-matrix.js --regions de,fr,it --sites ./sites-anchor.json --outdir reports --zip
+//   node run-matrix.js --region de --sites ./sites-anchor.json
 
-const fs = require("fs");
-const path = require("path");
-const { spawnSync } = require("child_process");
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { spawnSync } from 'node:child_process';
 
-function parseArgs() {
-  const args = process.argv.slice(2);
-  const out = {};
-  for (let i = 0; i < args.length; i += 2) {
-    const k = args[i], v = args[i + 1];
-    if (!v) continue;
-    if (k === "--region") out.region = v;
-    if (k === "--sites") out.sites = v;
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const log = (...a) => console.log('[run-matrix]', ...a);
+
+// --------- arg parsing ----------
+function parseArgs(argv) {
+  const out = {
+    regions: [],
+    sitesPath: null,
+    concurrency: 1,     // keep simple and predictable for forensics
+    outdir: 'reports',
+    zip: false,
+    latestOnly: true,
+    evidence: true,
+    extra: [],          // passthrough to professionalAnalysis if needed
+  };
+  const args = argv.slice(2);
+  for (let i = 0; i < args.length; i++) {
+    const a = args[i];
+    if (a === '--regions') { out.regions = args[++i].split(',').filter(Boolean); continue; }
+    if (a === '--region') { out.regions = [args[++i]]; continue; }
+    if (a === '--sites') { out.sitesPath = args[++i]; continue; }
+    if (a === '--outdir') { out.outdir = args[++i]; continue; }
+    if (a === '--zip') { out.zip = true; continue; }
+    if (a === '--all') { out.latestOnly = false; continue; }
+    if (a === '--no-evidence') { out.evidence = false; continue; }
+    // passthrough unknown flags:
+    if (a.startsWith('--')) { out.extra.push(a); if (!a.includes('=')) { const next = args[i+1]; if (next && !next.startsWith('--')) { out.extra.push(next); i++; } } continue; }
+    // ignore bare values here
   }
-  if (!out.region || !out.sites) {
-    console.log("Usage: node scripts/run-matrix.js --region <code> --sites <path.json>");
-    process.exit(2);
-  }
+  if (!out.regions.length) out.regions = ['de'];
+  if (!out.sitesPath) throw new Error('Missing --sites <path-to-json-or-js>');
   return out;
 }
 
-function loadSites(file) {
-  const raw = fs.readFileSync(file, "utf8");
-  const data = JSON.parse(raw);
-  if (!Array.isArray(data)) throw new Error("Sites JSON must be an array of URLs");
-  return data;
+function loadSites(sitesPath) {
+  const full = path.isAbsolute(sitesPath) ? sitesPath : path.join(process.cwd(), sitesPath);
+  if (!fs.existsSync(full)) throw new Error(`Sites file not found: ${full}`);
+  if (full.endsWith('.json')) {
+    return JSON.parse(fs.readFileSync(full, 'utf8'));
+  }
+  if (full.endsWith('.js')) {
+    // Common simple module export: module.exports = [ ... ]
+    const m = require(full); // Node still supports CJS require of external js in many setups
+    return Array.isArray(m) ? m : m?.default || [];
+  }
+  throw new Error('Unsupported sites file. Use .json or .js');
 }
 
-function latestReportForDomain(domain) {
-  const reportsDir = path.join(process.cwd(), "reports");
-  if (!fs.existsSync(reportsDir)) return null;
-  const files = fs.readdirSync(reportsDir)
-    .filter(f => f.startsWith("spectral-analysis-") && f.includes(domain) && f.endsWith(".json"))
-    .map(f => ({ f, t: fs.statSync(path.join(reportsDir, f)).mtimeMs }))
-    .sort((a, b) => b.t - a.t);
-  return files.length ? path.join(reportsDir, files[0].f) : null;
-}
-
-function runOne(url, region, outDir) {
-  console.log("==================================================");
-  console.log(`REGION=${region} URL=${url}`);
-  console.log("Starting professionalAnalysis...");
-  const env = { ...process.env, SPECTRAL_REGION: region };
-  const proc = spawnSync("node", ["professionalAnalysis.js", url], {
-    cwd: process.cwd(),
-    env,
-    encoding: "utf8",
-    stdio: ["ignore", "pipe", "pipe"]
-  });
-
-  const domain = url.replace(/^https?:\/\//, "").replace(/\/.*/, "");
-  const safeDomain = domain.replace(/[^a-zA-Z0-9.-]/g, "_");
-  const logBase = path.join(outDir, `${safeDomain}.${Date.now()}`);
-  fs.writeFileSync(`${logBase}.out.log`, proc.stdout || "", "utf8");
-  fs.writeFileSync(`${logBase}.err.log`, proc.stderr || "", "utf8");
-
-  const reportPath = latestReportForDomain(domain);
-  let summary = {
+function runOne(url, cfg) {
+  const cmd = process.execPath; // node
+  const args = [
+    path.join(__dirname, 'professionalAnalysis.js'),
     url,
-    region,
-    exitCode: proc.status,
-    report: reportPath ? path.relative(process.cwd(), reportPath) : null,
-  };
+    '--outdir', cfg.outdir,
+  ];
+  if (cfg.zip) args.push('--zip');
+  if (!cfg.latestOnly) args.push('--all');
+  if (!cfg.evidence) args.push('--no-evidence');
+  args.push(...cfg.extra);
 
-  // Try to read minimal fields for quick comparison if present
-  try {
-    if (reportPath && fs.existsSync(reportPath)) {
-      const rpt = JSON.parse(fs.readFileSync(reportPath, "utf8"));
-      summary.analysisDate = rpt?.analysisDate || rpt?.AnalysisDate || null;
-      summary.cmp = rpt?.bannerAnalysis?.provider || rpt?.cmpProvider || null;
-      summary.score = rpt?.compliance?.score || rpt?.complianceScore || null;
-      summary.violations = rpt?.violations?.length || rpt?.violationCount || null;
-    }
-  } catch (e) {
-    console.log(`[WARN] Could not parse report for ${url}: ${e.message}`);
+  const env = { ...process.env, SPECTRAL_REGION: cfg.region };
+  log('EXEC', { region: cfg.region, url, args: args.join(' ') });
+  const res = spawnSync(cmd, args, { stdio: 'inherit', env });
+  if (res.status !== 0) {
+    console.error('[run-matrix] ERROR status', res.status, 'region', cfg.region, 'url', url);
   }
-  console.log(`Completed ${url} with code=${proc.status} report=${summary.report || "n/a"}`);
-  return summary;
+  return res.status;
 }
 
-(function main() {
-  const { region, sites } = parseArgs();
-  const outDir = path.join(process.cwd(), "reports", "matrix", region);
-  fs.mkdirSync(outDir, { recursive: true });
+async function main() {
+  const cfg = parseArgs(process.argv);
+  const sites = loadSites(cfg.sitesPath);
+  if (!Array.isArray(sites) || sites.length === 0) throw new Error('Sites list is empty');
+  log('Config', { regions: cfg.regions, outdir: cfg.outdir, zip: cfg.zip, latestOnly: cfg.latestOnly, evidence: cfg.evidence, totalSites: sites.length });
 
-  const urls = loadSites(sites);
-  const results = [];
-  for (const url of urls) {
-    const res = runOne(url, region, outDir);
-    results.push(res);
+  let failures = 0;
+  for (const region of cfg.regions) {
+    for (const url of sites) {
+      const status = runOne(url, { ...cfg, region });
+      if (status !== 0) failures++;
+    }
   }
 
-  const summaryPath = path.join(outDir, `summary.${region}.json`);
-  fs.writeFileSync(summaryPath, JSON.stringify({ region, count: results.length, results }, null, 2), "utf8");
-  console.log(`[SUMMARY] ${summaryPath}`);
-})();
+  if (failures) {
+    console.error(`[run-matrix] Completed with ${failures} failures`);
+    process.exit(1);
+  } else {
+    log('Completed successfully');
+  }
+}
+
+main().catch(err => {
+  console.error('[run-matrix] FATAL', err?.stack || err);
+  process.exit(1);
+});

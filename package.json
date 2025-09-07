@@ -1,21 +1,30 @@
 {
-  "name": "spectral-backend",
-  "version": "0.1.0",
+  "name": "spectral",
+  "version": "0.5.0",
   "private": true,
-  "type": "commonjs",
+  "type": "module",
   "engines": {
-    "node": ">=20.10.0"
+    "node": ">=18.17"
   },
   "scripts": {
-    "scan": "node src/crawler/professionalAnalysis.js",
-    "smoke": "node src/crawler/testCrawler.js",
-    "verify": "node src/tools/verifyReport.js reports/spectral-analysis-*.json",
-    "pack:zip": "node src/tools/forensicZip.js reports/spectral-analysis-*.json"
+    "cycle:de": "npm run cycle -- de",
+    "cycle:fr": "npm run cycle -- fr",
+    "cycle:it": "npm run cycle -- it",
+    "cycle:es": "npm run cycle -- es",
+    "cycle:nl": "npm run cycle -- nl",
+
+    "cycle": "bash -c 'region=$1; shift; bash scripts/run-p0-matrix.sh $region config/sites-anchor.json && bash p0-verify.sh && bash scripts/make-forensic-all.sh \"reports/spectral-analysis-*.json\" && node scripts/manifest-tools.js verify reports/forensic && node scripts/manifest-tools.js index reports/forensic' --",
+
+    "verify:p0": "node verifyP0.js",
+    "verify:forensic": "node scripts/manifest-tools.js verify reports/forensic",
+    "index:forensic": "node scripts/manifest-tools.js index reports/forensic",
+
+    "backup": "node scripts/createBackup.js",
+    "audit": "node scripts/auditWorkspace.js"
   },
   "dependencies": {
-    "archiver": "^6.0.1",
-    "puppeteer": "^24.18.0",
-    "tldts": "^6.1.47",
-    "uuid": "^9.0.1"
+    "adm-zip": "^0.5.12",
+    "archiver": "^6.0.2",
+    "puppeteer": "^24.19.0"
   }
 }
