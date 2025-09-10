@@ -1,0 +1,83 @@
+name: Spectral P0 CI
+
+on:
+  push:
+    branches: [ "**" ]
+  pull_request:
+    branches: [ "**" ]
+
+concurrency:
+  group: spectral-p0-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  NODE_VERSION: "22.18.0"
+
+jobs:
+  p0-baseline:
+    name: P0 baseline (make + verify + artifacts)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Show repo tree for debug
+        run: |
+          pwd
+          ls -la
+          ls -la package.json package-lock.json || true
+          ls -la p0-pipeline.sh p0-verify.sh || true
+          ls -la reports || true
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install deps (root)
+        run: npm ci
+
+      - name: Prepare workspace
+        run: |
+          mkdir -p reports
+          mkdir -p public/screenshots
+          chmod +x p0-pipeline.sh || true
+          chmod +x p0-verify.sh || true
+
+      - name: Generate sample reports (Dell + Cookielaw)
+        run: |
+          node src/crawler/professionalAnalysis.js https://www.dell.com || true
+          node src/crawler/professionalAnalysis.js https://www.cookielaw.org || true
+        timeout-minutes: 15
+
+      - name: Normalize P0
+        run: node makeP0.js "reports/spectral-analysis-*.json"
+
+      - name: Verify P0
+        run: node verifyP0.js "reports/*.p0.json" | tee reports/ci-p0.log
+
+      - name: Upload P0 artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: p0-artifacts-${{ github.sha }}
+          path: reports/**
+          if-no-files-found: warn
+
+
+  matrix-multi-region:
+    name: Matrix multi-region (requires self-hosted + VPN)
+    needs: p0-baseline
+    runs-on: [ self-hosted, linux, vpn ]
+    strategy:
+      fail-fast: false
+      matrix:
+        region: [ de, fr, es, it, nl ]
+    steps:
+      - name: Placeholder
+        run: echo "Self-hosted runner required; job will stay queued if none."

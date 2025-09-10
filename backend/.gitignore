@@ -1,0 +1,4 @@
+# artefactos locales
+*.tgz
+reports/**
+!reports/*.norm.json.p0.json

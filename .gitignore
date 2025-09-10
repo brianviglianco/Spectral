@@ -1,0 +1,6 @@
+node_modules/
+reports/
+backups/
+archive/
+*.tgz
+.DS_Store

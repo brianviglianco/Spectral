@@ -1,0 +1,28 @@
+# Node modules
+/node_modules/
+
+# Reportes de análisis (se regeneran)
+reports/
+
+# Backups y dumps de DB
+backups/
+*.sql
+*.dump
+
+# Archivos temporales y logs
+tmp/
+logs/
+*.log
+*.out
+
+# Cachés de Puppeteer/Playwright
+.puppeteer_cache/
+.browser-profile/
+browser-profile/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Entorno
+.env
