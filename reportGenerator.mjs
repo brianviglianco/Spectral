@@ -130,10 +130,32 @@ function centerText(text, width = 60) {
   return ' '.repeat(padding) + text;
 }
 
+function defaultStageMetrics(stage) {
+  return {
+    stage,
+    hits: 0,
+    cookies: 0,
+    trackingCookies: 0,
+    scripts: 0,
+    localStorage: 0,
+    sessionStorage: 0,
+    unknownCookies: 0
+  };
+}
+
+function getStageMetrics(metrics, stage) {
+  if (metrics && metrics[stage]) {
+    return metrics[stage];
+  }
+  return defaultStageMetrics(stage);
+}
+
 // Report Generators
 function generateConsoleReport(data, opts) {
   const { report, norm } = data;
   const { compliance, violations, metrics, cmp } = report;
+  const analysisMode = (report.analysisMode || '').toLowerCase();
+  const limitedReason = report.limitedAnalysisReason || 'Stage not executed in limited mode.';
 
   let output = [];
 
@@ -162,9 +184,11 @@ function generateConsoleReport(data, opts) {
   output.push('🔍 PRIVACY BEHAVIOR FLOW');
   output.push(drawBox());
 
-  const baseline = metrics.baseline;
-  const reject = metrics.reject;
-  const accept = metrics.accept;
+  const baseline = getStageMetrics(metrics, 'baseline');
+  const reject = getStageMetrics(metrics, 'reject');
+  const accept = getStageMetrics(metrics, 'accept');
+  const rejectAnalyzed = Boolean(metrics?.reject);
+  const acceptAnalyzed = Boolean(metrics?.accept);
 
   output.push('┌─ User visits site');
   output.push(`│ → ${baseline.hits} tracking hits, ${baseline.cookies} cookies, ${baseline.localStorage} localStorage`);
@@ -185,28 +209,38 @@ function generateConsoleReport(data, opts) {
 
   output.push('│');
   output.push('├─ User clicks "Reject All"');
-  output.push(`│ → ${reject.hits} tracking hits, ${reject.cookies} cookies, ${reject.localStorage} localStorage`);
+  if(rejectAnalyzed) {
+    output.push(`│ → ${reject.hits} tracking hits, ${reject.cookies} cookies, ${reject.localStorage} localStorage`);
 
-  if(reject.hits > 0 || reject.trackingCookies > 0) {
-    let violationMsg = '│ ❌ VIOLATION: ';
-    if(reject.hits > 0 && reject.trackingCookies > baseline.trackingCookies) {
-      violationMsg += 'Tracking INCREASED after rejection';
-    } else if(reject.hits > 0) {
-      violationMsg += 'Tracking continues after rejection';
-    } else if(reject.trackingCookies > baseline.trackingCookies) {
-      violationMsg += 'Cookies INCREASED after rejection';
+    if(reject.hits > 0 || reject.trackingCookies > 0) {
+      let violationMsg = '│ ❌ VIOLATION: ';
+      if(reject.hits > 0 && reject.trackingCookies > baseline.trackingCookies) {
+        violationMsg += 'Tracking INCREASED after rejection';
+      } else if(reject.hits > 0) {
+        violationMsg += 'Tracking continues after rejection';
+      } else if(reject.trackingCookies > baseline.trackingCookies) {
+        violationMsg += 'Cookies INCREASED after rejection';
+      } else {
+        violationMsg += 'Tracking cookies remain after rejection';
+      }
+      output.push(violationMsg);
     } else {
-      violationMsg += 'Tracking cookies remain after rejection';
+      output.push('│ ✅ Tracking stopped after rejection');
     }
-    output.push(violationMsg);
   } else {
-    output.push('│ ✅ Tracking stopped after rejection');
+    output.push('│ → N/A (stage not analyzed)');
+    output.push(`│ ⚠️ Stage skipped: ${analysisMode.includes('limited') ? limitedReason : 'No data available'}`);
   }
 
   output.push('│');
   output.push('└─ User clicks "Accept All"');
-  output.push(`  → ${accept.hits} tracking hits, ${accept.cookies} cookies activated`);
-  output.push('  ✅ Tracking permitted after explicit consent');
+  if(acceptAnalyzed) {
+    output.push(`  → ${accept.hits} tracking hits, ${accept.cookies} cookies activated`);
+    output.push('  ✅ Tracking permitted after explicit consent');
+  } else {
+    output.push('  → N/A (stage not analyzed)');
+    output.push(`  ⚠️ Stage skipped: ${analysisMode.includes('limited') ? limitedReason : 'No data available'}`);
+  }
   output.push('');
 
   output.push('⚠️  VIOLATIONS SUMMARY');
@@ -230,6 +264,7 @@ function generateConsoleReport(data, opts) {
 function generateMarketingReport(data, opts) {
   const { report, norm } = data;
   const { compliance, violations, metrics, cmp, analysisMode } = report;
+  const baselineMetrics = getStageMetrics(metrics, 'baseline');
 
   let output = [];
 
@@ -261,7 +296,7 @@ function generateMarketingReport(data, opts) {
   output.push('🎯 AFFECTED TRACKING CODES');
   output.push(drawBox());
   
-  const hasGA = metrics.baseline.trackingCookies > 0;
+  const hasGA = baselineMetrics.trackingCookies > 0;
   const hasFacebook = violations.some(v => v.evidence?.examples?.some(e => String(e.name).includes('_fb')));
   const hasLinkedIn = violations.some(v => v.evidence?.examples?.some(e => String(e.name).includes('li_')));
   
