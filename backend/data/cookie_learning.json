@@ -1,0 +1,8916 @@
+{
+  "patterns": {
+    "bm_sv": {
+      "category": "necessary",
+      "confidence": 0.95,
+      "basedOn": 3,
+      "domains": [
+        "adobe.com",
+        "americanexpress.com",
+        "dailymail.co.uk",
+        "dell.com",
+        "hp.com",
+        "ibm.com",
+        "philips.com",
+        "royalcaribbean.com",
+        "volvocars.com"
+      ]
+    },
+    "ak_bmsc": {
+      "category": "necessary",
+      "confidence": 0.95,
+      "basedOn": 19,
+      "domains": [
+        "adobe.com",
+        "americanexpress.com",
+        "dailymail.co.uk",
+        "dell.com",
+        "hp.com",
+        "ibm.com",
+        "microsoft.com",
+        "philips.com",
+        "royalcaribbean.com",
+        "volvocars.com"
+      ]
+    },
+    "mbox": {
+      "category": "undefined",
+      "confidence": 0.8642857142857143,
+      "basedOn": 7,
+      "domains": [
+        "adobe.com",
+        "cisco.com",
+        "dell.com",
+        "hp.com",
+        "microsoft.com",
+        "royalcaribbean.com"
+      ]
+    },
+    "mboxEdgeCluster": {
+      "category": "undefined",
+      "confidence": 0.8642857142857143,
+      "basedOn": 7,
+      "domains": [
+        "adobe.com",
+        "cisco.com",
+        "dell.com",
+        "hp.com",
+        "microsoft.com"
+      ]
+    },
+    "s_vi": {
+      "category": "analytics",
+      "confidence": 0.95,
+      "basedOn": 4,
+      "domains": [
+        "adobe.com",
+        "cisco.com",
+        "hp.com",
+        "microsoft.com"
+      ]
+    },
+    "s_fid": {
+      "category": "analytics",
+      "confidence": 0.95,
+      "basedOn": 4,
+      "domains": [
+        "adobe.com",
+        "cisco.com",
+        "hp.com",
+        "microsoft.com"
+      ]
+    },
+    "s_cc": {
+      "category": "undefined",
+      "confidence": 0.95,
+      "basedOn": 14,
+      "domains": [
+        "adobe.com",
+        "cisco.com",
+        "dell.com",
+        "hp.com",
+        "microsoft.com",
+        "royalcaribbean.com",
+        "siemens.com"
+      ]
+    },
+    "s_sq": {
+      "category": "analytics",
+      "confidence": 0.95,
+      "basedOn": 2,
+      "domains": [
+        "adobe.com",
+        "cisco.com",
+        "dell.com",
+        "hp.com",
+        "microsoft.com",
+        "royalcaribbean.com"
+      ]
+    },
+    "AMCV_": {
+      "category": "analytics",
+      "confidence": 0.95,
+      "basedOn": 4,
+      "domains": [
+        "adobe.com",
+        "cisco.com",
+        "hp.com",
+        "microsoft.com"
+      ]
+    },
+    "AMCVS_": {
+      "category": "analytics",
+      "confidence": 0.95,
+      "basedOn": 4,
+      "domains": [
+        "adobe.com",
+        "cisco.com",
+        "hp.com",
+        "microsoft.com"
+      ]
+    },
+    "demdex": {
+      "category": "marketing",
+      "confidence": 0.95,
+      "basedOn": 4,
+      "domains": [
+        "adobe.com",
+        "cisco.com",
+        "hp.com",
+        "microsoft.com"
+      ]
+    },
+    "_abck": {
+      "category": "necessary",
+      "confidence": 0.95,
+      "basedOn": 17,
+      "domains": [
+        "americanexpress.com",
+        "cisco.com",
+        "dell.com",
+        "hm.com",
+        "hp.com",
+        "ibm.com",
+        "pandora.net",
+        "royalcaribbean.com",
+        "salesforce.com",
+        "volvocars.com"
+      ]
+    },
+    "__cf_bm": {
+      "category": "necessary",
+      "confidence": 0.95,
+      "basedOn": 35,
+      "domains": [
+        "carlsberg.com",
+        "cisco.com",
+        "cookiebot.com",
+        "ikea.com",
+        "pandora.net",
+        "zendesk.com",
+        "zoom.us"
+      ]
+    },
+    "personalization_id": {
+      "category": "marketing",
+      "confidence": 0.95,
+      "basedOn": 18,
+      "domains": [
+        "cisco.com",
+        "cookiebot.com",
+        "heineken.com",
+        "hp.com",
+        "ikea.com",
+        "microsoft.com",
+        "salesforce.com",
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ]
+    },
+    "guest_id": {
+      "category": "marketing",
+      "confidence": 0.95,
+      "basedOn": 18,
+      "domains": [
+        "cisco.com",
+        "cookiebot.com",
+        "heineken.com",
+        "hp.com",
+        "ikea.com",
+        "microsoft.com",
+        "salesforce.com",
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ]
+    },
+    "muc_ads": {
+      "category": "marketing",
+      "confidence": 0.95,
+      "basedOn": 18,
+      "domains": [
+        "cisco.com",
+        "cookiebot.com",
+        "heineken.com",
+        "hp.com",
+        "ikea.com",
+        "microsoft.com",
+        "salesforce.com",
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ]
+    },
+    "_ga": {
+      "category": "analytics",
+      "confidence": 0.95,
+      "basedOn": 15,
+      "domains": [
+        "cisco.com",
+        "cookiebot.com",
+        "dailymail.co.uk",
+        "dell.com",
+        "hp.com",
+        "ikea.com",
+        "philips.com",
+        "salesforce.com",
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ]
+    },
+    "_gid": {
+      "category": "analytics",
+      "confidence": 0.95,
+      "basedOn": 10,
+      "domains": [
+        "cisco.com",
+        "cookiebot.com",
+        "hp.com",
+        "ikea.com",
+        "philips.com",
+        "salesforce.com",
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ]
+    },
+    "_gat": {
+      "category": "analytics",
+      "confidence": 0.95,
+      "basedOn": 9,
+      "domains": [
+        "cisco.com",
+        "cookiebot.com",
+        "hp.com",
+        "ikea.com",
+        "philips.com",
+        "salesforce.com",
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ]
+    },
+    "_gcl_au": {
+      "category": "marketing",
+      "confidence": 0.95,
+      "basedOn": 17,
+      "domains": [
+        "cisco.com",
+        "cookiebot.com",
+        "dell.com",
+        "hp.com",
+        "ikea.com",
+        "philips.com",
+        "royalcaribbean.com",
+        "salesforce.com",
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ]
+    },
+    "_gcl_aw": {
+      "category": "marketing",
+      "confidence": 0.95,
+      "basedOn": 9,
+      "domains": [
+        "cisco.com",
+        "cookiebot.com",
+        "hp.com",
+        "ikea.com",
+        "philips.com",
+        "salesforce.com",
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ]
+    },
+    "IDE": {
+      "category": "marketing",
+      "confidence": 0.95,
+      "basedOn": 9,
+      "domains": [
+        "cisco.com",
+        "cookiebot.com",
+        "hp.com",
+        "ikea.com",
+        "philips.com",
+        "salesforce.com",
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ]
+    },
+    "test_cookie": {
+      "category": "marketing",
+      "confidence": 0.95,
+      "basedOn": 8,
+      "domains": [
+        "cisco.com",
+        "cookiebot.com",
+        "hp.com",
+        "ikea.com",
+        "salesforce.com",
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ]
+    },
+    "__gads": {
+      "category": "marketing",
+      "confidence": 0.95,
+      "basedOn": 9,
+      "domains": [
+        "cisco.com",
+        "cookiebot.com",
+        "hp.com",
+        "ikea.com",
+        "philips.com",
+        "salesforce.com",
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ]
+    },
+    "__gpi": {
+      "category": "marketing",
+      "confidence": 0.95,
+      "basedOn": 9,
+      "domains": [
+        "cisco.com",
+        "cookiebot.com",
+        "hp.com",
+        "ikea.com",
+        "philips.com",
+        "salesforce.com",
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ]
+    },
+    "DSID": {
+      "category": "marketing",
+      "confidence": 0.95,
+      "basedOn": 9,
+      "domains": [
+        "cisco.com",
+        "cookiebot.com",
+        "hp.com",
+        "ikea.com",
+        "philips.com",
+        "salesforce.com",
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ]
+    },
+    "_uetsid": {
+      "category": "marketing",
+      "confidence": 0.95,
+      "basedOn": 9,
+      "domains": [
+        "cisco.com",
+        "cookiebot.com",
+        "dell.com",
+        "hp.com",
+        "ikea.com",
+        "microsoft.com",
+        "royalcaribbean.com",
+        "zendesk.com",
+        "zoom.us"
+      ]
+    },
+    "_uetvid": {
+      "category": "marketing",
+      "confidence": 0.95,
+      "basedOn": 9,
+      "domains": [
+        "cisco.com",
+        "cookiebot.com",
+        "dell.com",
+        "hp.com",
+        "ikea.com",
+        "microsoft.com",
+        "royalcaribbean.com",
+        "zendesk.com",
+        "zoom.us"
+      ]
+    },
+    "MUID": {
+      "category": "marketing",
+      "confidence": 0.95,
+      "basedOn": 7,
+      "domains": [
+        "cisco.com",
+        "cookiebot.com",
+        "hp.com",
+        "ikea.com",
+        "microsoft.com",
+        "zendesk.com",
+        "zoom.us"
+      ]
+    },
+    "CLID": {
+      "category": "analytics",
+      "confidence": 0.95,
+      "basedOn": 7,
+      "domains": [
+        "cisco.com",
+        "cookiebot.com",
+        "hp.com",
+        "ikea.com",
+        "microsoft.com",
+        "zendesk.com",
+        "zoom.us"
+      ]
+    },
+    "_clck": {
+      "category": "analytics",
+      "confidence": 0.95,
+      "basedOn": 7,
+      "domains": [
+        "cisco.com",
+        "cookiebot.com",
+        "hp.com",
+        "ikea.com",
+        "microsoft.com",
+        "zendesk.com",
+        "zoom.us"
+      ]
+    },
+    "_clsk": {
+      "category": "analytics",
+      "confidence": 0.95,
+      "basedOn": 7,
+      "domains": [
+        "cisco.com",
+        "cookiebot.com",
+        "hp.com",
+        "ikea.com",
+        "microsoft.com",
+        "zendesk.com",
+        "zoom.us"
+      ]
+    },
+    "_fbp": {
+      "category": "marketing",
+      "confidence": 0.95,
+      "basedOn": 10,
+      "domains": [
+        "cisco.com",
+        "cookiebot.com",
+        "dell.com",
+        "hp.com",
+        "ikea.com",
+        "royalcaribbean.com",
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ]
+    },
+    "_fbc": {
+      "category": "marketing",
+      "confidence": 0.95,
+      "basedOn": 7,
+      "domains": [
+        "cisco.com",
+        "cookiebot.com",
+        "hp.com",
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ]
+    },
+    "fbm_": {
+      "category": "marketing",
+      "confidence": 0.95,
+      "basedOn": 7,
+      "domains": [
+        "cisco.com",
+        "cookiebot.com",
+        "hp.com",
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ]
+    },
+    "xs": {
+      "category": "marketing",
+      "confidence": 0.95,
+      "basedOn": 6,
+      "domains": [
+        "cisco.com",
+        "cookiebot.com",
+        "hp.com",
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ]
+    },
+    "fr": {
+      "category": "marketing",
+      "confidence": 0.95,
+      "basedOn": 7,
+      "domains": [
+        "cisco.com",
+        "cookiebot.com",
+        "hp.com",
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ]
+    },
+    "OptanonConsent": {
+      "category": "necessary",
+      "confidence": 0.95,
+      "basedOn": 50,
+      "domains": [
+        "cisco.com",
+        "cookielaw.org",
+        "dell.com",
+        "heineken.com",
+        "hp.com",
+        "ikea.com",
+        "onetrust.com",
+        "royalcaribbean.com",
+        "salesforce.com",
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ]
+    },
+    "RT": {
+      "category": "analytics",
+      "confidence": 0.9,
+      "basedOn": 8,
+      "domains": [
+        "cisco.com",
+        "dailymail.co.uk",
+        "royalcaribbean.com"
+      ]
+    },
+    "bm_mi": {
+      "category": "undefined",
+      "confidence": 0.9333333333333333,
+      "basedOn": 6,
+      "domains": [
+        "americanexpress.com",
+        "dell.com",
+        "hp.com",
+        "volvocars.com"
+      ]
+    },
+    "bm_sz": {
+      "category": "undefined",
+      "confidence": 0.8642857142857143,
+      "basedOn": 7,
+      "domains": [
+        "americanexpress.com",
+        "dell.com",
+        "hm.com",
+        "hp.com",
+        "ibm.com",
+        "royalcaribbean.com",
+        "salesforce.com",
+        "volvocars.com"
+      ]
+    },
+    "bm_ss": {
+      "category": "undefined",
+      "confidence": 0.8642857142857143,
+      "basedOn": 7,
+      "domains": [
+        "dailymail.co.uk",
+        "dell.com",
+        "hm.com",
+        "oracle.com"
+      ]
+    },
+    "bm_so": {
+      "category": "undefined",
+      "confidence": 0.8642857142857143,
+      "basedOn": 7,
+      "domains": [
+        "dailymail.co.uk",
+        "dell.com",
+        "hm.com",
+        "oracle.com"
+      ]
+    },
+    "bm_lso": {
+      "category": "undefined",
+      "confidence": 0.9333333333333333,
+      "basedOn": 6,
+      "domains": [
+        "dailymail.co.uk",
+        "dell.com"
+      ]
+    },
+    "bm_s": {
+      "category": "undefined",
+      "confidence": 0.8642857142857143,
+      "basedOn": 7,
+      "domains": [
+        "dailymail.co.uk",
+        "dell.com",
+        "hm.com",
+        "oracle.com"
+      ]
+    },
+    "OptanonAlertBoxClosed": {
+      "category": "necessary",
+      "confidence": 0.95,
+      "basedOn": 19,
+      "domains": [
+        "cisco.com",
+        "dell.com",
+        "heineken.com",
+        "hp.com",
+        "ikea.com",
+        "royalcaribbean.com",
+        "salesforce.com",
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ]
+    },
+    "QSI_SI": {
+      "category": "analytics",
+      "confidence": 0.95,
+      "basedOn": 2,
+      "domains": [
+        "cisco.com",
+        "hp.com"
+      ]
+    },
+    "QSI_S": {
+      "category": "analytics",
+      "confidence": 0.95,
+      "basedOn": 2,
+      "domains": [
+        "cisco.com",
+        "hp.com"
+      ]
+    },
+    "sm_": {
+      "category": "analytics",
+      "confidence": 0.95,
+      "basedOn": 2,
+      "domains": [
+        "cisco.com",
+        "hp.com"
+      ]
+    },
+    "li_gc": {
+      "category": "marketing",
+      "confidence": 0.95,
+      "basedOn": 6,
+      "domains": [
+        "cookiebot.com",
+        "hp.com",
+        "salesforce.com",
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ]
+    },
+    "lidc": {
+      "category": "marketing",
+      "confidence": 0.95,
+      "basedOn": 6,
+      "domains": [
+        "cookiebot.com",
+        "hp.com",
+        "salesforce.com",
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ]
+    },
+    "bcookie": {
+      "category": "marketing",
+      "confidence": 0.95,
+      "basedOn": 6,
+      "domains": [
+        "cookiebot.com",
+        "hp.com",
+        "salesforce.com",
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ]
+    },
+    "UserMatchHistory": {
+      "category": "marketing",
+      "confidence": 0.95,
+      "basedOn": 6,
+      "domains": [
+        "cookiebot.com",
+        "hp.com",
+        "salesforce.com",
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ]
+    },
+    "_pinterest_sess": {
+      "category": "marketing",
+      "confidence": 0.95,
+      "basedOn": 3,
+      "domains": [
+        "hp.com",
+        "ikea.com",
+        "volvocars.com"
+      ]
+    },
+    "_epik": {
+      "category": "marketing",
+      "confidence": 0.95,
+      "basedOn": 3,
+      "domains": [
+        "hp.com",
+        "ikea.com",
+        "volvocars.com"
+      ]
+    },
+    "_derived_epik": {
+      "category": "marketing",
+      "confidence": 0.95,
+      "basedOn": 3,
+      "domains": [
+        "hp.com",
+        "ikea.com",
+        "volvocars.com"
+      ]
+    },
+    "ai_session": {
+      "category": "necessary",
+      "confidence": 0.95,
+      "basedOn": 4,
+      "domains": [
+        "heineken.com",
+        "microsoft.com"
+      ]
+    },
+    "__cfduid": {
+      "category": "necessary",
+      "confidence": 0.95,
+      "basedOn": 2,
+      "domains": [
+        "cisco.com",
+        "pandora.net"
+      ]
+    },
+    "akavpau": {
+      "category": "necessary",
+      "confidence": 0.95,
+      "basedOn": 2,
+      "domains": [
+        "cisco.com",
+        "pandora.net"
+      ]
+    },
+    "TAsessionID": {
+      "category": "necessary",
+      "confidence": 0.95,
+      "basedOn": 4,
+      "domains": [
+        "ibm.com",
+        "philips.com"
+      ]
+    },
+    "gpv_pn": {
+      "category": "undefined",
+      "confidence": 0.95,
+      "basedOn": 10,
+      "domains": [
+        "dell.com",
+        "royalcaribbean.com"
+      ]
+    },
+    "s_ecid": {
+      "category": "undefined",
+      "confidence": 0.95,
+      "basedOn": 10,
+      "domains": [
+        "dell.com",
+        "royalcaribbean.com"
+      ]
+    },
+    "consentUUID": {
+      "category": "analytics",
+      "confidence": 0.95,
+      "basedOn": 2,
+      "domains": [
+        "theguardian.com",
+        "zeit.de"
+      ]
+    },
+    "_hjSessionUser": {
+      "category": "analytics",
+      "confidence": 0.95,
+      "basedOn": 3,
+      "domains": [
+        "cookiebot.com",
+        "zendesk.com",
+        "zoom.us"
+      ]
+    },
+    "_hjSession": {
+      "category": "analytics",
+      "confidence": 0.95,
+      "basedOn": 3,
+      "domains": [
+        "cookiebot.com",
+        "zendesk.com",
+        "zoom.us"
+      ]
+    },
+    "mp_": {
+      "category": "analytics",
+      "confidence": 0.95,
+      "basedOn": 3,
+      "domains": [
+        "cookiebot.com",
+        "zendesk.com",
+        "zoom.us"
+      ]
+    },
+    "ajs_user_id": {
+      "category": "analytics",
+      "confidence": 0.95,
+      "basedOn": 3,
+      "domains": [
+        "cookiebot.com",
+        "zendesk.com",
+        "zoom.us"
+      ]
+    },
+    "amplitude_id": {
+      "category": "analytics",
+      "confidence": 0.95,
+      "basedOn": 3,
+      "domains": [
+        "cookiebot.com",
+        "zendesk.com",
+        "zoom.us"
+      ]
+    },
+    "AWSALB": {
+      "category": "necessary",
+      "confidence": 0.95,
+      "basedOn": 4,
+      "domains": [
+        "dailymail.co.uk",
+        "zendesk.com"
+      ]
+    },
+    "AWSALBCORS": {
+      "category": "necessary",
+      "confidence": 0.95,
+      "basedOn": 4,
+      "domains": [
+        "dailymail.co.uk",
+        "zendesk.com"
+      ]
+    },
+    "YSC": {
+      "category": "analytics",
+      "confidence": 0.95,
+      "basedOn": 2,
+      "domains": [
+        "hp.com",
+        "zendesk.com"
+      ]
+    },
+    "VISITOR_INFO1_LIVE": {
+      "category": "analytics",
+      "confidence": 0.95,
+      "basedOn": 2,
+      "domains": [
+        "hp.com",
+        "zendesk.com"
+      ]
+    },
+    "BC_BANDWIDTH": {
+      "category": "analytics",
+      "confidence": 0.95,
+      "basedOn": 2,
+      "domains": [
+        "hp.com",
+        "zendesk.com"
+      ]
+    },
+    "BC_TOKEN": {
+      "category": "analytics",
+      "confidence": 0.95,
+      "basedOn": 2,
+      "domains": [
+        "hp.com",
+        "zendesk.com"
+      ]
+    },
+    "BC_VOLUME": {
+      "category": "functional",
+      "confidence": 0.95,
+      "basedOn": 2,
+      "domains": [
+        "hp.com",
+        "zendesk.com"
+      ]
+    },
+    "JSESSIONID": {
+      "category": "analytics",
+      "confidence": 0.95,
+      "basedOn": 2,
+      "domains": [
+        "ikea.com",
+        "zendesk.com"
+      ]
+    },
+    "_dd_s": {
+      "category": "analytics",
+      "confidence": 0.95,
+      "basedOn": 2,
+      "domains": [
+        "ikea.com",
+        "zendesk.com"
+      ]
+    },
+    "optimizelyEndUserId": {
+      "category": "analytics",
+      "confidence": 0.95,
+      "basedOn": 2,
+      "domains": [
+        "ikea.com",
+        "zendesk.com"
+      ]
+    },
+    "_vis_opt": {
+      "category": "analytics",
+      "confidence": 0.95,
+      "basedOn": 2,
+      "domains": [
+        "ikea.com",
+        "zendesk.com"
+      ]
+    },
+    "_gaexp": {
+      "category": "analytics",
+      "confidence": 0.95,
+      "basedOn": 2,
+      "domains": [
+        "ikea.com",
+        "zendesk.com"
+      ]
+    },
+    "uuid2": {
+      "category": "marketing",
+      "confidence": 0.95,
+      "basedOn": 3,
+      "domains": [
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ]
+    },
+    "obuid": {
+      "category": "marketing",
+      "confidence": 0.95,
+      "basedOn": 3,
+      "domains": [
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ]
+    },
+    "t_gid": {
+      "category": "marketing",
+      "confidence": 0.95,
+      "basedOn": 3,
+      "domains": [
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ]
+    },
+    "KRTBCOOKIE_": {
+      "category": "marketing",
+      "confidence": 0.95,
+      "basedOn": 3,
+      "domains": [
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ]
+    },
+    "ad-id": {
+      "category": "marketing",
+      "confidence": 0.95,
+      "basedOn": 3,
+      "domains": [
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ]
+    },
+    "ajs_anonymous_id": {
+      "category": "analytics",
+      "confidence": 0.95,
+      "basedOn": 4,
+      "domains": [
+        "cookiebot.com",
+        "dell.com",
+        "zendesk.com",
+        "zoom.us"
+      ]
+    },
+    "loid": {
+      "category": "analytics",
+      "confidence": 0.95,
+      "basedOn": 2,
+      "domains": [
+        "cookiebot.com",
+        "zoom.us"
+      ]
+    },
+    "B": {
+      "category": "marketing",
+      "confidence": 0.95,
+      "basedOn": 2,
+      "domains": [
+        "ikea.com",
+        "zoom.us"
+      ]
+    },
+    "GUC": {
+      "category": "functional",
+      "confidence": 0.95,
+      "basedOn": 2,
+      "domains": [
+        "ikea.com",
+        "zoom.us"
+      ]
+    },
+    "A3": {
+      "category": "marketing",
+      "confidence": 0.95,
+      "basedOn": 2,
+      "domains": [
+        "ikea.com",
+        "zoom.us"
+      ]
+    }
+  },
+  "domains": {
+    "adobe.com": {
+      "mbox": {
+        "firstSeen": "2025-09-23T19:43:37.700Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "mboxEdgeCluster": {
+        "firstSeen": "2025-09-23T19:43:37.703Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "kndctr_9E1005A551ED61CA0A490D45_AdobeOrg_cluster": {
+        "firstSeen": "2025-09-23T19:43:37.703Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "kndctr_9E1005A551ED61CA0A490D45_AdobeOrg_identity": {
+        "firstSeen": "2025-09-23T19:43:37.703Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "bm_sv": {
+        "firstSeen": "2025-09-23T19:43:37.703Z",
+        "occurrences": 1,
+        "categories": {
+          "necessary": 1
+        }
+      },
+      "AMCV_9E1005A551ED61CA0A490D45%40AdobeOrg": {
+        "firstSeen": "2025-09-23T19:43:37.703Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "gpv": {
+        "firstSeen": "2025-09-23T19:43:37.703Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "ak_bmsc": {
+        "firstSeen": "2025-09-23T19:43:37.703Z",
+        "occurrences": 1,
+        "categories": {
+          "necessary": 1
+        }
+      },
+      "relay": {
+        "firstSeen": "2025-09-23T19:43:37.703Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "ftrset": {
+        "firstSeen": "2025-09-23T19:43:37.703Z",
+        "occurrences": 1,
+        "categories": {
+          "functional": 1
+        }
+      },
+      "fg": {
+        "firstSeen": "2025-09-23T19:43:37.703Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "s_vi": {
+        "firstSeen": "2025-09-23T19:43:37.703Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "s_fid": {
+        "firstSeen": "2025-09-23T19:43:37.703Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "s_cc": {
+        "firstSeen": "2025-09-23T19:43:37.703Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "s_sq": {
+        "firstSeen": "2025-09-23T19:43:37.703Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "AMCV_": {
+        "firstSeen": "2025-09-23T19:43:37.703Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "AMCVS_": {
+        "firstSeen": "2025-09-23T19:43:37.703Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "demdex": {
+        "firstSeen": "2025-09-23T19:43:37.703Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      }
+    },
+    "americanexpress.com": {
+      "agent-id": {
+        "firstSeen": "2025-09-23T19:43:37.704Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "bm_mi": {
+        "firstSeen": "2025-09-23T19:43:37.704Z",
+        "occurrences": 1,
+        "categories": {
+          "necessary": 1
+        }
+      },
+      "bm_sz": {
+        "firstSeen": "2025-09-23T19:43:37.704Z",
+        "occurrences": 1,
+        "categories": {
+          "necessary": 1
+        }
+      },
+      "ak_bmsc": {
+        "firstSeen": "2025-09-23T19:43:37.704Z",
+        "occurrences": 1,
+        "categories": {
+          "necessary": 1
+        }
+      },
+      "_abck": {
+        "firstSeen": "2025-09-23T19:43:37.704Z",
+        "occurrences": 1,
+        "categories": {
+          "necessary": 1
+        }
+      },
+      "axplocale": {
+        "firstSeen": "2025-09-23T19:43:37.704Z",
+        "occurrences": 1,
+        "categories": {
+          "functional": 1
+        }
+      },
+      "TS01a91ed4": {
+        "firstSeen": "2025-09-23T19:43:37.704Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "bm_sv": {
+        "firstSeen": "2025-09-23T19:43:37.704Z",
+        "occurrences": 1,
+        "categories": {
+          "necessary": 1
+        }
+      }
+    },
+    "carlsberg.com": {
+      "__cf_bm": {
+        "firstSeen": "2025-09-23T19:43:37.705Z",
+        "occurrences": 1,
+        "categories": {
+          "necessary": 1
+        }
+      }
+    },
+    "cisco.com": {
+      "c_bi": {
+        "firstSeen": "2025-09-23T19:43:37.706Z",
+        "occurrences": 5,
+        "categories": {
+          "analytics": 5
+        }
+      },
+      "RT": {
+        "firstSeen": "2025-09-23T19:43:37.706Z",
+        "occurrences": 5,
+        "categories": {
+          "analytics": 5
+        }
+      },
+      "OptanonConsent": {
+        "firstSeen": "2025-09-23T19:43:37.706Z",
+        "occurrences": 5,
+        "categories": {
+          "necessary": 5
+        }
+      },
+      "OptanonAlertBoxClosed": {
+        "firstSeen": "2025-09-23T19:43:37.706Z",
+        "occurrences": 2,
+        "categories": {
+          "necessary": 2
+        }
+      },
+      "personalization_id": {
+        "firstSeen": "2025-09-23T19:43:37.706Z",
+        "occurrences": 2,
+        "categories": {
+          "marketing": 2
+        }
+      },
+      "guest_id": {
+        "firstSeen": "2025-09-23T19:43:37.706Z",
+        "occurrences": 2,
+        "categories": {
+          "marketing": 2
+        }
+      },
+      "muc_ads": {
+        "firstSeen": "2025-09-23T19:43:37.706Z",
+        "occurrences": 2,
+        "categories": {
+          "marketing": 2
+        }
+      },
+      "__cf_bm": {
+        "firstSeen": "2025-09-23T19:43:37.706Z",
+        "occurrences": 1,
+        "categories": {
+          "necessary": 1
+        }
+      },
+      "__cfduid": {
+        "firstSeen": "2025-09-23T19:43:37.706Z",
+        "occurrences": 1,
+        "categories": {
+          "necessary": 1
+        }
+      },
+      "akavpau": {
+        "firstSeen": "2025-09-23T19:43:37.706Z",
+        "occurrences": 1,
+        "categories": {
+          "necessary": 1
+        }
+      },
+      "_abck": {
+        "firstSeen": "2025-09-23T19:43:37.706Z",
+        "occurrences": 1,
+        "categories": {
+          "necessary": 1
+        }
+      },
+      "AMCV_B8D07FF4520E94C10A490D4C%40AdobeOrg": {
+        "firstSeen": "2025-09-23T19:43:37.706Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "C_FPID": {
+        "firstSeen": "2025-09-23T19:43:37.706Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "mbox": {
+        "firstSeen": "2025-09-23T19:43:37.706Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "mboxEdgeCluster": {
+        "firstSeen": "2025-09-23T19:43:37.706Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "s_vi": {
+        "firstSeen": "2025-09-23T19:43:37.706Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "s_fid": {
+        "firstSeen": "2025-09-23T19:43:37.706Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "s_cc": {
+        "firstSeen": "2025-09-23T19:43:37.706Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "s_sq": {
+        "firstSeen": "2025-09-23T19:43:37.706Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "AMCV_": {
+        "firstSeen": "2025-09-23T19:43:37.706Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "AMCVS_": {
+        "firstSeen": "2025-09-23T19:43:37.706Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "demdex": {
+        "firstSeen": "2025-09-23T19:43:37.706Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "_ga": {
+        "firstSeen": "2025-09-23T19:43:37.706Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_gid": {
+        "firstSeen": "2025-09-23T19:43:37.706Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_gat": {
+        "firstSeen": "2025-09-23T19:43:37.706Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_gcl_au": {
+        "firstSeen": "2025-09-23T19:43:37.706Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "_gcl_aw": {
+        "firstSeen": "2025-09-23T19:43:37.706Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "IDE": {
+        "firstSeen": "2025-09-23T19:43:37.706Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "test_cookie": {
+        "firstSeen": "2025-09-23T19:43:37.706Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "__gads": {
+        "firstSeen": "2025-09-23T19:43:37.706Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "__gpi": {
+        "firstSeen": "2025-09-23T19:43:37.706Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "DSID": {
+        "firstSeen": "2025-09-23T19:43:37.706Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "_uetsid": {
+        "firstSeen": "2025-09-23T19:43:37.706Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "_uetvid": {
+        "firstSeen": "2025-09-23T19:43:37.706Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "MUID": {
+        "firstSeen": "2025-09-23T19:43:37.706Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "CLID": {
+        "firstSeen": "2025-09-23T19:43:37.706Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_clck": {
+        "firstSeen": "2025-09-23T19:43:37.706Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_clsk": {
+        "firstSeen": "2025-09-23T19:43:37.706Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "QSI_SI": {
+        "firstSeen": "2025-09-23T19:43:37.706Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "QSI_S": {
+        "firstSeen": "2025-09-23T19:43:37.706Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "sm_": {
+        "firstSeen": "2025-09-23T19:43:37.706Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_fbp": {
+        "firstSeen": "2025-09-23T19:43:37.706Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "_fbc": {
+        "firstSeen": "2025-09-23T19:43:37.706Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "fbm_": {
+        "firstSeen": "2025-09-23T19:43:37.706Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "xs": {
+        "firstSeen": "2025-09-23T19:43:37.706Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "fr": {
+        "firstSeen": "2025-09-23T19:43:37.706Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      }
+    },
+    "cookiebot.com": {
+      "__cf_bm": {
+        "firstSeen": "2025-09-23T19:43:37.708Z",
+        "occurrences": 5,
+        "categories": {
+          "necessary": 5
+        }
+      },
+      "personalization_id": {
+        "firstSeen": "2025-09-23T19:43:37.708Z",
+        "occurrences": 2,
+        "categories": {
+          "marketing": 2
+        }
+      },
+      "guest_id": {
+        "firstSeen": "2025-09-23T19:43:37.708Z",
+        "occurrences": 2,
+        "categories": {
+          "marketing": 2
+        }
+      },
+      "muc_ads": {
+        "firstSeen": "2025-09-23T19:43:37.708Z",
+        "occurrences": 2,
+        "categories": {
+          "marketing": 2
+        }
+      },
+      "_ga": {
+        "firstSeen": "2025-09-23T19:43:37.708Z",
+        "occurrences": 2,
+        "categories": {
+          "analytics": 2
+        }
+      },
+      "_ga_6L1221E6ET": {
+        "firstSeen": "2025-09-23T19:43:37.708Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_ga_WX15RJ0HZZ": {
+        "firstSeen": "2025-09-23T19:43:37.708Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_ga_4SBCRNPYYR": {
+        "firstSeen": "2025-09-23T19:43:37.708Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_gcl_au": {
+        "firstSeen": "2025-09-23T19:43:37.708Z",
+        "occurrences": 2,
+        "categories": {
+          "marketing": 2
+        }
+      },
+      "userlang": {
+        "firstSeen": "2025-09-23T19:43:37.708Z",
+        "occurrences": 1,
+        "categories": {
+          "functional": 1
+        }
+      },
+      "FPID": {
+        "firstSeen": "2025-09-23T19:43:37.708Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "FPGSID": {
+        "firstSeen": "2025-09-23T19:43:37.708Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "FPLC": {
+        "firstSeen": "2025-09-23T19:43:37.708Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_gid": {
+        "firstSeen": "2025-09-23T19:43:37.708Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_gat": {
+        "firstSeen": "2025-09-23T19:43:37.708Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_gcl_aw": {
+        "firstSeen": "2025-09-23T19:43:37.708Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "IDE": {
+        "firstSeen": "2025-09-23T19:43:37.708Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "test_cookie": {
+        "firstSeen": "2025-09-23T19:43:37.708Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "__gads": {
+        "firstSeen": "2025-09-23T19:43:37.708Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "__gpi": {
+        "firstSeen": "2025-09-23T19:43:37.708Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "DSID": {
+        "firstSeen": "2025-09-23T19:43:37.708Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "_hjSessionUser": {
+        "firstSeen": "2025-09-23T19:43:37.708Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_hjSession": {
+        "firstSeen": "2025-09-23T19:43:37.708Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "mp_": {
+        "firstSeen": "2025-09-23T19:43:37.708Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "ajs_user_id": {
+        "firstSeen": "2025-09-23T19:43:37.708Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "ajs_anonymous_id": {
+        "firstSeen": "2025-09-23T19:43:37.708Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "amplitude_id": {
+        "firstSeen": "2025-09-23T19:43:37.708Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_uetsid": {
+        "firstSeen": "2025-09-23T19:43:37.708Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "_uetvid": {
+        "firstSeen": "2025-09-23T19:43:37.708Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "MUID": {
+        "firstSeen": "2025-09-23T19:43:37.708Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "CLID": {
+        "firstSeen": "2025-09-23T19:43:37.708Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_clck": {
+        "firstSeen": "2025-09-23T19:43:37.708Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_clsk": {
+        "firstSeen": "2025-09-23T19:43:37.708Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "li_gc": {
+        "firstSeen": "2025-09-23T19:43:37.708Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "lidc": {
+        "firstSeen": "2025-09-23T19:43:37.708Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "bcookie": {
+        "firstSeen": "2025-09-23T19:43:37.708Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "UserMatchHistory": {
+        "firstSeen": "2025-09-23T19:43:37.708Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "_fbp": {
+        "firstSeen": "2025-09-23T19:43:37.708Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "_fbc": {
+        "firstSeen": "2025-09-23T19:43:37.708Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "fbm_": {
+        "firstSeen": "2025-09-23T19:43:37.708Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "xs": {
+        "firstSeen": "2025-09-23T19:43:37.708Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "fr": {
+        "firstSeen": "2025-09-23T19:43:37.708Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "_rdt_uuid": {
+        "firstSeen": "2025-09-23T19:43:37.708Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "loid": {
+        "firstSeen": "2025-09-23T19:43:37.708Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      }
+    },
+    "cookielaw.org": {
+      "OptanonConsent": {
+        "firstSeen": "2025-09-23T19:43:37.708Z",
+        "occurrences": 1,
+        "categories": {
+          "necessary": 1
+        }
+      }
+    },
+    "dailymail.co.uk": {
+      "bm_ss": {
+        "firstSeen": "2025-09-23T19:43:37.712Z",
+        "occurrences": 1,
+        "categories": {
+          "necessary": 1
+        }
+      },
+      "gab": {
+        "firstSeen": "2025-09-23T19:43:37.712Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "bm_so": {
+        "firstSeen": "2025-09-23T19:43:37.712Z",
+        "occurrences": 1,
+        "categories": {
+          "necessary": 1
+        }
+      },
+      "_vwo_uuid_v2": {
+        "firstSeen": "2025-09-23T19:43:37.712Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_vwo_uuid": {
+        "firstSeen": "2025-09-23T19:43:37.712Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "bm_lso": {
+        "firstSeen": "2025-09-23T19:43:37.712Z",
+        "occurrences": 1,
+        "categories": {
+          "necessary": 1
+        }
+      },
+      "_ga": {
+        "firstSeen": "2025-09-23T19:43:37.712Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "ak_bmsc": {
+        "firstSeen": "2025-09-23T19:43:37.712Z",
+        "occurrences": 1,
+        "categories": {
+          "necessary": 1
+        }
+      },
+      "AWSALB": {
+        "firstSeen": "2025-09-23T19:43:37.712Z",
+        "occurrences": 1,
+        "categories": {
+          "necessary": 1
+        }
+      },
+      "AWSALBCORS": {
+        "firstSeen": "2025-09-23T19:43:37.712Z",
+        "occurrences": 1,
+        "categories": {
+          "necessary": 1
+        }
+      },
+      "blaize_session": {
+        "firstSeen": "2025-09-23T19:43:37.712Z",
+        "occurrences": 1,
+        "categories": {
+          "necessary": 1
+        }
+      },
+      "blaize_tracking_id": {
+        "firstSeen": "2025-09-23T19:43:37.712Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "bm_sv": {
+        "firstSeen": "2025-09-23T19:43:37.712Z",
+        "occurrences": 1,
+        "categories": {
+          "necessary": 1
+        }
+      },
+      "RT": {
+        "firstSeen": "2025-09-23T19:43:37.712Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "bm_s": {
+        "firstSeen": "2025-09-23T19:43:37.712Z",
+        "occurrences": 1,
+        "categories": {
+          "necessary": 1
+        }
+      },
+      "_ga_C9F47K6NW6": {
+        "firstSeen": "2025-09-23T19:43:37.712Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      }
+    },
+    "dell.com": {
+      "s_tp": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "OptanonConsent": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "dell_cmp_consent": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "s_cc": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "s_ivc": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "cidlid": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "s_vnc365": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "s_ips": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "s_ppv": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "gpv_pn": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "dc-ctxt": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "txUid": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "AMCVS_4DD80861515CAB990A490D45%40AdobeOrg": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "ak_bmsc": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "akavpau_maintenance_vp": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "bm_s": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "akGD": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "rumCki": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "eSupId": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 4,
+        "categories": {
+          "undefined": 4
+        }
+      },
+      "mboxEdgeCluster": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "bm_sz": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "bm_lso": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "s_c49": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "check": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "bm_ss": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "AMCV_4DD80861515CAB990A490D45%40AdobeOrg": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "s_ecid": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "_abck": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "DellCEMSession": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "bm_mi": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "bm_so": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "bm_sv": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "lwp": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "mbox": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "akaalb_CSB_CHINA_AZ": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "um_g_uc": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "OptanonAlertBoxClosed": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 2,
+        "categories": {
+          "undefined": 2
+        }
+      },
+      "s_sq": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 2,
+        "categories": {
+          "undefined": 2
+        }
+      },
+      "_an_uid": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 1,
+        "categories": {
+          "undefined": 1
+        }
+      },
+      "_uetvid": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 1,
+        "categories": {
+          "undefined": 1
+        }
+      },
+      "_gd_visitor": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 1,
+        "categories": {
+          "undefined": 1
+        }
+      },
+      "_gd_session": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 1,
+        "categories": {
+          "undefined": 1
+        }
+      },
+      "__rtbh.lid": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 1,
+        "categories": {
+          "undefined": 1
+        }
+      },
+      "d_dnb": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 1,
+        "categories": {
+          "undefined": 1
+        }
+      },
+      "_gcl_au": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 1,
+        "categories": {
+          "undefined": 1
+        }
+      },
+      "cjConsent": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 1,
+        "categories": {
+          "undefined": 1
+        }
+      },
+      "ajs_anonymous_id": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 1,
+        "categories": {
+          "undefined": 1
+        }
+      },
+      "FPGSID": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 1,
+        "categories": {
+          "undefined": 1
+        }
+      },
+      "mktrecipe": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 1,
+        "categories": {
+          "undefined": 1
+        }
+      },
+      "FPAU": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 1,
+        "categories": {
+          "undefined": 1
+        }
+      },
+      "FPID": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 1,
+        "categories": {
+          "undefined": 1
+        }
+      },
+      "_fbp": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 1,
+        "categories": {
+          "undefined": 1
+        }
+      },
+      "rto": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 1,
+        "categories": {
+          "undefined": 1
+        }
+      },
+      "_tq_id.TV-5445272754-1.a9b3": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 1,
+        "categories": {
+          "undefined": 1
+        }
+      },
+      "_cls_v": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 1,
+        "categories": {
+          "undefined": 1
+        }
+      },
+      "d_vi": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 1,
+        "categories": {
+          "undefined": 1
+        }
+      },
+      "_ga_1234567890": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 1,
+        "categories": {
+          "undefined": 1
+        }
+      },
+      "_ga": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 1,
+        "categories": {
+          "undefined": 1
+        }
+      },
+      "_cls_s": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 1,
+        "categories": {
+          "undefined": 1
+        }
+      },
+      "_gtmeec": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 1,
+        "categories": {
+          "undefined": 1
+        }
+      },
+      "FPLC": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 1,
+        "categories": {
+          "undefined": 1
+        }
+      },
+      "_uetsid": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 1,
+        "categories": {
+          "undefined": 1
+        }
+      },
+      "__rtbh.uid": {
+        "firstSeen": "2025-09-23T19:43:37.714Z",
+        "occurrences": 1,
+        "categories": {
+          "undefined": 1
+        }
+      }
+    },
+    "heineken.com": {
+      "ARRAffinity": {
+        "firstSeen": "2025-09-23T19:43:37.715Z",
+        "occurrences": 3,
+        "categories": {
+          "analytics": 3
+        }
+      },
+      "ARRAffinitySameSite": {
+        "firstSeen": "2025-09-23T19:43:37.715Z",
+        "occurrences": 3,
+        "categories": {
+          "analytics": 3
+        }
+      },
+      "OptanonConsent": {
+        "firstSeen": "2025-09-23T19:43:37.715Z",
+        "occurrences": 3,
+        "categories": {
+          "necessary": 3
+        }
+      },
+      "ai_session": {
+        "firstSeen": "2025-09-23T19:43:37.715Z",
+        "occurrences": 3,
+        "categories": {
+          "necessary": 3
+        }
+      },
+      "OptanonAlertBoxClosed": {
+        "firstSeen": "2025-09-23T19:43:37.715Z",
+        "occurrences": 1,
+        "categories": {
+          "necessary": 1
+        }
+      },
+      "personalization_id": {
+        "firstSeen": "2025-09-23T19:43:37.715Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "guest_id": {
+        "firstSeen": "2025-09-23T19:43:37.715Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "muc_ads": {
+        "firstSeen": "2025-09-23T19:43:37.715Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      }
+    },
+    "hm.com": {
+      "HMCORP_locale_autoassigned": {
+        "firstSeen": "2025-09-23T19:43:37.716Z",
+        "occurrences": 1,
+        "categories": {
+          "functional": 1
+        }
+      },
+      "HMCORP_locale": {
+        "firstSeen": "2025-09-23T19:43:37.716Z",
+        "occurrences": 1,
+        "categories": {
+          "functional": 1
+        }
+      },
+      "HMCOUNTRY_name": {
+        "firstSeen": "2025-09-23T19:43:37.716Z",
+        "occurrences": 1,
+        "categories": {
+          "functional": 1
+        }
+      },
+      "_abck": {
+        "firstSeen": "2025-09-23T19:43:37.716Z",
+        "occurrences": 1,
+        "categories": {
+          "necessary": 1
+        }
+      },
+      "bm_sz": {
+        "firstSeen": "2025-09-23T19:43:37.716Z",
+        "occurrences": 1,
+        "categories": {
+          "necessary": 1
+        }
+      },
+      "akamref": {
+        "firstSeen": "2025-09-23T19:43:37.716Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "akavpau_www2_de_de": {
+        "firstSeen": "2025-09-23T19:43:37.716Z",
+        "occurrences": 1,
+        "categories": {
+          "necessary": 1
+        }
+      },
+      "bm_ss": {
+        "firstSeen": "2025-09-23T19:43:37.716Z",
+        "occurrences": 1,
+        "categories": {
+          "necessary": 1
+        }
+      },
+      "bm_s": {
+        "firstSeen": "2025-09-23T19:43:37.716Z",
+        "occurrences": 1,
+        "categories": {
+          "necessary": 1
+        }
+      },
+      "bm_so": {
+        "firstSeen": "2025-09-23T19:43:37.716Z",
+        "occurrences": 1,
+        "categories": {
+          "necessary": 1
+        }
+      }
+    },
+    "hp.com": {
+      "bm_mi": {
+        "firstSeen": "2025-09-23T19:43:37.717Z",
+        "occurrences": 3,
+        "categories": {
+          "necessary": 3
+        }
+      },
+      "bm_sv": {
+        "firstSeen": "2025-09-23T19:43:37.717Z",
+        "occurrences": 3,
+        "categories": {
+          "necessary": 3
+        }
+      },
+      "bm_sz": {
+        "firstSeen": "2025-09-23T19:43:37.717Z",
+        "occurrences": 5,
+        "categories": {
+          "necessary": 5
+        }
+      },
+      "lang": {
+        "firstSeen": "2025-09-23T19:43:37.717Z",
+        "occurrences": 5,
+        "categories": {
+          "functional": 5
+        }
+      },
+      "www_hp_com_locale": {
+        "firstSeen": "2025-09-23T19:43:37.717Z",
+        "occurrences": 5,
+        "categories": {
+          "functional": 5
+        }
+      },
+      "cc": {
+        "firstSeen": "2025-09-23T19:43:37.717Z",
+        "occurrences": 5,
+        "categories": {
+          "analytics": 5
+        }
+      },
+      "ak_bmsc": {
+        "firstSeen": "2025-09-23T19:43:37.717Z",
+        "occurrences": 5,
+        "categories": {
+          "necessary": 5
+        }
+      },
+      "c_hp_filter": {
+        "firstSeen": "2025-09-23T19:43:37.717Z",
+        "occurrences": 5,
+        "categories": {
+          "analytics": 5
+        }
+      },
+      "_abck": {
+        "firstSeen": "2025-09-23T19:43:37.717Z",
+        "occurrences": 5,
+        "categories": {
+          "necessary": 5
+        }
+      },
+      "OptanonConsent": {
+        "firstSeen": "2025-09-23T19:43:37.717Z",
+        "occurrences": 5,
+        "categories": {
+          "necessary": 5
+        }
+      },
+      "hpeuck_prefs": {
+        "firstSeen": "2025-09-23T19:43:37.717Z",
+        "occurrences": 5,
+        "categories": {
+          "marketing": 5
+        }
+      },
+      "OptanonAlertBoxClosed": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 2,
+        "categories": {
+          "necessary": 2
+        }
+      },
+      "personalization_id": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 2,
+        "categories": {
+          "marketing": 2
+        }
+      },
+      "guest_id": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 2,
+        "categories": {
+          "marketing": 2
+        }
+      },
+      "muc_ads": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 2,
+        "categories": {
+          "marketing": 2
+        }
+      },
+      "AMCV_5E34123F5245B2CD0A490D45%40AdobeOrg": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "sdk_visitTimestamp": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 1,
+        "categories": {
+          "functional": 1
+        }
+      },
+      "mbox": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 2,
+        "categories": {
+          "analytics": 2
+        }
+      },
+      "_gcl_au": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 2,
+        "categories": {
+          "marketing": 2
+        }
+      },
+      "hp_pv1_prefs": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "YSC": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "__Secure-ROLLOUT_TOKEN": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 1,
+        "categories": {
+          "necessary": 1
+        }
+      },
+      "VISITOR_INFO1_LIVE": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "VISITOR_PRIVACY_METADATA": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_ga_vnum": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_ga_invisitc": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_ga4_vnum": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_ga4_invisit": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_ga4_invisitc": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_ga_invisit": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_ga_vnumid": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_ga4_vnumid": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_ga": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_gid": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_gat": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_gcl_aw": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "IDE": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "test_cookie": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "__gads": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "__gpi": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "DSID": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "mboxEdgeCluster": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "s_vi": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "s_fid": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "s_cc": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "s_sq": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "AMCV_": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "AMCVS_": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "demdex": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "BC_BANDWIDTH": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "BC_TOKEN": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "BC_VOLUME": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 1,
+        "categories": {
+          "functional": 1
+        }
+      },
+      "QSI_SI": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "QSI_S": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "sm_": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_uetsid": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "_uetvid": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "MUID": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "CLID": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_clck": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_clsk": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "li_gc": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "lidc": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "bcookie": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "UserMatchHistory": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "_fbp": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "_fbc": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "fbm_": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "xs": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "fr": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "_pinterest_sess": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "_epik": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "_derived_epik": {
+        "firstSeen": "2025-09-23T19:43:37.718Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      }
+    },
+    "ibm.com": {
+      "ak_bmsc": {
+        "firstSeen": "2025-09-23T19:43:37.720Z",
+        "occurrences": 3,
+        "categories": {
+          "necessary": 3
+        }
+      },
+      "bm_sz": {
+        "firstSeen": "2025-09-23T19:43:37.720Z",
+        "occurrences": 3,
+        "categories": {
+          "necessary": 3
+        }
+      },
+      "pageviewContext": {
+        "firstSeen": "2025-09-23T19:43:37.720Z",
+        "occurrences": 3,
+        "categories": {
+          "analytics": 3
+        }
+      },
+      "notice_preferences_master": {
+        "firstSeen": "2025-09-23T19:43:37.720Z",
+        "occurrences": 3,
+        "categories": {
+          "functional": 3
+        }
+      },
+      "e79d2bf4da9603c4863b9214ab815aca": {
+        "firstSeen": "2025-09-23T19:43:37.720Z",
+        "occurrences": 3,
+        "categories": {
+          "analytics": 3
+        }
+      },
+      "CIPD-S-SESSION-ID": {
+        "firstSeen": "2025-09-23T19:43:37.720Z",
+        "occurrences": 3,
+        "categories": {
+          "necessary": 3
+        }
+      },
+      "CISESSIONIDPR07A": {
+        "firstSeen": "2025-09-23T19:43:37.720Z",
+        "occurrences": 3,
+        "categories": {
+          "necessary": 3
+        }
+      },
+      "bm_sv": {
+        "firstSeen": "2025-09-23T19:43:37.720Z",
+        "occurrences": 3,
+        "categories": {
+          "necessary": 3
+        }
+      },
+      "_abck": {
+        "firstSeen": "2025-09-23T19:43:37.720Z",
+        "occurrences": 3,
+        "categories": {
+          "necessary": 3
+        }
+      },
+      "OPTOUTMULTI": {
+        "firstSeen": "2025-09-23T19:43:37.720Z",
+        "occurrences": 3,
+        "categories": {
+          "marketing": 3
+        }
+      },
+      "TAsessionID": {
+        "firstSeen": "2025-09-23T19:43:37.720Z",
+        "occurrences": 3,
+        "categories": {
+          "necessary": 3
+        }
+      }
+    },
+    "ikea.com": {
+      "guest": {
+        "firstSeen": "2025-09-23T19:43:37.721Z",
+        "occurrences": 5,
+        "categories": {
+          "analytics": 5
+        }
+      },
+      "OptanonConsent": {
+        "firstSeen": "2025-09-23T19:43:37.721Z",
+        "occurrences": 5,
+        "categories": {
+          "necessary": 5
+        }
+      },
+      "ikexp_id": {
+        "firstSeen": "2025-09-23T19:43:37.721Z",
+        "occurrences": 5,
+        "categories": {
+          "analytics": 5
+        }
+      },
+      "__cf_bm": {
+        "firstSeen": "2025-09-23T19:43:37.721Z",
+        "occurrences": 15,
+        "categories": {
+          "necessary": 15
+        }
+      },
+      "_cfuvid": {
+        "firstSeen": "2025-09-23T19:43:37.721Z",
+        "occurrences": 5,
+        "categories": {
+          "functional": 5
+        }
+      },
+      "OptanonAlertBoxClosed": {
+        "firstSeen": "2025-09-23T19:43:37.721Z",
+        "occurrences": 2,
+        "categories": {
+          "necessary": 2
+        }
+      },
+      "personalization_id": {
+        "firstSeen": "2025-09-23T19:43:37.721Z",
+        "occurrences": 2,
+        "categories": {
+          "marketing": 2
+        }
+      },
+      "guest_id": {
+        "firstSeen": "2025-09-23T19:43:37.721Z",
+        "occurrences": 2,
+        "categories": {
+          "marketing": 2
+        }
+      },
+      "muc_ads": {
+        "firstSeen": "2025-09-23T19:43:37.721Z",
+        "occurrences": 2,
+        "categories": {
+          "marketing": 2
+        }
+      },
+      "_cs_mk_ga": {
+        "firstSeen": "2025-09-23T19:43:37.721Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_fbp": {
+        "firstSeen": "2025-09-23T19:43:37.721Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "JSESSIONID": {
+        "firstSeen": "2025-09-23T19:43:37.721Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "ADRUM": {
+        "firstSeen": "2025-09-23T19:43:37.721Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_dd_s": {
+        "firstSeen": "2025-09-23T19:43:37.721Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_uetsid": {
+        "firstSeen": "2025-09-23T19:43:37.721Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "_uetvid": {
+        "firstSeen": "2025-09-23T19:43:37.722Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "MUID": {
+        "firstSeen": "2025-09-23T19:43:37.722Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "CLID": {
+        "firstSeen": "2025-09-23T19:43:37.722Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_clck": {
+        "firstSeen": "2025-09-23T19:43:37.722Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_clsk": {
+        "firstSeen": "2025-09-23T19:43:37.722Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_ga": {
+        "firstSeen": "2025-09-23T19:43:37.722Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_gid": {
+        "firstSeen": "2025-09-23T19:43:37.722Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_gat": {
+        "firstSeen": "2025-09-23T19:43:37.722Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_gcl_au": {
+        "firstSeen": "2025-09-23T19:43:37.722Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "_gcl_aw": {
+        "firstSeen": "2025-09-23T19:43:37.722Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "IDE": {
+        "firstSeen": "2025-09-23T19:43:37.722Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "test_cookie": {
+        "firstSeen": "2025-09-23T19:43:37.722Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "__gads": {
+        "firstSeen": "2025-09-23T19:43:37.722Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "__gpi": {
+        "firstSeen": "2025-09-23T19:43:37.722Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "DSID": {
+        "firstSeen": "2025-09-23T19:43:37.722Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "B": {
+        "firstSeen": "2025-09-23T19:43:37.722Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "GUC": {
+        "firstSeen": "2025-09-23T19:43:37.722Z",
+        "occurrences": 1,
+        "categories": {
+          "functional": 1
+        }
+      },
+      "A3": {
+        "firstSeen": "2025-09-23T19:43:37.722Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "_pinterest_sess": {
+        "firstSeen": "2025-09-23T19:43:37.722Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "_epik": {
+        "firstSeen": "2025-09-23T19:43:37.722Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "_derived_epik": {
+        "firstSeen": "2025-09-23T19:43:37.722Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "optimizelyEndUserId": {
+        "firstSeen": "2025-09-23T19:43:37.722Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_vis_opt": {
+        "firstSeen": "2025-09-23T19:43:37.722Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_gaexp": {
+        "firstSeen": "2025-09-23T19:43:37.722Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      }
+    },
+    "microsoft.com": {
+      "Cascade.AuthSSO": {
+        "firstSeen": "2025-09-23T19:43:37.723Z",
+        "occurrences": 1,
+        "categories": {
+          "necessary": 1
+        }
+      },
+      "ak_bmsc": {
+        "firstSeen": "2025-09-23T19:43:37.723Z",
+        "occurrences": 1,
+        "categories": {
+          "necessary": 1
+        }
+      },
+      "MicrosoftApplicationsTelemetryDeviceId": {
+        "firstSeen": "2025-09-23T19:43:37.723Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "ai_session": {
+        "firstSeen": "2025-09-23T19:43:37.723Z",
+        "occurrences": 1,
+        "categories": {
+          "necessary": 1
+        }
+      },
+      "MC1": {
+        "firstSeen": "2025-09-23T19:43:37.723Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "MS0": {
+        "firstSeen": "2025-09-23T19:43:37.723Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "MSFPC": {
+        "firstSeen": "2025-09-23T19:43:37.723Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "mbox": {
+        "firstSeen": "2025-09-23T19:43:37.723Z",
+        "occurrences": 2,
+        "categories": {
+          "analytics": 2
+        }
+      },
+      "_uetsid": {
+        "firstSeen": "2025-09-23T19:43:37.723Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "_uetvid": {
+        "firstSeen": "2025-09-23T19:43:37.723Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "MUID": {
+        "firstSeen": "2025-09-23T19:43:37.723Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "CLID": {
+        "firstSeen": "2025-09-23T19:43:37.723Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_clck": {
+        "firstSeen": "2025-09-23T19:43:37.723Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_clsk": {
+        "firstSeen": "2025-09-23T19:43:37.723Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "personalization_id": {
+        "firstSeen": "2025-09-23T19:43:37.723Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "guest_id": {
+        "firstSeen": "2025-09-23T19:43:37.723Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "muc_ads": {
+        "firstSeen": "2025-09-23T19:43:37.723Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "mboxEdgeCluster": {
+        "firstSeen": "2025-09-23T19:43:37.723Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "s_vi": {
+        "firstSeen": "2025-09-23T19:43:37.723Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "s_fid": {
+        "firstSeen": "2025-09-23T19:43:37.723Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "s_cc": {
+        "firstSeen": "2025-09-23T19:43:37.723Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "s_sq": {
+        "firstSeen": "2025-09-23T19:43:37.723Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "AMCV_": {
+        "firstSeen": "2025-09-23T19:43:37.723Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "AMCVS_": {
+        "firstSeen": "2025-09-23T19:43:37.723Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "demdex": {
+        "firstSeen": "2025-09-23T19:43:37.723Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      }
+    },
+    "onetrust.com": {
+      "OptanonConsent": {
+        "firstSeen": "2025-09-23T19:43:37.724Z",
+        "occurrences": 1,
+        "categories": {
+          "necessary": 1
+        }
+      }
+    },
+    "oracle.com": {
+      "bm_ss": {
+        "firstSeen": "2025-09-23T19:43:37.724Z",
+        "occurrences": 1,
+        "categories": {
+          "necessary": 1
+        }
+      },
+      "bm_s": {
+        "firstSeen": "2025-09-23T19:43:37.724Z",
+        "occurrences": 1,
+        "categories": {
+          "necessary": 1
+        }
+      },
+      "bm_so": {
+        "firstSeen": "2025-09-23T19:43:37.724Z",
+        "occurrences": 1,
+        "categories": {
+          "necessary": 1
+        }
+      }
+    },
+    "pandora.net": {
+      "cqcid": {
+        "firstSeen": "2025-09-23T19:43:37.725Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "cquid": {
+        "firstSeen": "2025-09-23T19:43:37.725Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "sid": {
+        "firstSeen": "2025-09-23T19:43:37.725Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "dwanonymous_b170c3bc15c6f4d5c0ad01498f5ea32c": {
+        "firstSeen": "2025-09-23T19:43:37.725Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "dwsid": {
+        "firstSeen": "2025-09-23T19:43:37.725Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "__cf_bm": {
+        "firstSeen": "2025-09-23T19:43:37.725Z",
+        "occurrences": 2,
+        "categories": {
+          "necessary": 2
+        }
+      },
+      "__cfduid": {
+        "firstSeen": "2025-09-23T19:43:37.725Z",
+        "occurrences": 1,
+        "categories": {
+          "necessary": 1
+        }
+      },
+      "akavpau": {
+        "firstSeen": "2025-09-23T19:43:37.725Z",
+        "occurrences": 1,
+        "categories": {
+          "necessary": 1
+        }
+      },
+      "_abck": {
+        "firstSeen": "2025-09-23T19:43:37.725Z",
+        "occurrences": 1,
+        "categories": {
+          "necessary": 1
+        }
+      }
+    },
+    "philips.com": {
+      "ak_bmsc": {
+        "firstSeen": "2025-09-23T19:43:37.726Z",
+        "occurrences": 2,
+        "categories": {
+          "necessary": 2
+        }
+      },
+      "user_country": {
+        "firstSeen": "2025-09-23T19:43:37.726Z",
+        "occurrences": 1,
+        "categories": {
+          "functional": 1
+        }
+      },
+      "notice_settings": {
+        "firstSeen": "2025-09-23T19:43:37.726Z",
+        "occurrences": 1,
+        "categories": {
+          "functional": 1
+        }
+      },
+      "signifyd_id_1142733": {
+        "firstSeen": "2025-09-23T19:43:37.726Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "TAsessionID": {
+        "firstSeen": "2025-09-23T19:43:37.726Z",
+        "occurrences": 1,
+        "categories": {
+          "necessary": 1
+        }
+      },
+      "bm_sv": {
+        "firstSeen": "2025-09-23T19:43:37.726Z",
+        "occurrences": 1,
+        "categories": {
+          "necessary": 1
+        }
+      },
+      "_ga": {
+        "firstSeen": "2025-09-23T19:43:37.726Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_gid": {
+        "firstSeen": "2025-09-23T19:43:37.726Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_gat": {
+        "firstSeen": "2025-09-23T19:43:37.726Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_gcl_au": {
+        "firstSeen": "2025-09-23T19:43:37.726Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "_gcl_aw": {
+        "firstSeen": "2025-09-23T19:43:37.726Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "IDE": {
+        "firstSeen": "2025-09-23T19:43:37.726Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "__gads": {
+        "firstSeen": "2025-09-23T19:43:37.726Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "__gpi": {
+        "firstSeen": "2025-09-23T19:43:37.726Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "DSID": {
+        "firstSeen": "2025-09-23T19:43:37.726Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      }
+    },
+    "royalcaribbean.com": {
+      "BVBRANDSID": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 4,
+        "categories": {
+          "undefined": 4
+        }
+      },
+      "BVBRANDID": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 4,
+        "categories": {
+          "undefined": 4
+        }
+      },
+      "s_cc": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "s_evar66cvp": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "cmChannel": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "cmCampaign": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "pageNamePersistant": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "OptanonConsent": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "visitorType": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "AMCVS_981337045329610C0A490D44%40AdobeOrg": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "s_cm": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "_abck": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "_cs_mk_aa": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "AKA_A2": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "utag_main": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 3,
+        "categories": {
+          "undefined": 3
+        }
+      },
+      "gpv_pn": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "ak_bmsc": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "akacd_PRC-ROYAL-GRAPH-PRD-V2": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "AMCV_981337045329610C0A490D44%40AdobeOrg": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "affinity": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "s_evar68cvp": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "tiktok_throttle": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "language": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "s_ecid": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "wul": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "country": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "rwd_id": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "gp": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "bm_sz": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "s_plt": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "s_dl": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "MCMID": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 4,
+        "categories": {
+          "undefined": 4
+        }
+      },
+      "wuc": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "s_nr": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "bm_sv": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "bgv": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 5,
+        "categories": {
+          "undefined": 5
+        }
+      },
+      "LPSID-51532229": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 4,
+        "categories": {
+          "undefined": 4
+        }
+      },
+      "LPVID": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 4,
+        "categories": {
+          "undefined": 4
+        }
+      },
+      "newUniversalNav": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 3,
+        "categories": {
+          "undefined": 3
+        }
+      },
+      "at_check": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 3,
+        "categories": {
+          "undefined": 3
+        }
+      },
+      "OptanonAlertBoxClosed": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 2,
+        "categories": {
+          "undefined": 2
+        }
+      },
+      "mbox": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 3,
+        "categories": {
+          "undefined": 3
+        }
+      },
+      "s_sq": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 2,
+        "categories": {
+          "undefined": 2
+        }
+      },
+      "RT": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 2,
+        "categories": {
+          "undefined": 2
+        }
+      },
+      "utag_main__st": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 2,
+        "categories": {
+          "undefined": 2
+        }
+      },
+      "utag_main_vapi_domain": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 2,
+        "categories": {
+          "undefined": 2
+        }
+      },
+      "s_v21": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 2,
+        "categories": {
+          "undefined": 2
+        }
+      },
+      "utag_main__pn": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 2,
+        "categories": {
+          "undefined": 2
+        }
+      },
+      "utag_main__ss": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 2,
+        "categories": {
+          "undefined": 2
+        }
+      },
+      "utag_main__se": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 2,
+        "categories": {
+          "undefined": 2
+        }
+      },
+      "utag_main__sn": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 2,
+        "categories": {
+          "undefined": 2
+        }
+      },
+      "utag_main_ses_id": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 2,
+        "categories": {
+          "undefined": 2
+        }
+      },
+      "utag_main_count_dc": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 2,
+        "categories": {
+          "undefined": 2
+        }
+      },
+      "ADRUM": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 2,
+        "categories": {
+          "undefined": 2
+        }
+      },
+      "kampyleUserPercentile": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 1,
+        "categories": {
+          "undefined": 1
+        }
+      },
+      "kampyleUserSession": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 1,
+        "categories": {
+          "undefined": 1
+        }
+      },
+      "_gcl_au": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 1,
+        "categories": {
+          "undefined": 1
+        }
+      },
+      "_rdt_uuid": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 1,
+        "categories": {
+          "undefined": 1
+        }
+      },
+      "utag_main_dc_event": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 1,
+        "categories": {
+          "undefined": 1
+        }
+      },
+      "_cs_s": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 1,
+        "categories": {
+          "undefined": 1
+        }
+      },
+      "_cs_id": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 1,
+        "categories": {
+          "undefined": 1
+        }
+      },
+      "_cs_c": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 1,
+        "categories": {
+          "undefined": 1
+        }
+      },
+      "__pdst": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 1,
+        "categories": {
+          "undefined": 1
+        }
+      },
+      "_uetvid": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 1,
+        "categories": {
+          "undefined": 1
+        }
+      },
+      "_ScCbts": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 1,
+        "categories": {
+          "undefined": 1
+        }
+      },
+      "_uetsid": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 1,
+        "categories": {
+          "undefined": 1
+        }
+      },
+      "utag_main_dc_region": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 1,
+        "categories": {
+          "undefined": 1
+        }
+      },
+      "_scid_r": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 1,
+        "categories": {
+          "undefined": 1
+        }
+      },
+      "utag_main_v_id": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 1,
+        "categories": {
+          "undefined": 1
+        }
+      },
+      "_pin_unauth": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 1,
+        "categories": {
+          "undefined": 1
+        }
+      },
+      "_fbp": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 1,
+        "categories": {
+          "undefined": 1
+        }
+      },
+      "kampyleUserSessionsCount": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 1,
+        "categories": {
+          "undefined": 1
+        }
+      },
+      "utag_main_dc_visit": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 1,
+        "categories": {
+          "undefined": 1
+        }
+      },
+      "kampyleSessionPageCounter": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 1,
+        "categories": {
+          "undefined": 1
+        }
+      },
+      "kampyle_userid": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 1,
+        "categories": {
+          "undefined": 1
+        }
+      },
+      "_scid": {
+        "firstSeen": "2025-09-23T19:43:37.728Z",
+        "occurrences": 1,
+        "categories": {
+          "undefined": 1
+        }
+      }
+    },
+    "salesforce.com": {
+      "_abck": {
+        "firstSeen": "2025-09-23T19:43:37.730Z",
+        "occurrences": 5,
+        "categories": {
+          "necessary": 5
+        }
+      },
+      "bm_sz": {
+        "firstSeen": "2025-09-23T19:43:37.730Z",
+        "occurrences": 5,
+        "categories": {
+          "necessary": 5
+        }
+      },
+      "gtm_session_start": {
+        "firstSeen": "2025-09-23T19:43:37.730Z",
+        "occurrences": 5,
+        "categories": {
+          "necessary": 5
+        }
+      },
+      "OptanonConsent": {
+        "firstSeen": "2025-09-23T19:43:37.730Z",
+        "occurrences": 5,
+        "categories": {
+          "necessary": 5
+        }
+      },
+      "OptanonAlertBoxClosed": {
+        "firstSeen": "2025-09-23T19:43:37.730Z",
+        "occurrences": 2,
+        "categories": {
+          "necessary": 2
+        }
+      },
+      "personalization_id": {
+        "firstSeen": "2025-09-23T19:43:37.730Z",
+        "occurrences": 2,
+        "categories": {
+          "marketing": 2
+        }
+      },
+      "guest_id": {
+        "firstSeen": "2025-09-23T19:43:37.730Z",
+        "occurrences": 2,
+        "categories": {
+          "marketing": 2
+        }
+      },
+      "muc_ads": {
+        "firstSeen": "2025-09-23T19:43:37.730Z",
+        "occurrences": 2,
+        "categories": {
+          "marketing": 2
+        }
+      },
+      "__hstc": {
+        "firstSeen": "2025-09-23T19:43:37.730Z",
+        "occurrences": 2,
+        "categories": {
+          "analytics": 2
+        }
+      },
+      "hubspotutk": {
+        "firstSeen": "2025-09-23T19:43:37.730Z",
+        "occurrences": 2,
+        "categories": {
+          "analytics": 2
+        }
+      },
+      "_mkto_trk": {
+        "firstSeen": "2025-09-23T19:43:37.730Z",
+        "occurrences": 2,
+        "categories": {
+          "marketing": 2
+        }
+      },
+      "visitor_id": {
+        "firstSeen": "2025-09-23T19:43:37.730Z",
+        "occurrences": 2,
+        "categories": {
+          "marketing": 2
+        }
+      },
+      "eloqua": {
+        "firstSeen": "2025-09-23T19:43:37.730Z",
+        "occurrences": 2,
+        "categories": {
+          "marketing": 2
+        }
+      },
+      "_gcl_au": {
+        "firstSeen": "2025-09-23T19:43:37.730Z",
+        "occurrences": 2,
+        "categories": {
+          "marketing": 2
+        }
+      },
+      "_gid": {
+        "firstSeen": "2025-09-23T19:43:37.730Z",
+        "occurrences": 2,
+        "categories": {
+          "analytics": 2
+        }
+      },
+      "_ga_3VHBZ2DJWP": {
+        "firstSeen": "2025-09-23T19:43:37.730Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_ga": {
+        "firstSeen": "2025-09-23T19:43:37.730Z",
+        "occurrences": 2,
+        "categories": {
+          "analytics": 2
+        }
+      },
+      "_gat": {
+        "firstSeen": "2025-09-23T19:43:37.730Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_gcl_aw": {
+        "firstSeen": "2025-09-23T19:43:37.730Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "IDE": {
+        "firstSeen": "2025-09-23T19:43:37.730Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "test_cookie": {
+        "firstSeen": "2025-09-23T19:43:37.730Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "__gads": {
+        "firstSeen": "2025-09-23T19:43:37.730Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "__gpi": {
+        "firstSeen": "2025-09-23T19:43:37.730Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "DSID": {
+        "firstSeen": "2025-09-23T19:43:37.730Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "li_gc": {
+        "firstSeen": "2025-09-23T19:43:37.730Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "lidc": {
+        "firstSeen": "2025-09-23T19:43:37.730Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "bcookie": {
+        "firstSeen": "2025-09-23T19:43:37.730Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "UserMatchHistory": {
+        "firstSeen": "2025-09-23T19:43:37.730Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      }
+    },
+    "siemens.com": {
+      "AWSALBAPP-0": {
+        "firstSeen": "2025-09-23T19:43:37.731Z",
+        "occurrences": 1,
+        "categories": {
+          "necessary": 1
+        }
+      },
+      "AWSALBAPP-1": {
+        "firstSeen": "2025-09-23T19:43:37.731Z",
+        "occurrences": 1,
+        "categories": {
+          "necessary": 1
+        }
+      },
+      "AWSALBAPP-2": {
+        "firstSeen": "2025-09-23T19:43:37.731Z",
+        "occurrences": 1,
+        "categories": {
+          "necessary": 1
+        }
+      },
+      "AWSALBAPP-3": {
+        "firstSeen": "2025-09-23T19:43:37.731Z",
+        "occurrences": 1,
+        "categories": {
+          "necessary": 1
+        }
+      },
+      "s_cc": {
+        "firstSeen": "2025-09-23T19:43:37.731Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "ELQCOUNTRY": {
+        "firstSeen": "2025-09-23T19:43:37.731Z",
+        "occurrences": 1,
+        "categories": {
+          "functional": 1
+        }
+      },
+      "ELOQUA": {
+        "firstSeen": "2025-09-23T19:43:37.731Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      }
+    },
+    "theguardian.com": {
+      "GU_geo_country": {
+        "firstSeen": "2025-09-23T19:43:37.732Z",
+        "occurrences": 1,
+        "categories": {
+          "functional": 1
+        }
+      },
+      "bwid": {
+        "firstSeen": "2025-09-23T19:43:37.732Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "consentUUID": {
+        "firstSeen": "2025-09-23T19:43:37.732Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      }
+    },
+    "volvocars.com": {
+      "OptanonConsent": {
+        "firstSeen": "2025-09-23T19:43:37.734Z",
+        "occurrences": 5,
+        "categories": {
+          "necessary": 5
+        }
+      },
+      "bm_mi": {
+        "firstSeen": "2025-09-23T19:43:37.734Z",
+        "occurrences": 3,
+        "categories": {
+          "necessary": 3
+        }
+      },
+      "bm_sz": {
+        "firstSeen": "2025-09-23T19:43:37.734Z",
+        "occurrences": 5,
+        "categories": {
+          "necessary": 5
+        }
+      },
+      "ld-identifier": {
+        "firstSeen": "2025-09-23T19:43:37.734Z",
+        "occurrences": 5,
+        "categories": {
+          "marketing": 5
+        }
+      },
+      "_abck": {
+        "firstSeen": "2025-09-23T19:43:37.734Z",
+        "occurrences": 5,
+        "categories": {
+          "necessary": 5
+        }
+      },
+      "ak_bmsc": {
+        "firstSeen": "2025-09-23T19:43:37.734Z",
+        "occurrences": 5,
+        "categories": {
+          "necessary": 5
+        }
+      },
+      "bm_sv": {
+        "firstSeen": "2025-09-23T19:43:37.734Z",
+        "occurrences": 3,
+        "categories": {
+          "necessary": 3
+        }
+      },
+      "OptanonAlertBoxClosed": {
+        "firstSeen": "2025-09-23T19:43:37.734Z",
+        "occurrences": 2,
+        "categories": {
+          "necessary": 2
+        }
+      },
+      "personalization_id": {
+        "firstSeen": "2025-09-23T19:43:37.734Z",
+        "occurrences": 2,
+        "categories": {
+          "marketing": 2
+        }
+      },
+      "guest_id": {
+        "firstSeen": "2025-09-23T19:43:37.734Z",
+        "occurrences": 2,
+        "categories": {
+          "marketing": 2
+        }
+      },
+      "muc_ads": {
+        "firstSeen": "2025-09-23T19:43:37.734Z",
+        "occurrences": 2,
+        "categories": {
+          "marketing": 2
+        }
+      },
+      "_ga": {
+        "firstSeen": "2025-09-23T19:43:37.734Z",
+        "occurrences": 2,
+        "categories": {
+          "analytics": 2
+        }
+      },
+      "_gcl_au": {
+        "firstSeen": "2025-09-23T19:43:37.734Z",
+        "occurrences": 2,
+        "categories": {
+          "marketing": 2
+        }
+      },
+      "steps": {
+        "firstSeen": "2025-09-23T19:43:37.734Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_ga_73WLWG7342": {
+        "firstSeen": "2025-09-23T19:43:37.734Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "FPID": {
+        "firstSeen": "2025-09-23T19:43:37.734Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "FPLC": {
+        "firstSeen": "2025-09-23T19:43:37.734Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "FPAU": {
+        "firstSeen": "2025-09-23T19:43:37.734Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "wp-tracking": {
+        "firstSeen": "2025-09-23T19:43:37.734Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_pinterest_sess": {
+        "firstSeen": "2025-09-23T19:43:37.734Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "_epik": {
+        "firstSeen": "2025-09-23T19:43:37.734Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "_derived_epik": {
+        "firstSeen": "2025-09-23T19:43:37.734Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "_fbp": {
+        "firstSeen": "2025-09-23T19:43:37.734Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "_fbc": {
+        "firstSeen": "2025-09-23T19:43:37.734Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "fbm_": {
+        "firstSeen": "2025-09-23T19:43:37.734Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "xs": {
+        "firstSeen": "2025-09-23T19:43:37.734Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "fr": {
+        "firstSeen": "2025-09-23T19:43:37.734Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "uuid2": {
+        "firstSeen": "2025-09-23T19:43:37.734Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "obuid": {
+        "firstSeen": "2025-09-23T19:43:37.734Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "t_gid": {
+        "firstSeen": "2025-09-23T19:43:37.734Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "KRTBCOOKIE_": {
+        "firstSeen": "2025-09-23T19:43:37.734Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "ad-id": {
+        "firstSeen": "2025-09-23T19:43:37.734Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "li_gc": {
+        "firstSeen": "2025-09-23T19:43:37.734Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "lidc": {
+        "firstSeen": "2025-09-23T19:43:37.734Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "bcookie": {
+        "firstSeen": "2025-09-23T19:43:37.734Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "UserMatchHistory": {
+        "firstSeen": "2025-09-23T19:43:37.734Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "_gid": {
+        "firstSeen": "2025-09-23T19:43:37.734Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_gat": {
+        "firstSeen": "2025-09-23T19:43:37.734Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_gcl_aw": {
+        "firstSeen": "2025-09-23T19:43:37.734Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "IDE": {
+        "firstSeen": "2025-09-23T19:43:37.734Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "test_cookie": {
+        "firstSeen": "2025-09-23T19:43:37.734Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "__gads": {
+        "firstSeen": "2025-09-23T19:43:37.734Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "__gpi": {
+        "firstSeen": "2025-09-23T19:43:37.734Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "DSID": {
+        "firstSeen": "2025-09-23T19:43:37.734Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "TDID": {
+        "firstSeen": "2025-09-23T19:43:37.734Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "TDCPM": {
+        "firstSeen": "2025-09-23T19:43:37.734Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "TTDOptOut": {
+        "firstSeen": "2025-09-23T19:43:37.734Z",
+        "occurrences": 1,
+        "categories": {
+          "functional": 1
+        }
+      }
+    },
+    "zeit.de": {
+      "creid": {
+        "firstSeen": "2025-09-23T19:43:37.735Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_sp_enable_dfp_personalized_ads": {
+        "firstSeen": "2025-09-23T19:43:37.735Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "consentUUID": {
+        "firstSeen": "2025-09-23T19:43:37.735Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "xbc": {
+        "firstSeen": "2025-09-23T19:43:37.735Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_pcus": {
+        "firstSeen": "2025-09-23T19:43:37.735Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_zsp_": {
+        "firstSeen": "2025-09-23T19:43:37.735Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      }
+    },
+    "zendesk.com": {
+      "__cf_bm": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 3,
+        "categories": {
+          "necessary": 3
+        }
+      },
+      "flight": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 5,
+        "categories": {
+          "analytics": 5
+        }
+      },
+      "AWSALB": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 3,
+        "categories": {
+          "necessary": 3
+        }
+      },
+      "AWSALBCORS": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 3,
+        "categories": {
+          "necessary": 3
+        }
+      },
+      "OptanonConsent": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 5,
+        "categories": {
+          "necessary": 5
+        }
+      },
+      "OptanonAlertBoxClosed": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 2,
+        "categories": {
+          "necessary": 2
+        }
+      },
+      "personalization_id": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 2,
+        "categories": {
+          "marketing": 2
+        }
+      },
+      "guest_id": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 2,
+        "categories": {
+          "marketing": 2
+        }
+      },
+      "muc_ads": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 2,
+        "categories": {
+          "marketing": 2
+        }
+      },
+      "BC_BANDWIDTH": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "BC_TOKEN": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "BC_VOLUME": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 1,
+        "categories": {
+          "functional": 1
+        }
+      },
+      "YSC": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "VISITOR_INFO1_LIVE": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_fbp": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 2,
+        "categories": {
+          "marketing": 2
+        }
+      },
+      "_fbc": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 2,
+        "categories": {
+          "marketing": 2
+        }
+      },
+      "fbm_": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 2,
+        "categories": {
+          "marketing": 2
+        }
+      },
+      "fr": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 2,
+        "categories": {
+          "marketing": 2
+        }
+      },
+      "LP_VISITOR": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 2,
+        "categories": {
+          "functional": 2
+        }
+      },
+      "intercom-id": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 2,
+        "categories": {
+          "functional": 2
+        }
+      },
+      "drift_aid": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 2,
+        "categories": {
+          "functional": 2
+        }
+      },
+      "__tawkuuid": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 2,
+        "categories": {
+          "functional": 2
+        }
+      },
+      "_gcl_au": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 2,
+        "categories": {
+          "marketing": 2
+        }
+      },
+      "_ga": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 2,
+        "categories": {
+          "analytics": 2
+        }
+      },
+      "_ga_FBP7C61M6Z": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_gid": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_gat": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_gcl_aw": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "IDE": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "test_cookie": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "__gads": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "__gpi": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "DSID": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "_hjSessionUser": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_hjSession": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "mp_": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "ajs_user_id": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "ajs_anonymous_id": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "amplitude_id": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_uetsid": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "_uetvid": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "MUID": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "CLID": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_clck": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_clsk": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "li_gc": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "lidc": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "bcookie": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "UserMatchHistory": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "xs": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "JSESSIONID": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "ADRUM": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_dd_s": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "uuid2": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "obuid": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "t_gid": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "KRTBCOOKIE_": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "ad-id": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "optimizelyEndUserId": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_vis_opt": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_gaexp": {
+        "firstSeen": "2025-09-23T19:43:37.737Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      }
+    },
+    "zoom.us": {
+      "__cf_bm": {
+        "firstSeen": "2025-09-23T19:43:37.739Z",
+        "occurrences": 8,
+        "categories": {
+          "necessary": 8
+        }
+      },
+      "cred": {
+        "firstSeen": "2025-09-23T19:43:37.739Z",
+        "occurrences": 5,
+        "categories": {
+          "analytics": 5
+        }
+      },
+      "_zm_mtk_guid": {
+        "firstSeen": "2025-09-23T19:43:37.739Z",
+        "occurrences": 5,
+        "categories": {
+          "analytics": 5
+        }
+      },
+      "OnetrustActiveGroups": {
+        "firstSeen": "2025-09-23T19:43:37.739Z",
+        "occurrences": 5,
+        "categories": {
+          "necessary": 5
+        }
+      },
+      "OptanonConsent": {
+        "firstSeen": "2025-09-23T19:43:37.739Z",
+        "occurrences": 5,
+        "categories": {
+          "necessary": 5
+        }
+      },
+      "OptanonAlertBoxClosed": {
+        "firstSeen": "2025-09-23T19:43:37.739Z",
+        "occurrences": 2,
+        "categories": {
+          "necessary": 2
+        }
+      },
+      "personalization_id": {
+        "firstSeen": "2025-09-23T19:43:37.739Z",
+        "occurrences": 2,
+        "categories": {
+          "marketing": 2
+        }
+      },
+      "guest_id": {
+        "firstSeen": "2025-09-23T19:43:37.739Z",
+        "occurrences": 2,
+        "categories": {
+          "marketing": 2
+        }
+      },
+      "muc_ads": {
+        "firstSeen": "2025-09-23T19:43:37.739Z",
+        "occurrences": 2,
+        "categories": {
+          "marketing": 2
+        }
+      },
+      "_gcl_au": {
+        "firstSeen": "2025-09-23T19:43:37.739Z",
+        "occurrences": 2,
+        "categories": {
+          "marketing": 2
+        }
+      },
+      "_yjsu_yjad": {
+        "firstSeen": "2025-09-23T19:43:37.739Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "_ga": {
+        "firstSeen": "2025-09-23T19:43:37.739Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_gid": {
+        "firstSeen": "2025-09-23T19:43:37.739Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_gat": {
+        "firstSeen": "2025-09-23T19:43:37.739Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_gcl_aw": {
+        "firstSeen": "2025-09-23T19:43:37.739Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "IDE": {
+        "firstSeen": "2025-09-23T19:43:37.739Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "test_cookie": {
+        "firstSeen": "2025-09-23T19:43:37.739Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "__gads": {
+        "firstSeen": "2025-09-23T19:43:37.739Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "__gpi": {
+        "firstSeen": "2025-09-23T19:43:37.739Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "DSID": {
+        "firstSeen": "2025-09-23T19:43:37.739Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "li_gc": {
+        "firstSeen": "2025-09-23T19:43:37.739Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "lidc": {
+        "firstSeen": "2025-09-23T19:43:37.739Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "bcookie": {
+        "firstSeen": "2025-09-23T19:43:37.739Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "UserMatchHistory": {
+        "firstSeen": "2025-09-23T19:43:37.739Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "_fbp": {
+        "firstSeen": "2025-09-23T19:43:37.739Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "_fbc": {
+        "firstSeen": "2025-09-23T19:43:37.739Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "fbm_": {
+        "firstSeen": "2025-09-23T19:43:37.739Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "xs": {
+        "firstSeen": "2025-09-23T19:43:37.739Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "fr": {
+        "firstSeen": "2025-09-23T19:43:37.739Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "B": {
+        "firstSeen": "2025-09-23T19:43:37.739Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "GUC": {
+        "firstSeen": "2025-09-23T19:43:37.739Z",
+        "occurrences": 1,
+        "categories": {
+          "functional": 1
+        }
+      },
+      "A3": {
+        "firstSeen": "2025-09-23T19:43:37.739Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "_hjSessionUser": {
+        "firstSeen": "2025-09-23T19:43:37.739Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_hjSession": {
+        "firstSeen": "2025-09-23T19:43:37.739Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "mp_": {
+        "firstSeen": "2025-09-23T19:43:37.739Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "ajs_user_id": {
+        "firstSeen": "2025-09-23T19:43:37.739Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "ajs_anonymous_id": {
+        "firstSeen": "2025-09-23T19:43:37.739Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "amplitude_id": {
+        "firstSeen": "2025-09-23T19:43:37.739Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_rdt_uuid": {
+        "firstSeen": "2025-09-23T19:43:37.739Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "loid": {
+        "firstSeen": "2025-09-23T19:43:37.739Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_uetsid": {
+        "firstSeen": "2025-09-23T19:43:37.739Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "_uetvid": {
+        "firstSeen": "2025-09-23T19:43:37.739Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "MUID": {
+        "firstSeen": "2025-09-23T19:43:37.739Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "CLID": {
+        "firstSeen": "2025-09-23T19:43:37.739Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_clck": {
+        "firstSeen": "2025-09-23T19:43:37.739Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "_clsk": {
+        "firstSeen": "2025-09-23T19:43:37.739Z",
+        "occurrences": 1,
+        "categories": {
+          "analytics": 1
+        }
+      },
+      "uuid2": {
+        "firstSeen": "2025-09-23T19:43:37.739Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "obuid": {
+        "firstSeen": "2025-09-23T19:43:37.739Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "t_gid": {
+        "firstSeen": "2025-09-23T19:43:37.739Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "KRTBCOOKIE_": {
+        "firstSeen": "2025-09-23T19:43:37.739Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      },
+      "ad-id": {
+        "firstSeen": "2025-09-23T19:43:37.739Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        }
+      }
+    }
+  },
+  "cooccurrence": {},
+  "confidence": {},
+  "globalPatterns": {
+    "mbox": {
+      "domains": [
+        "adobe.com",
+        "cisco.com",
+        "dell.com",
+        "hp.com",
+        "microsoft.com",
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 14,
+      "categories": {
+        "analytics": 6,
+        "undefined": 8
+      }
+    },
+    "mboxEdgeCluster": {
+      "domains": [
+        "adobe.com",
+        "cisco.com",
+        "dell.com",
+        "hp.com",
+        "microsoft.com"
+      ],
+      "totalOccurrences": 9,
+      "categories": {
+        "analytics": 4,
+        "undefined": 5
+      }
+    },
+    "kndctr_9E1005A551ED61CA0A490D45_AdobeOrg_cluster": {
+      "domains": [
+        "adobe.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "marketing": 1
+      }
+    },
+    "kndctr_9E1005A551ED61CA0A490D45_AdobeOrg_identity": {
+      "domains": [
+        "adobe.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "marketing": 1
+      }
+    },
+    "bm_sv": {
+      "domains": [
+        "adobe.com",
+        "americanexpress.com",
+        "dailymail.co.uk",
+        "dell.com",
+        "hp.com",
+        "ibm.com",
+        "philips.com",
+        "royalcaribbean.com",
+        "volvocars.com"
+      ],
+      "totalOccurrences": 23,
+      "categories": {
+        "necessary": 13,
+        "undefined": 10
+      }
+    },
+    "AMCV_9E1005A551ED61CA0A490D45%40AdobeOrg": {
+      "domains": [
+        "adobe.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "analytics": 1
+      }
+    },
+    "gpv": {
+      "domains": [
+        "adobe.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "analytics": 1
+      }
+    },
+    "ak_bmsc": {
+      "domains": [
+        "adobe.com",
+        "americanexpress.com",
+        "dailymail.co.uk",
+        "dell.com",
+        "hp.com",
+        "ibm.com",
+        "microsoft.com",
+        "philips.com",
+        "royalcaribbean.com",
+        "volvocars.com"
+      ],
+      "totalOccurrences": 29,
+      "categories": {
+        "necessary": 19,
+        "undefined": 10
+      }
+    },
+    "relay": {
+      "domains": [
+        "adobe.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "analytics": 1
+      }
+    },
+    "ftrset": {
+      "domains": [
+        "adobe.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "functional": 1
+      }
+    },
+    "fg": {
+      "domains": [
+        "adobe.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "analytics": 1
+      }
+    },
+    "s_vi": {
+      "domains": [
+        "adobe.com",
+        "cisco.com",
+        "hp.com",
+        "microsoft.com"
+      ],
+      "totalOccurrences": 4,
+      "categories": {
+        "analytics": 4
+      }
+    },
+    "s_fid": {
+      "domains": [
+        "adobe.com",
+        "cisco.com",
+        "hp.com",
+        "microsoft.com"
+      ],
+      "totalOccurrences": 4,
+      "categories": {
+        "analytics": 4
+      }
+    },
+    "s_cc": {
+      "domains": [
+        "adobe.com",
+        "cisco.com",
+        "dell.com",
+        "hp.com",
+        "microsoft.com",
+        "royalcaribbean.com",
+        "siemens.com"
+      ],
+      "totalOccurrences": 15,
+      "categories": {
+        "analytics": 5,
+        "undefined": 10
+      }
+    },
+    "s_sq": {
+      "domains": [
+        "adobe.com",
+        "cisco.com",
+        "dell.com",
+        "hp.com",
+        "microsoft.com",
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 8,
+      "categories": {
+        "analytics": 4,
+        "undefined": 4
+      }
+    },
+    "AMCV_": {
+      "domains": [
+        "adobe.com",
+        "cisco.com",
+        "hp.com",
+        "microsoft.com"
+      ],
+      "totalOccurrences": 4,
+      "categories": {
+        "analytics": 4
+      }
+    },
+    "AMCVS_": {
+      "domains": [
+        "adobe.com",
+        "cisco.com",
+        "hp.com",
+        "microsoft.com"
+      ],
+      "totalOccurrences": 4,
+      "categories": {
+        "analytics": 4
+      }
+    },
+    "demdex": {
+      "domains": [
+        "adobe.com",
+        "cisco.com",
+        "hp.com",
+        "microsoft.com"
+      ],
+      "totalOccurrences": 4,
+      "categories": {
+        "marketing": 4
+      }
+    },
+    "agent-id": {
+      "domains": [
+        "americanexpress.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "analytics": 1
+      }
+    },
+    "bm_mi": {
+      "domains": [
+        "americanexpress.com",
+        "dell.com",
+        "hp.com",
+        "volvocars.com"
+      ],
+      "totalOccurrences": 12,
+      "categories": {
+        "necessary": 7,
+        "undefined": 5
+      }
+    },
+    "bm_sz": {
+      "domains": [
+        "americanexpress.com",
+        "dell.com",
+        "hm.com",
+        "hp.com",
+        "ibm.com",
+        "royalcaribbean.com",
+        "salesforce.com",
+        "volvocars.com"
+      ],
+      "totalOccurrences": 30,
+      "categories": {
+        "necessary": 20,
+        "undefined": 10
+      }
+    },
+    "_abck": {
+      "domains": [
+        "americanexpress.com",
+        "cisco.com",
+        "dell.com",
+        "hm.com",
+        "hp.com",
+        "ibm.com",
+        "pandora.net",
+        "royalcaribbean.com",
+        "salesforce.com",
+        "volvocars.com"
+      ],
+      "totalOccurrences": 32,
+      "categories": {
+        "necessary": 22,
+        "undefined": 10
+      }
+    },
+    "axplocale": {
+      "domains": [
+        "americanexpress.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "functional": 1
+      }
+    },
+    "TS01a91ed4": {
+      "domains": [
+        "americanexpress.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "analytics": 1
+      }
+    },
+    "__cf_bm": {
+      "domains": [
+        "carlsberg.com",
+        "cisco.com",
+        "cookiebot.com",
+        "ikea.com",
+        "pandora.net",
+        "zendesk.com",
+        "zoom.us"
+      ],
+      "totalOccurrences": 35,
+      "categories": {
+        "necessary": 35
+      }
+    },
+    "c_bi": {
+      "domains": [
+        "cisco.com"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "analytics": 5
+      }
+    },
+    "RT": {
+      "domains": [
+        "cisco.com",
+        "dailymail.co.uk",
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 8,
+      "categories": {
+        "analytics": 6,
+        "undefined": 2
+      }
+    },
+    "OptanonConsent": {
+      "domains": [
+        "cisco.com",
+        "cookielaw.org",
+        "dell.com",
+        "heineken.com",
+        "hp.com",
+        "ikea.com",
+        "onetrust.com",
+        "royalcaribbean.com",
+        "salesforce.com",
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ],
+      "totalOccurrences": 50,
+      "categories": {
+        "necessary": 40,
+        "undefined": 10
+      }
+    },
+    "OptanonAlertBoxClosed": {
+      "domains": [
+        "cisco.com",
+        "dell.com",
+        "heineken.com",
+        "hp.com",
+        "ikea.com",
+        "royalcaribbean.com",
+        "salesforce.com",
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ],
+      "totalOccurrences": 19,
+      "categories": {
+        "necessary": 15,
+        "undefined": 4
+      }
+    },
+    "personalization_id": {
+      "domains": [
+        "cisco.com",
+        "cookiebot.com",
+        "heineken.com",
+        "hp.com",
+        "ikea.com",
+        "microsoft.com",
+        "salesforce.com",
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ],
+      "totalOccurrences": 18,
+      "categories": {
+        "marketing": 18
+      }
+    },
+    "guest_id": {
+      "domains": [
+        "cisco.com",
+        "cookiebot.com",
+        "heineken.com",
+        "hp.com",
+        "ikea.com",
+        "microsoft.com",
+        "salesforce.com",
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ],
+      "totalOccurrences": 18,
+      "categories": {
+        "marketing": 18
+      }
+    },
+    "muc_ads": {
+      "domains": [
+        "cisco.com",
+        "cookiebot.com",
+        "heineken.com",
+        "hp.com",
+        "ikea.com",
+        "microsoft.com",
+        "salesforce.com",
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ],
+      "totalOccurrences": 18,
+      "categories": {
+        "marketing": 18
+      }
+    },
+    "__cfduid": {
+      "domains": [
+        "cisco.com",
+        "pandora.net"
+      ],
+      "totalOccurrences": 2,
+      "categories": {
+        "necessary": 2
+      }
+    },
+    "akavpau": {
+      "domains": [
+        "cisco.com",
+        "pandora.net"
+      ],
+      "totalOccurrences": 2,
+      "categories": {
+        "necessary": 2
+      }
+    },
+    "AMCV_B8D07FF4520E94C10A490D4C%40AdobeOrg": {
+      "domains": [
+        "cisco.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "analytics": 1
+      }
+    },
+    "C_FPID": {
+      "domains": [
+        "cisco.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "analytics": 1
+      }
+    },
+    "_ga": {
+      "domains": [
+        "cisco.com",
+        "cookiebot.com",
+        "dailymail.co.uk",
+        "dell.com",
+        "hp.com",
+        "ikea.com",
+        "philips.com",
+        "salesforce.com",
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ],
+      "totalOccurrences": 15,
+      "categories": {
+        "analytics": 14,
+        "undefined": 1
+      }
+    },
+    "_gid": {
+      "domains": [
+        "cisco.com",
+        "cookiebot.com",
+        "hp.com",
+        "ikea.com",
+        "philips.com",
+        "salesforce.com",
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ],
+      "totalOccurrences": 10,
+      "categories": {
+        "analytics": 10
+      }
+    },
+    "_gat": {
+      "domains": [
+        "cisco.com",
+        "cookiebot.com",
+        "hp.com",
+        "ikea.com",
+        "philips.com",
+        "salesforce.com",
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ],
+      "totalOccurrences": 9,
+      "categories": {
+        "analytics": 9
+      }
+    },
+    "_gcl_au": {
+      "domains": [
+        "cisco.com",
+        "cookiebot.com",
+        "dell.com",
+        "hp.com",
+        "ikea.com",
+        "philips.com",
+        "royalcaribbean.com",
+        "salesforce.com",
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ],
+      "totalOccurrences": 17,
+      "categories": {
+        "marketing": 15,
+        "undefined": 2
+      }
+    },
+    "_gcl_aw": {
+      "domains": [
+        "cisco.com",
+        "cookiebot.com",
+        "hp.com",
+        "ikea.com",
+        "philips.com",
+        "salesforce.com",
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ],
+      "totalOccurrences": 9,
+      "categories": {
+        "marketing": 9
+      }
+    },
+    "IDE": {
+      "domains": [
+        "cisco.com",
+        "cookiebot.com",
+        "hp.com",
+        "ikea.com",
+        "philips.com",
+        "salesforce.com",
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ],
+      "totalOccurrences": 9,
+      "categories": {
+        "marketing": 9
+      }
+    },
+    "test_cookie": {
+      "domains": [
+        "cisco.com",
+        "cookiebot.com",
+        "hp.com",
+        "ikea.com",
+        "salesforce.com",
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ],
+      "totalOccurrences": 8,
+      "categories": {
+        "marketing": 8
+      }
+    },
+    "__gads": {
+      "domains": [
+        "cisco.com",
+        "cookiebot.com",
+        "hp.com",
+        "ikea.com",
+        "philips.com",
+        "salesforce.com",
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ],
+      "totalOccurrences": 9,
+      "categories": {
+        "marketing": 9
+      }
+    },
+    "__gpi": {
+      "domains": [
+        "cisco.com",
+        "cookiebot.com",
+        "hp.com",
+        "ikea.com",
+        "philips.com",
+        "salesforce.com",
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ],
+      "totalOccurrences": 9,
+      "categories": {
+        "marketing": 9
+      }
+    },
+    "DSID": {
+      "domains": [
+        "cisco.com",
+        "cookiebot.com",
+        "hp.com",
+        "ikea.com",
+        "philips.com",
+        "salesforce.com",
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ],
+      "totalOccurrences": 9,
+      "categories": {
+        "marketing": 9
+      }
+    },
+    "_uetsid": {
+      "domains": [
+        "cisco.com",
+        "cookiebot.com",
+        "dell.com",
+        "hp.com",
+        "ikea.com",
+        "microsoft.com",
+        "royalcaribbean.com",
+        "zendesk.com",
+        "zoom.us"
+      ],
+      "totalOccurrences": 9,
+      "categories": {
+        "marketing": 7,
+        "undefined": 2
+      }
+    },
+    "_uetvid": {
+      "domains": [
+        "cisco.com",
+        "cookiebot.com",
+        "dell.com",
+        "hp.com",
+        "ikea.com",
+        "microsoft.com",
+        "royalcaribbean.com",
+        "zendesk.com",
+        "zoom.us"
+      ],
+      "totalOccurrences": 9,
+      "categories": {
+        "marketing": 7,
+        "undefined": 2
+      }
+    },
+    "MUID": {
+      "domains": [
+        "cisco.com",
+        "cookiebot.com",
+        "hp.com",
+        "ikea.com",
+        "microsoft.com",
+        "zendesk.com",
+        "zoom.us"
+      ],
+      "totalOccurrences": 7,
+      "categories": {
+        "marketing": 7
+      }
+    },
+    "CLID": {
+      "domains": [
+        "cisco.com",
+        "cookiebot.com",
+        "hp.com",
+        "ikea.com",
+        "microsoft.com",
+        "zendesk.com",
+        "zoom.us"
+      ],
+      "totalOccurrences": 7,
+      "categories": {
+        "analytics": 7
+      }
+    },
+    "_clck": {
+      "domains": [
+        "cisco.com",
+        "cookiebot.com",
+        "hp.com",
+        "ikea.com",
+        "microsoft.com",
+        "zendesk.com",
+        "zoom.us"
+      ],
+      "totalOccurrences": 7,
+      "categories": {
+        "analytics": 7
+      }
+    },
+    "_clsk": {
+      "domains": [
+        "cisco.com",
+        "cookiebot.com",
+        "hp.com",
+        "ikea.com",
+        "microsoft.com",
+        "zendesk.com",
+        "zoom.us"
+      ],
+      "totalOccurrences": 7,
+      "categories": {
+        "analytics": 7
+      }
+    },
+    "QSI_SI": {
+      "domains": [
+        "cisco.com",
+        "hp.com"
+      ],
+      "totalOccurrences": 2,
+      "categories": {
+        "analytics": 2
+      }
+    },
+    "QSI_S": {
+      "domains": [
+        "cisco.com",
+        "hp.com"
+      ],
+      "totalOccurrences": 2,
+      "categories": {
+        "analytics": 2
+      }
+    },
+    "sm_": {
+      "domains": [
+        "cisco.com",
+        "hp.com"
+      ],
+      "totalOccurrences": 2,
+      "categories": {
+        "analytics": 2
+      }
+    },
+    "_fbp": {
+      "domains": [
+        "cisco.com",
+        "cookiebot.com",
+        "dell.com",
+        "hp.com",
+        "ikea.com",
+        "royalcaribbean.com",
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ],
+      "totalOccurrences": 10,
+      "categories": {
+        "marketing": 8,
+        "undefined": 2
+      }
+    },
+    "_fbc": {
+      "domains": [
+        "cisco.com",
+        "cookiebot.com",
+        "hp.com",
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ],
+      "totalOccurrences": 7,
+      "categories": {
+        "marketing": 7
+      }
+    },
+    "fbm_": {
+      "domains": [
+        "cisco.com",
+        "cookiebot.com",
+        "hp.com",
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ],
+      "totalOccurrences": 7,
+      "categories": {
+        "marketing": 7
+      }
+    },
+    "xs": {
+      "domains": [
+        "cisco.com",
+        "cookiebot.com",
+        "hp.com",
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ],
+      "totalOccurrences": 6,
+      "categories": {
+        "marketing": 6
+      }
+    },
+    "fr": {
+      "domains": [
+        "cisco.com",
+        "cookiebot.com",
+        "hp.com",
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ],
+      "totalOccurrences": 7,
+      "categories": {
+        "marketing": 7
+      }
+    },
+    "_ga_6L1221E6ET": {
+      "domains": [
+        "cookiebot.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "analytics": 1
+      }
+    },
+    "_ga_WX15RJ0HZZ": {
+      "domains": [
+        "cookiebot.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "analytics": 1
+      }
+    },
+    "_ga_4SBCRNPYYR": {
+      "domains": [
+        "cookiebot.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "analytics": 1
+      }
+    },
+    "userlang": {
+      "domains": [
+        "cookiebot.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "functional": 1
+      }
+    },
+    "FPID": {
+      "domains": [
+        "cookiebot.com",
+        "dell.com",
+        "volvocars.com"
+      ],
+      "totalOccurrences": 3,
+      "categories": {
+        "analytics": 2,
+        "undefined": 1
+      }
+    },
+    "FPGSID": {
+      "domains": [
+        "cookiebot.com",
+        "dell.com"
+      ],
+      "totalOccurrences": 2,
+      "categories": {
+        "analytics": 1,
+        "undefined": 1
+      }
+    },
+    "FPLC": {
+      "domains": [
+        "cookiebot.com",
+        "dell.com",
+        "volvocars.com"
+      ],
+      "totalOccurrences": 3,
+      "categories": {
+        "analytics": 2,
+        "undefined": 1
+      }
+    },
+    "_hjSessionUser": {
+      "domains": [
+        "cookiebot.com",
+        "zendesk.com",
+        "zoom.us"
+      ],
+      "totalOccurrences": 3,
+      "categories": {
+        "analytics": 3
+      }
+    },
+    "_hjSession": {
+      "domains": [
+        "cookiebot.com",
+        "zendesk.com",
+        "zoom.us"
+      ],
+      "totalOccurrences": 3,
+      "categories": {
+        "analytics": 3
+      }
+    },
+    "mp_": {
+      "domains": [
+        "cookiebot.com",
+        "zendesk.com",
+        "zoom.us"
+      ],
+      "totalOccurrences": 3,
+      "categories": {
+        "analytics": 3
+      }
+    },
+    "ajs_user_id": {
+      "domains": [
+        "cookiebot.com",
+        "zendesk.com",
+        "zoom.us"
+      ],
+      "totalOccurrences": 3,
+      "categories": {
+        "analytics": 3
+      }
+    },
+    "ajs_anonymous_id": {
+      "domains": [
+        "cookiebot.com",
+        "dell.com",
+        "zendesk.com",
+        "zoom.us"
+      ],
+      "totalOccurrences": 4,
+      "categories": {
+        "analytics": 3,
+        "undefined": 1
+      }
+    },
+    "amplitude_id": {
+      "domains": [
+        "cookiebot.com",
+        "zendesk.com",
+        "zoom.us"
+      ],
+      "totalOccurrences": 3,
+      "categories": {
+        "analytics": 3
+      }
+    },
+    "li_gc": {
+      "domains": [
+        "cookiebot.com",
+        "hp.com",
+        "salesforce.com",
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ],
+      "totalOccurrences": 6,
+      "categories": {
+        "marketing": 6
+      }
+    },
+    "lidc": {
+      "domains": [
+        "cookiebot.com",
+        "hp.com",
+        "salesforce.com",
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ],
+      "totalOccurrences": 6,
+      "categories": {
+        "marketing": 6
+      }
+    },
+    "bcookie": {
+      "domains": [
+        "cookiebot.com",
+        "hp.com",
+        "salesforce.com",
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ],
+      "totalOccurrences": 6,
+      "categories": {
+        "marketing": 6
+      }
+    },
+    "UserMatchHistory": {
+      "domains": [
+        "cookiebot.com",
+        "hp.com",
+        "salesforce.com",
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ],
+      "totalOccurrences": 6,
+      "categories": {
+        "marketing": 6
+      }
+    },
+    "_rdt_uuid": {
+      "domains": [
+        "cookiebot.com",
+        "royalcaribbean.com",
+        "zoom.us"
+      ],
+      "totalOccurrences": 3,
+      "categories": {
+        "marketing": 2,
+        "undefined": 1
+      }
+    },
+    "loid": {
+      "domains": [
+        "cookiebot.com",
+        "zoom.us"
+      ],
+      "totalOccurrences": 2,
+      "categories": {
+        "analytics": 2
+      }
+    },
+    "bm_ss": {
+      "domains": [
+        "dailymail.co.uk",
+        "dell.com",
+        "hm.com",
+        "oracle.com"
+      ],
+      "totalOccurrences": 8,
+      "categories": {
+        "necessary": 3,
+        "undefined": 5
+      }
+    },
+    "gab": {
+      "domains": [
+        "dailymail.co.uk"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "analytics": 1
+      }
+    },
+    "bm_so": {
+      "domains": [
+        "dailymail.co.uk",
+        "dell.com",
+        "hm.com",
+        "oracle.com"
+      ],
+      "totalOccurrences": 8,
+      "categories": {
+        "necessary": 3,
+        "undefined": 5
+      }
+    },
+    "_vwo_uuid_v2": {
+      "domains": [
+        "dailymail.co.uk"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "analytics": 1
+      }
+    },
+    "_vwo_uuid": {
+      "domains": [
+        "dailymail.co.uk"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "analytics": 1
+      }
+    },
+    "bm_lso": {
+      "domains": [
+        "dailymail.co.uk",
+        "dell.com"
+      ],
+      "totalOccurrences": 6,
+      "categories": {
+        "necessary": 1,
+        "undefined": 5
+      }
+    },
+    "AWSALB": {
+      "domains": [
+        "dailymail.co.uk",
+        "zendesk.com"
+      ],
+      "totalOccurrences": 4,
+      "categories": {
+        "necessary": 4
+      }
+    },
+    "AWSALBCORS": {
+      "domains": [
+        "dailymail.co.uk",
+        "zendesk.com"
+      ],
+      "totalOccurrences": 4,
+      "categories": {
+        "necessary": 4
+      }
+    },
+    "blaize_session": {
+      "domains": [
+        "dailymail.co.uk"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "necessary": 1
+      }
+    },
+    "blaize_tracking_id": {
+      "domains": [
+        "dailymail.co.uk"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "analytics": 1
+      }
+    },
+    "bm_s": {
+      "domains": [
+        "dailymail.co.uk",
+        "dell.com",
+        "hm.com",
+        "oracle.com"
+      ],
+      "totalOccurrences": 8,
+      "categories": {
+        "necessary": 3,
+        "undefined": 5
+      }
+    },
+    "_ga_C9F47K6NW6": {
+      "domains": [
+        "dailymail.co.uk"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "analytics": 1
+      }
+    },
+    "s_tp": {
+      "domains": [
+        "dell.com"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "undefined": 5
+      }
+    },
+    "dell_cmp_consent": {
+      "domains": [
+        "dell.com"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "undefined": 5
+      }
+    },
+    "s_ivc": {
+      "domains": [
+        "dell.com"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "undefined": 5
+      }
+    },
+    "cidlid": {
+      "domains": [
+        "dell.com"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "undefined": 5
+      }
+    },
+    "s_vnc365": {
+      "domains": [
+        "dell.com"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "undefined": 5
+      }
+    },
+    "s_ips": {
+      "domains": [
+        "dell.com"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "undefined": 5
+      }
+    },
+    "s_ppv": {
+      "domains": [
+        "dell.com"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "undefined": 5
+      }
+    },
+    "gpv_pn": {
+      "domains": [
+        "dell.com",
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 10,
+      "categories": {
+        "undefined": 10
+      }
+    },
+    "dc-ctxt": {
+      "domains": [
+        "dell.com"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "undefined": 5
+      }
+    },
+    "txUid": {
+      "domains": [
+        "dell.com"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "undefined": 5
+      }
+    },
+    "AMCVS_4DD80861515CAB990A490D45%40AdobeOrg": {
+      "domains": [
+        "dell.com"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "undefined": 5
+      }
+    },
+    "akavpau_maintenance_vp": {
+      "domains": [
+        "dell.com"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "undefined": 5
+      }
+    },
+    "akGD": {
+      "domains": [
+        "dell.com"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "undefined": 5
+      }
+    },
+    "rumCki": {
+      "domains": [
+        "dell.com"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "undefined": 5
+      }
+    },
+    "eSupId": {
+      "domains": [
+        "dell.com"
+      ],
+      "totalOccurrences": 4,
+      "categories": {
+        "undefined": 4
+      }
+    },
+    "s_c49": {
+      "domains": [
+        "dell.com"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "undefined": 5
+      }
+    },
+    "check": {
+      "domains": [
+        "dell.com"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "undefined": 5
+      }
+    },
+    "AMCV_4DD80861515CAB990A490D45%40AdobeOrg": {
+      "domains": [
+        "dell.com"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "undefined": 5
+      }
+    },
+    "s_ecid": {
+      "domains": [
+        "dell.com",
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 10,
+      "categories": {
+        "undefined": 10
+      }
+    },
+    "DellCEMSession": {
+      "domains": [
+        "dell.com"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "undefined": 5
+      }
+    },
+    "lwp": {
+      "domains": [
+        "dell.com"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "undefined": 5
+      }
+    },
+    "akaalb_CSB_CHINA_AZ": {
+      "domains": [
+        "dell.com"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "undefined": 5
+      }
+    },
+    "um_g_uc": {
+      "domains": [
+        "dell.com"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "undefined": 5
+      }
+    },
+    "_an_uid": {
+      "domains": [
+        "dell.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "undefined": 1
+      }
+    },
+    "_gd_visitor": {
+      "domains": [
+        "dell.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "undefined": 1
+      }
+    },
+    "_gd_session": {
+      "domains": [
+        "dell.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "undefined": 1
+      }
+    },
+    "__rtbh.lid": {
+      "domains": [
+        "dell.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "undefined": 1
+      }
+    },
+    "d_dnb": {
+      "domains": [
+        "dell.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "undefined": 1
+      }
+    },
+    "cjConsent": {
+      "domains": [
+        "dell.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "undefined": 1
+      }
+    },
+    "mktrecipe": {
+      "domains": [
+        "dell.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "undefined": 1
+      }
+    },
+    "FPAU": {
+      "domains": [
+        "dell.com",
+        "volvocars.com"
+      ],
+      "totalOccurrences": 2,
+      "categories": {
+        "undefined": 1,
+        "analytics": 1
+      }
+    },
+    "rto": {
+      "domains": [
+        "dell.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "undefined": 1
+      }
+    },
+    "_tq_id.TV-5445272754-1.a9b3": {
+      "domains": [
+        "dell.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "undefined": 1
+      }
+    },
+    "_cls_v": {
+      "domains": [
+        "dell.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "undefined": 1
+      }
+    },
+    "d_vi": {
+      "domains": [
+        "dell.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "undefined": 1
+      }
+    },
+    "_ga_1234567890": {
+      "domains": [
+        "dell.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "undefined": 1
+      }
+    },
+    "_cls_s": {
+      "domains": [
+        "dell.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "undefined": 1
+      }
+    },
+    "_gtmeec": {
+      "domains": [
+        "dell.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "undefined": 1
+      }
+    },
+    "__rtbh.uid": {
+      "domains": [
+        "dell.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "undefined": 1
+      }
+    },
+    "ARRAffinity": {
+      "domains": [
+        "heineken.com"
+      ],
+      "totalOccurrences": 3,
+      "categories": {
+        "analytics": 3
+      }
+    },
+    "ARRAffinitySameSite": {
+      "domains": [
+        "heineken.com"
+      ],
+      "totalOccurrences": 3,
+      "categories": {
+        "analytics": 3
+      }
+    },
+    "ai_session": {
+      "domains": [
+        "heineken.com",
+        "microsoft.com"
+      ],
+      "totalOccurrences": 4,
+      "categories": {
+        "necessary": 4
+      }
+    },
+    "HMCORP_locale_autoassigned": {
+      "domains": [
+        "hm.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "functional": 1
+      }
+    },
+    "HMCORP_locale": {
+      "domains": [
+        "hm.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "functional": 1
+      }
+    },
+    "HMCOUNTRY_name": {
+      "domains": [
+        "hm.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "functional": 1
+      }
+    },
+    "akamref": {
+      "domains": [
+        "hm.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "marketing": 1
+      }
+    },
+    "akavpau_www2_de_de": {
+      "domains": [
+        "hm.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "necessary": 1
+      }
+    },
+    "lang": {
+      "domains": [
+        "hp.com"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "functional": 5
+      }
+    },
+    "www_hp_com_locale": {
+      "domains": [
+        "hp.com"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "functional": 5
+      }
+    },
+    "cc": {
+      "domains": [
+        "hp.com"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "analytics": 5
+      }
+    },
+    "c_hp_filter": {
+      "domains": [
+        "hp.com"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "analytics": 5
+      }
+    },
+    "hpeuck_prefs": {
+      "domains": [
+        "hp.com"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "marketing": 5
+      }
+    },
+    "AMCV_5E34123F5245B2CD0A490D45%40AdobeOrg": {
+      "domains": [
+        "hp.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "analytics": 1
+      }
+    },
+    "sdk_visitTimestamp": {
+      "domains": [
+        "hp.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "functional": 1
+      }
+    },
+    "hp_pv1_prefs": {
+      "domains": [
+        "hp.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "marketing": 1
+      }
+    },
+    "YSC": {
+      "domains": [
+        "hp.com",
+        "zendesk.com"
+      ],
+      "totalOccurrences": 2,
+      "categories": {
+        "analytics": 2
+      }
+    },
+    "__Secure-ROLLOUT_TOKEN": {
+      "domains": [
+        "hp.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "necessary": 1
+      }
+    },
+    "VISITOR_INFO1_LIVE": {
+      "domains": [
+        "hp.com",
+        "zendesk.com"
+      ],
+      "totalOccurrences": 2,
+      "categories": {
+        "analytics": 2
+      }
+    },
+    "VISITOR_PRIVACY_METADATA": {
+      "domains": [
+        "hp.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "analytics": 1
+      }
+    },
+    "_ga_vnum": {
+      "domains": [
+        "hp.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "analytics": 1
+      }
+    },
+    "_ga_invisitc": {
+      "domains": [
+        "hp.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "analytics": 1
+      }
+    },
+    "_ga4_vnum": {
+      "domains": [
+        "hp.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "analytics": 1
+      }
+    },
+    "_ga4_invisit": {
+      "domains": [
+        "hp.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "analytics": 1
+      }
+    },
+    "_ga4_invisitc": {
+      "domains": [
+        "hp.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "analytics": 1
+      }
+    },
+    "_ga_invisit": {
+      "domains": [
+        "hp.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "analytics": 1
+      }
+    },
+    "_ga_vnumid": {
+      "domains": [
+        "hp.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "analytics": 1
+      }
+    },
+    "_ga4_vnumid": {
+      "domains": [
+        "hp.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "analytics": 1
+      }
+    },
+    "BC_BANDWIDTH": {
+      "domains": [
+        "hp.com",
+        "zendesk.com"
+      ],
+      "totalOccurrences": 2,
+      "categories": {
+        "analytics": 2
+      }
+    },
+    "BC_TOKEN": {
+      "domains": [
+        "hp.com",
+        "zendesk.com"
+      ],
+      "totalOccurrences": 2,
+      "categories": {
+        "analytics": 2
+      }
+    },
+    "BC_VOLUME": {
+      "domains": [
+        "hp.com",
+        "zendesk.com"
+      ],
+      "totalOccurrences": 2,
+      "categories": {
+        "functional": 2
+      }
+    },
+    "_pinterest_sess": {
+      "domains": [
+        "hp.com",
+        "ikea.com",
+        "volvocars.com"
+      ],
+      "totalOccurrences": 3,
+      "categories": {
+        "marketing": 3
+      }
+    },
+    "_epik": {
+      "domains": [
+        "hp.com",
+        "ikea.com",
+        "volvocars.com"
+      ],
+      "totalOccurrences": 3,
+      "categories": {
+        "marketing": 3
+      }
+    },
+    "_derived_epik": {
+      "domains": [
+        "hp.com",
+        "ikea.com",
+        "volvocars.com"
+      ],
+      "totalOccurrences": 3,
+      "categories": {
+        "marketing": 3
+      }
+    },
+    "pageviewContext": {
+      "domains": [
+        "ibm.com"
+      ],
+      "totalOccurrences": 3,
+      "categories": {
+        "analytics": 3
+      }
+    },
+    "notice_preferences_master": {
+      "domains": [
+        "ibm.com"
+      ],
+      "totalOccurrences": 3,
+      "categories": {
+        "functional": 3
+      }
+    },
+    "e79d2bf4da9603c4863b9214ab815aca": {
+      "domains": [
+        "ibm.com"
+      ],
+      "totalOccurrences": 3,
+      "categories": {
+        "analytics": 3
+      }
+    },
+    "CIPD-S-SESSION-ID": {
+      "domains": [
+        "ibm.com"
+      ],
+      "totalOccurrences": 3,
+      "categories": {
+        "necessary": 3
+      }
+    },
+    "CISESSIONIDPR07A": {
+      "domains": [
+        "ibm.com"
+      ],
+      "totalOccurrences": 3,
+      "categories": {
+        "necessary": 3
+      }
+    },
+    "OPTOUTMULTI": {
+      "domains": [
+        "ibm.com"
+      ],
+      "totalOccurrences": 3,
+      "categories": {
+        "marketing": 3
+      }
+    },
+    "TAsessionID": {
+      "domains": [
+        "ibm.com",
+        "philips.com"
+      ],
+      "totalOccurrences": 4,
+      "categories": {
+        "necessary": 4
+      }
+    },
+    "guest": {
+      "domains": [
+        "ikea.com"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "analytics": 5
+      }
+    },
+    "ikexp_id": {
+      "domains": [
+        "ikea.com"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "analytics": 5
+      }
+    },
+    "_cfuvid": {
+      "domains": [
+        "ikea.com"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "functional": 5
+      }
+    },
+    "_cs_mk_ga": {
+      "domains": [
+        "ikea.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "analytics": 1
+      }
+    },
+    "JSESSIONID": {
+      "domains": [
+        "ikea.com",
+        "zendesk.com"
+      ],
+      "totalOccurrences": 2,
+      "categories": {
+        "analytics": 2
+      }
+    },
+    "ADRUM": {
+      "domains": [
+        "ikea.com",
+        "royalcaribbean.com",
+        "zendesk.com"
+      ],
+      "totalOccurrences": 4,
+      "categories": {
+        "analytics": 2,
+        "undefined": 2
+      }
+    },
+    "_dd_s": {
+      "domains": [
+        "ikea.com",
+        "zendesk.com"
+      ],
+      "totalOccurrences": 2,
+      "categories": {
+        "analytics": 2
+      }
+    },
+    "B": {
+      "domains": [
+        "ikea.com",
+        "zoom.us"
+      ],
+      "totalOccurrences": 2,
+      "categories": {
+        "marketing": 2
+      }
+    },
+    "GUC": {
+      "domains": [
+        "ikea.com",
+        "zoom.us"
+      ],
+      "totalOccurrences": 2,
+      "categories": {
+        "functional": 2
+      }
+    },
+    "A3": {
+      "domains": [
+        "ikea.com",
+        "zoom.us"
+      ],
+      "totalOccurrences": 2,
+      "categories": {
+        "marketing": 2
+      }
+    },
+    "optimizelyEndUserId": {
+      "domains": [
+        "ikea.com",
+        "zendesk.com"
+      ],
+      "totalOccurrences": 2,
+      "categories": {
+        "analytics": 2
+      }
+    },
+    "_vis_opt": {
+      "domains": [
+        "ikea.com",
+        "zendesk.com"
+      ],
+      "totalOccurrences": 2,
+      "categories": {
+        "analytics": 2
+      }
+    },
+    "_gaexp": {
+      "domains": [
+        "ikea.com",
+        "zendesk.com"
+      ],
+      "totalOccurrences": 2,
+      "categories": {
+        "analytics": 2
+      }
+    },
+    "Cascade.AuthSSO": {
+      "domains": [
+        "microsoft.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "necessary": 1
+      }
+    },
+    "MicrosoftApplicationsTelemetryDeviceId": {
+      "domains": [
+        "microsoft.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "analytics": 1
+      }
+    },
+    "MC1": {
+      "domains": [
+        "microsoft.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "analytics": 1
+      }
+    },
+    "MS0": {
+      "domains": [
+        "microsoft.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "analytics": 1
+      }
+    },
+    "MSFPC": {
+      "domains": [
+        "microsoft.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "analytics": 1
+      }
+    },
+    "cqcid": {
+      "domains": [
+        "pandora.net"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "analytics": 1
+      }
+    },
+    "cquid": {
+      "domains": [
+        "pandora.net"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "analytics": 1
+      }
+    },
+    "sid": {
+      "domains": [
+        "pandora.net"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "analytics": 1
+      }
+    },
+    "dwanonymous_b170c3bc15c6f4d5c0ad01498f5ea32c": {
+      "domains": [
+        "pandora.net"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "marketing": 1
+      }
+    },
+    "dwsid": {
+      "domains": [
+        "pandora.net"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "analytics": 1
+      }
+    },
+    "user_country": {
+      "domains": [
+        "philips.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "functional": 1
+      }
+    },
+    "notice_settings": {
+      "domains": [
+        "philips.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "functional": 1
+      }
+    },
+    "signifyd_id_1142733": {
+      "domains": [
+        "philips.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "analytics": 1
+      }
+    },
+    "BVBRANDSID": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 4,
+      "categories": {
+        "undefined": 4
+      }
+    },
+    "BVBRANDID": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 4,
+      "categories": {
+        "undefined": 4
+      }
+    },
+    "s_evar66cvp": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "undefined": 5
+      }
+    },
+    "cmChannel": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "undefined": 5
+      }
+    },
+    "cmCampaign": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "undefined": 5
+      }
+    },
+    "pageNamePersistant": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "undefined": 5
+      }
+    },
+    "visitorType": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "undefined": 5
+      }
+    },
+    "AMCVS_981337045329610C0A490D44%40AdobeOrg": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "undefined": 5
+      }
+    },
+    "s_cm": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "undefined": 5
+      }
+    },
+    "_cs_mk_aa": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "undefined": 5
+      }
+    },
+    "AKA_A2": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "undefined": 5
+      }
+    },
+    "utag_main": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 3,
+      "categories": {
+        "undefined": 3
+      }
+    },
+    "akacd_PRC-ROYAL-GRAPH-PRD-V2": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "undefined": 5
+      }
+    },
+    "AMCV_981337045329610C0A490D44%40AdobeOrg": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "undefined": 5
+      }
+    },
+    "affinity": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "undefined": 5
+      }
+    },
+    "s_evar68cvp": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "undefined": 5
+      }
+    },
+    "tiktok_throttle": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "undefined": 5
+      }
+    },
+    "language": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "undefined": 5
+      }
+    },
+    "wul": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "undefined": 5
+      }
+    },
+    "country": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "undefined": 5
+      }
+    },
+    "rwd_id": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "undefined": 5
+      }
+    },
+    "gp": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "undefined": 5
+      }
+    },
+    "s_plt": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "undefined": 5
+      }
+    },
+    "s_dl": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "undefined": 5
+      }
+    },
+    "MCMID": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 4,
+      "categories": {
+        "undefined": 4
+      }
+    },
+    "wuc": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "undefined": 5
+      }
+    },
+    "s_nr": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "undefined": 5
+      }
+    },
+    "bgv": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "undefined": 5
+      }
+    },
+    "LPSID-51532229": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 4,
+      "categories": {
+        "undefined": 4
+      }
+    },
+    "LPVID": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 4,
+      "categories": {
+        "undefined": 4
+      }
+    },
+    "newUniversalNav": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 3,
+      "categories": {
+        "undefined": 3
+      }
+    },
+    "at_check": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 3,
+      "categories": {
+        "undefined": 3
+      }
+    },
+    "utag_main__st": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 2,
+      "categories": {
+        "undefined": 2
+      }
+    },
+    "utag_main_vapi_domain": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 2,
+      "categories": {
+        "undefined": 2
+      }
+    },
+    "s_v21": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 2,
+      "categories": {
+        "undefined": 2
+      }
+    },
+    "utag_main__pn": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 2,
+      "categories": {
+        "undefined": 2
+      }
+    },
+    "utag_main__ss": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 2,
+      "categories": {
+        "undefined": 2
+      }
+    },
+    "utag_main__se": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 2,
+      "categories": {
+        "undefined": 2
+      }
+    },
+    "utag_main__sn": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 2,
+      "categories": {
+        "undefined": 2
+      }
+    },
+    "utag_main_ses_id": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 2,
+      "categories": {
+        "undefined": 2
+      }
+    },
+    "utag_main_count_dc": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 2,
+      "categories": {
+        "undefined": 2
+      }
+    },
+    "kampyleUserPercentile": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "undefined": 1
+      }
+    },
+    "kampyleUserSession": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "undefined": 1
+      }
+    },
+    "utag_main_dc_event": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "undefined": 1
+      }
+    },
+    "_cs_s": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "undefined": 1
+      }
+    },
+    "_cs_id": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "undefined": 1
+      }
+    },
+    "_cs_c": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "undefined": 1
+      }
+    },
+    "__pdst": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "undefined": 1
+      }
+    },
+    "_ScCbts": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "undefined": 1
+      }
+    },
+    "utag_main_dc_region": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "undefined": 1
+      }
+    },
+    "_scid_r": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "undefined": 1
+      }
+    },
+    "utag_main_v_id": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "undefined": 1
+      }
+    },
+    "_pin_unauth": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "undefined": 1
+      }
+    },
+    "kampyleUserSessionsCount": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "undefined": 1
+      }
+    },
+    "utag_main_dc_visit": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "undefined": 1
+      }
+    },
+    "kampyleSessionPageCounter": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "undefined": 1
+      }
+    },
+    "kampyle_userid": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "undefined": 1
+      }
+    },
+    "_scid": {
+      "domains": [
+        "royalcaribbean.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "undefined": 1
+      }
+    },
+    "gtm_session_start": {
+      "domains": [
+        "salesforce.com"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "necessary": 5
+      }
+    },
+    "__hstc": {
+      "domains": [
+        "salesforce.com"
+      ],
+      "totalOccurrences": 2,
+      "categories": {
+        "analytics": 2
+      }
+    },
+    "hubspotutk": {
+      "domains": [
+        "salesforce.com"
+      ],
+      "totalOccurrences": 2,
+      "categories": {
+        "analytics": 2
+      }
+    },
+    "_mkto_trk": {
+      "domains": [
+        "salesforce.com"
+      ],
+      "totalOccurrences": 2,
+      "categories": {
+        "marketing": 2
+      }
+    },
+    "visitor_id": {
+      "domains": [
+        "salesforce.com"
+      ],
+      "totalOccurrences": 2,
+      "categories": {
+        "marketing": 2
+      }
+    },
+    "eloqua": {
+      "domains": [
+        "salesforce.com"
+      ],
+      "totalOccurrences": 2,
+      "categories": {
+        "marketing": 2
+      }
+    },
+    "_ga_3VHBZ2DJWP": {
+      "domains": [
+        "salesforce.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "analytics": 1
+      }
+    },
+    "AWSALBAPP-0": {
+      "domains": [
+        "siemens.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "necessary": 1
+      }
+    },
+    "AWSALBAPP-1": {
+      "domains": [
+        "siemens.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "necessary": 1
+      }
+    },
+    "AWSALBAPP-2": {
+      "domains": [
+        "siemens.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "necessary": 1
+      }
+    },
+    "AWSALBAPP-3": {
+      "domains": [
+        "siemens.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "necessary": 1
+      }
+    },
+    "ELQCOUNTRY": {
+      "domains": [
+        "siemens.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "functional": 1
+      }
+    },
+    "ELOQUA": {
+      "domains": [
+        "siemens.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "analytics": 1
+      }
+    },
+    "GU_geo_country": {
+      "domains": [
+        "theguardian.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "functional": 1
+      }
+    },
+    "bwid": {
+      "domains": [
+        "theguardian.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "analytics": 1
+      }
+    },
+    "consentUUID": {
+      "domains": [
+        "theguardian.com",
+        "zeit.de"
+      ],
+      "totalOccurrences": 2,
+      "categories": {
+        "analytics": 2
+      }
+    },
+    "ld-identifier": {
+      "domains": [
+        "volvocars.com"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "marketing": 5
+      }
+    },
+    "steps": {
+      "domains": [
+        "volvocars.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "analytics": 1
+      }
+    },
+    "_ga_73WLWG7342": {
+      "domains": [
+        "volvocars.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "analytics": 1
+      }
+    },
+    "wp-tracking": {
+      "domains": [
+        "volvocars.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "analytics": 1
+      }
+    },
+    "uuid2": {
+      "domains": [
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ],
+      "totalOccurrences": 3,
+      "categories": {
+        "marketing": 3
+      }
+    },
+    "obuid": {
+      "domains": [
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ],
+      "totalOccurrences": 3,
+      "categories": {
+        "marketing": 3
+      }
+    },
+    "t_gid": {
+      "domains": [
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ],
+      "totalOccurrences": 3,
+      "categories": {
+        "marketing": 3
+      }
+    },
+    "KRTBCOOKIE_": {
+      "domains": [
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ],
+      "totalOccurrences": 3,
+      "categories": {
+        "marketing": 3
+      }
+    },
+    "ad-id": {
+      "domains": [
+        "volvocars.com",
+        "zendesk.com",
+        "zoom.us"
+      ],
+      "totalOccurrences": 3,
+      "categories": {
+        "marketing": 3
+      }
+    },
+    "TDID": {
+      "domains": [
+        "volvocars.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "marketing": 1
+      }
+    },
+    "TDCPM": {
+      "domains": [
+        "volvocars.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "marketing": 1
+      }
+    },
+    "TTDOptOut": {
+      "domains": [
+        "volvocars.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "functional": 1
+      }
+    },
+    "creid": {
+      "domains": [
+        "zeit.de"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "analytics": 1
+      }
+    },
+    "_sp_enable_dfp_personalized_ads": {
+      "domains": [
+        "zeit.de"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "marketing": 1
+      }
+    },
+    "xbc": {
+      "domains": [
+        "zeit.de"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "analytics": 1
+      }
+    },
+    "_pcus": {
+      "domains": [
+        "zeit.de"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "analytics": 1
+      }
+    },
+    "_zsp_": {
+      "domains": [
+        "zeit.de"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "analytics": 1
+      }
+    },
+    "flight": {
+      "domains": [
+        "zendesk.com"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "analytics": 5
+      }
+    },
+    "LP_VISITOR": {
+      "domains": [
+        "zendesk.com"
+      ],
+      "totalOccurrences": 2,
+      "categories": {
+        "functional": 2
+      }
+    },
+    "intercom-id": {
+      "domains": [
+        "zendesk.com"
+      ],
+      "totalOccurrences": 2,
+      "categories": {
+        "functional": 2
+      }
+    },
+    "drift_aid": {
+      "domains": [
+        "zendesk.com"
+      ],
+      "totalOccurrences": 2,
+      "categories": {
+        "functional": 2
+      }
+    },
+    "__tawkuuid": {
+      "domains": [
+        "zendesk.com"
+      ],
+      "totalOccurrences": 2,
+      "categories": {
+        "functional": 2
+      }
+    },
+    "_ga_FBP7C61M6Z": {
+      "domains": [
+        "zendesk.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "analytics": 1
+      }
+    },
+    "cred": {
+      "domains": [
+        "zoom.us"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "analytics": 5
+      }
+    },
+    "_zm_mtk_guid": {
+      "domains": [
+        "zoom.us"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "analytics": 5
+      }
+    },
+    "OnetrustActiveGroups": {
+      "domains": [
+        "zoom.us"
+      ],
+      "totalOccurrences": 5,
+      "categories": {
+        "necessary": 5
+      }
+    },
+    "_yjsu_yjad": {
+      "domains": [
+        "zoom.us"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "marketing": 1
+      }
+    }
+  }
+}

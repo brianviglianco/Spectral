@@ -3,7 +3,9 @@
   "version": "0.5.0",
   "private": true,
   "type": "commonjs",
-  "engines": { "node": ">=18.17" },
+  "engines": {
+    "node": ">=18.17"
+  },
   "scripts": {
     "p0:full": "node src/crawler/professionalAnalysis.cjs \"$URL\" --outdir reports && npm run p0:pack",
     "p0:pack": "node src/tools/inspectReport.js && node src/tools/verifyReport.js reports/spectral-analysis-*.json && bash scripts/make-forensic-all.sh reports && node scripts/manifest-tools.cjs verify reports/forensic && node scripts/manifest-tools.cjs index reports/forensic",
@@ -11,11 +13,19 @@
     "report:verify": "node src/tools/verifyReport.js reports/spectral-analysis-*.json",
     "cmp:fix": "node scripts/fix-cmp.js reports",
     "backup": "node scripts/createBackup.js",
-    "audit": "node scripts/auditWorkspace.js"
+    "audit": "node scripts/auditWorkspace.js",
+    "scan:one": "node runConsoleSingle.mjs",
+    "scan:batch": "node runConsoleBatch.mjs"
   },
   "dependencies": {
     "adm-zip": "^0.5.12",
     "archiver": "^6.0.2",
-    "puppeteer": "^24.19.0"
+    "chrome-har-capturer": "^0.14.2",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.545.0",
+    "puppeteer": "^24.22.0",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "tailwind-merge": "^3.3.1"
   }
 }

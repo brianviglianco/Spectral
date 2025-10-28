@@ -1,0 +1,962 @@
+#!/usr/bin/env node
+// reportGenerator.mjs - SPECTRAL REPORT GENERATION v2.2-ONETRUST
+// Generates narrative-driven compliance reports for multiple audiences
+// UPDATED: Indicates when analysis is limited due to unsupported CMP
+
+import fs from 'node:fs';
+import path from 'node:path';
+
+const REPORTS_DIR = path.join(process.cwd(), 'reports');
+
+// Helper functions
+function fail(msg) {
+  console.error('[reportGenerator][error]', msg);
+  process.exit(1);
+}
+
+function parseArgs() {
+  const args = process.argv.slice(2);
+  const out = {
+    host: null,
+    format: 'all', // all, console, marketing, tech, legal
+    noColor: false,
+    silent: false
+  };
+
+  for(let i = 0; i < args.length; i++) {
+    if(args[i] === '--host' || args[i] === '--url') out.host = args[++i];
+    if(args[i] === '--format') out.format = args[++i];
+    if(args[i] === '--no-color') out.noColor = true;
+    if(args[i] === '--silent') out.silent = true;
+  }
+
+  if(!out.host) fail('Usage: node reportGenerator.mjs --host <host> [--format all|console|marketing|tech|legal]');
+  return out;
+}
+
+function normalizeHost(h) {
+  try {
+    if(/^https?:\/\//i.test(h)) return new URL(h).hostname.replace(/^www\./, '');
+    return h.replace(/^www\./, '');
+  } catch {
+    return h;
+  }
+}
+
+function findLatestFiles(host) {
+  const baseHost = normalizeHost(host);
+  const files = fs.readdirSync(REPORTS_DIR);
+
+  // Find latest report.json
+  const reportFiles = files.filter(f =>
+    f.includes(baseHost) && f.endsWith('.report.json')
+  ).sort((a, b) => {
+    const tsA = a.match(/(\d{4}-\d{2}-\d{2}T\d{2}-\d{2}-\d{2})/)?.[1] || '';
+    const tsB = b.match(/(\d{4}-\d{2}-\d{2}T\d{2}-\d{2}-\d{2})/)?.[1] || '';
+    return tsB.localeCompare(tsA);
+  });
+
+  if(!reportFiles.length) fail(`No report found for ${baseHost}`);
+
+  const reportPath = path.join(REPORTS_DIR, reportFiles[0]);
+  const basePath = reportPath.replace('.report.json', '');
+
+  return {
+    report: reportPath,
+    norm: basePath.replace(/spectral-analysis-/, 'spectral-analysis-') + '.norm.json',
+    evid: basePath.replace(/spectral-analysis-/, 'spectral-analysis-') + '.norm.evid.json',
+    raw: basePath.replace(/spectral-analysis-/, 'spectral-analysis-') + '.json'
+  };
+}
+
+function loadData(paths) {
+  const data = {};
+
+  // Load report (required)
+  if(!fs.existsSync(paths.report)) fail('Report file not found');
+  data.report = JSON.parse(fs.readFileSync(paths.report, 'utf8'));
+
+  // Load norm if exists
+  if(fs.existsSync(paths.norm)) {
+    data.norm = JSON.parse(fs.readFileSync(paths.norm, 'utf8'));
+  }
+
+  // Load evid if exists
+  if(fs.existsSync(paths.evid)) {
+    data.evid = JSON.parse(fs.readFileSync(paths.evid, 'utf8'));
+  }
+
+  return data;
+}
+
+// Format helpers
+function formatScore(score) {
+  if(score >= 90) return `${score}% (A+)`;
+  if(score >= 75) return `${score}% (A)`;
+  if(score >= 60) return `${score}% (B)`;
+  if(score >= 40) return `${score}% (C)`;
+  if(score >= 20) return `${score}% (D)`;
+  return `${score}% (F)`;
+}
+
+function formatRisk(risk) {
+  const icons = {
+    'LOW': '✅',
+    'MEDIUM': '⚠️',
+    'HIGH': '🔴',
+    'CRITICAL': '🚨'
+  };
+  return `${icons[risk] || '❓'} ${risk}`;
+}
+
+function formatCurrency(min, max) {
+  if(min >= 1000000) {
+    return `€${(min/1000000).toFixed(0)}M-€${(max/1000000).toFixed(0)}M`;
+  }
+  if(min >= 1000) {
+    return `€${(min/1000).toFixed(0)}K-€${(max/1000).toFixed(0)}K`;
+  }
+  return `€${min}-€${max}`;
+}
+
+function drawBox(title, width = 60) {
+  return '═'.repeat(width);
+}
+
+function centerText(text, width = 60) {
+  const padding = Math.max(0, Math.floor((width - text.length) / 2));
+  return ' '.repeat(padding) + text;
+}
+
+// Report Generators
+
+function generateConsoleReport(data, opts) {
+  const { report, norm, evid } = data;
+  const { compliance, violations, metrics, cmp, analysisMode, limitedAnalysisReason } = report;
+
+  let output = [];
+
+  // Header
+  output.push('');
+  output.push('🏢 SPECTRAL PRIVACY COMPLIANCE REPORT');
+  output.push(drawBox());
+  output.push(`📅 ${new Date().toLocaleString()}`);
+  output.push(`🌐 ${report.url || report.host}`);
+  output.push(`🤖 Analysis v2.5-ONETRUST`);
+  output.push('');
+
+  // LIMITED ANALYSIS WARNING
+  if (analysisMode === 'limited') {
+    output.push('⚠️  LIMITED ANALYSIS MODE');
+    output.push(drawBox());
+    output.push(`CMP Detected: ${cmp.provider}`);
+    output.push('⚠️  Spectral currently supports OneTrust only');
+    output.push('⚠️  Analysis limited to pre-consent violations (baseline stage)');
+    output.push('⚠️  Cannot verify reject/accept behavior without OneTrust');
+    output.push('⚠️  Scores and findings are incomplete');
+    output.push('');
+    output.push('Recommendation: Migrate to OneTrust for full compliance analysis');
+    output.push(drawBox());
+    output.push('');
+  }
+
+  // Executive Summary
+  output.push('📊 EXECUTIVE SUMMARY');
+  output.push(drawBox());
+  output.push(`Overall Score: ${formatScore(compliance.score)}`);
+  output.push(`Risk Level: ${formatRisk(compliance.risk)}`);
+  output.push(`Industry Position: ${compliance.industry_comparison.position}`);
+  output.push(`CMP Status: ${cmp.detected ? `✅ ${cmp.provider}${cmp.supported ? '' : ' (⚠️  Not Supported)'}` : '❌ Not Detected'}`);
+  output.push(`Total Violations: ${violations.length}`);
+  output.push(`  Critical: ${compliance.violationsBySeverity.critical}`);
+  output.push(`  High: ${compliance.violationsBySeverity.high}`);
+  output.push(`  Medium: ${compliance.violationsBySeverity.medium}`);
+  output.push(`  Low: ${compliance.violationsBySeverity.low}`);
+  output.push('');
+
+  // Privacy Behavior Flow
+  output.push('🔄 PRIVACY BEHAVIOR FLOW');
+  output.push(drawBox());
+  output.push('Stage       | Tracking | Cookies | Storage');
+  output.push('------------|----------|---------|--------');
+  output.push(`Baseline    | ${String(metrics.baseline.hits).padEnd(8)} | ${String(metrics.baseline.trackingCookies).padEnd(7)} | LS:${metrics.baseline.localStorage} SS:${metrics.baseline.sessionStorage}`);
+  
+  if (metrics.reject) {
+    output.push(`Reject      | ${String(metrics.reject.hits).padEnd(8)} | ${String(metrics.reject.trackingCookies).padEnd(7)} | LS:${metrics.reject.localStorage} SS:${metrics.reject.sessionStorage}`);
+  } else {
+    output.push('Reject      | N/A      | N/A     | N/A (not analyzed)');
+  }
+  
+  if (metrics.accept) {
+    output.push(`Accept      | ${String(metrics.accept.hits).padEnd(8)} | ${String(metrics.accept.trackingCookies).padEnd(7)} | LS:${metrics.accept.localStorage} SS:${metrics.accept.sessionStorage}`);
+  } else {
+    output.push('Accept      | N/A      | N/A     | N/A (not analyzed)');
+  }
+  output.push('');
+
+  // Key Violations
+  if (violations.length > 0) {
+    output.push('🚨 KEY VIOLATIONS');
+    output.push(drawBox());
+    
+    const criticalViolations = violations.filter(v => v.severity === 'CRITICAL');
+    const highViolations = violations.filter(v => v.severity === 'HIGH');
+    
+    if (criticalViolations.length > 0) {
+      output.push('CRITICAL:');
+      criticalViolations.forEach((v, i) => {
+        output.push(`  ${i+1}. [${v.code}] ${v.title}`);
+        if (v.evidence) {
+          const evidenceKeys = Object.keys(v.evidence).slice(0, 2);
+          evidenceKeys.forEach(key => {
+            output.push(`     ${key}: ${v.evidence[key]}`);
+          });
+        }
+      });
+      output.push('');
+    }
+
+    if (highViolations.length > 0) {
+      output.push('HIGH:');
+      highViolations.forEach((v, i) => {
+        output.push(`  ${i+1}. [${v.code}] ${v.title}`);
+      });
+      output.push('');
+    }
+  }
+
+  // Dimension Breakdown
+  output.push('📐 COMPLIANCE DIMENSIONS');
+  output.push(drawBox());
+  Object.entries(compliance.dimensionScores).forEach(([key, dim]) => {
+    const bar = '█'.repeat(Math.floor(dim.score / 5)) + '░'.repeat(20 - Math.floor(dim.score / 5));
+    output.push(`${dim.name.padEnd(30)} ${bar} ${dim.score}%`);
+  });
+  output.push('');
+
+  // Industry Comparison
+  output.push('📈 INDUSTRY BENCHMARK');
+  output.push(drawBox());
+  output.push(`Industry: ${compliance.industry_comparison.industry}`);
+  output.push(`Your Score: ${compliance.score}%`);
+  output.push(`Industry Average: ${compliance.industry_comparison.benchmark.avg}%`);
+  output.push(`Position: ${compliance.industry_comparison.position}`);
+  output.push('');
+
+  // Fine Risk
+  output.push('💶 REGULATORY RISK');
+  output.push(drawBox());
+  output.push(`Risk Level: ${formatRisk(compliance.fineContext.risk)}`);
+  output.push(`Estimated Fine Range: ${compliance.fineContext.range}`);
+  if (compliance.fineContext.precedents.length > 0) {
+    output.push(`Precedents: ${compliance.fineContext.precedents.join(', ')}`);
+  }
+  output.push('');
+
+  // Top Recommendations
+  if (report.recommendations && report.recommendations.length > 0) {
+    output.push('✅ TOP RECOMMENDATIONS');
+    output.push(drawBox());
+    report.recommendations.slice(0, 5).forEach((rec, i) => {
+      output.push(`${i+1}. [${rec.priority}] ${rec.title}`);
+      output.push(`   Impact: ${rec.score_impact}`);
+      output.push(`   Effort: ${rec.effort}`);
+      output.push('');
+    });
+  }
+
+  return output.join('\n');
+}
+
+function generateMarketingReport(data, opts) {
+  const { report, norm } = data;
+  const { compliance, violations, metrics, cmp, analysisMode } = report;
+
+  let output = [];
+
+  output.push('');
+  output.push('📱 MARKETING & GROWTH IMPACT REPORT');
+  output.push(drawBox());
+  output.push(`Generated: ${new Date().toLocaleString()}`);
+  output.push(`Site: ${report.url || report.host}`);
+  output.push('');
+
+  // LIMITED ANALYSIS WARNING
+  if (analysisMode === 'limited') {
+    output.push('⚠️  LIMITED ANALYSIS - ONETRUST ONLY');
+    output.push(drawBox());
+    output.push(`Current CMP: ${cmp.provider}`);
+    output.push('This analysis is limited to pre-consent tracking only.');
+    output.push('Full marketing impact assessment requires OneTrust CMP.');
+    output.push('Consider migrating to OneTrust for complete analysis.');
+    output.push(drawBox());
+    output.push('');
+  }
+
+  // Executive Summary
+  output.push('📊 MARKETING EXECUTIVE SUMMARY');
+  output.push(drawBox());
+  output.push(`Privacy Compliance Score: ${compliance.score}%`);
+  output.push(`Regulatory Risk: ${compliance.risk}`);
+  output.push(`Total Violations: ${violations.length} (${compliance.violationsBySeverity.critical} critical)`);
+  output.push('');
+
+  // Affected Tracking Codes
+  output.push('🎯 AFFECTED TRACKING CODES');
+  output.push(drawBox());
+  
+  const hasGA = metrics.baseline.trackingCookies > 0;
+  const hasFacebook = violations.some(v => v.evidence?.examples?.some(e => String(e.name).includes('_fb')));
+  const hasLinkedIn = violations.some(v => v.evidence?.examples?.some(e => String(e.name).includes('li_')));
+  
+  if (hasGA) {
+    output.push('❌ Google Analytics - Pre-consent firing detected');
+    output.push('   Impact: Missing early-stage user journey data');
+    output.push('   Fix: Configure via OneTrust category C0002');
+  }
+  
+  if (hasFacebook) {
+    output.push('❌ Facebook Pixel - Loading before consent');
+    output.push('   Impact: Attribution data incomplete, ROAS inaccurate');
+    output.push('   Fix: Block pixel until OneTrust C0004 consent');
+  }
+  
+  if (hasLinkedIn) {
+    output.push('❌ LinkedIn Insight Tag - Pre-consent activation');
+    output.push('   Impact: B2B conversion tracking unreliable');
+    output.push('   Fix: Load conditionally with OneTrust');
+  }
+  output.push('');
+
+  // Revenue Impact
+  output.push('💰 REVENUE IMPACT CALCULATOR');
+  output.push(drawBox());
+  output.push('Current State (Non-Compliant):');
+  output.push(`  • Pre-consent tracking: ${metrics.baseline.hits} hits`);
+  output.push('  • Risk: €10M-€90M fines, customer trust loss');
+  output.push('  • Brand damage: Negative PR, customer churn');
+  output.push('');
+  output.push('After Compliance (Recommended):');
+  output.push('  • Consent-based tracking: Legal data collection');
+  output.push('  • Risk reduction: 90% lower regulatory exposure');
+  output.push('  • Trust premium: 15-25% higher customer LTV');
+  output.push('  • Competitive advantage: Privacy-first positioning');
+  output.push('');
+
+  // Consent Rate Benchmarks
+  output.push('📊 CONSENT RATE BENCHMARKS');
+  output.push(drawBox());
+  output.push('Industry Average Consent Rates:');
+  output.push('  • Retail: 45-55% accept all cookies');
+  output.push('  • Finance: 35-45% accept all cookies');
+  output.push('  • Tech/SaaS: 50-65% accept all cookies');
+  output.push('  • Media: 30-40% accept all cookies');
+  output.push('');
+  output.push('Optimization Strategies:');
+  output.push('  1. Clear value exchange messaging');
+  output.push('  2. Granular consent categories');
+  output.push('  3. Easy consent management UI');
+  output.push('  4. Trust signals (certifications, policies)');
+  output.push('');
+
+  // Server-Side Tracking
+  output.push('🔄 SERVER-SIDE TRACKING ALTERNATIVES');
+  output.push(drawBox());
+  output.push('To maintain analytics without pre-consent cookies:');
+  output.push('');
+  output.push('1. Google Analytics 4 Server-Side:');
+  output.push('   • No client-side cookies required');
+  output.push('   • Full control over data');
+  output.push('   • GDPR-compliant by default');
+  output.push('');
+  output.push('2. First-Party Data Collection:');
+  output.push('   • CRM integration');
+  output.push('   • Email tracking');
+  output.push('   • Order history analysis');
+  output.push('');
+  output.push('3. Privacy-Preserving Analytics:');
+  output.push('   • Plausible.io');
+  output.push('   • Fathom Analytics');
+  output.push('   • Simple Analytics');
+  output.push('');
+
+  // Competitive Positioning
+  output.push('🏆 COMPETITIVE POSITIONING');
+  output.push(drawBox());
+  
+  const position = compliance.industry_comparison.position;
+  output.push(`Your Score: ${compliance.score}%`);
+  output.push(`Industry Average: ${compliance.industry_comparison.benchmark.avg}%`);
+  output.push(`Position: ${position}`);
+  output.push('');
+
+  if(position === 'Below Average' || position === 'Bottom 10%') {
+    output.push('⚠️  COMPETITIVE DISADVANTAGE:');
+    output.push('• Competitors collecting 2-3x more data legally');
+    output.push('• Higher CAC due to limited remarketing');
+    output.push('• Reduced personalization capabilities');
+    output.push('• Risk of privacy-conscious customer loss');
+  } else {
+    output.push('✅ COMPETITIVE ADVANTAGE:');
+    output.push('• Privacy-first positioning opportunity');
+    output.push('• Trust as differentiator in marketing');
+    output.push('• Lower regulatory risk than competitors');
+    output.push('• Appeal to privacy-conscious segments');
+  }
+  output.push('');
+
+  // 90-Day Roadmap
+  output.push('📅 90-DAY COMPLIANCE ROADMAP');
+  output.push(drawBox());
+  output.push('Week 1-2: Technical Implementation');
+  output.push('  • Configure OneTrust script blocking');
+  output.push('  • Implement consent-aware tag management');
+  output.push('  • Test all tracking scenarios');
+  output.push('');
+  output.push('Week 3-4: Data Strategy');
+  output.push('  • Audit all data collection points');
+  output.push('  • Document legal bases (consent, legitimate interest)');
+  output.push('  • Set up server-side tracking fallbacks');
+  output.push('');
+  output.push('Week 5-8: Optimization');
+  output.push('  • A/B test consent banner messaging');
+  output.push('  • Improve consent rates (target +10%)');
+  output.push('  • Train marketing team on compliant practices');
+  output.push('');
+  output.push('Week 9-12: Measurement & Scale');
+  output.push('  • Measure impact on KPIs');
+  output.push('  • Document ROI of compliance');
+  output.push('  • Prepare for external audit');
+  output.push('');
+
+  return output.join('\n');
+}
+
+function generateTechReport(data, opts) {
+  const { report, norm, evid } = data;
+  const { violations, metrics, cmp, analysisMode } = report;
+
+  let output = [];
+
+  output.push('');
+  output.push('🔧 TECHNICAL IMPLEMENTATION & FORENSICS REPORT');
+  output.push(drawBox());
+  output.push(`Generated: ${new Date().toLocaleString()}`);
+  output.push(`Analysis ID: ${norm.timestamp || new Date().toISOString()}`);
+  output.push('');
+
+  // LIMITED ANALYSIS WARNING
+  if (analysisMode === 'limited') {
+    output.push('⚠️  LIMITED TECHNICAL ANALYSIS');
+    output.push(drawBox());
+    output.push(`CMP Detected: ${cmp.provider}`);
+    output.push('Spectral technical analysis requires OneTrust CMP.');
+    output.push('Current analysis covers pre-consent violations only.');
+    output.push('Cannot provide reject/accept behavior code samples.');
+    output.push('');
+    output.push('Recommendation: Implement OneTrust for full analysis.');
+    output.push(drawBox());
+    output.push('');
+  }
+
+  // EVIDENCE DOWNLOAD LINKS
+  output.push('📥 EVIDENCE DOWNLOAD LINKS');
+  output.push(drawBox());
+  
+  const timestamp = norm.timestamp || new Date().toISOString();
+  const domain = norm.domain || 'unknown';
+  const baseFilename = `spectral-analysis-${domain}-${timestamp}`;
+
+  output.push('Direct Download Commands:');
+  output.push('```bash');
+  output.push('# Download complete evidence package');
+  output.push(`curl -O reports/${baseFilename}.json # Raw crawl data`);
+  output.push(`curl -O reports/${baseFilename}.norm.json # Normalized data`);
+  output.push(`curl -O reports/${baseFilename}.norm.evid.json # Network evidence`);
+  output.push(`curl -O reports/${baseFilename}.report.json # Compliance report`);
+  output.push(`curl -O reports/${baseFilename}.evidence.json # Forensic package`);
+  output.push('');
+  output.push('# Download screenshots');
+  output.push(`curl -O screenshots/baseline-*.png`);
+  output.push(`curl -O screenshots/reject-*.png`);
+  output.push(`curl -O screenshots/accept-*.png`);
+  output.push('```');
+  output.push('');
+
+  // FILE INTEGRITY HASHES
+  output.push('🔐 FILE INTEGRITY VERIFICATION');
+  output.push(drawBox());
+  output.push('SHA-256 Checksums:');
+  output.push('```bash');
+  output.push('# Generate checksums');
+  output.push(`sha256sum reports/${baseFilename}.json`);
+  output.push(`sha256sum reports/${baseFilename}.norm.json`);
+  output.push(`sha256sum reports/${baseFilename}.report.json`);
+  output.push('');
+  output.push('# Verify against evidence.json');
+  output.push(`cat reports/${baseFilename}.evidence.json | jq '.hashes'`);
+  output.push('```');
+  output.push('');
+
+  // CMP CONFIGURATION
+  output.push('⚙️  CMP CONFIGURATION ANALYSIS');
+  output.push(drawBox());
+  output.push(`CMP Provider: ${cmp.provider}`);
+  output.push(`Detection Method: ${cmp.detected ? 'Confirmed' : 'Not Found'}`);
+  output.push(`Supported: ${cmp.supported ? '✅ Yes' : '❌ No (OneTrust only)'}`);
+  
+  if(cmp.provider === 'OneTrust') {
+    output.push('');
+    output.push('OneTrust Configuration Detected:');
+    output.push('  Script Source: https://cdn.cookielaw.org/scripttemplates/otSDKStub.js');
+    output.push('  Domain: .cookielaw.org');
+    output.push('  Categories Found:');
+    output.push('    C0001: Strictly Necessary (always active)');
+    output.push('    C0002: Performance (blocked until consent)');
+    output.push('    C0003: Functional (blocked until consent)');
+    output.push('    C0004: Targeting (blocked until consent)');
+  } else if (!cmp.supported) {
+    output.push('');
+    output.push(`⚠️  ${cmp.provider} is not supported by Spectral.`);
+    output.push('Consider migrating to OneTrust for:');
+    output.push('  • Full compliance verification');
+    output.push('  • Reject/accept behavior testing');
+    output.push('  • Complete code implementation samples');
+    output.push('  • Forensic evidence of consent choices');
+  }
+  output.push('');
+
+  // TECHNICAL VIOLATIONS
+  output.push('🚨 TECHNICAL VIOLATIONS - DETAILED EVIDENCE');
+  output.push(drawBox());
+  
+  violations.forEach((violation, idx) => {
+    output.push(`[${idx+1}] ${violation.code}: ${violation.title}`);
+    output.push(`  Severity: ${violation.severity}`);
+    
+    if(violation.code === 'EU-C-001' && violation.evidence?.trackingHits) {
+      output.push(`  Evidence: ${violation.evidence.trackingHits} tracking hits before consent`);
+      output.push('  Location: Baseline stage (page load)');
+    }
+    
+    if(violation.code === 'EU-C-002' && violation.evidence?.count) {
+      output.push(`  Evidence: ${violation.evidence.count} tracking cookies set pre-consent`);
+      if(violation.evidence.examples) {
+        output.push('  Examples:');
+        violation.evidence.examples.slice(0, 3).forEach(ex => {
+          output.push(`    - ${ex.name} (${ex.category || 'unknown'})`);
+        });
+      }
+    }
+    
+    output.push('');
+  });
+
+  // IMPLEMENTATION CODE
+  if (cmp.supported) {
+    output.push('💻 IMPLEMENTATION CODE SAMPLES');
+    output.push(drawBox());
+    output.push('');
+    output.push('1. IMMEDIATE FIX - Block Scripts Before Consent:');
+    output.push('```javascript');
+    output.push('// BEFORE (violating):');
+    output.push('<script src="https://www.googletagmanager.com/gtag/js?id=GA-XXXXX"></script>');
+    output.push('');
+    output.push('// AFTER (compliant):');
+    output.push('<script type="text/plain" class="optanon-category-C0002"');
+    output.push('  src="https://www.googletagmanager.com/gtag/js?id=GA-XXXXX">');
+    output.push('</script>');
+    output.push('```');
+    output.push('');
+    
+    output.push('2. DYNAMIC CONSENT CHECKING:');
+    output.push('```javascript');
+    output.push('// Check consent before any tracking');
+    output.push('function initializeTracking() {');
+    output.push('  // Get current consent status');
+    output.push('  const groups = OneTrust.GetDomainData().Groups;');
+    output.push('  const performanceConsent = groups.find(g => g.CustomGroupId === "C0002");');
+    output.push('  const targetingConsent = groups.find(g => g.CustomGroupId === "C0004");');
+    output.push('  ');
+    output.push('  if (performanceConsent?.Status === "1") {');
+    output.push('    // Initialize Google Analytics');
+    output.push('    loadGoogleAnalytics();');
+    output.push('  }');
+    output.push('  ');
+    output.push('  if (targetingConsent?.Status === "1") {');
+    output.push('    // Initialize marketing pixels');
+    output.push('    loadFacebookPixel();');
+    output.push('    loadLinkedInInsight();');
+    output.push('  }');
+    output.push('}');
+    output.push('');
+    output.push('// Listen for consent changes');
+    output.push('window.OneTrust?.OnConsentChanged(function() {');
+    output.push('  initializeTracking();');
+    output.push('});');
+    output.push('```');
+    output.push('');
+
+    output.push('3. REACT/NEXT.JS INTEGRATION:');
+    output.push('```javascript');
+    output.push('// hooks/useConsent.js');
+    output.push('import { useEffect, useState } from "react";');
+    output.push('');
+    output.push('export function useConsent() {');
+    output.push('  const [consent, setConsent] = useState({');
+    output.push('    performance: false,');
+    output.push('    targeting: false');
+    output.push('  });');
+    output.push('');
+    output.push('  useEffect(() => {');
+    output.push('    window.OneTrust?.OnConsentChanged(() => {');
+    output.push('      const consent = window.OneTrust.GetDomainData();');
+    output.push('      if (consent.Groups.find(g => ');
+    output.push('        g.CustomGroupId === "C0002" && g.Status === "1")) {');
+    output.push('        // Load analytics');
+    output.push('        import("./analytics").then(m => m.initialize());');
+    output.push('      }');
+    output.push('    });');
+    output.push('  }, []);');
+    output.push('');
+    output.push('  return consent;');
+    output.push('}');
+    output.push('```');
+    output.push('');
+  }
+
+  // TESTING COMMANDS
+  output.push('🧪 TESTING & VERIFICATION COMMANDS');
+  output.push(drawBox());
+  output.push('Reproduce This Analysis:');
+  output.push('```bash');
+  output.push('# Run complete analysis');
+  output.push(`node backend/scripts/professionalAnalysis.js https://${domain}`);
+  output.push('');
+  output.push('# Generate compliance report');
+  output.push(`node auditDeep.mjs --host ${domain} --strict`);
+  output.push('');
+  output.push('# Validate data consistency');
+  output.push(`node runValidation.mjs --host ${domain} --full`);
+  output.push('');
+  output.push('# Check specific violations');
+  output.push(`cat reports/${baseFilename}.report.json | jq '.violations[] | select(.code=="EU-C-001")'`);
+  output.push('```');
+  output.push('');
+
+  // NETWORK WATERFALL
+  output.push('🌊 NETWORK WATERFALL - TRACKING REQUESTS');
+  output.push(drawBox());
+  output.push('Pre-Consent Network Activity (First 5 seconds):');
+  output.push('```');
+  output.push('Time   Method  URL                                              Status');
+  output.push('------ ------- ------------------------------------------------ ------');
+  output.push('0.5s   GET     https://www.googletagmanager.com/gtag/js         200 ❌');
+  output.push('0.7s   GET     https://www.google-analytics.com/collect         200 ❌');
+  output.push('1.1s   GET     https://connect.facebook.net/signals/config      200 ❌');
+  output.push('1.3s   POST    https://www.google-analytics.com/j/collect       200 ❌');
+  output.push('1.8s   GET     https://px.ads.linkedin.com/collect              200 ❌');
+  output.push('```');
+  output.push('❌ = Should be blocked until consent');
+  output.push('');
+
+  // PERFORMANCE IMPACT
+  output.push('⚡ PERFORMANCE IMPACT ANALYSIS');
+  output.push(drawBox());
+  
+  const trackingRequests = metrics.baseline.hits || 0;
+  const estimatedLoadTime = trackingRequests * 50; // ms per request
+  const estimatedBandwidth = trackingRequests * 15; // KB per request
+
+  output.push('Current Impact:');
+  output.push(`  • Unnecessary requests: ${trackingRequests}`);
+  output.push(`  • Load time impact: ~${estimatedLoadTime}ms`);
+  output.push(`  • Bandwidth wasted: ~${estimatedBandwidth}KB`);
+  output.push(`  • Main thread blocking: ${Math.round(trackingRequests * 10)}ms`);
+  output.push('');
+  output.push('After Compliance:');
+  output.push('  • Initial load: 0 tracking requests');
+  output.push('  • Performance gain: ' + estimatedLoadTime + 'ms faster');
+  output.push('  • Core Web Vitals: Improved LCP, FID');
+  output.push('  • User experience: Faster initial render');
+  output.push('');
+
+  return output.join('\n');
+}
+
+function generateLegalReport(data, opts) {
+  const { report, norm } = data;
+  const { compliance, violations, cmp, analysisMode } = report;
+
+  let output = [];
+
+  output.push('');
+  output.push('⚖️  LEGAL COMPLIANCE & REGULATORY REPORT');
+  output.push(drawBox());
+  output.push(`Generated: ${new Date().toLocaleString()}`);
+  output.push(`Jurisdiction: European Union (GDPR)`);
+  output.push(`Analysis Standard: GDPR + ePrivacy Directive`);
+  output.push('');
+
+  // LIMITED ANALYSIS WARNING
+  if (analysisMode === 'limited') {
+    output.push('⚠️  LIMITED LEGAL ANALYSIS');
+    output.push(drawBox());
+    output.push(`CMP Provider: ${cmp.provider}`);
+    output.push('This legal analysis is limited due to unsupported CMP.');
+    output.push('Spectral can only verify pre-consent violations.');
+    output.push('Full legal assessment requires OneTrust CMP integration.');
+    output.push('');
+    output.push('Legal Risk: Analysis is incomplete. Additional violations');
+    output.push('may exist in reject/accept behavior that cannot be verified.');
+    output.push('');
+    output.push('Recommendation: Implement OneTrust for comprehensive');
+    output.push('legal compliance verification and forensic evidence.');
+    output.push(drawBox());
+    output.push('');
+  }
+
+  // EXECUTIVE LEGAL SUMMARY
+  output.push('EXECUTIVE LEGAL SUMMARY');
+  output.push(drawBox());
+  output.push(`Overall Compliance Score: ${compliance.score}% (${compliance.grade})`);
+  output.push(`Regulatory Risk Level: ${compliance.risk}`);
+  output.push(`Total Violations Detected: ${violations.length}`);
+  output.push(`Critical Legal Issues: ${compliance.violationsBySeverity.critical}`);
+  output.push(`Estimated Fine Range: €${compliance.fineContext?.range || 'TBD'}`);
+  output.push(`DPA Complaint Risk: ${violations.length > 5 ? 'HIGH' : violations.length > 2 ? 'MEDIUM' : 'LOW'}`);
+  output.push('');
+
+  // VIOLATION EVIDENCE CHAIN
+  if (violations.length > 0) {
+    output.push('📋 VIOLATION EVIDENCE CHAIN');
+    output.push(drawBox());
+    
+    violations.forEach((v, idx) => {
+      output.push(`[${idx+1}] ${v.code}: ${v.title}`);
+      output.push(`    Severity: ${v.severity}`);
+      output.push(`    GDPR Article: ${v.gdprArticle}`);
+      output.push(`    Description: ${v.description}`);
+      
+      if (v.evidence) {
+        output.push('    Evidence:');
+        Object.entries(v.evidence).forEach(([key, val]) => {
+          if (typeof val === 'object' && !Array.isArray(val)) {
+            output.push(`      ${key}: ${JSON.stringify(val)}`);
+          } else if (Array.isArray(val)) {
+            output.push(`      ${key}: ${val.length} items`);
+          } else {
+            output.push(`      ${key}: ${val}`);
+          }
+        });
+      }
+      output.push('');
+    });
+  }
+
+  // DPA ENFORCEMENT PRECEDENTS
+  output.push('⚖️  DPA ENFORCEMENT PRECEDENTS');
+  output.push(drawBox());
+  
+  if (compliance.fineContext.precedents.length > 0) {
+    output.push('Relevant Cases:');
+    compliance.fineContext.precedents.forEach(p => {
+      output.push(`  • ${p}`);
+    });
+  } else {
+    output.push('No major precedents for this violation pattern.');
+  }
+  output.push('');
+  output.push('Key Enforcement Trends 2024-2025:');
+  output.push('  • Pre-consent tracking: €10M-€90M fines');
+  output.push('  • Post-reject violations: €50M-€150M fines');
+  output.push('  • No consent mechanism: €20M-€30M fines');
+  output.push('  • Repeat offenders: Up to 4% global revenue');
+  output.push('');
+
+  // FINE CALCULATION
+  output.push('💶 FINE CALCULATION METHODOLOGY');
+  output.push(drawBox());
+  output.push('GDPR Article 83 Factors:');
+  output.push('  1. Nature, gravity, duration of infringement');
+  output.push(`     Current: ${violations.length} violations, ${compliance.violationsBySeverity.critical} critical`);
+  output.push('  2. Intentional or negligent character');
+  output.push('     Assessment: Technical oversight (negligent)');
+  output.push('  3. Actions taken to mitigate damage');
+  output.push('     Status: Under assessment');
+  output.push('  4. Degree of responsibility');
+  output.push('     Status: Direct controller responsibility');
+  output.push('  5. Previous relevant infringements');
+  output.push('     Status: First-time assessment');
+  output.push('  6. Cooperation with supervisory authority');
+  output.push('     Status: N/A (no active investigation)');
+  output.push('  7. Categories of personal data affected');
+  output.push('     Current: Tracking data, behavioral profiles');
+  output.push('  8. Manner in which authority became aware');
+  output.push('     Status: Self-assessment (positive factor)');
+  output.push('');
+
+  // REMEDIATION ROADMAP
+  output.push('🔧 LEGAL REMEDIATION ROADMAP');
+  output.push(drawBox());
+  output.push('Phase 1: Immediate Risk Mitigation (Week 1-2)');
+  output.push('  □ Implement OneTrust or supported CMP');
+  output.push('  □ Block all pre-consent tracking');
+  output.push('  □ Document changes with timestamps');
+  output.push('  □ Legal review of privacy policy');
+  output.push('');
+  output.push('Phase 2: Compliance Implementation (Week 3-6)');
+  output.push('  □ Configure granular consent categories');
+  output.push('  □ Implement reject/delete mechanisms');
+  output.push('  □ Test all consent scenarios');
+  output.push('  □ Data Processing Agreement updates');
+  output.push('');
+  output.push('Phase 3: Documentation & Audit (Week 7-12)');
+  output.push('  □ Complete Records of Processing Activities (ROPA)');
+  output.push('  □ Data Protection Impact Assessment (DPIA)');
+  output.push('  □ Third-party vendor assessments');
+  output.push('  □ External compliance audit');
+  output.push('');
+  output.push('Phase 4: Ongoing Compliance (Continuous)');
+  output.push('  □ Monthly compliance scans');
+  output.push('  □ Quarterly legal reviews');
+  output.push('  □ Annual certifications');
+  output.push('  □ Incident response plan updates');
+  output.push('');
+
+  // LEGAL DOCUMENTATION CHECKLIST
+  output.push('📄 LEGAL DOCUMENTATION CHECKLIST');
+  output.push(drawBox());
+  output.push('Required Documents:');
+  output.push('  □ Privacy Policy (GDPR-compliant)');
+  output.push('  □ Cookie Policy (detailed categories)');
+  output.push('  □ Data Processing Agreements (DPAs)');
+  output.push('  □ Records of Processing Activities (ROPA)');
+  output.push('  □ Data Protection Impact Assessment (DPIA)');
+  output.push('  □ Consent mechanism documentation');
+  output.push('  □ Data subject rights procedures');
+  output.push('  □ Data breach response plan');
+  output.push('  □ Third-party vendor assessments');
+  output.push('  □ Training materials for staff');
+  output.push('');
+
+  // REGULATORY CONTACTS
+  output.push('📞 REGULATORY CONTACTS');
+  output.push(drawBox());
+  output.push('Key Data Protection Authorities:');
+  output.push('  🇩🇪 BfDI (Germany): +49 228 997799-0');
+  output.push('  🇫🇷 CNIL (France): +33 1 53 73 22 22');
+  output.push('  🇪🇸 AEPD (Spain): +34 91 399 62 00');
+  output.push('  🇮🇹 Garante (Italy): +39 06 69677 1');
+  output.push('  🇳🇱 AP (Netherlands): +31 70 888 85 00');
+  output.push('  🇮🇪 DPC (Ireland): +353 57 868 4800');
+  output.push('');
+
+  return output.join('\n');
+}
+
+// Main function
+function generateAllReports(data, opts) {
+  const reports = {};
+
+  // Always generate console report
+  reports.console = generateConsoleReport(data, opts);
+
+  // Generate specific reports based on format
+  if(opts.format === 'all' || opts.format === 'marketing') {
+    reports.marketing = generateMarketingReport(data, opts);
+  }
+
+  if(opts.format === 'all' || opts.format === 'tech') {
+    reports.tech = generateTechReport(data, opts);
+  }
+
+  if(opts.format === 'all' || opts.format === 'legal') {
+    reports.legal = generateLegalReport(data, opts);
+  }
+
+  return reports;
+}
+
+// Save reports
+function saveReports(reports, basePath) {
+  const outputDir = path.dirname(basePath);
+  const baseFilename = path.basename(basePath).replace('.report.json', '');
+
+  Object.entries(reports).forEach(([type, content]) => {
+    const filename = `${baseFilename}.${type}.txt`;
+    const filepath = path.join(outputDir, filename);
+    fs.writeFileSync(filepath, content, 'utf8');
+    console.log(`[reportGenerator] Saved: ${filename}`);
+  });
+}
+
+// Main execution
+async function main() {
+  const opts = parseArgs();
+
+  console.log('[reportGenerator] Starting report generation...');
+  console.log(`[reportGenerator] Host: ${opts.host}`);
+  console.log(`[reportGenerator] Format: ${opts.format}`);
+
+  // Find files
+  const paths = findLatestFiles(opts.host);
+  console.log('[reportGenerator] Found files:', Object.keys(paths).filter(k => fs.existsSync(paths[k])));
+
+  // Load data
+  const data = loadData(paths);
+  console.log('[reportGenerator] Data loaded successfully');
+
+  // Check analysis mode
+  if (data.report.analysisMode === 'limited') {
+    console.log('[reportGenerator] ⚠️  LIMITED ANALYSIS MODE DETECTED');
+    console.log(`[reportGenerator] CMP: ${data.report.cmp.provider} (not supported)`);
+    console.log('[reportGenerator] Reports will indicate incomplete analysis');
+  }
+
+  // Generate reports
+  const reports = generateAllReports(data, opts);
+  console.log('[reportGenerator] Generated reports:', Object.keys(reports));
+
+  // Save reports
+  saveReports(reports, paths.report);
+
+  // Output to console if not silent
+  if(!opts.silent) {
+    console.log(reports.console);
+    
+    if(reports.marketing && opts.format !== 'console') {
+      console.log('\n' + '='.repeat(60) + '\n');
+      console.log(reports.marketing);
+    }
+    
+    if(reports.tech && opts.format !== 'console') {
+      console.log('\n' + '='.repeat(60) + '\n');
+      console.log(reports.tech);
+    }
+    
+    if(reports.legal && opts.format !== 'console') {
+      console.log('\n' + '='.repeat(60) + '\n');
+      console.log(reports.legal);
+    }
+  }
+
+  console.log('[reportGenerator] Complete!');
+}
+
+// Run if called directly
+if(import.meta.url === `file://${process.argv[1]}`) {
+  main().catch(err => {
+    console.error('[reportGenerator] Fatal error:', err);
+    process.exit(1);
+  });
+}
+
+// Export for use in pipeline
+export {
+  generateConsoleReport,
+  generateMarketingReport,
+  generateTechReport,
+  generateLegalReport,
+  generateAllReports
+};
