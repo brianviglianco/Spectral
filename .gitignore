@@ -4,3 +4,9 @@ backups/
 archive/
 *.tgz
 .DS_Store
+.docs/
+.vscode/
+.env
+.env.local
+.env.*.local
+.codeviz/

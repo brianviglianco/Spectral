@@ -24,6 +24,57 @@ flowchart TD
 forensic --> dashboard[Visualización & descarga<br/>dashboard Next.js]
 ```
 
+### Codeviz Flow:
+```mermaid
+graph TD
+
+    user["User<br>[External]"]
+    external_website["External Website<br>/backend/spectralCrawler.js"]
+    subgraph spectral_system["Spectral System<br>[External]"]
+        subgraph dashboard_system["Dashboard System<br>/dashboard/"]
+            subgraph dashboard_webapp_boundary["Dashboard Web Application<br>/dashboard/app/"]
+                dashboard_ui["Dashboard UI<br>/dashboard/app/page.js"]
+                dashboard_api_routes["Dashboard API Routes<br>/dashboard/app/api/"]
+                frontend_api_client["Frontend API Client<br>/dashboard/lib/api.js"]
+                %% Edges at this level (grouped by source)
+                dashboard_ui["Dashboard UI<br>/dashboard/app/page.js"] -->|"Calls | HTTP/JSON"| dashboard_api_routes["Dashboard API Routes<br>/dashboard/app/api/"]
+                dashboard_api_routes["Dashboard API Routes<br>/dashboard/app/api/"] -->|"Uses to call | HTTP/JSON"| frontend_api_client["Frontend API Client<br>/dashboard/lib/api.js"]
+            end
+        end
+        subgraph backend_system["Backend System<br>/backend/"]
+            subgraph backend_api_boundary["Backend API<br>/backend/"]
+                cookie_intelligence_module["Cookie Intelligence<br>/backend/cookieIntelligence.js"]
+                cookie_learning_module["Cookie Learning<br>/backend/cookieLearning.js"]
+                cmp_detection_module["CMP Detection<br>/backend/detectCMP.js"]
+                p0_generation_module["P0 Generation<br>/backend/makeP0.mjs"]
+                p0_verification_module["P0 Verification<br>/backend/verifyP0.mjs"]
+                crawler_orchestration_module["Crawler Orchestration<br>/backend/spectralCrawler.js"]
+                cookie_learning_data["Cookie Learning Data<br>/backend/data/cookie_learning.json"]
+                %% Edges at this level (grouped by source)
+                backend_api_boundary["Backend API<br>/backend/"] -->|"Uses"| cookie_intelligence_module["Cookie Intelligence<br>/backend/cookieIntelligence.js"]
+                backend_api_boundary["Backend API<br>/backend/"] -->|"Uses"| cookie_learning_module["Cookie Learning<br>/backend/cookieLearning.js"]
+                backend_api_boundary["Backend API<br>/backend/"] -->|"Uses"| cmp_detection_module["CMP Detection<br>/backend/detectCMP.js"]
+                backend_api_boundary["Backend API<br>/backend/"] -->|"Uses"| p0_generation_module["P0 Generation<br>/backend/makeP0.mjs"]
+                backend_api_boundary["Backend API<br>/backend/"] -->|"Uses"| p0_verification_module["P0 Verification<br>/backend/verifyP0.mjs"]
+                backend_api_boundary["Backend API<br>/backend/"] -->|"Triggers"| crawler_orchestration_module["Crawler Orchestration<br>/backend/spectralCrawler.js"]
+                cookie_learning_module["Cookie Learning<br>/backend/cookieLearning.js"] -->|"Reads/Writes | JSON"| cookie_learning_data["Cookie Learning Data<br>/backend/data/cookie_learning.json"]
+            end
+            subgraph crawler_service_boundary["Crawler Service<br>/backend/spectralCrawler.js"]
+                crawler_core["Crawler Core<br>/backend/spectralCrawler.js"]
+            end
+            %% Edges at this level (grouped by source)
+            crawler_core["Crawler Core<br>/backend/spectralCrawler.js"] -->|"Uses | Reads/Writes"| cookie_learning_data["Cookie Learning Data<br>/backend/data/cookie_learning.json"]
+            crawler_orchestration_module["Crawler Orchestration<br>/backend/spectralCrawler.js"] -->|"Invokes"| crawler_service_boundary["Crawler Service<br>/backend/spectralCrawler.js"]
+        end
+        %% Edges at this level (grouped by source)
+        frontend_api_client["Frontend API Client<br>/dashboard/lib/api.js"] -->|"Calls | HTTP/JSON"| backend_api_boundary["Backend API<br>/backend/"]
+    end
+    %% Edges at this level (grouped by source)
+    user["User<br>[External]"] -->|"Uses | Web Browser"| dashboard_ui["Dashboard UI<br>/dashboard/app/page.js"]
+    crawler_core["Crawler Core<br>/backend/spectralCrawler.js"] -->|"Crawls and analyzes | HTTP/HTTPS"| external_website["External Website<br>/backend/spectralCrawler.js"]
+
+```
+
 ## Documentación disponible
 
 | Documento | Descripción |

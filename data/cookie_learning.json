@@ -22,10 +22,11 @@
     "mbox": {
       "category": "analytics",
       "confidence": 0.95,
-      "basedOn": 46,
+      "basedOn": 48,
       "domains": [
         "dell.com",
-        "royalcaribbean.com"
+        "royalcaribbean.com",
+        "microsoft.com"
       ]
     },
     "mboxEdgeCluster": {
@@ -40,10 +41,11 @@
     "ak_bmsc": {
       "category": "necessary",
       "confidence": 0.95,
-      "basedOn": 65,
+      "basedOn": 67,
       "domains": [
         "dell.com",
-        "royalcaribbean.com"
+        "royalcaribbean.com",
+        "microsoft.com"
       ]
     },
     "s_c49": {
@@ -327,46 +329,51 @@
     "_uetsid": {
       "category": "marketing",
       "confidence": 0.95,
-      "basedOn": 15,
+      "basedOn": 19,
       "domains": [
         "royalcaribbean.com",
-        "dell.com"
+        "dell.com",
+        "microsoft.com"
       ]
     },
     "MUID": {
       "category": "marketing",
       "confidence": 0.95,
-      "basedOn": 12,
+      "basedOn": 14,
       "domains": [
         "royalcaribbean.com",
-        "dell.com"
+        "dell.com",
+        "microsoft.com"
       ]
     },
     "CLID": {
       "category": "analytics",
       "confidence": 0.95,
-      "basedOn": 12,
+      "basedOn": 14,
       "domains": [
         "royalcaribbean.com",
-        "dell.com"
+        "dell.com",
+        "microsoft.com"
       ]
     },
     "_clck": {
       "category": "analytics",
       "confidence": 0.95,
-      "basedOn": 12,
+      "basedOn": 16,
       "domains": [
         "royalcaribbean.com",
-        "dell.com"
+        "dell.com",
+        "microsoft.com"
       ]
     },
     "_clsk": {
       "category": "analytics",
       "confidence": 0.95,
-      "basedOn": 12,
+      "basedOn": 16,
       "domains": [
         "royalcaribbean.com",
-        "dell.com"
+        "dell.com",
+        "microsoft.com"
       ]
     },
     "_gid": {
@@ -498,10 +505,11 @@
     "_uetvid": {
       "category": "marketing",
       "confidence": 0.95,
-      "basedOn": 15,
+      "basedOn": 19,
       "domains": [
         "royalcaribbean.com",
-        "dell.com"
+        "dell.com",
+        "microsoft.com"
       ]
     },
     "BC_BANDWIDTH": {
@@ -3323,6 +3331,256 @@
         "values": [],
         "lastSeen": "2025-10-16T02:36:40.913Z"
       }
+    },
+    "microsoft.com": {
+      ".AspNetCore.OpenIdConnect.Nonce.CfDJ8LpX7AEm64lJqvovzonWFb4lrLQX6qwXZAdAaOJ3yH4DPsa9A1YmG2iPHTuQYNFwl-oH04IH-vTUVvpAqg1hHAIV40F2Lpdngx__vMQ-_KevEMtv6UxDWdj5joK_gluT9fn3e-lCApld359qJE34sEFEkw6l6rfU69Fxd2idne-5jlXDPsiajqjbBYlz9gI8r53Kyh2yAPLRsOxwHf8v25OrW-29e8wYLQAnUGEfqxEVmY-Md89Pj0xd7WOmmdKcQL_FfY5EW89Yu0Acchc78Wk": {
+        "firstSeen": "2025-10-28T20:57:46.303Z",
+        "occurrences": 1,
+        "categories": {
+          "marketing": 1
+        },
+        "stages": {},
+        "values": [],
+        "lastSeen": "2025-10-28T20:57:46.303Z"
+      },
+      "Cascade.AuthSSO": {
+        "firstSeen": "2025-10-28T20:57:46.303Z",
+        "occurrences": 2,
+        "categories": {
+          "necessary": 2
+        },
+        "stages": {},
+        "values": [],
+        "lastSeen": "2025-10-28T21:06:20.099Z"
+      },
+      "akacd_OneRF": {
+        "firstSeen": "2025-10-28T20:57:46.303Z",
+        "occurrences": 2,
+        "categories": {
+          "necessary": 2
+        },
+        "stages": {},
+        "values": [],
+        "lastSeen": "2025-10-28T21:06:20.100Z"
+      },
+      "ak_bmsc": {
+        "firstSeen": "2025-10-28T20:57:46.303Z",
+        "occurrences": 2,
+        "categories": {
+          "necessary": 2
+        },
+        "stages": {},
+        "values": [],
+        "lastSeen": "2025-10-28T21:06:20.100Z"
+      },
+      "MicrosoftApplicationsTelemetryDeviceId": {
+        "firstSeen": "2025-10-28T20:57:46.303Z",
+        "occurrences": 2,
+        "categories": {
+          "analytics": 2
+        },
+        "stages": {},
+        "values": [],
+        "lastSeen": "2025-10-28T21:06:20.100Z"
+      },
+      "ai_session": {
+        "firstSeen": "2025-10-28T20:57:46.303Z",
+        "occurrences": 2,
+        "categories": {
+          "necessary": 2
+        },
+        "stages": {},
+        "values": [],
+        "lastSeen": "2025-10-28T21:06:20.100Z"
+      },
+      "MSCC": {
+        "firstSeen": "2025-10-28T20:57:46.303Z",
+        "occurrences": 2,
+        "categories": {
+          "analytics": 2
+        },
+        "stages": {},
+        "values": [],
+        "lastSeen": "2025-10-28T21:06:20.100Z"
+      },
+      "_clck": {
+        "firstSeen": "2025-10-28T20:57:46.303Z",
+        "occurrences": 4,
+        "categories": {
+          "analytics": 4
+        },
+        "stages": {},
+        "values": [],
+        "lastSeen": "2025-10-28T21:06:20.100Z"
+      },
+      "_clsk": {
+        "firstSeen": "2025-10-28T20:57:46.303Z",
+        "occurrences": 4,
+        "categories": {
+          "analytics": 4
+        },
+        "stages": {},
+        "values": [],
+        "lastSeen": "2025-10-28T21:06:20.100Z"
+      },
+      "at_check": {
+        "firstSeen": "2025-10-28T20:57:46.303Z",
+        "occurrences": 2,
+        "categories": {},
+        "stages": {},
+        "values": [],
+        "lastSeen": "2025-10-28T21:06:20.100Z"
+      },
+      "_cs_c": {
+        "firstSeen": "2025-10-28T20:57:46.303Z",
+        "occurrences": 2,
+        "categories": {
+          "necessary": 2
+        },
+        "stages": {},
+        "values": [],
+        "lastSeen": "2025-10-28T21:06:20.100Z"
+      },
+      "AMCVS_EA76ADE95776D2EC7F000101%40AdobeOrg": {
+        "firstSeen": "2025-10-28T20:57:46.303Z",
+        "occurrences": 2,
+        "categories": {
+          "analytics": 2
+        },
+        "stages": {},
+        "values": [],
+        "lastSeen": "2025-10-28T21:06:20.100Z"
+      },
+      "_cs_id": {
+        "firstSeen": "2025-10-28T20:57:46.303Z",
+        "occurrences": 2,
+        "categories": {
+          "necessary": 2
+        },
+        "stages": {},
+        "values": [],
+        "lastSeen": "2025-10-28T21:06:20.100Z"
+      },
+      "_cs_s": {
+        "firstSeen": "2025-10-28T20:57:46.303Z",
+        "occurrences": 2,
+        "categories": {
+          "necessary": 2
+        },
+        "stages": {},
+        "values": [],
+        "lastSeen": "2025-10-28T21:06:20.100Z"
+      },
+      "_uetvid": {
+        "firstSeen": "2025-10-28T20:57:46.303Z",
+        "occurrences": 4,
+        "categories": {
+          "marketing": 4
+        },
+        "stages": {},
+        "values": [],
+        "lastSeen": "2025-10-28T21:06:20.100Z"
+      },
+      "_cs_cvars": {
+        "firstSeen": "2025-10-28T20:57:46.303Z",
+        "occurrences": 2,
+        "categories": {
+          "necessary": 2
+        },
+        "stages": {},
+        "values": [],
+        "lastSeen": "2025-10-28T21:06:20.100Z"
+      },
+      "_uetsid": {
+        "firstSeen": "2025-10-28T20:57:46.303Z",
+        "occurrences": 4,
+        "categories": {
+          "marketing": 4
+        },
+        "stages": {},
+        "values": [],
+        "lastSeen": "2025-10-28T21:06:20.100Z"
+      },
+      "MC1": {
+        "firstSeen": "2025-10-28T20:57:46.303Z",
+        "occurrences": 2,
+        "categories": {
+          "analytics": 2
+        },
+        "stages": {},
+        "values": [],
+        "lastSeen": "2025-10-28T21:06:20.100Z"
+      },
+      "MS0": {
+        "firstSeen": "2025-10-28T20:57:46.303Z",
+        "occurrences": 2,
+        "categories": {
+          "analytics": 2
+        },
+        "stages": {},
+        "values": [],
+        "lastSeen": "2025-10-28T21:06:20.100Z"
+      },
+      "MSFPC": {
+        "firstSeen": "2025-10-28T20:57:46.303Z",
+        "occurrences": 2,
+        "categories": {
+          "analytics": 2
+        },
+        "stages": {},
+        "values": [],
+        "lastSeen": "2025-10-28T21:06:20.100Z"
+      },
+      "AMCV_EA76ADE95776D2EC7F000101%40AdobeOrg": {
+        "firstSeen": "2025-10-28T20:57:46.303Z",
+        "occurrences": 2,
+        "categories": {
+          "analytics": 2
+        },
+        "stages": {},
+        "values": [],
+        "lastSeen": "2025-10-28T21:06:20.100Z"
+      },
+      "mbox": {
+        "firstSeen": "2025-10-28T20:57:46.303Z",
+        "occurrences": 2,
+        "categories": {
+          "analytics": 2
+        },
+        "stages": {},
+        "values": [],
+        "lastSeen": "2025-10-28T21:06:20.100Z"
+      },
+      "MUID": {
+        "firstSeen": "2025-10-28T20:57:46.303Z",
+        "occurrences": 2,
+        "categories": {
+          "marketing": 2
+        },
+        "stages": {},
+        "values": [],
+        "lastSeen": "2025-10-28T21:06:20.100Z"
+      },
+      "CLID": {
+        "firstSeen": "2025-10-28T20:57:46.303Z",
+        "occurrences": 2,
+        "categories": {
+          "analytics": 2
+        },
+        "stages": {},
+        "values": [],
+        "lastSeen": "2025-10-28T21:06:20.100Z"
+      },
+      ".AspNetCore.OpenIdConnect.Nonce.CfDJ8LpX7AEm64lJqvovzonWFb6e111ITHkUDfBlAYp3G0jfNUl39cfOCFI6qVp1HgUVrZ_l_CwIMBV0RrPlO62F7un3qs0EVja3eb9MqiFXon7S_fr_njlrDxWi196r3ulH8_olVl8gkAV4bE8KLlwqpwUlIakXiNBLlQ-0ZKqMbizDnLNEfFjRv5QVCg0sZ0ZPnLJ_Xk0u7O6BequudUgj0yGLva2tMlt7aroYJPzNc7IpptSvXlxTuK2zQiwX348oqu1SvFZsjeUV9VSuCSeLBmg": {
+        "firstSeen": "2025-10-28T21:06:20.099Z",
+        "occurrences": 1,
+        "categories": {
+          "necessary": 1
+        },
+        "stages": {},
+        "values": [],
+        "lastSeen": "2025-10-28T21:06:20.099Z"
+      }
     }
   },
   "cooccurrence": {
@@ -4004,7 +4262,7 @@
     "mbox::mboxEdgeCluster": 76,
     "bm_lso::mbox": 60,
     "mbox::rumCki": 60,
-    "ak_bmsc::mbox": 92,
+    "ak_bmsc::mbox": 96,
     "dc-ctxt::mbox": 60,
     "lwp::mbox": 60,
     "mbox::txUid": 60,
@@ -7174,7 +7432,7 @@
     "personalization_id::wul": 16,
     "guest_id::wul": 16,
     "muc_ads::wul": 16,
-    "ak_bmsc::at_check": 24,
+    "ak_bmsc::at_check": 28,
     "LPVID::ak_bmsc": 18,
     "LPSID-51532229::ak_bmsc": 18,
     "ak_bmsc::newUniversalNav": 24,
@@ -7527,7 +7785,7 @@
     "OptanonConsent::at_check": 24,
     "LPVID::at_check": 18,
     "LPSID-51532229::at_check": 18,
-    "at_check::mbox": 32,
+    "at_check::mbox": 36,
     "at_check::newUniversalNav": 24,
     "_kuid_::at_check": 16,
     "at_check::bku": 16,
@@ -9341,12 +9599,12 @@
     "at_check::utag_main_dc_event": 4,
     "_scid::at_check": 8,
     "_scid_r::at_check": 4,
-    "_uetsid::at_check": 8,
-    "_uetvid::at_check": 8,
-    "MUID::at_check": 8,
-    "CLID::at_check": 8,
-    "_clck::at_check": 8,
-    "_clsk::at_check": 8,
+    "_uetsid::at_check": 16,
+    "_uetvid::at_check": 16,
+    "MUID::at_check": 12,
+    "CLID::at_check": 12,
+    "_clck::at_check": 16,
+    "_clsk::at_check": 16,
     "_pinterest_sess::at_check": 8,
     "_epik::at_check": 8,
     "_derived_epik::at_check": 8,
@@ -10417,12 +10675,12 @@
     "ak_bmsc::utag_main_dc_event": 4,
     "_scid::ak_bmsc": 8,
     "_scid_r::ak_bmsc": 4,
-    "_uetsid::ak_bmsc": 30,
-    "_uetvid::ak_bmsc": 30,
-    "MUID::ak_bmsc": 24,
-    "CLID::ak_bmsc": 24,
-    "_clck::ak_bmsc": 24,
-    "_clsk::ak_bmsc": 24,
+    "_uetsid::ak_bmsc": 38,
+    "_uetvid::ak_bmsc": 38,
+    "MUID::ak_bmsc": 28,
+    "CLID::ak_bmsc": 28,
+    "_clck::ak_bmsc": 32,
+    "_clsk::ak_bmsc": 32,
     "_pinterest_sess::ak_bmsc": 8,
     "_epik::ak_bmsc": 8,
     "_derived_epik::ak_bmsc": 8,
@@ -11633,12 +11891,12 @@
     "mbox::utag_main_dc_event": 8,
     "_scid::mbox": 16,
     "_scid_r::mbox": 8,
-    "_uetsid::mbox": 26,
-    "_uetvid::mbox": 26,
-    "MUID::mbox": 26,
-    "CLID::mbox": 26,
-    "_clck::mbox": 26,
-    "_clsk::mbox": 26,
+    "_uetsid::mbox": 34,
+    "_uetvid::mbox": 34,
+    "MUID::mbox": 30,
+    "CLID::mbox": 30,
+    "_clck::mbox": 34,
+    "_clsk::mbox": 34,
     "_pinterest_sess::mbox": 16,
     "_epik::mbox": 16,
     "_derived_epik::mbox": 16,
@@ -12204,11 +12462,11 @@
     "_rdt_uuid::_scid_r": 2,
     "_scid_r::loid": 2,
     "_scid_r::_scsrid": 4,
-    "_uetsid::_uetvid": 42,
-    "MUID::_uetsid": 30,
-    "CLID::_uetsid": 30,
-    "_clck::_uetsid": 30,
-    "_clsk::_uetsid": 30,
+    "_uetsid::_uetvid": 58,
+    "MUID::_uetsid": 38,
+    "CLID::_uetsid": 38,
+    "_clck::_uetsid": 46,
+    "_clsk::_uetsid": 46,
     "_uetsid::personalization_id": 30,
     "_uetsid::guest_id": 30,
     "_uetsid::muc_ads": 30,
@@ -12269,10 +12527,10 @@
     "_rdt_uuid::_uetsid": 4,
     "_uetsid::loid": 4,
     "_scsrid::_uetsid": 4,
-    "MUID::_uetvid": 30,
-    "CLID::_uetvid": 30,
-    "_clck::_uetvid": 30,
-    "_clsk::_uetvid": 30,
+    "MUID::_uetvid": 38,
+    "CLID::_uetvid": 38,
+    "_clck::_uetvid": 46,
+    "_clsk::_uetvid": 46,
     "_uetvid::personalization_id": 30,
     "_uetvid::guest_id": 30,
     "_uetvid::muc_ads": 30,
@@ -12333,9 +12591,9 @@
     "_rdt_uuid::_uetvid": 4,
     "_uetvid::loid": 4,
     "_scsrid::_uetvid": 4,
-    "CLID::MUID": 24,
-    "MUID::_clck": 24,
-    "MUID::_clsk": 24,
+    "CLID::MUID": 28,
+    "MUID::_clck": 32,
+    "MUID::_clsk": 32,
     "MUID::personalization_id": 24,
     "MUID::guest_id": 24,
     "MUID::muc_ads": 24,
@@ -12396,8 +12654,8 @@
     "MUID::_rdt_uuid": 4,
     "MUID::loid": 4,
     "MUID::_scsrid": 4,
-    "CLID::_clck": 24,
-    "CLID::_clsk": 24,
+    "CLID::_clck": 32,
+    "CLID::_clsk": 32,
     "CLID::personalization_id": 24,
     "CLID::guest_id": 24,
     "CLID::muc_ads": 24,
@@ -12458,7 +12716,7 @@
     "CLID::_rdt_uuid": 4,
     "CLID::loid": 4,
     "CLID::_scsrid": 4,
-    "_clck::_clsk": 24,
+    "_clck::_clsk": 40,
     "_clck::personalization_id": 24,
     "_clck::guest_id": 24,
     "_clck::muc_ads": 24,
@@ -18142,7 +18400,270 @@
     "akacd_PRC_RCI_CRUISE_SEARCH_PRD_V2::tt_webid": 2,
     "akacd_PRC_RCI_CRUISE_SEARCH_PRD_V2::tt_webid_v2": 2,
     "_rdt_uuid::akacd_PRC_RCI_CRUISE_SEARCH_PRD_V2": 2,
-    "akacd_PRC_RCI_CRUISE_SEARCH_PRD_V2::loid": 2
+    "akacd_PRC_RCI_CRUISE_SEARCH_PRD_V2::loid": 2,
+    ".AspNetCore.OpenIdConnect.Nonce.CfDJ8LpX7AEm64lJqvovzonWFb4lrLQX6qwXZAdAaOJ3yH4DPsa9A1YmG2iPHTuQYNFwl-oH04IH-vTUVvpAqg1hHAIV40F2Lpdngx__vMQ-_KevEMtv6UxDWdj5joK_gluT9fn3e-lCApld359qJE34sEFEkw6l6rfU69Fxd2idne-5jlXDPsiajqjbBYlz9gI8r53Kyh2yAPLRsOxwHf8v25OrW-29e8wYLQAnUGEfqxEVmY-Md89Pj0xd7WOmmdKcQL_FfY5EW89Yu0Acchc78Wk::Cascade.AuthSSO": 2,
+    ".AspNetCore.OpenIdConnect.Nonce.CfDJ8LpX7AEm64lJqvovzonWFb4lrLQX6qwXZAdAaOJ3yH4DPsa9A1YmG2iPHTuQYNFwl-oH04IH-vTUVvpAqg1hHAIV40F2Lpdngx__vMQ-_KevEMtv6UxDWdj5joK_gluT9fn3e-lCApld359qJE34sEFEkw6l6rfU69Fxd2idne-5jlXDPsiajqjbBYlz9gI8r53Kyh2yAPLRsOxwHf8v25OrW-29e8wYLQAnUGEfqxEVmY-Md89Pj0xd7WOmmdKcQL_FfY5EW89Yu0Acchc78Wk::akacd_OneRF": 2,
+    ".AspNetCore.OpenIdConnect.Nonce.CfDJ8LpX7AEm64lJqvovzonWFb4lrLQX6qwXZAdAaOJ3yH4DPsa9A1YmG2iPHTuQYNFwl-oH04IH-vTUVvpAqg1hHAIV40F2Lpdngx__vMQ-_KevEMtv6UxDWdj5joK_gluT9fn3e-lCApld359qJE34sEFEkw6l6rfU69Fxd2idne-5jlXDPsiajqjbBYlz9gI8r53Kyh2yAPLRsOxwHf8v25OrW-29e8wYLQAnUGEfqxEVmY-Md89Pj0xd7WOmmdKcQL_FfY5EW89Yu0Acchc78Wk::ak_bmsc": 2,
+    ".AspNetCore.OpenIdConnect.Nonce.CfDJ8LpX7AEm64lJqvovzonWFb4lrLQX6qwXZAdAaOJ3yH4DPsa9A1YmG2iPHTuQYNFwl-oH04IH-vTUVvpAqg1hHAIV40F2Lpdngx__vMQ-_KevEMtv6UxDWdj5joK_gluT9fn3e-lCApld359qJE34sEFEkw6l6rfU69Fxd2idne-5jlXDPsiajqjbBYlz9gI8r53Kyh2yAPLRsOxwHf8v25OrW-29e8wYLQAnUGEfqxEVmY-Md89Pj0xd7WOmmdKcQL_FfY5EW89Yu0Acchc78Wk::MicrosoftApplicationsTelemetryDeviceId": 2,
+    ".AspNetCore.OpenIdConnect.Nonce.CfDJ8LpX7AEm64lJqvovzonWFb4lrLQX6qwXZAdAaOJ3yH4DPsa9A1YmG2iPHTuQYNFwl-oH04IH-vTUVvpAqg1hHAIV40F2Lpdngx__vMQ-_KevEMtv6UxDWdj5joK_gluT9fn3e-lCApld359qJE34sEFEkw6l6rfU69Fxd2idne-5jlXDPsiajqjbBYlz9gI8r53Kyh2yAPLRsOxwHf8v25OrW-29e8wYLQAnUGEfqxEVmY-Md89Pj0xd7WOmmdKcQL_FfY5EW89Yu0Acchc78Wk::ai_session": 2,
+    ".AspNetCore.OpenIdConnect.Nonce.CfDJ8LpX7AEm64lJqvovzonWFb4lrLQX6qwXZAdAaOJ3yH4DPsa9A1YmG2iPHTuQYNFwl-oH04IH-vTUVvpAqg1hHAIV40F2Lpdngx__vMQ-_KevEMtv6UxDWdj5joK_gluT9fn3e-lCApld359qJE34sEFEkw6l6rfU69Fxd2idne-5jlXDPsiajqjbBYlz9gI8r53Kyh2yAPLRsOxwHf8v25OrW-29e8wYLQAnUGEfqxEVmY-Md89Pj0xd7WOmmdKcQL_FfY5EW89Yu0Acchc78Wk::MSCC": 2,
+    ".AspNetCore.OpenIdConnect.Nonce.CfDJ8LpX7AEm64lJqvovzonWFb4lrLQX6qwXZAdAaOJ3yH4DPsa9A1YmG2iPHTuQYNFwl-oH04IH-vTUVvpAqg1hHAIV40F2Lpdngx__vMQ-_KevEMtv6UxDWdj5joK_gluT9fn3e-lCApld359qJE34sEFEkw6l6rfU69Fxd2idne-5jlXDPsiajqjbBYlz9gI8r53Kyh2yAPLRsOxwHf8v25OrW-29e8wYLQAnUGEfqxEVmY-Md89Pj0xd7WOmmdKcQL_FfY5EW89Yu0Acchc78Wk::_clck": 4,
+    ".AspNetCore.OpenIdConnect.Nonce.CfDJ8LpX7AEm64lJqvovzonWFb4lrLQX6qwXZAdAaOJ3yH4DPsa9A1YmG2iPHTuQYNFwl-oH04IH-vTUVvpAqg1hHAIV40F2Lpdngx__vMQ-_KevEMtv6UxDWdj5joK_gluT9fn3e-lCApld359qJE34sEFEkw6l6rfU69Fxd2idne-5jlXDPsiajqjbBYlz9gI8r53Kyh2yAPLRsOxwHf8v25OrW-29e8wYLQAnUGEfqxEVmY-Md89Pj0xd7WOmmdKcQL_FfY5EW89Yu0Acchc78Wk::_clsk": 4,
+    ".AspNetCore.OpenIdConnect.Nonce.CfDJ8LpX7AEm64lJqvovzonWFb4lrLQX6qwXZAdAaOJ3yH4DPsa9A1YmG2iPHTuQYNFwl-oH04IH-vTUVvpAqg1hHAIV40F2Lpdngx__vMQ-_KevEMtv6UxDWdj5joK_gluT9fn3e-lCApld359qJE34sEFEkw6l6rfU69Fxd2idne-5jlXDPsiajqjbBYlz9gI8r53Kyh2yAPLRsOxwHf8v25OrW-29e8wYLQAnUGEfqxEVmY-Md89Pj0xd7WOmmdKcQL_FfY5EW89Yu0Acchc78Wk::at_check": 2,
+    ".AspNetCore.OpenIdConnect.Nonce.CfDJ8LpX7AEm64lJqvovzonWFb4lrLQX6qwXZAdAaOJ3yH4DPsa9A1YmG2iPHTuQYNFwl-oH04IH-vTUVvpAqg1hHAIV40F2Lpdngx__vMQ-_KevEMtv6UxDWdj5joK_gluT9fn3e-lCApld359qJE34sEFEkw6l6rfU69Fxd2idne-5jlXDPsiajqjbBYlz9gI8r53Kyh2yAPLRsOxwHf8v25OrW-29e8wYLQAnUGEfqxEVmY-Md89Pj0xd7WOmmdKcQL_FfY5EW89Yu0Acchc78Wk::_cs_c": 2,
+    ".AspNetCore.OpenIdConnect.Nonce.CfDJ8LpX7AEm64lJqvovzonWFb4lrLQX6qwXZAdAaOJ3yH4DPsa9A1YmG2iPHTuQYNFwl-oH04IH-vTUVvpAqg1hHAIV40F2Lpdngx__vMQ-_KevEMtv6UxDWdj5joK_gluT9fn3e-lCApld359qJE34sEFEkw6l6rfU69Fxd2idne-5jlXDPsiajqjbBYlz9gI8r53Kyh2yAPLRsOxwHf8v25OrW-29e8wYLQAnUGEfqxEVmY-Md89Pj0xd7WOmmdKcQL_FfY5EW89Yu0Acchc78Wk::AMCVS_EA76ADE95776D2EC7F000101%40AdobeOrg": 2,
+    ".AspNetCore.OpenIdConnect.Nonce.CfDJ8LpX7AEm64lJqvovzonWFb4lrLQX6qwXZAdAaOJ3yH4DPsa9A1YmG2iPHTuQYNFwl-oH04IH-vTUVvpAqg1hHAIV40F2Lpdngx__vMQ-_KevEMtv6UxDWdj5joK_gluT9fn3e-lCApld359qJE34sEFEkw6l6rfU69Fxd2idne-5jlXDPsiajqjbBYlz9gI8r53Kyh2yAPLRsOxwHf8v25OrW-29e8wYLQAnUGEfqxEVmY-Md89Pj0xd7WOmmdKcQL_FfY5EW89Yu0Acchc78Wk::_cs_id": 2,
+    ".AspNetCore.OpenIdConnect.Nonce.CfDJ8LpX7AEm64lJqvovzonWFb4lrLQX6qwXZAdAaOJ3yH4DPsa9A1YmG2iPHTuQYNFwl-oH04IH-vTUVvpAqg1hHAIV40F2Lpdngx__vMQ-_KevEMtv6UxDWdj5joK_gluT9fn3e-lCApld359qJE34sEFEkw6l6rfU69Fxd2idne-5jlXDPsiajqjbBYlz9gI8r53Kyh2yAPLRsOxwHf8v25OrW-29e8wYLQAnUGEfqxEVmY-Md89Pj0xd7WOmmdKcQL_FfY5EW89Yu0Acchc78Wk::_cs_s": 2,
+    ".AspNetCore.OpenIdConnect.Nonce.CfDJ8LpX7AEm64lJqvovzonWFb4lrLQX6qwXZAdAaOJ3yH4DPsa9A1YmG2iPHTuQYNFwl-oH04IH-vTUVvpAqg1hHAIV40F2Lpdngx__vMQ-_KevEMtv6UxDWdj5joK_gluT9fn3e-lCApld359qJE34sEFEkw6l6rfU69Fxd2idne-5jlXDPsiajqjbBYlz9gI8r53Kyh2yAPLRsOxwHf8v25OrW-29e8wYLQAnUGEfqxEVmY-Md89Pj0xd7WOmmdKcQL_FfY5EW89Yu0Acchc78Wk::_uetvid": 4,
+    ".AspNetCore.OpenIdConnect.Nonce.CfDJ8LpX7AEm64lJqvovzonWFb4lrLQX6qwXZAdAaOJ3yH4DPsa9A1YmG2iPHTuQYNFwl-oH04IH-vTUVvpAqg1hHAIV40F2Lpdngx__vMQ-_KevEMtv6UxDWdj5joK_gluT9fn3e-lCApld359qJE34sEFEkw6l6rfU69Fxd2idne-5jlXDPsiajqjbBYlz9gI8r53Kyh2yAPLRsOxwHf8v25OrW-29e8wYLQAnUGEfqxEVmY-Md89Pj0xd7WOmmdKcQL_FfY5EW89Yu0Acchc78Wk::_cs_cvars": 2,
+    ".AspNetCore.OpenIdConnect.Nonce.CfDJ8LpX7AEm64lJqvovzonWFb4lrLQX6qwXZAdAaOJ3yH4DPsa9A1YmG2iPHTuQYNFwl-oH04IH-vTUVvpAqg1hHAIV40F2Lpdngx__vMQ-_KevEMtv6UxDWdj5joK_gluT9fn3e-lCApld359qJE34sEFEkw6l6rfU69Fxd2idne-5jlXDPsiajqjbBYlz9gI8r53Kyh2yAPLRsOxwHf8v25OrW-29e8wYLQAnUGEfqxEVmY-Md89Pj0xd7WOmmdKcQL_FfY5EW89Yu0Acchc78Wk::_uetsid": 4,
+    ".AspNetCore.OpenIdConnect.Nonce.CfDJ8LpX7AEm64lJqvovzonWFb4lrLQX6qwXZAdAaOJ3yH4DPsa9A1YmG2iPHTuQYNFwl-oH04IH-vTUVvpAqg1hHAIV40F2Lpdngx__vMQ-_KevEMtv6UxDWdj5joK_gluT9fn3e-lCApld359qJE34sEFEkw6l6rfU69Fxd2idne-5jlXDPsiajqjbBYlz9gI8r53Kyh2yAPLRsOxwHf8v25OrW-29e8wYLQAnUGEfqxEVmY-Md89Pj0xd7WOmmdKcQL_FfY5EW89Yu0Acchc78Wk::MC1": 2,
+    ".AspNetCore.OpenIdConnect.Nonce.CfDJ8LpX7AEm64lJqvovzonWFb4lrLQX6qwXZAdAaOJ3yH4DPsa9A1YmG2iPHTuQYNFwl-oH04IH-vTUVvpAqg1hHAIV40F2Lpdngx__vMQ-_KevEMtv6UxDWdj5joK_gluT9fn3e-lCApld359qJE34sEFEkw6l6rfU69Fxd2idne-5jlXDPsiajqjbBYlz9gI8r53Kyh2yAPLRsOxwHf8v25OrW-29e8wYLQAnUGEfqxEVmY-Md89Pj0xd7WOmmdKcQL_FfY5EW89Yu0Acchc78Wk::MS0": 2,
+    ".AspNetCore.OpenIdConnect.Nonce.CfDJ8LpX7AEm64lJqvovzonWFb4lrLQX6qwXZAdAaOJ3yH4DPsa9A1YmG2iPHTuQYNFwl-oH04IH-vTUVvpAqg1hHAIV40F2Lpdngx__vMQ-_KevEMtv6UxDWdj5joK_gluT9fn3e-lCApld359qJE34sEFEkw6l6rfU69Fxd2idne-5jlXDPsiajqjbBYlz9gI8r53Kyh2yAPLRsOxwHf8v25OrW-29e8wYLQAnUGEfqxEVmY-Md89Pj0xd7WOmmdKcQL_FfY5EW89Yu0Acchc78Wk::MSFPC": 2,
+    ".AspNetCore.OpenIdConnect.Nonce.CfDJ8LpX7AEm64lJqvovzonWFb4lrLQX6qwXZAdAaOJ3yH4DPsa9A1YmG2iPHTuQYNFwl-oH04IH-vTUVvpAqg1hHAIV40F2Lpdngx__vMQ-_KevEMtv6UxDWdj5joK_gluT9fn3e-lCApld359qJE34sEFEkw6l6rfU69Fxd2idne-5jlXDPsiajqjbBYlz9gI8r53Kyh2yAPLRsOxwHf8v25OrW-29e8wYLQAnUGEfqxEVmY-Md89Pj0xd7WOmmdKcQL_FfY5EW89Yu0Acchc78Wk::AMCV_EA76ADE95776D2EC7F000101%40AdobeOrg": 2,
+    ".AspNetCore.OpenIdConnect.Nonce.CfDJ8LpX7AEm64lJqvovzonWFb4lrLQX6qwXZAdAaOJ3yH4DPsa9A1YmG2iPHTuQYNFwl-oH04IH-vTUVvpAqg1hHAIV40F2Lpdngx__vMQ-_KevEMtv6UxDWdj5joK_gluT9fn3e-lCApld359qJE34sEFEkw6l6rfU69Fxd2idne-5jlXDPsiajqjbBYlz9gI8r53Kyh2yAPLRsOxwHf8v25OrW-29e8wYLQAnUGEfqxEVmY-Md89Pj0xd7WOmmdKcQL_FfY5EW89Yu0Acchc78Wk::mbox": 2,
+    ".AspNetCore.OpenIdConnect.Nonce.CfDJ8LpX7AEm64lJqvovzonWFb4lrLQX6qwXZAdAaOJ3yH4DPsa9A1YmG2iPHTuQYNFwl-oH04IH-vTUVvpAqg1hHAIV40F2Lpdngx__vMQ-_KevEMtv6UxDWdj5joK_gluT9fn3e-lCApld359qJE34sEFEkw6l6rfU69Fxd2idne-5jlXDPsiajqjbBYlz9gI8r53Kyh2yAPLRsOxwHf8v25OrW-29e8wYLQAnUGEfqxEVmY-Md89Pj0xd7WOmmdKcQL_FfY5EW89Yu0Acchc78Wk::MUID": 2,
+    ".AspNetCore.OpenIdConnect.Nonce.CfDJ8LpX7AEm64lJqvovzonWFb4lrLQX6qwXZAdAaOJ3yH4DPsa9A1YmG2iPHTuQYNFwl-oH04IH-vTUVvpAqg1hHAIV40F2Lpdngx__vMQ-_KevEMtv6UxDWdj5joK_gluT9fn3e-lCApld359qJE34sEFEkw6l6rfU69Fxd2idne-5jlXDPsiajqjbBYlz9gI8r53Kyh2yAPLRsOxwHf8v25OrW-29e8wYLQAnUGEfqxEVmY-Md89Pj0xd7WOmmdKcQL_FfY5EW89Yu0Acchc78Wk::CLID": 2,
+    "Cascade.AuthSSO::akacd_OneRF": 4,
+    "Cascade.AuthSSO::ak_bmsc": 4,
+    "Cascade.AuthSSO::MicrosoftApplicationsTelemetryDeviceId": 4,
+    "Cascade.AuthSSO::ai_session": 4,
+    "Cascade.AuthSSO::MSCC": 4,
+    "Cascade.AuthSSO::_clck": 8,
+    "Cascade.AuthSSO::_clsk": 8,
+    "Cascade.AuthSSO::at_check": 4,
+    "Cascade.AuthSSO::_cs_c": 4,
+    "AMCVS_EA76ADE95776D2EC7F000101%40AdobeOrg::Cascade.AuthSSO": 4,
+    "Cascade.AuthSSO::_cs_id": 4,
+    "Cascade.AuthSSO::_cs_s": 4,
+    "Cascade.AuthSSO::_uetvid": 8,
+    "Cascade.AuthSSO::_cs_cvars": 4,
+    "Cascade.AuthSSO::_uetsid": 8,
+    "Cascade.AuthSSO::MC1": 4,
+    "Cascade.AuthSSO::MS0": 4,
+    "Cascade.AuthSSO::MSFPC": 4,
+    "AMCV_EA76ADE95776D2EC7F000101%40AdobeOrg::Cascade.AuthSSO": 4,
+    "Cascade.AuthSSO::mbox": 4,
+    "Cascade.AuthSSO::MUID": 4,
+    "CLID::Cascade.AuthSSO": 4,
+    "ak_bmsc::akacd_OneRF": 4,
+    "MicrosoftApplicationsTelemetryDeviceId::akacd_OneRF": 4,
+    "ai_session::akacd_OneRF": 4,
+    "MSCC::akacd_OneRF": 4,
+    "_clck::akacd_OneRF": 8,
+    "_clsk::akacd_OneRF": 8,
+    "akacd_OneRF::at_check": 4,
+    "_cs_c::akacd_OneRF": 4,
+    "AMCVS_EA76ADE95776D2EC7F000101%40AdobeOrg::akacd_OneRF": 4,
+    "_cs_id::akacd_OneRF": 4,
+    "_cs_s::akacd_OneRF": 4,
+    "_uetvid::akacd_OneRF": 8,
+    "_cs_cvars::akacd_OneRF": 4,
+    "_uetsid::akacd_OneRF": 8,
+    "MC1::akacd_OneRF": 4,
+    "MS0::akacd_OneRF": 4,
+    "MSFPC::akacd_OneRF": 4,
+    "AMCV_EA76ADE95776D2EC7F000101%40AdobeOrg::akacd_OneRF": 4,
+    "akacd_OneRF::mbox": 4,
+    "MUID::akacd_OneRF": 4,
+    "CLID::akacd_OneRF": 4,
+    "MicrosoftApplicationsTelemetryDeviceId::ak_bmsc": 4,
+    "ai_session::ak_bmsc": 4,
+    "MSCC::ak_bmsc": 4,
+    "_cs_c::ak_bmsc": 4,
+    "AMCVS_EA76ADE95776D2EC7F000101%40AdobeOrg::ak_bmsc": 4,
+    "_cs_id::ak_bmsc": 4,
+    "_cs_s::ak_bmsc": 4,
+    "_cs_cvars::ak_bmsc": 4,
+    "MC1::ak_bmsc": 4,
+    "MS0::ak_bmsc": 4,
+    "MSFPC::ak_bmsc": 4,
+    "AMCV_EA76ADE95776D2EC7F000101%40AdobeOrg::ak_bmsc": 4,
+    "MicrosoftApplicationsTelemetryDeviceId::ai_session": 4,
+    "MSCC::MicrosoftApplicationsTelemetryDeviceId": 4,
+    "MicrosoftApplicationsTelemetryDeviceId::_clck": 8,
+    "MicrosoftApplicationsTelemetryDeviceId::_clsk": 8,
+    "MicrosoftApplicationsTelemetryDeviceId::at_check": 4,
+    "MicrosoftApplicationsTelemetryDeviceId::_cs_c": 4,
+    "AMCVS_EA76ADE95776D2EC7F000101%40AdobeOrg::MicrosoftApplicationsTelemetryDeviceId": 4,
+    "MicrosoftApplicationsTelemetryDeviceId::_cs_id": 4,
+    "MicrosoftApplicationsTelemetryDeviceId::_cs_s": 4,
+    "MicrosoftApplicationsTelemetryDeviceId::_uetvid": 8,
+    "MicrosoftApplicationsTelemetryDeviceId::_cs_cvars": 4,
+    "MicrosoftApplicationsTelemetryDeviceId::_uetsid": 8,
+    "MC1::MicrosoftApplicationsTelemetryDeviceId": 4,
+    "MS0::MicrosoftApplicationsTelemetryDeviceId": 4,
+    "MSFPC::MicrosoftApplicationsTelemetryDeviceId": 4,
+    "AMCV_EA76ADE95776D2EC7F000101%40AdobeOrg::MicrosoftApplicationsTelemetryDeviceId": 4,
+    "MicrosoftApplicationsTelemetryDeviceId::mbox": 4,
+    "MUID::MicrosoftApplicationsTelemetryDeviceId": 4,
+    "CLID::MicrosoftApplicationsTelemetryDeviceId": 4,
+    "MSCC::ai_session": 4,
+    "_clck::ai_session": 8,
+    "_clsk::ai_session": 8,
+    "ai_session::at_check": 4,
+    "_cs_c::ai_session": 4,
+    "AMCVS_EA76ADE95776D2EC7F000101%40AdobeOrg::ai_session": 4,
+    "_cs_id::ai_session": 4,
+    "_cs_s::ai_session": 4,
+    "_uetvid::ai_session": 8,
+    "_cs_cvars::ai_session": 4,
+    "_uetsid::ai_session": 8,
+    "MC1::ai_session": 4,
+    "MS0::ai_session": 4,
+    "MSFPC::ai_session": 4,
+    "AMCV_EA76ADE95776D2EC7F000101%40AdobeOrg::ai_session": 4,
+    "ai_session::mbox": 4,
+    "MUID::ai_session": 4,
+    "CLID::ai_session": 4,
+    "MSCC::_clck": 8,
+    "MSCC::_clsk": 8,
+    "MSCC::at_check": 4,
+    "MSCC::_cs_c": 4,
+    "AMCVS_EA76ADE95776D2EC7F000101%40AdobeOrg::MSCC": 4,
+    "MSCC::_cs_id": 4,
+    "MSCC::_cs_s": 4,
+    "MSCC::_uetvid": 8,
+    "MSCC::_cs_cvars": 4,
+    "MSCC::_uetsid": 8,
+    "MC1::MSCC": 4,
+    "MS0::MSCC": 4,
+    "MSCC::MSFPC": 4,
+    "AMCV_EA76ADE95776D2EC7F000101%40AdobeOrg::MSCC": 4,
+    "MSCC::mbox": 4,
+    "MSCC::MUID": 4,
+    "CLID::MSCC": 4,
+    "_clck::_cs_c": 8,
+    "AMCVS_EA76ADE95776D2EC7F000101%40AdobeOrg::_clck": 8,
+    "_clck::_cs_id": 8,
+    "_clck::_cs_s": 8,
+    "_clck::_cs_cvars": 8,
+    "MC1::_clck": 8,
+    "MS0::_clck": 8,
+    "MSFPC::_clck": 8,
+    "AMCV_EA76ADE95776D2EC7F000101%40AdobeOrg::_clck": 8,
+    "_clsk::_cs_c": 8,
+    "AMCVS_EA76ADE95776D2EC7F000101%40AdobeOrg::_clsk": 8,
+    "_clsk::_cs_id": 8,
+    "_clsk::_cs_s": 8,
+    "_clsk::_cs_cvars": 8,
+    "MC1::_clsk": 8,
+    "MS0::_clsk": 8,
+    "MSFPC::_clsk": 8,
+    "AMCV_EA76ADE95776D2EC7F000101%40AdobeOrg::_clsk": 8,
+    "_cs_c::at_check": 4,
+    "AMCVS_EA76ADE95776D2EC7F000101%40AdobeOrg::at_check": 4,
+    "_cs_id::at_check": 4,
+    "_cs_s::at_check": 4,
+    "_cs_cvars::at_check": 4,
+    "MC1::at_check": 4,
+    "MS0::at_check": 4,
+    "MSFPC::at_check": 4,
+    "AMCV_EA76ADE95776D2EC7F000101%40AdobeOrg::at_check": 4,
+    "AMCVS_EA76ADE95776D2EC7F000101%40AdobeOrg::_cs_c": 4,
+    "_cs_c::_cs_id": 4,
+    "_cs_c::_cs_s": 4,
+    "_cs_c::_uetvid": 8,
+    "_cs_c::_cs_cvars": 4,
+    "_cs_c::_uetsid": 8,
+    "MC1::_cs_c": 4,
+    "MS0::_cs_c": 4,
+    "MSFPC::_cs_c": 4,
+    "AMCV_EA76ADE95776D2EC7F000101%40AdobeOrg::_cs_c": 4,
+    "_cs_c::mbox": 4,
+    "MUID::_cs_c": 4,
+    "CLID::_cs_c": 4,
+    "AMCVS_EA76ADE95776D2EC7F000101%40AdobeOrg::_cs_id": 4,
+    "AMCVS_EA76ADE95776D2EC7F000101%40AdobeOrg::_cs_s": 4,
+    "AMCVS_EA76ADE95776D2EC7F000101%40AdobeOrg::_uetvid": 8,
+    "AMCVS_EA76ADE95776D2EC7F000101%40AdobeOrg::_cs_cvars": 4,
+    "AMCVS_EA76ADE95776D2EC7F000101%40AdobeOrg::_uetsid": 8,
+    "AMCVS_EA76ADE95776D2EC7F000101%40AdobeOrg::MC1": 4,
+    "AMCVS_EA76ADE95776D2EC7F000101%40AdobeOrg::MS0": 4,
+    "AMCVS_EA76ADE95776D2EC7F000101%40AdobeOrg::MSFPC": 4,
+    "AMCVS_EA76ADE95776D2EC7F000101%40AdobeOrg::AMCV_EA76ADE95776D2EC7F000101%40AdobeOrg": 4,
+    "AMCVS_EA76ADE95776D2EC7F000101%40AdobeOrg::mbox": 4,
+    "AMCVS_EA76ADE95776D2EC7F000101%40AdobeOrg::MUID": 4,
+    "AMCVS_EA76ADE95776D2EC7F000101%40AdobeOrg::CLID": 4,
+    "_cs_id::_cs_s": 4,
+    "_cs_id::_uetvid": 8,
+    "_cs_cvars::_cs_id": 4,
+    "_cs_id::_uetsid": 8,
+    "MC1::_cs_id": 4,
+    "MS0::_cs_id": 4,
+    "MSFPC::_cs_id": 4,
+    "AMCV_EA76ADE95776D2EC7F000101%40AdobeOrg::_cs_id": 4,
+    "_cs_id::mbox": 4,
+    "MUID::_cs_id": 4,
+    "CLID::_cs_id": 4,
+    "_cs_s::_uetvid": 8,
+    "_cs_cvars::_cs_s": 4,
+    "_cs_s::_uetsid": 8,
+    "MC1::_cs_s": 4,
+    "MS0::_cs_s": 4,
+    "MSFPC::_cs_s": 4,
+    "AMCV_EA76ADE95776D2EC7F000101%40AdobeOrg::_cs_s": 4,
+    "_cs_s::mbox": 4,
+    "MUID::_cs_s": 4,
+    "CLID::_cs_s": 4,
+    "_cs_cvars::_uetvid": 8,
+    "MC1::_uetvid": 8,
+    "MS0::_uetvid": 8,
+    "MSFPC::_uetvid": 8,
+    "AMCV_EA76ADE95776D2EC7F000101%40AdobeOrg::_uetvid": 8,
+    "_cs_cvars::_uetsid": 8,
+    "MC1::_cs_cvars": 4,
+    "MS0::_cs_cvars": 4,
+    "MSFPC::_cs_cvars": 4,
+    "AMCV_EA76ADE95776D2EC7F000101%40AdobeOrg::_cs_cvars": 4,
+    "_cs_cvars::mbox": 4,
+    "MUID::_cs_cvars": 4,
+    "CLID::_cs_cvars": 4,
+    "MC1::_uetsid": 8,
+    "MS0::_uetsid": 8,
+    "MSFPC::_uetsid": 8,
+    "AMCV_EA76ADE95776D2EC7F000101%40AdobeOrg::_uetsid": 8,
+    "MC1::MS0": 4,
+    "MC1::MSFPC": 4,
+    "AMCV_EA76ADE95776D2EC7F000101%40AdobeOrg::MC1": 4,
+    "MC1::mbox": 4,
+    "MC1::MUID": 4,
+    "CLID::MC1": 4,
+    "MS0::MSFPC": 4,
+    "AMCV_EA76ADE95776D2EC7F000101%40AdobeOrg::MS0": 4,
+    "MS0::mbox": 4,
+    "MS0::MUID": 4,
+    "CLID::MS0": 4,
+    "AMCV_EA76ADE95776D2EC7F000101%40AdobeOrg::MSFPC": 4,
+    "MSFPC::mbox": 4,
+    "MSFPC::MUID": 4,
+    "CLID::MSFPC": 4,
+    "AMCV_EA76ADE95776D2EC7F000101%40AdobeOrg::mbox": 4,
+    "AMCV_EA76ADE95776D2EC7F000101%40AdobeOrg::MUID": 4,
+    "AMCV_EA76ADE95776D2EC7F000101%40AdobeOrg::CLID": 4,
+    ".AspNetCore.OpenIdConnect.Nonce.CfDJ8LpX7AEm64lJqvovzonWFb6e111ITHkUDfBlAYp3G0jfNUl39cfOCFI6qVp1HgUVrZ_l_CwIMBV0RrPlO62F7un3qs0EVja3eb9MqiFXon7S_fr_njlrDxWi196r3ulH8_olVl8gkAV4bE8KLlwqpwUlIakXiNBLlQ-0ZKqMbizDnLNEfFjRv5QVCg0sZ0ZPnLJ_Xk0u7O6BequudUgj0yGLva2tMlt7aroYJPzNc7IpptSvXlxTuK2zQiwX348oqu1SvFZsjeUV9VSuCSeLBmg::Cascade.AuthSSO": 2,
+    ".AspNetCore.OpenIdConnect.Nonce.CfDJ8LpX7AEm64lJqvovzonWFb6e111ITHkUDfBlAYp3G0jfNUl39cfOCFI6qVp1HgUVrZ_l_CwIMBV0RrPlO62F7un3qs0EVja3eb9MqiFXon7S_fr_njlrDxWi196r3ulH8_olVl8gkAV4bE8KLlwqpwUlIakXiNBLlQ-0ZKqMbizDnLNEfFjRv5QVCg0sZ0ZPnLJ_Xk0u7O6BequudUgj0yGLva2tMlt7aroYJPzNc7IpptSvXlxTuK2zQiwX348oqu1SvFZsjeUV9VSuCSeLBmg::akacd_OneRF": 2,
+    ".AspNetCore.OpenIdConnect.Nonce.CfDJ8LpX7AEm64lJqvovzonWFb6e111ITHkUDfBlAYp3G0jfNUl39cfOCFI6qVp1HgUVrZ_l_CwIMBV0RrPlO62F7un3qs0EVja3eb9MqiFXon7S_fr_njlrDxWi196r3ulH8_olVl8gkAV4bE8KLlwqpwUlIakXiNBLlQ-0ZKqMbizDnLNEfFjRv5QVCg0sZ0ZPnLJ_Xk0u7O6BequudUgj0yGLva2tMlt7aroYJPzNc7IpptSvXlxTuK2zQiwX348oqu1SvFZsjeUV9VSuCSeLBmg::ak_bmsc": 2,
+    ".AspNetCore.OpenIdConnect.Nonce.CfDJ8LpX7AEm64lJqvovzonWFb6e111ITHkUDfBlAYp3G0jfNUl39cfOCFI6qVp1HgUVrZ_l_CwIMBV0RrPlO62F7un3qs0EVja3eb9MqiFXon7S_fr_njlrDxWi196r3ulH8_olVl8gkAV4bE8KLlwqpwUlIakXiNBLlQ-0ZKqMbizDnLNEfFjRv5QVCg0sZ0ZPnLJ_Xk0u7O6BequudUgj0yGLva2tMlt7aroYJPzNc7IpptSvXlxTuK2zQiwX348oqu1SvFZsjeUV9VSuCSeLBmg::MicrosoftApplicationsTelemetryDeviceId": 2,
+    ".AspNetCore.OpenIdConnect.Nonce.CfDJ8LpX7AEm64lJqvovzonWFb6e111ITHkUDfBlAYp3G0jfNUl39cfOCFI6qVp1HgUVrZ_l_CwIMBV0RrPlO62F7un3qs0EVja3eb9MqiFXon7S_fr_njlrDxWi196r3ulH8_olVl8gkAV4bE8KLlwqpwUlIakXiNBLlQ-0ZKqMbizDnLNEfFjRv5QVCg0sZ0ZPnLJ_Xk0u7O6BequudUgj0yGLva2tMlt7aroYJPzNc7IpptSvXlxTuK2zQiwX348oqu1SvFZsjeUV9VSuCSeLBmg::ai_session": 2,
+    ".AspNetCore.OpenIdConnect.Nonce.CfDJ8LpX7AEm64lJqvovzonWFb6e111ITHkUDfBlAYp3G0jfNUl39cfOCFI6qVp1HgUVrZ_l_CwIMBV0RrPlO62F7un3qs0EVja3eb9MqiFXon7S_fr_njlrDxWi196r3ulH8_olVl8gkAV4bE8KLlwqpwUlIakXiNBLlQ-0ZKqMbizDnLNEfFjRv5QVCg0sZ0ZPnLJ_Xk0u7O6BequudUgj0yGLva2tMlt7aroYJPzNc7IpptSvXlxTuK2zQiwX348oqu1SvFZsjeUV9VSuCSeLBmg::MSCC": 2,
+    ".AspNetCore.OpenIdConnect.Nonce.CfDJ8LpX7AEm64lJqvovzonWFb6e111ITHkUDfBlAYp3G0jfNUl39cfOCFI6qVp1HgUVrZ_l_CwIMBV0RrPlO62F7un3qs0EVja3eb9MqiFXon7S_fr_njlrDxWi196r3ulH8_olVl8gkAV4bE8KLlwqpwUlIakXiNBLlQ-0ZKqMbizDnLNEfFjRv5QVCg0sZ0ZPnLJ_Xk0u7O6BequudUgj0yGLva2tMlt7aroYJPzNc7IpptSvXlxTuK2zQiwX348oqu1SvFZsjeUV9VSuCSeLBmg::_clck": 4,
+    ".AspNetCore.OpenIdConnect.Nonce.CfDJ8LpX7AEm64lJqvovzonWFb6e111ITHkUDfBlAYp3G0jfNUl39cfOCFI6qVp1HgUVrZ_l_CwIMBV0RrPlO62F7un3qs0EVja3eb9MqiFXon7S_fr_njlrDxWi196r3ulH8_olVl8gkAV4bE8KLlwqpwUlIakXiNBLlQ-0ZKqMbizDnLNEfFjRv5QVCg0sZ0ZPnLJ_Xk0u7O6BequudUgj0yGLva2tMlt7aroYJPzNc7IpptSvXlxTuK2zQiwX348oqu1SvFZsjeUV9VSuCSeLBmg::_clsk": 4,
+    ".AspNetCore.OpenIdConnect.Nonce.CfDJ8LpX7AEm64lJqvovzonWFb6e111ITHkUDfBlAYp3G0jfNUl39cfOCFI6qVp1HgUVrZ_l_CwIMBV0RrPlO62F7un3qs0EVja3eb9MqiFXon7S_fr_njlrDxWi196r3ulH8_olVl8gkAV4bE8KLlwqpwUlIakXiNBLlQ-0ZKqMbizDnLNEfFjRv5QVCg0sZ0ZPnLJ_Xk0u7O6BequudUgj0yGLva2tMlt7aroYJPzNc7IpptSvXlxTuK2zQiwX348oqu1SvFZsjeUV9VSuCSeLBmg::at_check": 2,
+    ".AspNetCore.OpenIdConnect.Nonce.CfDJ8LpX7AEm64lJqvovzonWFb6e111ITHkUDfBlAYp3G0jfNUl39cfOCFI6qVp1HgUVrZ_l_CwIMBV0RrPlO62F7un3qs0EVja3eb9MqiFXon7S_fr_njlrDxWi196r3ulH8_olVl8gkAV4bE8KLlwqpwUlIakXiNBLlQ-0ZKqMbizDnLNEfFjRv5QVCg0sZ0ZPnLJ_Xk0u7O6BequudUgj0yGLva2tMlt7aroYJPzNc7IpptSvXlxTuK2zQiwX348oqu1SvFZsjeUV9VSuCSeLBmg::_cs_c": 2,
+    ".AspNetCore.OpenIdConnect.Nonce.CfDJ8LpX7AEm64lJqvovzonWFb6e111ITHkUDfBlAYp3G0jfNUl39cfOCFI6qVp1HgUVrZ_l_CwIMBV0RrPlO62F7un3qs0EVja3eb9MqiFXon7S_fr_njlrDxWi196r3ulH8_olVl8gkAV4bE8KLlwqpwUlIakXiNBLlQ-0ZKqMbizDnLNEfFjRv5QVCg0sZ0ZPnLJ_Xk0u7O6BequudUgj0yGLva2tMlt7aroYJPzNc7IpptSvXlxTuK2zQiwX348oqu1SvFZsjeUV9VSuCSeLBmg::AMCVS_EA76ADE95776D2EC7F000101%40AdobeOrg": 2,
+    ".AspNetCore.OpenIdConnect.Nonce.CfDJ8LpX7AEm64lJqvovzonWFb6e111ITHkUDfBlAYp3G0jfNUl39cfOCFI6qVp1HgUVrZ_l_CwIMBV0RrPlO62F7un3qs0EVja3eb9MqiFXon7S_fr_njlrDxWi196r3ulH8_olVl8gkAV4bE8KLlwqpwUlIakXiNBLlQ-0ZKqMbizDnLNEfFjRv5QVCg0sZ0ZPnLJ_Xk0u7O6BequudUgj0yGLva2tMlt7aroYJPzNc7IpptSvXlxTuK2zQiwX348oqu1SvFZsjeUV9VSuCSeLBmg::_cs_id": 2,
+    ".AspNetCore.OpenIdConnect.Nonce.CfDJ8LpX7AEm64lJqvovzonWFb6e111ITHkUDfBlAYp3G0jfNUl39cfOCFI6qVp1HgUVrZ_l_CwIMBV0RrPlO62F7un3qs0EVja3eb9MqiFXon7S_fr_njlrDxWi196r3ulH8_olVl8gkAV4bE8KLlwqpwUlIakXiNBLlQ-0ZKqMbizDnLNEfFjRv5QVCg0sZ0ZPnLJ_Xk0u7O6BequudUgj0yGLva2tMlt7aroYJPzNc7IpptSvXlxTuK2zQiwX348oqu1SvFZsjeUV9VSuCSeLBmg::_cs_s": 2,
+    ".AspNetCore.OpenIdConnect.Nonce.CfDJ8LpX7AEm64lJqvovzonWFb6e111ITHkUDfBlAYp3G0jfNUl39cfOCFI6qVp1HgUVrZ_l_CwIMBV0RrPlO62F7un3qs0EVja3eb9MqiFXon7S_fr_njlrDxWi196r3ulH8_olVl8gkAV4bE8KLlwqpwUlIakXiNBLlQ-0ZKqMbizDnLNEfFjRv5QVCg0sZ0ZPnLJ_Xk0u7O6BequudUgj0yGLva2tMlt7aroYJPzNc7IpptSvXlxTuK2zQiwX348oqu1SvFZsjeUV9VSuCSeLBmg::_uetvid": 4,
+    ".AspNetCore.OpenIdConnect.Nonce.CfDJ8LpX7AEm64lJqvovzonWFb6e111ITHkUDfBlAYp3G0jfNUl39cfOCFI6qVp1HgUVrZ_l_CwIMBV0RrPlO62F7un3qs0EVja3eb9MqiFXon7S_fr_njlrDxWi196r3ulH8_olVl8gkAV4bE8KLlwqpwUlIakXiNBLlQ-0ZKqMbizDnLNEfFjRv5QVCg0sZ0ZPnLJ_Xk0u7O6BequudUgj0yGLva2tMlt7aroYJPzNc7IpptSvXlxTuK2zQiwX348oqu1SvFZsjeUV9VSuCSeLBmg::_cs_cvars": 2,
+    ".AspNetCore.OpenIdConnect.Nonce.CfDJ8LpX7AEm64lJqvovzonWFb6e111ITHkUDfBlAYp3G0jfNUl39cfOCFI6qVp1HgUVrZ_l_CwIMBV0RrPlO62F7un3qs0EVja3eb9MqiFXon7S_fr_njlrDxWi196r3ulH8_olVl8gkAV4bE8KLlwqpwUlIakXiNBLlQ-0ZKqMbizDnLNEfFjRv5QVCg0sZ0ZPnLJ_Xk0u7O6BequudUgj0yGLva2tMlt7aroYJPzNc7IpptSvXlxTuK2zQiwX348oqu1SvFZsjeUV9VSuCSeLBmg::_uetsid": 4,
+    ".AspNetCore.OpenIdConnect.Nonce.CfDJ8LpX7AEm64lJqvovzonWFb6e111ITHkUDfBlAYp3G0jfNUl39cfOCFI6qVp1HgUVrZ_l_CwIMBV0RrPlO62F7un3qs0EVja3eb9MqiFXon7S_fr_njlrDxWi196r3ulH8_olVl8gkAV4bE8KLlwqpwUlIakXiNBLlQ-0ZKqMbizDnLNEfFjRv5QVCg0sZ0ZPnLJ_Xk0u7O6BequudUgj0yGLva2tMlt7aroYJPzNc7IpptSvXlxTuK2zQiwX348oqu1SvFZsjeUV9VSuCSeLBmg::AMCV_EA76ADE95776D2EC7F000101%40AdobeOrg": 2,
+    ".AspNetCore.OpenIdConnect.Nonce.CfDJ8LpX7AEm64lJqvovzonWFb6e111ITHkUDfBlAYp3G0jfNUl39cfOCFI6qVp1HgUVrZ_l_CwIMBV0RrPlO62F7un3qs0EVja3eb9MqiFXon7S_fr_njlrDxWi196r3ulH8_olVl8gkAV4bE8KLlwqpwUlIakXiNBLlQ-0ZKqMbizDnLNEfFjRv5QVCg0sZ0ZPnLJ_Xk0u7O6BequudUgj0yGLva2tMlt7aroYJPzNc7IpptSvXlxTuK2zQiwX348oqu1SvFZsjeUV9VSuCSeLBmg::MC1": 2,
+    ".AspNetCore.OpenIdConnect.Nonce.CfDJ8LpX7AEm64lJqvovzonWFb6e111ITHkUDfBlAYp3G0jfNUl39cfOCFI6qVp1HgUVrZ_l_CwIMBV0RrPlO62F7un3qs0EVja3eb9MqiFXon7S_fr_njlrDxWi196r3ulH8_olVl8gkAV4bE8KLlwqpwUlIakXiNBLlQ-0ZKqMbizDnLNEfFjRv5QVCg0sZ0ZPnLJ_Xk0u7O6BequudUgj0yGLva2tMlt7aroYJPzNc7IpptSvXlxTuK2zQiwX348oqu1SvFZsjeUV9VSuCSeLBmg::MS0": 2,
+    ".AspNetCore.OpenIdConnect.Nonce.CfDJ8LpX7AEm64lJqvovzonWFb6e111ITHkUDfBlAYp3G0jfNUl39cfOCFI6qVp1HgUVrZ_l_CwIMBV0RrPlO62F7un3qs0EVja3eb9MqiFXon7S_fr_njlrDxWi196r3ulH8_olVl8gkAV4bE8KLlwqpwUlIakXiNBLlQ-0ZKqMbizDnLNEfFjRv5QVCg0sZ0ZPnLJ_Xk0u7O6BequudUgj0yGLva2tMlt7aroYJPzNc7IpptSvXlxTuK2zQiwX348oqu1SvFZsjeUV9VSuCSeLBmg::MSFPC": 2,
+    ".AspNetCore.OpenIdConnect.Nonce.CfDJ8LpX7AEm64lJqvovzonWFb6e111ITHkUDfBlAYp3G0jfNUl39cfOCFI6qVp1HgUVrZ_l_CwIMBV0RrPlO62F7un3qs0EVja3eb9MqiFXon7S_fr_njlrDxWi196r3ulH8_olVl8gkAV4bE8KLlwqpwUlIakXiNBLlQ-0ZKqMbizDnLNEfFjRv5QVCg0sZ0ZPnLJ_Xk0u7O6BequudUgj0yGLva2tMlt7aroYJPzNc7IpptSvXlxTuK2zQiwX348oqu1SvFZsjeUV9VSuCSeLBmg::mbox": 2,
+    ".AspNetCore.OpenIdConnect.Nonce.CfDJ8LpX7AEm64lJqvovzonWFb6e111ITHkUDfBlAYp3G0jfNUl39cfOCFI6qVp1HgUVrZ_l_CwIMBV0RrPlO62F7un3qs0EVja3eb9MqiFXon7S_fr_njlrDxWi196r3ulH8_olVl8gkAV4bE8KLlwqpwUlIakXiNBLlQ-0ZKqMbizDnLNEfFjRv5QVCg0sZ0ZPnLJ_Xk0u7O6BequudUgj0yGLva2tMlt7aroYJPzNc7IpptSvXlxTuK2zQiwX348oqu1SvFZsjeUV9VSuCSeLBmg::MUID": 2,
+    ".AspNetCore.OpenIdConnect.Nonce.CfDJ8LpX7AEm64lJqvovzonWFb6e111ITHkUDfBlAYp3G0jfNUl39cfOCFI6qVp1HgUVrZ_l_CwIMBV0RrPlO62F7un3qs0EVja3eb9MqiFXon7S_fr_njlrDxWi196r3ulH8_olVl8gkAV4bE8KLlwqpwUlIakXiNBLlQ-0ZKqMbizDnLNEfFjRv5QVCg0sZ0ZPnLJ_Xk0u7O6BequudUgj0yGLva2tMlt7aroYJPzNc7IpptSvXlxTuK2zQiwX348oqu1SvFZsjeUV9VSuCSeLBmg::CLID": 2
   },
   "confidence": {},
   "globalPatterns": {
@@ -18300,11 +18821,12 @@
     "mbox": {
       "domains": [
         "dell.com",
-        "royalcaribbean.com"
+        "royalcaribbean.com",
+        "microsoft.com"
       ],
-      "totalOccurrences": 46,
+      "totalOccurrences": 48,
       "categories": {
-        "analytics": 46
+        "analytics": 48
       },
       "confidence": 0
     },
@@ -18342,11 +18864,12 @@
     "ak_bmsc": {
       "domains": [
         "dell.com",
-        "royalcaribbean.com"
+        "royalcaribbean.com",
+        "microsoft.com"
       ],
-      "totalOccurrences": 65,
+      "totalOccurrences": 67,
       "categories": {
-        "necessary": 65
+        "necessary": 67
       },
       "confidence": 0
     },
@@ -19328,9 +19851,10 @@
     },
     "at_check": {
       "domains": [
-        "royalcaribbean.com"
+        "royalcaribbean.com",
+        "microsoft.com"
       ],
-      "totalOccurrences": 12,
+      "totalOccurrences": 14,
       "categories": {},
       "confidence": 0
     },
@@ -19570,22 +20094,24 @@
     "_uetsid": {
       "domains": [
         "royalcaribbean.com",
-        "dell.com"
+        "dell.com",
+        "microsoft.com"
       ],
-      "totalOccurrences": 15,
+      "totalOccurrences": 19,
       "categories": {
-        "marketing": 15
+        "marketing": 19
       },
       "confidence": 0
     },
     "_uetvid": {
       "domains": [
         "royalcaribbean.com",
-        "dell.com"
+        "dell.com",
+        "microsoft.com"
       ],
-      "totalOccurrences": 15,
+      "totalOccurrences": 19,
       "categories": {
-        "marketing": 14,
+        "marketing": 18,
         "necessary": 1
       },
       "confidence": 0
@@ -19593,44 +20119,48 @@
     "MUID": {
       "domains": [
         "royalcaribbean.com",
-        "dell.com"
+        "dell.com",
+        "microsoft.com"
       ],
-      "totalOccurrences": 12,
+      "totalOccurrences": 14,
       "categories": {
-        "marketing": 12
+        "marketing": 14
       },
       "confidence": 0
     },
     "CLID": {
       "domains": [
         "royalcaribbean.com",
-        "dell.com"
+        "dell.com",
+        "microsoft.com"
       ],
-      "totalOccurrences": 12,
+      "totalOccurrences": 14,
       "categories": {
-        "analytics": 12
+        "analytics": 14
       },
       "confidence": 0
     },
     "_clck": {
       "domains": [
         "royalcaribbean.com",
-        "dell.com"
+        "dell.com",
+        "microsoft.com"
       ],
-      "totalOccurrences": 12,
+      "totalOccurrences": 16,
       "categories": {
-        "analytics": 12
+        "analytics": 16
       },
       "confidence": 0
     },
     "_clsk": {
       "domains": [
         "royalcaribbean.com",
-        "dell.com"
+        "dell.com",
+        "microsoft.com"
       ],
-      "totalOccurrences": 12,
+      "totalOccurrences": 16,
       "categories": {
-        "analytics": 12
+        "analytics": 16
       },
       "confidence": 0
     },
@@ -20293,6 +20823,166 @@
       "totalOccurrences": 5,
       "categories": {
         "necessary": 5
+      },
+      "confidence": 0
+    },
+    ".AspNetCore.OpenIdConnect.Nonce.CfDJ8LpX7AEm64lJqvovzonWFb4lrLQX6qwXZAdAaOJ3yH4DPsa9A1YmG2iPHTuQYNFwl-oH04IH-vTUVvpAqg1hHAIV40F2Lpdngx__vMQ-_KevEMtv6UxDWdj5joK_gluT9fn3e-lCApld359qJE34sEFEkw6l6rfU69Fxd2idne-5jlXDPsiajqjbBYlz9gI8r53Kyh2yAPLRsOxwHf8v25OrW-29e8wYLQAnUGEfqxEVmY-Md89Pj0xd7WOmmdKcQL_FfY5EW89Yu0Acchc78Wk": {
+      "domains": [
+        "microsoft.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "marketing": 1
+      },
+      "confidence": 0
+    },
+    "Cascade.AuthSSO": {
+      "domains": [
+        "microsoft.com"
+      ],
+      "totalOccurrences": 2,
+      "categories": {
+        "necessary": 2
+      },
+      "confidence": 0
+    },
+    "akacd_OneRF": {
+      "domains": [
+        "microsoft.com"
+      ],
+      "totalOccurrences": 2,
+      "categories": {
+        "necessary": 2
+      },
+      "confidence": 0
+    },
+    "MicrosoftApplicationsTelemetryDeviceId": {
+      "domains": [
+        "microsoft.com"
+      ],
+      "totalOccurrences": 2,
+      "categories": {
+        "analytics": 2
+      },
+      "confidence": 0
+    },
+    "ai_session": {
+      "domains": [
+        "microsoft.com"
+      ],
+      "totalOccurrences": 2,
+      "categories": {
+        "necessary": 2
+      },
+      "confidence": 0
+    },
+    "MSCC": {
+      "domains": [
+        "microsoft.com"
+      ],
+      "totalOccurrences": 2,
+      "categories": {
+        "analytics": 2
+      },
+      "confidence": 0
+    },
+    "_cs_c": {
+      "domains": [
+        "microsoft.com"
+      ],
+      "totalOccurrences": 2,
+      "categories": {
+        "necessary": 2
+      },
+      "confidence": 0
+    },
+    "AMCVS_EA76ADE95776D2EC7F000101%40AdobeOrg": {
+      "domains": [
+        "microsoft.com"
+      ],
+      "totalOccurrences": 2,
+      "categories": {
+        "analytics": 2
+      },
+      "confidence": 0
+    },
+    "_cs_id": {
+      "domains": [
+        "microsoft.com"
+      ],
+      "totalOccurrences": 2,
+      "categories": {
+        "necessary": 2
+      },
+      "confidence": 0
+    },
+    "_cs_s": {
+      "domains": [
+        "microsoft.com"
+      ],
+      "totalOccurrences": 2,
+      "categories": {
+        "necessary": 2
+      },
+      "confidence": 0
+    },
+    "_cs_cvars": {
+      "domains": [
+        "microsoft.com"
+      ],
+      "totalOccurrences": 2,
+      "categories": {
+        "necessary": 2
+      },
+      "confidence": 0
+    },
+    "MC1": {
+      "domains": [
+        "microsoft.com"
+      ],
+      "totalOccurrences": 2,
+      "categories": {
+        "analytics": 2
+      },
+      "confidence": 0
+    },
+    "MS0": {
+      "domains": [
+        "microsoft.com"
+      ],
+      "totalOccurrences": 2,
+      "categories": {
+        "analytics": 2
+      },
+      "confidence": 0
+    },
+    "MSFPC": {
+      "domains": [
+        "microsoft.com"
+      ],
+      "totalOccurrences": 2,
+      "categories": {
+        "analytics": 2
+      },
+      "confidence": 0
+    },
+    "AMCV_EA76ADE95776D2EC7F000101%40AdobeOrg": {
+      "domains": [
+        "microsoft.com"
+      ],
+      "totalOccurrences": 2,
+      "categories": {
+        "analytics": 2
+      },
+      "confidence": 0
+    },
+    ".AspNetCore.OpenIdConnect.Nonce.CfDJ8LpX7AEm64lJqvovzonWFb6e111ITHkUDfBlAYp3G0jfNUl39cfOCFI6qVp1HgUVrZ_l_CwIMBV0RrPlO62F7un3qs0EVja3eb9MqiFXon7S_fr_njlrDxWi196r3ulH8_olVl8gkAV4bE8KLlwqpwUlIakXiNBLlQ-0ZKqMbizDnLNEfFjRv5QVCg0sZ0ZPnLJ_Xk0u7O6BequudUgj0yGLva2tMlt7aroYJPzNc7IpptSvXlxTuK2zQiwX348oqu1SvFZsjeUV9VSuCSeLBmg": {
+      "domains": [
+        "microsoft.com"
+      ],
+      "totalOccurrences": 1,
+      "categories": {
+        "necessary": 1
       },
       "confidence": 0
     }
