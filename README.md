@@ -72,16 +72,29 @@ graph TD
     %% Edges at this level (grouped by source)
     user["User<br>[External]"] -->|"Uses | Web Browser"| dashboard_ui["Dashboard UI<br>/dashboard/app/page.js"]
     crawler_core["Crawler Core<br>/backend/spectralCrawler.js"] -->|"Crawls and analyzes | HTTP/HTTPS"| external_website["External Website<br>/backend/spectralCrawler.js"]
-
 ```
 
-## Documentación disponible
+## Documentación
+
+### Documentos principales
 
 | Documento | Descripción |
 |-----------|-------------|
-| [docs/documentacion_spectral_v4.8.md](docs/documentacion_spectral_v4.8.md) | Historial funcional del proyecto, métricas de validación multi-país y roadmap v4.8. |
-| [docs/architecture_assessment.md](docs/architecture_assessment.md) | Evaluación de arquitectura, operaciones y seguridad con mejoras priorizadas y plan de acción. |
-| [docs/business_strategy.md](docs/business_strategy.md) | Estrategia comercial y de escalabilidad: packaging, GTM, roadmap SaaS y add-on IA de remediación. |
+| [PRD.md](docs/PRD.md) | Product Requirements Document - Especificaciones completas del producto SaaS (features, personas, métricas) |
+| [ROADMAP.md](docs/ROADMAP.md) | Roadmap detallado en 3 fases: MVP SaaS (8 semanas), Growth (8 semanas), Enterprise + Multi-CMP (8 semanas) |
+| [documentacion_spectral_v4.8.md](docs/documentacion_spectral_v4.8.md) | Documentación histórica v4.8 - Pipeline actual, validación multi-país, soporte OneTrust |
+
+### Análisis técnico (archivo)
+
+Los siguientes documentos contienen análisis técnicos detallados realizados por equipos especializados. Han sido archivados en `docs/archive/` como referencia:
+
+- **SPECTRAL_MVP_STRATEGY.md** - Estrategia consolidada de implementación con stack Vercel + Supabase
+- **backend_architecture_analysis.md** - Evaluación crítica de arquitectura backend y pipeline
+- **kubernetes_devops_assessment.md** - Análisis de infraestructura y DevOps
+- **ux_analysis_saas.md** - Análisis UI/UX y modelo freemium
+- **component_specs.md** - Especificaciones de componentes y design system
+
+Ver `docs/archive/` para acceder a estos documentos.
 
 ## Estructura de carpetas
 
